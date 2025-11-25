@@ -13,10 +13,13 @@
 
 
 % Epigraph settings
-\setlength{\epigraphwidth}{0.45\textwidth}
+\setlength{\epigraphwidth}{0.5\textwidth}
 \setlength{\epigraphrule}{0pt}
 \epigraphfontsize{\small}
-
+% vertical gap between epigraph text and author
+\setlength{\epigraphsourceoffset}{2em}
+\renewcommand{\textflush}{flushright} % default
+\renewcommand{\epigraphsource}[1]{\vspace{5em}\hfill\textit{#1}}
 
 % Page style and numbering
 \pagestyle{fancy}
@@ -27,11 +30,19 @@
 
 % Chapter title style
 \titleformat{\chapter}[display]
-  {\normalfont\Huge\bfseries}
+  {\normalfont\LARGE\bfseries}
   {Chapter \thechapter}
   {2ex}
-  {\Huge\bfseries}
+  {\LARGE\bfseries}
 \titlespacing*{\chapter}{5pt}{-1em}{2.5em}
+
+% Appendix title sty
+\makeatletter
+\g@addto@macro\appendix{%
+  \renewcommand{\chaptername}{Appendix}%
+  \renewcommand{\thechapter}{\Alph{chapter}}%
+}
+\makeatother
 
 % Shortcut commands
 \newcommand{\E}{\mathbb{E}}

@@ -39,6 +39,6 @@
 \contentsline {section}{\numberline {5.2}Mathematical definition}{23}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Some examples of conditional probility}{23}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Stochasticity and Markov processes}{23}{section.5.4}%
-\contentsline {chapter}{\numberline {Appendix 1}Vectors and matrices: a quick review}{27}{appendix.A}%
-\contentsline {chapter}{\numberline {Appendix 2}Functions and derivatives: a quick review}{29}{appendix.B}%
-\contentsline {chapter}{\numberline {Appendix 3}Integral calculus: a quick review}{31}{appendix.C}%
+\contentsline {chapter}{\numberline {A}Vectors and matrices: a quick review}{27}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Functions and derivatives: a quick review}{29}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Integral calculus: a quick review}{31}{appendix.C}%

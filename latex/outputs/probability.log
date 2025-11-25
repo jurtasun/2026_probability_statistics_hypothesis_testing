@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  20 NOV 2025 19:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  25 NOV 2025 18:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -701,6 +701,50 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+! Undefined control sequence.
+<argument> \epigraphsourceoffset 
+                                 
+l.20 \setlength{\epigraphsourceoffset}{2em}
+                                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \let 
+l.21 \renewcommand
+                  {\textflush}{flushright} % default
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \let 
+l.21 \renewcommand
+                  {\textflush}{flushright} % default
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! LaTeX Error: Command \epigraphsource undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 \renewcommand{\epigraphsource}
+                                   [1]{\vspace{5em}\hfill\textit{#1}}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
 
@@ -932,13 +976,13 @@ Package biblatex Info: ... and expl3
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 ))
 LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input lin
-e 11.
+e 20.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 11.
+(Font)              scaled to size 12.0pt on input line 20.
 \@quotelevel=\count442
 \@quotereset=\count443
 
@@ -950,54 +994,54 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (outputs/chapters/appendix3.aux))
 \openout1 = `probability.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 11.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 20.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 11.
+ 20.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 20.
 LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-11.
+20.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 20.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 11.
+ 20.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 20.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 11.
+e 20.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Info: Command `\dddot' is already robust on input line 11.
-LaTeX Info: Command `\ddddot' is already robust on input line 11.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Info: Command `\dddot' is already robust on input line 20.
+LaTeX Info: Command `\ddddot' is already robust on input line 20.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1058,19 +1102,19 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 11.
-Package microtype Info: Applying patch `item' on input line 11.
-Package microtype Info: Applying patch `toc' on input line 11.
-Package microtype Info: Applying patch `eqnum' on input line 11.
-Package microtype Info: Applying patch `footnote' on input line 11.
-Package microtype Info: Applying patch `verbatim' on input line 11.
+LaTeX Info: Redefining \microtypecontext on input line 20.
+Package microtype Info: Applying patch `item' on input line 20.
+Package microtype Info: Applying patch `toc' on input line 20.
+Package microtype Info: Applying patch `eqnum' on input line 20.
+Package microtype Info: Applying patch `footnote' on input line 20.
+Package microtype Info: Applying patch `verbatim' on input line 20.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 11.
+LaTeX Info: Redefining \showhyphens on input line 20.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1080,7 +1124,7 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 11.
+Package hyperref Info: Link coloring OFF on input line 20.
 
 (outputs/probability.out) (outputs/probability.out)
 \@outlinefile=\write5
@@ -1104,27 +1148,83 @@ Package biblatex Info: ... file 'probability.bbl' found.
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
+(biblatex)                bernoulli1713ars
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                cardano1663ludo
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                cicero45bce
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                david1962games
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                devlin2008unfinished
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                finkel2007ancient
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                hald1990history
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                huygens1657ratiociniis
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
 (biblatex)                kolmogorov1933grundbegriffe
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
 )
-Package biblatex Info: Reference section=0 on input line 11.
-Package biblatex Info: Reference segment=0 on input line 11.
+Package biblatex Info: Reference section=0 on input line 20.
+Package biblatex Info: Reference segment=0 on input line 20.
 <figures/frontpage/icl_logo.jpeg, id=180, 461.725pt x 225.84375pt>
 File: figures/frontpage/icl_logo.jpeg Graphic file (type jpg)
 <use figures/frontpage/icl_logo.jpeg>
-Package pdftex.def Info: figures/frontpage/icl_logo.jpeg  used on input line 22
+Package pdftex.def Info: figures/frontpage/icl_logo.jpeg  used on input line 31
 .
 (pdftex.def)             Requested size: 211.38832pt x 103.39658pt.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 24.88pt on input line 28.
+(Font)              scaled to size 24.88pt on input line 37.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 24.88pt on input line 28.
+(Font)              scaled to size 24.88pt on input line 37.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 34.
+(Font)              scaled to size 17.28pt on input line 43.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 44.
+(Font)              scaled to size 14.4pt on input line 53.
  [1
 
 
@@ -1132,7 +1232,12 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 al/texlive/2024/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc} <./figures/fr
 ontpage/icl_logo.jpeg>] [2
 
-] (outputs/probability.toc
+]
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 20.74pt on input line 62.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 20.74pt on input line 62.
+ (outputs/probability.toc
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 1.
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
@@ -1180,29 +1285,15 @@ LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 ) [1
 
-]
-Overfull \hbox (39.81592pt too wide) detected at line 42
-\OT1/ntxtlf/b/n/12 Appendix 1 
- []
-
-
-Overfull \hbox (39.81592pt too wide) detected at line 43
-\OT1/ntxtlf/b/n/12 Appendix 2 
- []
-
-
-Overfull \hbox (39.81592pt too wide) detected at line 44
-\OT1/ntxtlf/b/n/12 Appendix 3 
- []
-
-)
+])
 \tf@toc=\write6
 \openout6 = `probability.toc'.
 
  [2]
 \openout2 = `chapters/preface.aux'.
 
- (./chapters/preface.tex
+
+(./chapters/preface.tex
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 17.28pt on input line 5.
 
@@ -1255,6 +1346,36 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 8.
 
+
+LaTeX Warning: Citation 'finkel2007ancient' on page 5 undefined on input line 1
+0.
+
+
+LaTeX Warning: Citation 'david1962games' on page 5 undefined on input line 10.
+
+
+LaTeX Warning: Citation 'cicero45bce' on page 5 undefined on input line 14.
+
+
+LaTeX Warning: Citation 'cardano1663ludo' on page 5 undefined on input line 16.
+
+
+
+LaTeX Warning: Citation 'devlin2008unfinished' on page 5 undefined on input lin
+e 20.
+
+
+LaTeX Warning: Citation 'huygens1657ratiociniis' on page 5 undefined on input l
+ine 20.
+
+
+LaTeX Warning: Citation 'bernoulli1713ars' on page 5 undefined on input line 20
+.
+
+
+LaTeX Warning: Citation 'hald1990history' on page 5 undefined on input line 20.
+
+
 [5]
 
 LaTeX Warning: Citation 'kolmogorov1933grundbegriffe' on page 6 undefined on in
@@ -1299,7 +1420,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 32--64
+Underfull \hbox (badness 10000) in paragraph at lines 32--73
 
  []
 
@@ -1339,7 +1460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 46--65
+Underfull \hbox (badness 10000) in paragraph at lines 46--74
 
  []
 
@@ -1379,7 +1500,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 32--66
+Underfull \hbox (badness 10000) in paragraph at lines 32--75
 
  []
 
@@ -1435,7 +1556,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--41
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 42--67
+Underfull \hbox (badness 10000) in paragraph at lines 42--76
 
  []
 
@@ -1475,7 +1596,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 32--68
+Underfull \hbox (badness 10000) in paragraph at lines 32--77
 
  []
 
@@ -1488,7 +1609,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--68
 
 
 ]
-Appendix Appendix 1.
+Appendix A.
 ) [27]
 \openout2 = `chapters/appendix2.aux'.
 
@@ -1498,7 +1619,7 @@ Appendix Appendix 1.
 
 
 ]
-Appendix Appendix 2.
+Appendix B.
 ) [29]
 \openout2 = `chapters/appendix3.aux'.
 
@@ -1508,7 +1629,7 @@ Appendix Appendix 2.
 
 
 ]
-Appendix Appendix 3.
+Appendix C.
 ) [31] [32
 
 
@@ -1523,18 +1644,25 @@ Appendix Appendix 3.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `probability.out' has not changed.
 (rerunfilecheck)             Checksum: 5FE9C64FAA084FF02D61E3A02BB9DFD7;9321.
+
+Package biblatex Warning: Please rerun LaTeX.
+
 Package logreq Info: Writing requests to 'probability.run.xml'.
 \openout1 = `probability.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28563 strings out of 474116
- 498089 string characters out of 5743681
+ 28569 strings out of 474116
+ 497385 string characters out of 5743681
  1941187 words of memory out of 5000000
- 50082 multiletter control sequences out of 15000+600000
- 638176 words of font info for 365 fonts, out of 8000000 for 9000
+ 50064 multiletter control sequences out of 15000+600000
+ 642441 words of font info for 388 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  88i,11n,134p,1580b,1421s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></us
@@ -1542,10 +1670,10 @@ r/local/texlive/2024/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/loca
 l/texlive/2024/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive
 /2024/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2024/tex
 mf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on outputs/probability.pdf (37 pages, 177269 bytes).
+Output written on outputs/probability.pdf (37 pages, 175677 bytes).
 PDF statistics:
- 466 PDF objects out of 1000 (max. 8388607)
- 411 compressed objects within 5 object streams
- 96 named destinations out of 1000 (max. 500000)
- 70502 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 448 PDF objects out of 1000 (max. 8388607)
+ 394 compressed objects within 4 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 78694 words of extra memory for PDF output out of 89155 (max. 10000000)
 

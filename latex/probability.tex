@@ -8,6 +8,15 @@
 \usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
 \addbibresource{bibliography/references.bib}
 
+% Ensure bibliography format
+\DeclareFieldFormat[article]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[inbook]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[incollection]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[inproceedings]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[book]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[report]{title}{\mkbibemph{#1}}
+
 \begin{document}
 
 % Custom frontpage
@@ -69,7 +78,6 @@
 
 % Appendix
 \appendix
-\renewcommand{\thechapter}{Appendix \arabic{chapter}}
 \include{chapters/appendix1}
 \include{chapters/appendix2}
 \include{chapters/appendix3}

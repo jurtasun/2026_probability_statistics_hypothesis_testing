@@ -323,6 +323,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/newtx/ntx-Regular-tlf-ot1.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/txmiaX.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1r.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-ot1.tfm
 INPUT outputs/probability.toc
 INPUT outputs/probability.toc
 INPUT outputs/probability.toc
@@ -381,6 +383,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/newtx/ntx-Bold-tlf-ot1.vf
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/txbmiaX.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-ot1r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/newtx/ntx-Bold-tlf-ot1.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/txbmiaX.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-ot1r.tfm
