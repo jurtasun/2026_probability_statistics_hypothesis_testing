@@ -3,42 +3,50 @@
 \contentsline {chapter}{Introduction}{5}{chapter*.4}%
 \contentsline {section}{A bit of history}{5}{section*.5}%
 \contentsline {chapter}{\numberline {1}Descriptive statistics}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Population and sampling}{7}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Central tendency and variation}{7}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Data visualization}{7}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Dependency and correlation}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.1}Population and sampling}{8}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Central tendency and variation}{8}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Data visualization}{8}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Foundations of Probability}{11}{chapter.2}%
-\contentsline {section}{\numberline {2.1}What is probability?}{11}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Discrete random variables}{11}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Bernoulli events}{11}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Binomial distribution}{11}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Poisson distribution}{11}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Discrete uniform distribution}{11}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}Continuous random variables}{11}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Continuous uniform distribution}{11}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Exponential distribution}{11}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Gaussian distribution}{11}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Expectation values}{11}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Prediction and inference}{15}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Prediction vs inference}{15}{section.3.1}%
-\contentsline {section}{\numberline {3.2}The Law of Large Numbers}{15}{section.3.2}%
-\contentsline {section}{\numberline {3.3}The Central Limit Theorem}{15}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Application to Generalized Linear Models}{15}{section.3.4}%
+\contentsline {section}{\numberline {2.1}What is probability?}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Discrete random variables}{12}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Bernoulli events}{12}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Binomial distribution}{12}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Poisson distribution}{12}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Discrete uniform distribution}{12}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Continuous random variables}{12}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Continuous uniform distribution}{12}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Exponential distribution}{12}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Gaussian distribution}{12}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Expectation values}{12}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Estimation, prediction and inference}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Prediction vs inference}{16}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Law of Large Numbers}{16}{section.3.2}%
+\contentsline {section}{\numberline {3.3}The Central Limit Theorem}{16}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Application to Generalized Linear Models}{16}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Introduction to hypothesis testing}{19}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Prediction vs inference revisted}{19}{section.4.1}%
-\contentsline {section}{\numberline {4.2}General approach to hypothesis testing}{19}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Statistical tests: some examples}{19}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Compare sample mean with hypothesized value - One sample t-test}{19}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Compare sample means of two independent groups - Two sample t-test}{19}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Compare variation on more than two groups - Fisher's ANOVA}{19}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Compare distributions and testing for normality - $\chi ^{2}$ test}{19}{subsection.4.3.4}%
-\contentsline {section}{\numberline {4.4}Parametric and non-parametric tests}{19}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Comparing data and normalization}{19}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Introduction to conditional probability}{23}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Motivation and philosophy}{23}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Mathematical definition}{23}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Some examples of conditional probility}{23}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Stochasticity and Markov processes}{23}{section.5.4}%
-\contentsline {chapter}{\numberline {A}Vectors and matrices: a quick review}{27}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Functions and derivatives: a quick review}{29}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Integral calculus: a quick review}{31}{appendix.C}%
+\contentsline {section}{\numberline {4.1}Prediction vs inference revisted}{20}{section.4.1}%
+\contentsline {section}{\numberline {4.2}General approach to hypothesis testing}{20}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Statistical tests: some examples}{20}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Compare sample mean with hypothesized value - One sample t-test}{20}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Compare sample means of two independent groups - Two sample t-test}{20}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Compare variation on two groups - Fisher's exact test}{20}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Compare variation o multiple groups - Fisher's ANOVA}{20}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Compare distributions and testing for normality - $\chi ^{2}$ test}{20}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}Parametric and non-parametric tests}{20}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Comparing data and normalization}{20}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Modeling, dependency and correlation}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Linear models}{24}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Polynomial models}{24}{section.5.2}%
+\contentsline {section}{\numberline {5.3}GLMs and some examples}{24}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Introduction to conditional probability}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Motivation and philosophy}{28}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Dependent and independent events}{28}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Some examples of conditional probability}{28}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Stochasticity and Markov Processes}{31}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Motivation and philosophy}{32}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Mathematical definition}{32}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Some examples of conditional probility}{32}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Stochasticity and Markov processes}{32}{section.7.4}%
+\contentsline {chapter}{\numberline {A}Vectors and matrices: a quick review}{35}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Functions and derivatives: a quick review}{37}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Integral calculus: a quick review}{39}{appendix.C}%

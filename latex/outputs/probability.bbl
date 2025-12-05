@@ -188,6 +188,236 @@
       \field{title}{``Introduction to Probability, Statistics and Random Processes''}
       \field{year}{2014}
     \endentry
+    \entry{finkel_2007_dice}{article}{}
+      \name{author}{1}{}{%
+        {{hash=674a906e61f9f2a882d545ba9152f980}{%
+           family={Finkel},
+           familyi={F\bibinitperiod},
+           given={Irving\bibnamedelima L.},
+           giveni={I\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{674a906e61f9f2a882d545ba9152f980}
+      \strng{fullhash}{674a906e61f9f2a882d545ba9152f980}
+      \strng{bibnamehash}{674a906e61f9f2a882d545ba9152f980}
+      \strng{authorbibnamehash}{674a906e61f9f2a882d545ba9152f980}
+      \strng{authornamehash}{674a906e61f9f2a882d545ba9152f980}
+      \strng{authorfullhash}{674a906e61f9f2a882d545ba9152f980}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Antiquity}
+      \field{number}{314}
+      \field{title}{``The Ancient Origins of Dice"}
+      \field{volume}{81}
+      \field{year}{2007}
+      \field{pages}{176\bibrangedash 187}
+      \range{pages}{12}
+    \endentry
+    \entry{david_1962_games}{book}{}
+      \name{author}{1}{}{%
+        {{hash=a3bf42caa1cc29dd25e1bf19ca098037}{%
+           family={David},
+           familyi={D\bibinitperiod},
+           given={F.\bibnamedelimi N.},
+           giveni={F\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Griffin}%
+      }
+      \strng{namehash}{a3bf42caa1cc29dd25e1bf19ca098037}
+      \strng{fullhash}{a3bf42caa1cc29dd25e1bf19ca098037}
+      \strng{bibnamehash}{a3bf42caa1cc29dd25e1bf19ca098037}
+      \strng{authorbibnamehash}{a3bf42caa1cc29dd25e1bf19ca098037}
+      \strng{authornamehash}{a3bf42caa1cc29dd25e1bf19ca098037}
+      \strng{authorfullhash}{a3bf42caa1cc29dd25e1bf19ca098037}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Games, Gods and Gambling}
+      \field{year}{1962}
+    \endentry
+    \entry{cicero_45bce_divination}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5300f28847a596397d754d714b49c0de}{%
+           family={Cicero},
+           familyi={C\bibinitperiod},
+           given={Marcus\bibnamedelima Tullius},
+           giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Ancient Sources Edition}%
+      }
+      \strng{namehash}{5300f28847a596397d754d714b49c0de}
+      \strng{fullhash}{5300f28847a596397d754d714b49c0de}
+      \strng{bibnamehash}{5300f28847a596397d754d714b49c0de}
+      \strng{authorbibnamehash}{5300f28847a596397d754d714b49c0de}
+      \strng{authornamehash}{5300f28847a596397d754d714b49c0de}
+      \strng{authorfullhash}{5300f28847a596397d754d714b49c0de}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{De Divinatione}
+      \field{year}{45 BCE}
+    \endentry
+    \entry{cardano_1663_ludo}{book}{}
+      \name{author}{1}{}{%
+        {{hash=eb78e02f2472aa0f9af834d21956d64b}{%
+           family={Cardano},
+           familyi={C\bibinitperiod},
+           given={Gerolamo},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Paris}%
+      }
+      \list{publisher}{1}{%
+        {Apud Joannem Baptistam Ferrarium}%
+      }
+      \strng{namehash}{eb78e02f2472aa0f9af834d21956d64b}
+      \strng{fullhash}{eb78e02f2472aa0f9af834d21956d64b}
+      \strng{bibnamehash}{eb78e02f2472aa0f9af834d21956d64b}
+      \strng{authorbibnamehash}{eb78e02f2472aa0f9af834d21956d64b}
+      \strng{authornamehash}{eb78e02f2472aa0f9af834d21956d64b}
+      \strng{authorfullhash}{eb78e02f2472aa0f9af834d21956d64b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Liber de Ludo Aleae}
+      \field{year}{1663}
+    \endentry
+    \entry{devlin_2008_unfinished}{book}{}
+      \name{author}{1}{}{%
+        {{hash=99226d82767ae89eaf66e1f398ff38fa}{%
+           family={Devlin},
+           familyi={D\bibinitperiod},
+           given={Keith},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Basic Books}%
+      }
+      \strng{namehash}{99226d82767ae89eaf66e1f398ff38fa}
+      \strng{fullhash}{99226d82767ae89eaf66e1f398ff38fa}
+      \strng{bibnamehash}{99226d82767ae89eaf66e1f398ff38fa}
+      \strng{authorbibnamehash}{99226d82767ae89eaf66e1f398ff38fa}
+      \strng{authornamehash}{99226d82767ae89eaf66e1f398ff38fa}
+      \strng{authorfullhash}{99226d82767ae89eaf66e1f398ff38fa}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Unfinished Game}
+      \field{year}{2008}
+    \endentry
+    \entry{huygens_1657_ratiociniis}{book}{}
+      \name{author}{1}{}{%
+        {{hash=08c1e21bc7163d4a61af78e727bc1cb0}{%
+           family={Huygens},
+           familyi={H\bibinitperiod},
+           given={Christiaan},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Leiden}%
+      }
+      \list{publisher}{1}{%
+        {Elzevier}%
+      }
+      \strng{namehash}{08c1e21bc7163d4a61af78e727bc1cb0}
+      \strng{fullhash}{08c1e21bc7163d4a61af78e727bc1cb0}
+      \strng{bibnamehash}{08c1e21bc7163d4a61af78e727bc1cb0}
+      \strng{authorbibnamehash}{08c1e21bc7163d4a61af78e727bc1cb0}
+      \strng{authornamehash}{08c1e21bc7163d4a61af78e727bc1cb0}
+      \strng{authorfullhash}{08c1e21bc7163d4a61af78e727bc1cb0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{De Ratiociniis in Ludo Aleae}
+      \field{year}{1657}
+    \endentry
+    \entry{bernoulli_1713_ars}{book}{}
+      \name{author}{1}{}{%
+        {{hash=556f66e0ff3a81ec6466acb5cf12c51b}{%
+           family={Bernoulli},
+           familyi={B\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Basel}%
+      }
+      \list{publisher}{1}{%
+        {Thurneysen Brothers}%
+      }
+      \strng{namehash}{556f66e0ff3a81ec6466acb5cf12c51b}
+      \strng{fullhash}{556f66e0ff3a81ec6466acb5cf12c51b}
+      \strng{bibnamehash}{556f66e0ff3a81ec6466acb5cf12c51b}
+      \strng{authorbibnamehash}{556f66e0ff3a81ec6466acb5cf12c51b}
+      \strng{authornamehash}{556f66e0ff3a81ec6466acb5cf12c51b}
+      \strng{authorfullhash}{556f66e0ff3a81ec6466acb5cf12c51b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Ars Conjectandi}
+      \field{year}{1713}
+    \endentry
+    \entry{hald_1990_history}{book}{}
+      \name{author}{1}{}{%
+        {{hash=7af52e8e08ce968cd8c3e5d86a5e3e81}{%
+           family={Hald},
+           familyi={H\bibinitperiod},
+           given={Anders},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{7af52e8e08ce968cd8c3e5d86a5e3e81}
+      \strng{fullhash}{7af52e8e08ce968cd8c3e5d86a5e3e81}
+      \strng{bibnamehash}{7af52e8e08ce968cd8c3e5d86a5e3e81}
+      \strng{authorbibnamehash}{7af52e8e08ce968cd8c3e5d86a5e3e81}
+      \strng{authornamehash}{7af52e8e08ce968cd8c3e5d86a5e3e81}
+      \strng{authorfullhash}{7af52e8e08ce968cd8c3e5d86a5e3e81}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A History of Probability and Statistics and Their Applications before 1750}
+      \field{year}{1990}
+    \endentry
+    \entry{kolmogorov_1933_grundbegriffe}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ad140838a1d76746af1851d451345e1d}{%
+           family={Kolmogorov},
+           familyi={K\bibinitperiod},
+           given={Andrey},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{ad140838a1d76746af1851d451345e1d}
+      \strng{fullhash}{ad140838a1d76746af1851d451345e1d}
+      \strng{bibnamehash}{ad140838a1d76746af1851d451345e1d}
+      \strng{authorbibnamehash}{ad140838a1d76746af1851d451345e1d}
+      \strng{authornamehash}{ad140838a1d76746af1851d451345e1d}
+      \strng{authorfullhash}{ad140838a1d76746af1851d451345e1d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Grundbegriffe der Wahrscheinlichkeitsrechnung}
+      \field{year}{1933}
+    \endentry
   \enddatalist
   \missing{bernoulli1713ars}
   \missing{cardano1663ludo}
