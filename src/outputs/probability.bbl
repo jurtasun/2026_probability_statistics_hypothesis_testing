@@ -1,0 +1,49 @@
+\begin{thebibliography}{CicCE}
+
+\bibitem[Ber13]{bernoulli_1713_ars}
+Jacob Bernoulli.
+\newblock {\em Ars Conjectandi}.
+\newblock Thurneysen Brothers, Basel, 1713.
+
+\bibitem[Car63]{cardano_1663_ludo}
+Gerolamo Cardano.
+\newblock {\em Liber de Ludo Aleae}.
+\newblock Apud Joannem Baptistam Ferrarium, Paris, 1663.
+
+\bibitem[CicCE]{cicero_45bce_divination}
+Marcus~Tullius Cicero.
+\newblock {\em De Divinatione}.
+\newblock Ancient Sources Edition, 45 BCE.
+
+\bibitem[Dav62]{david_1962_games}
+F.~N. David.
+\newblock {\em Games, Gods and Gambling}.
+\newblock Griffin, 1962.
+
+\bibitem[Dev08]{devlin_2008_unfinished}
+Keith Devlin.
+\newblock {\em The Unfinished Game}.
+\newblock Basic Books, 2008.
+
+\bibitem[Fin07]{finkel_2007_dice}
+Irving~L. Finkel.
+\newblock ``the ancient origins of dice".
+\newblock {\em Antiquity}, 81(314):176--187, 2007.
+
+\bibitem[Hal90]{hald_1990_history}
+Anders Hald.
+\newblock {\em A History of Probability and Statistics and Their Applications
+  before 1750}.
+\newblock Wiley, 1990.
+
+\bibitem[Huy57]{huygens_1657_ratiociniis}
+Christiaan Huygens.
+\newblock {\em De Ratiociniis in Ludo Aleae}.
+\newblock Elzevier, Leiden, 1657.
+
+\bibitem[Kol33]{kolmogorov_1933_grundbegriffe}
+Andrey Kolmogorov.
+\newblock {\em Grundbegriffe der Wahrscheinlichkeitsrechnung}.
+\newblock Springer, Berlin, 1933.
+
+\end{thebibliography}

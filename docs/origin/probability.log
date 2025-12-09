@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  19 NOV 2025 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  9 DEC 2025 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -788,18 +788,27 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<figures/frontpage/icl_logo.jpeg, id=1, 461.725pt x 225.84375pt>
-File: figures/frontpage/icl_logo.jpeg Graphic file (type jpg)
-<use figures/frontpage/icl_logo.jpeg>
-Package pdftex.def Info: figures/frontpage/icl_logo.jpeg  used on input line 32
-.
-(pdftex.def)             Requested size: 234.8775pt x 114.88586pt.
+
+LaTeX Warning: File `5_figures/frontpage/icl_logo.jpeg' not found on input line
+ 32.
+
+
+! Package pdftex.def Error: File `5_figures/frontpage/icl_logo.jpeg' not found:
+ using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.32 ...twidth]{5_figures/frontpage/icl_logo.jpeg}
+                                                  
+? 
 [1
 
 
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
-es/frontpage/icl_logo.jpeg>] [2
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2
 
 ] (./probability.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
@@ -837,109 +846,251 @@ Underfull \hbox (badness 10000) in paragraph at lines 141--142
  []
 
 [5]
-<figures/chapter1/histogram_1.png, id=41, 498.4221pt x 317.5062pt>
-File: figures/chapter1/histogram_1.png Graphic file (type png)
-<use figures/chapter1/histogram_1.png>
-Package pdftex.def Info: figures/chapter1/histogram_1.png  used on input line 1
-81.
-(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
-<figures/chapter1/histogram_2.png, id=43, 498.4221pt x 317.5062pt>
-File: figures/chapter1/histogram_2.png Graphic file (type png)
-<use figures/chapter1/histogram_2.png>
-Package pdftex.def Info: figures/chapter1/histogram_2.png  used on input line 1
-88.
-(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
-<figures/chapter1/histogram1_bins_small.png, id=44, 498.4221pt x 317.5062pt>
-File: figures/chapter1/histogram1_bins_small.png Graphic file (type png)
-<use figures/chapter1/histogram1_bins_small.png>
-Package pdftex.def Info: figures/chapter1/histogram1_bins_small.png  used on in
-put line 201.
-(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
-<figures/chapter1/histogram2_bins_small.png, id=45, 498.4221pt x 317.5062pt>
-File: figures/chapter1/histogram2_bins_small.png Graphic file (type png)
-<use figures/chapter1/histogram2_bins_small.png>
-Package pdftex.def Info: figures/chapter1/histogram2_bins_small.png  used on in
-put line 208.
-(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
-<figures/chapter1/histogram1_bins_large.png, id=46, 498.4221pt x 317.5062pt>
-File: figures/chapter1/histogram1_bins_large.png Graphic file (type png)
-<use figures/chapter1/histogram1_bins_large.png>
-Package pdftex.def Info: figures/chapter1/histogram1_bins_large.png  used on in
-put line 220.
-(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
-<figures/chapter1/histogram2_bins_large.png, id=47, 498.4221pt x 317.5062pt>
-File: figures/chapter1/histogram2_bins_large.png Graphic file (type png)
-<use figures/chapter1/histogram2_bins_large.png>
-Package pdftex.def Info: figures/chapter1/histogram2_bins_large.png  used on in
-put line 227.
-(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
- [6] [7 <./figures/chapter1/histogram_1.png> <./figures/chapter1/histogram_2.pn
-g>] [8 <./figures/chapter1/histogram1_bins_small.png> <./figures/chapter1/histo
-gram2_bins_small.png>] [9 <./figures/chapter1/histogram1_bins_large.png> <./fig
-ures/chapter1/histogram2_bins_large.png>]
-<figures/chapter1/box_1.png, id=73, 498.4221pt x 317.0244pt>
-File: figures/chapter1/box_1.png Graphic file (type png)
-<use figures/chapter1/box_1.png>
-Package pdftex.def Info: figures/chapter1/box_1.png  used on input line 396.
-(pdftex.def)             Requested size: 225.4819pt x 157.8394pt.
-<figures/chapter1/box_2.png, id=74, 498.4221pt x 317.0244pt>
-File: figures/chapter1/box_2.png Graphic file (type png)
-<use figures/chapter1/box_2.png>
-Package pdftex.def Info: figures/chapter1/box_2.png  used on input line 403.
-(pdftex.def)             Requested size: 225.4819pt x 157.8394pt.
-<figures/chapter1/violin_1.png, id=75, 498.4221pt x 317.0244pt>
-File: figures/chapter1/violin_1.png Graphic file (type png)
-<use figures/chapter1/violin_1.png>
-Package pdftex.def Info: figures/chapter1/violin_1.png  used on input line 415.
 
-(pdftex.def)             Requested size: 225.4819pt x 157.8394pt.
-<figures/chapter1/violin_2.png, id=76, 498.4221pt x 317.0244pt>
-File: figures/chapter1/violin_2.png Graphic file (type png)
-<use figures/chapter1/violin_2.png>
-Package pdftex.def Info: figures/chapter1/violin_2.png  used on input line 422.
+LaTeX Warning: File `5_figures/chapter1/histogram_1.png' not found on input lin
+e 181.
 
-(pdftex.def)             Requested size: 225.4819pt x 157.8394pt.
+
+! Package pdftex.def Error: File `5_figures/chapter1/histogram_1.png' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.181 ...idth]{5_figures/chapter1/histogram_1.png}
+                                                  
+? 
+
+LaTeX Warning: File `5_figures/chapter1/histogram_2.png' not found on input lin
+e 188.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/histogram_2.png' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.188 ...idth]{5_figures/chapter1/histogram_2.png}
+                                                  
+? 
+
+LaTeX Warning: File `5_figures/chapter1/histogram1_bins_small.png' not found on
+ input line 201.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/histogram1_bins_small.png'
+ not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.201 ...gures/chapter1/histogram1_bins_small.png}
+                                                  
+? 
+
+LaTeX Warning: File `5_figures/chapter1/histogram2_bins_small.png' not found on
+ input line 208.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/histogram2_bins_small.png'
+ not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.208 ...gures/chapter1/histogram2_bins_small.png}
+                                                  
+? 
+
+LaTeX Warning: File `5_figures/chapter1/histogram1_bins_large.png' not found on
+ input line 220.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/histogram1_bins_large.png'
+ not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.220 ...gures/chapter1/histogram1_bins_large.png}
+                                                  
+? 
+
+LaTeX Warning: File `5_figures/chapter1/histogram2_bins_large.png' not found on
+ input line 227.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/histogram2_bins_large.png'
+ not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.227 ...gures/chapter1/histogram2_bins_large.png}
+                                                  
+? 
+[6] [7] [8] [9]
+
+LaTeX Warning: File `5_figures/chapter1/box_1.png' not found on input line 396.
+
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/box_1.png' not found: usin
+g draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.396 ...\textwidth]{5_figures/chapter1/box_1.png}
+                                                  
+? 
+
+LaTeX Warning: File `5_figures/chapter1/box_2.png' not found on input line 403.
+
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/box_2.png' not found: usin
+g draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.403 ...\textwidth]{5_figures/chapter1/box_2.png}
+                                                  
+? 
+
+LaTeX Warning: File `5_figures/chapter1/violin_1.png' not found on input line 4
+15.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/violin_1.png' not found: u
+sing draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.415 ...xtwidth]{5_figures/chapter1/violin_1.png}
+                                                  
+? 
+
+LaTeX Warning: File `5_figures/chapter1/violin_2.png' not found on input line 4
+22.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/violin_2.png' not found: u
+sing draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.422 ...xtwidth]{5_figures/chapter1/violin_2.png}
+                                                  
+? q
+OK, entering \batchmode...
  [10]
-<figures/chapter1/mean_std_hist.png, id=80, 498.4221pt x 317.5062pt>
-File: figures/chapter1/mean_std_hist.png Graphic file (type png)
-<use figures/chapter1/mean_std_hist.png>
-Package pdftex.def Info: figures/chapter1/mean_std_hist.png  used on input line
- 446.
-(pdftex.def)             Requested size: 281.85587pt x 179.5512pt.
-<figures/chapter1/mean_std_box.png, id=81, 498.4221pt x 316.5426pt>
-File: figures/chapter1/mean_std_box.png Graphic file (type png)
-<use figures/chapter1/mean_std_box.png>
-Package pdftex.def Info: figures/chapter1/mean_std_box.png  used on input line 
-453.
-(pdftex.def)             Requested size: 281.85587pt x 179.00629pt.
-<figures/chapter1/mean_std_violin.png, id=82, 498.4221pt x 316.5426pt>
-File: figures/chapter1/mean_std_violin.png Graphic file (type png)
-<use figures/chapter1/mean_std_violin.png>
-Package pdftex.def Info: figures/chapter1/mean_std_violin.png  used on input li
-ne 460.
-(pdftex.def)             Requested size: 281.85587pt x 179.00629pt.
- [11 <./figures/chapter1/box_1.png> <./figures/chapter1/box_2.png>]
-<figures/chapter1/linear1.png, id=88, 498.663pt x 318.9516pt>
-File: figures/chapter1/linear1.png Graphic file (type png)
-<use figures/chapter1/linear1.png>
-Package pdftex.def Info: figures/chapter1/linear1.png  used on input line 485.
-(pdftex.def)             Requested size: 281.85587pt x 180.27611pt.
-<figures/chapter1/quadratic1.png, id=89, 498.663pt x 318.7107pt>
-File: figures/chapter1/quadratic1.png Graphic file (type png)
-<use figures/chapter1/quadratic1.png>
-Package pdftex.def Info: figures/chapter1/quadratic1.png  used on input line 49
-2.
-(pdftex.def)             Requested size: 281.85587pt x 180.13995pt.
- [12 <./figures/chapter1/violin_1.png> <./figures/chapter1/violin_2.png>] [13 <
-./figures/chapter1/mean_std_hist.png>]
-[14 <./figures/chapter1/mean_std_box.png>] [15 <./figures/chapter1/mean_std_vio
-lin.png>] [16 <./figures/chapter1/linear1.png> <./figures/chapter1/quadratic1.p
-ng>]
+
+LaTeX Warning: File `5_figures/chapter1/mean_std_hist.png' not found on input l
+ine 446.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/mean_std_hist.png' not fou
+nd: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.446 ...th]{5_figures/chapter1/mean_std_hist.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/chapter1/mean_std_box.png' not found on input li
+ne 453.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/mean_std_box.png' not foun
+d: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.453 ...dth]{5_figures/chapter1/mean_std_box.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/chapter1/mean_std_violin.png' not found on input
+ line 460.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/mean_std_violin.png' not f
+ound: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.460 ...]{5_figures/chapter1/mean_std_violin.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [11]
+
+LaTeX Warning: File `5_figures/chapter1/linear1.png' not found on input line 48
+5.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/linear1.png' not found: us
+ing draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.485 ...extwidth]{5_figures/chapter1/linear1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/chapter1/quadratic1.png' not found on input line
+ 492.
+
+
+! Package pdftex.def Error: File `5_figures/chapter1/quadratic1.png' not found:
+ using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.492 ...width]{5_figures/chapter1/quadratic1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [12] [13] [14] [15] [16]
 Underfull \hbox (badness 10000) in paragraph at lines 607--608
 
  []
 
-[17]
+ [17] [18]
 Underfull \hbox (badness 10000) in paragraph at lines 613--614
 
  []
@@ -954,7 +1105,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 617--618
 
  []
 
-[18]
+ [19]
 Underfull \hbox (badness 10000) in paragraph at lines 623--624
 
  []
@@ -969,112 +1120,261 @@ Underfull \hbox (badness 10000) in paragraph at lines 627--628
 
  []
 
-[19] [20
-
-]
+ [20]
 Chapter 2.
-[21] [22]
+ [21
+
+] [22]
 
 LaTeX Warning: Reference `prob_frequentist' on page 23 undefined on input line 
 734.
 
-[23]
-<figures/chapter2/bernoulli_1.png, id=138, 497.2176pt x 317.988pt>
-File: figures/chapter2/bernoulli_1.png Graphic file (type png)
-<use figures/chapter2/bernoulli_1.png>
-Package pdftex.def Info: figures/chapter2/bernoulli_1.png  used on input line 7
-68.
-(pdftex.def)             Requested size: 225.48325pt x 157.83395pt.
-<figures/chapter2/bernoulli_2.png, id=139, 497.2176pt x 317.988pt>
-File: figures/chapter2/bernoulli_2.png Graphic file (type png)
-<use figures/chapter2/bernoulli_2.png>
-Package pdftex.def Info: figures/chapter2/bernoulli_2.png  used on input line 7
-75.
-(pdftex.def)             Requested size: 225.48325pt x 157.83395pt.
- [24 <./figures/chapter2/bernoulli_1.png> <./figures/chapter2/bernoulli_2.png>]
-<figures/chapter2/binomial_1.png, id=145, 497.4585pt x 317.988pt>
-File: figures/chapter2/binomial_1.png Graphic file (type png)
-<use figures/chapter2/binomial_1.png>
-Package pdftex.def Info: figures/chapter2/binomial_1.png  used on input line 82
-2.
-(pdftex.def)             Requested size: 225.47864pt x 157.83395pt.
-<figures/chapter2/binomial_1_cum.png, id=146, 497.4585pt x 317.988pt>
-File: figures/chapter2/binomial_1_cum.png Graphic file (type png)
-<use figures/chapter2/binomial_1_cum.png>
-Package pdftex.def Info: figures/chapter2/binomial_1_cum.png  used on input lin
-e 829.
-(pdftex.def)             Requested size: 225.47864pt x 157.83395pt.
+ [23]
+
+LaTeX Warning: File `5_figures/chapter2/bernoulli_1.png' not found on input lin
+e 768.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/bernoulli_1.png' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.768 ...idth]{5_figures/chapter2/bernoulli_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/chapter2/bernoulli_2.png' not found on input lin
+e 775.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/bernoulli_2.png' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.775 ...idth]{5_figures/chapter2/bernoulli_2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [24]
+
+LaTeX Warning: File `5_figures/chapter2/binomial_1.png' not found on input line
+ 822.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/binomial_1.png' not found:
+ using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.822 ...width]{5_figures/chapter2/binomial_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/chapter2/binomial_1_cum.png' not found on input 
+line 829.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/binomial_1_cum.png' not fo
+und: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.829 ...h]{5_figures/chapter2/binomial_1_cum.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
  [25]
-<figures/chapter2/poisson_1.png, id=150, 497.4585pt x 317.7471pt>
-File: figures/chapter2/poisson_1.png Graphic file (type png)
-<use figures/chapter2/poisson_1.png>
-Package pdftex.def Info: figures/chapter2/poisson_1.png  used on input line 876
-.
-(pdftex.def)             Requested size: 225.47864pt x 157.84044pt.
-<figures/chapter2/poisson_1_cum.png, id=151, 497.4585pt x 317.7471pt>
-File: figures/chapter2/poisson_1_cum.png Graphic file (type png)
-<use figures/chapter2/poisson_1_cum.png>
-Package pdftex.def Info: figures/chapter2/poisson_1_cum.png  used on input line
- 883.
-(pdftex.def)             Requested size: 225.47864pt x 157.84044pt.
- [26 <./figures/chapter2/binomial_1.png> <./figures/chapter2/binomial_1_cum.png
->]
-<figures/chapter2/duniform_1.png, id=158, 497.4585pt x 317.7471pt>
-File: figures/chapter2/duniform_1.png Graphic file (type png)
-<use figures/chapter2/duniform_1.png>
-Package pdftex.def Info: figures/chapter2/duniform_1.png  used on input line 92
-1.
-(pdftex.def)             Requested size: 225.47864pt x 157.84044pt.
-<figures/chapter2/duniform_1_cum.png, id=159, 497.4585pt x 317.7471pt>
-File: figures/chapter2/duniform_1_cum.png Graphic file (type png)
-<use figures/chapter2/duniform_1_cum.png>
-Package pdftex.def Info: figures/chapter2/duniform_1_cum.png  used on input lin
-e 928.
-(pdftex.def)             Requested size: 225.47864pt x 157.84044pt.
- [27 <./figures/chapter2/poisson_1.png> <./figures/chapter2/poisson_1_cum.png> 
-<./figures/chapter2/duniform_1.png> <./figures/chapter2/duniform_1_cum.png>]
-<figures/chapter2/uniform_1.png, id=168, 498.663pt x 317.0244pt>
-File: figures/chapter2/uniform_1.png Graphic file (type png)
-<use figures/chapter2/uniform_1.png>
-Package pdftex.def Info: figures/chapter2/uniform_1.png  used on input line 987
-.
-(pdftex.def)             Requested size: 225.47675pt x 157.8394pt.
-<figures/chapter2/uniform_2.png, id=169, 498.663pt x 317.0244pt>
-File: figures/chapter2/uniform_2.png Graphic file (type png)
-<use figures/chapter2/uniform_2.png>
-Package pdftex.def Info: figures/chapter2/uniform_2.png  used on input line 994
-.
-(pdftex.def)             Requested size: 225.47675pt x 157.8394pt.
- [28] [29 <./figures/chapter2/uniform_1.png> <./figures/chapter2/uniform_2.png>
-]
-<figures/chapter2/exponential_1.png, id=180, 498.663pt x 317.0244pt>
-File: figures/chapter2/exponential_1.png Graphic file (type png)
-<use figures/chapter2/exponential_1.png>
-Package pdftex.def Info: figures/chapter2/exponential_1.png  used on input line
- 1068.
-(pdftex.def)             Requested size: 225.47675pt x 157.8394pt.
-<figures/chapter2/exponential_2.png, id=181, 498.663pt x 317.0244pt>
-File: figures/chapter2/exponential_2.png Graphic file (type png)
-<use figures/chapter2/exponential_2.png>
-Package pdftex.def Info: figures/chapter2/exponential_2.png  used on input line
- 1075.
-(pdftex.def)             Requested size: 225.47675pt x 157.8394pt.
- [30 <./figures/chapter2/exponential_1.png> <./figures/chapter2/exponential_2.p
-ng>]
-<figures/chapter2/gaussian_1.png, id=187, 498.663pt x 317.0244pt>
-File: figures/chapter2/gaussian_1.png Graphic file (type png)
-<use figures/chapter2/gaussian_1.png>
-Package pdftex.def Info: figures/chapter2/gaussian_1.png  used on input line 11
-39.
-(pdftex.def)             Requested size: 225.47675pt x 157.8394pt.
-<figures/chapter2/gaussian_2.png, id=188, 498.663pt x 317.0244pt>
-File: figures/chapter2/gaussian_2.png Graphic file (type png)
-<use figures/chapter2/gaussian_2.png>
-Package pdftex.def Info: figures/chapter2/gaussian_2.png  used on input line 11
-46.
-(pdftex.def)             Requested size: 225.47675pt x 157.8394pt.
- [31 <./figures/chapter2/gaussian_1.png> <./figures/chapter2/gaussian_2.png>] [
-32] [33]
+
+LaTeX Warning: File `5_figures/chapter2/poisson_1.png' not found on input line 
+876.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/poisson_1.png' not found: 
+using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.876 ...twidth]{5_figures/chapter2/poisson_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/chapter2/poisson_1_cum.png' not found on input l
+ine 883.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/poisson_1_cum.png' not fou
+nd: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.883 ...th]{5_figures/chapter2/poisson_1_cum.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [26]
+
+LaTeX Warning: File `5_figures/chapter2/duniform_1.png' not found on input line
+ 921.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/duniform_1.png' not found:
+ using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.921 ...width]{5_figures/chapter2/duniform_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/chapter2/duniform_1_cum.png' not found on input 
+line 928.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/duniform_1_cum.png' not fo
+und: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.928 ...h]{5_figures/chapter2/duniform_1_cum.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [27]
+
+LaTeX Warning: File `5_figures/chapter2/uniform_1.png' not found on input line 
+987.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/uniform_1.png' not found: 
+using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.987 ...twidth]{5_figures/chapter2/uniform_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/chapter2/uniform_2.png' not found on input line 
+994.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/uniform_2.png' not found: 
+using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.994 ...twidth]{5_figures/chapter2/uniform_2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [28] [29]
+
+LaTeX Warning: File `5_figures/chapter2/exponential_1.png' not found on input l
+ine 1068.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/exponential_1.png' not fou
+nd: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1068 ...h]{5_figures/chapter2/exponential_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/chapter2/exponential_2.png' not found on input l
+ine 1075.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/exponential_2.png' not fou
+nd: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1075 ...h]{5_figures/chapter2/exponential_2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [30]
+
+LaTeX Warning: File `5_figures/chapter2/gaussian_1.png' not found on input line
+ 1139.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/gaussian_1.png' not found:
+ using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1139 ...idth]{5_figures/chapter2/gaussian_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/chapter2/gaussian_2.png' not found on input line
+ 1146.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/gaussian_2.png' not found:
+ using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1146 ...idth]{5_figures/chapter2/gaussian_2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [31] [32] [33]
 Underfull \hbox (badness 10000) in paragraph at lines 1287--1288
 
  []
@@ -1089,7 +1389,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1291--1292
 
  []
 
-[34]
+ [34]
 Underfull \hbox (badness 10000) in paragraph at lines 1297--1298
 
  []
@@ -1104,7 +1404,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1301--1302
 
  []
 
-[35] [36
+ [35] [36
 
 ]
 Chapter 3.
@@ -1128,46 +1428,94 @@ Underfull \hbox (badness 10000) in paragraph at lines 1321--1322
 
  []
 
-[37]
+ [37]
 Underfull \hbox (badness 10000) in paragraph at lines 1329--1331
 
  []
 
-[38] [39]
-File: figures/chapter2/gaussian_2.png Graphic file (type png)
-<use figures/chapter2/gaussian_2.png>
-Package pdftex.def Info: figures/chapter2/gaussian_2.png  used on input line 14
-09.
-(pdftex.def)             Requested size: 328.82707pt x 209.05292pt.
+ [38] [39]
+
+LaTeX Warning: File `5_figures/chapter2/gaussian_2.png' not found on input line
+ 1409.
+
+
+! Package pdftex.def Error: File `5_figures/chapter2/gaussian_2.png' not found:
+ using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1409 ...idth]{5_figures/chapter2/gaussian_2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
  [40]
-<figures/chapter3/clt_1.png, id=223, 498.9039pt x 317.988pt>
-File: figures/chapter3/clt_1.png Graphic file (type png)
-<use figures/chapter3/clt_1.png>
-Package pdftex.def Info: figures/chapter3/clt_1.png  used on input line 1434.
-(pdftex.def)             Requested size: 281.85587pt x 179.65384pt.
- [41 <./figures/chapter3/clt_1.png>]
-<figures/chapter3/clt_2.png, id=228, 498.9039pt x 317.988pt>
-File: figures/chapter3/clt_2.png Graphic file (type png)
-<use figures/chapter3/clt_2.png>
-Package pdftex.def Info: figures/chapter3/clt_2.png  used on input line 1467.
-(pdftex.def)             Requested size: 281.85587pt x 179.65384pt.
- [42 <./figures/chapter3/clt_2.png>]
-<figures/chapter3/clt_3.png, id=233, 498.9039pt x 317.7471pt>
-File: figures/chapter3/clt_3.png Graphic file (type png)
-<use figures/chapter3/clt_3.png>
-Package pdftex.def Info: figures/chapter3/clt_3.png  used on input line 1505.
-(pdftex.def)             Requested size: 281.85587pt x 179.51773pt.
- [43 <./figures/chapter3/clt_3.png>] [44] [45]
+
+LaTeX Warning: File `5_figures/chapter3/clt_1.png' not found on input line 1434
+.
+
+
+! Package pdftex.def Error: File `5_figures/chapter3/clt_1.png' not found: usin
+g draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1434 ...textwidth]{5_figures/chapter3/clt_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [41]
+
+LaTeX Warning: File `5_figures/chapter3/clt_2.png' not found on input line 1467
+.
+
+
+! Package pdftex.def Error: File `5_figures/chapter3/clt_2.png' not found: usin
+g draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1467 ...textwidth]{5_figures/chapter3/clt_2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [42]
+
+LaTeX Warning: File `5_figures/chapter3/clt_3.png' not found on input line 1505
+.
+
+
+! Package pdftex.def Error: File `5_figures/chapter3/clt_3.png' not found: usin
+g draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1505 ...textwidth]{5_figures/chapter3/clt_3.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [43] [44] [45]
 Underfull \hbox (badness 10000) in paragraph at lines 1617--1618
 
  []
 
-[46]
+ [46]
 Underfull \hbox (badness 10000) in paragraph at lines 1693--1695
 
  []
 
-[47]
+ [47]
 Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
 
  []
@@ -1182,7 +1530,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1714--1715
 
  []
 
-[48]
+ [48]
 Underfull \hbox (badness 10000) in paragraph at lines 1720--1721
 
  []
@@ -1197,7 +1545,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1724--1725
 
  []
 
-[49] [50
+ [49] [50
 
 ]
 Chapter 4.
@@ -1211,24 +1559,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 1737--1738
 
  []
 
-<figures/chapter4/probability_vs_statistics.png, id=261, 508.5399pt x 216.81pt>
 
-File: figures/chapter4/probability_vs_statistics.png Graphic file (type png)
-<use figures/chapter4/probability_vs_statistics.png>
-Package pdftex.def Info: figures/chapter4/probability_vs_statistics.png  used o
-n input line 1741.
-(pdftex.def)             Requested size: 281.85587pt x 120.16556pt.
+LaTeX Warning: File `5_figures/chapter4/probability_vs_statistics.png' not foun
+d on input line 1741.
+
+
+! Package pdftex.def Error: File `5_figures/chapter4/probability_vs_statistics.
+png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1741 .../chapter4/probability_vs_statistics.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 1746--1747
 
  []
 
-[51 <./figures/chapter4/probability_vs_statistics.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 1748--1749
 
  []
 
-
+ [51]
 Underfull \hbox (badness 10000) in paragraph at lines 1750--1751
 
  []
@@ -1243,7 +1601,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 1759--1760
 
  []
 
-[52]
+
+Underfull \vbox (badness 3579) has occurred while \output is active []
+
+ [52]
 Underfull \hbox (badness 10000) in paragraph at lines 1771--1772
 
  []
@@ -1253,7 +1614,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1794--1795
 
  []
 
-
+ [53]
 Underfull \hbox (badness 10000) in paragraph at lines 1796--1797
 
  []
@@ -1263,7 +1624,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1798--1799
 
  []
 
-[53] [54]
+ [54]
 Underfull \hbox (badness 10000) in paragraph at lines 1812--1813
 
  []
@@ -1278,15 +1639,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 1816--1817
 
  []
 
-<figures/chapter4/t_test_1_sample_p_one_tailed.png, id=276, 498.1812pt x 317.02
-44pt>
-File: figures/chapter4/t_test_1_sample_p_one_tailed.png Graphic file (type png)
 
-<use figures/chapter4/t_test_1_sample_p_one_tailed.png>
-Package pdftex.def Info: figures/chapter4/t_test_1_sample_p_one_tailed.png  use
-d on input line 1820.
-(pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
-[55 <./figures/chapter4/t_test_1_sample_p_one_tailed.png>]
+LaTeX Warning: File `5_figures/chapter4/t_test_1_sample_p_one_tailed.png' not f
+ound on input line 1820.
+
+
+! Package pdftex.def Error: File `5_figures/chapter4/t_test_1_sample_p_one_tail
+ed.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1820 ...apter4/t_test_1_sample_p_one_tailed.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 1830--1831
 
  []
@@ -1296,7 +1666,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1839--1840
 
  []
 
-[56]
+ [55] [56]
 Underfull \hbox (badness 10000) in paragraph at lines 1862--1863
 
  []
@@ -1311,27 +1681,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 1866--1867
 
  []
 
-<figures/chapter4/t_test_1_sample_p_two_tailed.png, id=285, 498.1812pt x 317.02
-44pt>
-File: figures/chapter4/t_test_1_sample_p_two_tailed.png Graphic file (type png)
 
-<use figures/chapter4/t_test_1_sample_p_two_tailed.png>
-Package pdftex.def Info: figures/chapter4/t_test_1_sample_p_two_tailed.png  use
-d on input line 1870.
-(pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
+LaTeX Warning: File `5_figures/chapter4/t_test_1_sample_p_two_tailed.png' not f
+ound on input line 1870.
+
+
+! Package pdftex.def Error: File `5_figures/chapter4/t_test_1_sample_p_two_tail
+ed.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1870 ...apter4/t_test_1_sample_p_two_tailed.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 1878--1880
 
  []
 
-[57 <./figures/chapter4/t_test_1_sample_p_two_tailed.png>]
-<figures/chapter4/t_distribution.png, id=291, 498.1812pt x 317.0244pt>
-File: figures/chapter4/t_distribution.png Graphic file (type png)
-<use figures/chapter4/t_distribution.png>
-Package pdftex.def Info: figures/chapter4/t_distribution.png  used on input lin
-e 1908.
-(pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
- [58 <./figures/chapter4/t_distribution.png>]
+
+LaTeX Warning: File `5_figures/chapter4/t_distribution.png' not found on input 
+line 1908.
+
+
+! Package pdftex.def Error: File `5_figures/chapter4/t_distribution.png' not fo
+und: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1908 ...]{5_figures/chapter4/t_distribution.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [57]
 Underfull \hbox (badness 10000) in paragraph at lines 1917--1918
 
  []
@@ -1346,23 +1735,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 1921--1922
 
  []
 
-<figures/chapter4/f_test_one_tailed.png, id=296, 498.1812pt x 317.0244pt>
-File: figures/chapter4/f_test_one_tailed.png Graphic file (type png)
-<use figures/chapter4/f_test_one_tailed.png>
-Package pdftex.def Info: figures/chapter4/f_test_one_tailed.png  used on input 
-line 1925.
-(pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
+ [58]
+
+LaTeX Warning: File `5_figures/chapter4/f_test_one_tailed.png' not found on inp
+ut line 1925.
+
+
+! Package pdftex.def Error: File `5_figures/chapter4/f_test_one_tailed.png' not
+ found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1925 ..._figures/chapter4/f_test_one_tailed.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 1930--1931
 
  []
 
-[59 <./figures/chapter4/f_test_one_tailed.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 1937--1938
 
  []
 
-[60]
+ [59] [60]
 Underfull \hbox (badness 10000) in paragraph at lines 1977--1979
 
  []
@@ -1377,24 +1778,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 1982--1983
 
  []
 
-<figures/chapter4/f_test_two_tailed.png, id=304, 498.1812pt x 317.0244pt>
-File: figures/chapter4/f_test_two_tailed.png Graphic file (type png)
-<use figures/chapter4/f_test_two_tailed.png>
-Package pdftex.def Info: figures/chapter4/f_test_two_tailed.png  used on input 
-line 1986.
-(pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
+
+LaTeX Warning: File `5_figures/chapter4/f_test_two_tailed.png' not found on inp
+ut line 1986.
+
+
+! Package pdftex.def Error: File `5_figures/chapter4/f_test_two_tailed.png' not
+ found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1986 ..._figures/chapter4/f_test_two_tailed.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 1994--1996
 
  []
 
-[61 <./figures/chapter4/f_test_two_tailed.png>]
-<figures/chapter4/f_distribution.png, id=309, 498.1812pt x 317.0244pt>
-File: figures/chapter4/f_distribution.png Graphic file (type png)
-<use figures/chapter4/f_distribution.png>
-Package pdftex.def Info: figures/chapter4/f_distribution.png  used on input lin
-e 2039.
-(pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
+ [61]
+
+LaTeX Warning: File `5_figures/chapter4/f_distribution.png' not found on input 
+line 2039.
+
+
+! Package pdftex.def Error: File `5_figures/chapter4/f_distribution.png' not fo
+und: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2039 ...]{5_figures/chapter4/f_distribution.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
  [62]
 Underfull \hbox (badness 10000) in paragraph at lines 2048--2049
 
@@ -1410,32 +1833,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 2052--2053
 
  []
 
-<figures/chapter4/chi2_test_one_tailed.png, id=313, 497.9403pt x 316.5426pt>
-File: figures/chapter4/chi2_test_one_tailed.png Graphic file (type png)
-<use figures/chapter4/chi2_test_one_tailed.png>
-Package pdftex.def Info: figures/chapter4/chi2_test_one_tailed.png  used on inp
-ut line 2056.
-(pdftex.def)             Requested size: 328.82707pt x 209.03468pt.
 
+LaTeX Warning: File `5_figures/chapter4/chi2_test_one_tailed.png' not found on 
+input line 2056.
+
+
+! Package pdftex.def Error: File `5_figures/chapter4/chi2_test_one_tailed.png' 
+not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2056 ...gures/chapter4/chi2_test_one_tailed.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [63]
 Underfull \hbox (badness 10000) in paragraph at lines 2064--2066
 
  []
 
-<figures/chapter4/chi2_test_two_tailed.png, id=314, 497.9403pt x 316.5426pt>
-File: figures/chapter4/chi2_test_two_tailed.png Graphic file (type png)
-<use figures/chapter4/chi2_test_two_tailed.png>
-Package pdftex.def Info: figures/chapter4/chi2_test_two_tailed.png  used on inp
-ut line 2069.
-(pdftex.def)             Requested size: 328.82707pt x 209.03468pt.
-[63 <./figures/chapter4/f_distribution.png>]
-<figures/chapter4/chi2_distribution.png, id=322, 497.9403pt x 316.5426pt>
-File: figures/chapter4/chi2_distribution.png Graphic file (type png)
-<use figures/chapter4/chi2_distribution.png>
-Package pdftex.def Info: figures/chapter4/chi2_distribution.png  used on input 
-line 2100.
-(pdftex.def)             Requested size: 328.82707pt x 209.03468pt.
- [64 <./figures/chapter4/chi2_test_one_tailed.png>] [65 <./figures/chapter4/chi
-2_test_two_tailed.png>] [66 <./figures/chapter4/chi2_distribution.png>] [67]
+
+LaTeX Warning: File `5_figures/chapter4/chi2_test_two_tailed.png' not found on 
+input line 2069.
+
+
+! Package pdftex.def Error: File `5_figures/chapter4/chi2_test_two_tailed.png' 
+not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2069 ...gures/chapter4/chi2_test_two_tailed.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [64]
+
+LaTeX Warning: File `5_figures/chapter4/chi2_distribution.png' not found on inp
+ut line 2100.
+
+
+! Package pdftex.def Error: File `5_figures/chapter4/chi2_distribution.png' not
+ found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2100 ..._figures/chapter4/chi2_distribution.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [65] [66] [67] [68]
 Underfull \hbox (badness 10000) in paragraph at lines 2145--2146
 
  []
@@ -1450,7 +1905,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2149--2150
 
  []
 
-[68]
+ [69]
 Underfull \hbox (badness 10000) in paragraph at lines 2155--2156
 
  []
@@ -1465,21 +1920,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 2159--2160
 
  []
 
-[69] [70
+ [70]
+Chapter 5.
+ [71
 
 ]
-Chapter 5.
-[71]
 
 LaTeX Warning: Citation `kolmogorov1933foundations' on page 72 undefined on inp
 ut line 2222.
 
-[72]
+ [72]
 Underfull \hbox (badness 10000) in paragraph at lines 2242--2243
 
  []
 
-[73]
+ [73]
 Underfull \hbox (badness 10000) in paragraph at lines 2270--2271
 
  []
@@ -1494,7 +1949,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2274--2275
 
  []
 
-[74]
+ [74]
 Underfull \hbox (badness 10000) in paragraph at lines 2280--2281
 
  []
@@ -1509,7 +1964,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2284--2285
 
  []
 
-[75] [76
+ [75] [76
 
 ]
 Appendix A.
@@ -1528,7 +1983,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2306--2307
 
  []
 
-[77] [78]
+ [77] [78]
 Underfull \hbox (badness 10000) in paragraph at lines 2358--2359
 
  []
@@ -1538,7 +1993,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2365--2367
 
  []
 
-[79] [80]
+ [79] [80]
 Appendix B.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2407--2408
@@ -1560,7 +2015,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2413--2414
 
  []
 
-[81
+ [81
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 2415--2416
@@ -1572,50 +2027,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 2417--2418
 
  []
 
-<figures/appendix/functions_point_1.png, id=383, 499.6266pt x 316.7835pt>
-File: figures/appendix/functions_point_1.png Graphic file (type png)
-<use figures/appendix/functions_point_1.png>
-Package pdftex.def Info: figures/appendix/functions_point_1.png  used on input 
-line 2421.
-(pdftex.def)             Requested size: 328.82707pt x 208.48804pt.
+
+LaTeX Warning: File `5_figures/appendix/functions_point_1.png' not found on inp
+ut line 2421.
+
+
+! Package pdftex.def Error: File `5_figures/appendix/functions_point_1.png' not
+ found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2421 ..._figures/appendix/functions_point_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 2426--2427
 
  []
 
+ [82]
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: File `5_figures/appendix/functions_point_2.png' not found on inp
+ut line 2434.
 
- [82 <./figures/appendix/functions_point_1.png>]
-<figures/appendix/functions_point_2.png, id=388, 498.663pt x 315.8199pt>
-File: figures/appendix/functions_point_2.png Graphic file (type png)
-<use figures/appendix/functions_point_2.png>
-Package pdftex.def Info: figures/appendix/functions_point_2.png  used on input 
-line 2434.
-(pdftex.def)             Requested size: 328.82707pt x 208.25865pt.
-<figures/appendix/functions_point_2_shadow.png, id=389, 498.663pt x 315.8199pt>
 
-File: figures/appendix/functions_point_2_shadow.png Graphic file (type png)
-<use figures/appendix/functions_point_2_shadow.png>
-Package pdftex.def Info: figures/appendix/functions_point_2_shadow.png  used on
- input line 2457.
-(pdftex.def)             Requested size: 328.82707pt x 208.25865pt.
+! Package pdftex.def Error: File `5_figures/appendix/functions_point_2.png' not
+ found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2434 ..._figures/appendix/functions_point_2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [83]
+
+LaTeX Warning: File `5_figures/appendix/functions_point_2_shadow.png' not found
+ on input line 2457.
+
+
+! Package pdftex.def Error: File `5_figures/appendix/functions_point_2_shadow.p
+ng' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2457 ...s/appendix/functions_point_2_shadow.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 2468--2469
 
  []
 
-[83 <./figures/appendix/functions_point_2.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 2470--2471
 
  []
 
-
+ [84]
 Underfull \hbox (badness 10000) in paragraph at lines 2485--2486
 
  []
 
-[84 <./figures/appendix/functions_point_2_shadow.png>] [85] [86
+ [85] [86
 
 ]
 Appendix C.
@@ -1644,32 +2129,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 2512--2513
 
  []
 
-<figures/appendix/integrals_1.png, id=404, 499.6266pt x 316.7835pt>
-File: figures/appendix/integrals_1.png Graphic file (type png)
-<use figures/appendix/integrals_1.png>
-Package pdftex.def Info: figures/appendix/integrals_1.png  used on input line 2
-516.
-(pdftex.def)             Requested size: 328.82707pt x 208.48804pt.
-<figures/appendix/integrals_2.png, id=405, 498.9039pt x 315.8199pt>
-File: figures/appendix/integrals_2.png Graphic file (type png)
-<use figures/appendix/integrals_2.png>
-Package pdftex.def Info: figures/appendix/integrals_2.png  used on input line 2
-523.
-(pdftex.def)             Requested size: 328.82707pt x 208.16708pt.
-<figures/appendix/integrals_2_subdivisions.png, id=406, 498.663pt x 316.5426pt>
 
-File: figures/appendix/integrals_2_subdivisions.png Graphic file (type png)
-<use figures/appendix/integrals_2_subdivisions.png>
-Package pdftex.def Info: figures/appendix/integrals_2_subdivisions.png  used on
- input line 2530.
-(pdftex.def)             Requested size: 328.82707pt x 208.73521pt.
-[87]
-<figures/appendix/integrals_3_riemann.png, id=411, 498.663pt x 315.8199pt>
-File: figures/appendix/integrals_3_riemann.png Graphic file (type png)
-<use figures/appendix/integrals_3_riemann.png>
-Package pdftex.def Info: figures/appendix/integrals_3_riemann.png  used on inpu
-t line 2538.
-(pdftex.def)             Requested size: 328.82707pt x 208.25865pt.
+LaTeX Warning: File `5_figures/appendix/integrals_1.png' not found on input lin
+e 2516.
+
+
+! Package pdftex.def Error: File `5_figures/appendix/integrals_1.png' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2516 ...dth]{5_figures/appendix/integrals_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/appendix/integrals_2.png' not found on input lin
+e 2523.
+
+
+! Package pdftex.def Error: File `5_figures/appendix/integrals_2.png' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2523 ...dth]{5_figures/appendix/integrals_2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `5_figures/appendix/integrals_2_subdivisions.png' not found
+ on input line 2530.
+
+
+! Package pdftex.def Error: File `5_figures/appendix/integrals_2_subdivisions.p
+ng' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2530 ...s/appendix/integrals_2_subdivisions.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ [87]
+
+LaTeX Warning: File `5_figures/appendix/integrals_3_riemann.png' not found on i
+nput line 2538.
+
+
+! Package pdftex.def Error: File `5_figures/appendix/integrals_3_riemann.png' n
+ot found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2538 ...igures/appendix/integrals_3_riemann.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 2543--2544
 
@@ -1685,13 +2213,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2547--2548
 
  []
 
-
-Underfull \vbox (badness 1867) has occurred while \output is active []
-
- [88 <./figures/appendix/integrals_1.png>] [89 <./figures/appendix/integrals_2.
-png>]
-[90 <./figures/appendix/integrals_2_subdivisions.png>] [91 <./figures/appendix/
-integrals_3_riemann.png>] [92
+ [88] [89] [90] [91] [92
 
 ] [93
 
@@ -1701,7 +2223,6 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 
-
 LaTeX Warning: There were undefined references.
 
 
@@ -1709,11 +2230,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8945 strings out of 474116
- 159858 string characters out of 5743681
+ 10097 strings out of 474116
+ 215768 string characters out of 5743681
  1945187 words of memory out of 5000000
- 31175 multiletter control sequences out of 15000+600000
- 570727 words of font info for 82 fonts, out of 8000000 for 9000
+ 32326 multiletter control sequences out of 15000+600000
+ 570895 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,12n,77p,1509b,554s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -1737,13 +2258,14 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-
-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/texlive/2024/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf
--dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on probability.pdf (99 pages, 4448292 bytes).
+dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-d
+ist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/texlive/2024/texmf-dist
+/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-
+dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on probability.pdf (99 pages, 564799 bytes).
 PDF statistics:
- 545 PDF objects out of 1000 (max. 8388607)
- 294 compressed objects within 3 object streams
+ 450 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 251 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

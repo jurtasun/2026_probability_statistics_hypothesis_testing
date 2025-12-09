@@ -1,0 +1,97 @@
+
+\documentclass[11pt,oneside]{book}
+
+% Basic packages
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{csquotes}
+\usepackage{epigraph}
+
+% Bibliography (BibTeX)
+\bibliographystyle{alpha} % or: alpha, apalike, unsrt, etc.
+
+% % Page style and numbering
+% \pagestyle{fancy}
+% \fancyhf{} % clear
+% \fancyfoot[C]{\thepage} % centered page number
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+% Custom macros
+\input{0_config/macros.tex}
+
+\begin{document}
+
+\frontmatter
+\title{A minimal introduction to probability theory, \\ statistical inference \& hypothesis testing}
+\author{Jesús Urtasun Elizari}
+\maketitle
+
+% % Custom frontpage
+% \begin{titlepage}
+
+%     \thispagestyle{empty}
+
+%     \begin{center}
+
+%         % Logo
+%         \vspace*{2cm}
+%         % \includegraphics[width=0.45\textwidth]{5_figures/frontpage/icl_logo.jpeg}
+
+%         % Space between logo and title
+%         \vspace{3cm}
+
+%         % Title
+%         {\Huge\bfseries Introduction to probability theory\\[0.4em]
+%         and statistical inference\par}
+
+%         \vspace{1.8cm}
+
+%         % Author
+%         {\Large Jes\'us Urtasun Elizari\par}
+
+%         \vspace{1.2cm}
+
+%         % Department
+%         {\Large Research Computing and Data Science\par}
+
+%         \vspace{2cm}
+
+%         % Date
+%         {\large \today\par}
+
+%     \end{center}
+    
+% \end{titlepage}
+
+\tableofcontents
+
+\include{1_frontmatter/preface}
+\include{1_frontmatter/introduction}
+
+\mainmatter
+
+\include{2_chapters/chapter1}
+\include{2_chapters/chapter2}
+\include{2_chapters/chapter3}
+\include{2_chapters/chapter4}
+\include{2_chapters/chapter5}
+\include{2_chapters/chapter6}
+\include{2_chapters/chapter7}
+
+\appendix
+
+\include{3_backmatter/appendix_a}
+\include{3_backmatter/appendix_b}
+\include{3_backmatter/appendix_c}
+
+\backmatter
+
+% \printbibliography
+\bibliography{4_bibliography/references}
+
+
+\end{document}

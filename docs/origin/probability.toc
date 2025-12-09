@@ -28,15 +28,15 @@
 \contentsline {subsection}{\numberline {3.5.2}The Likelihood and Log-Likelihood functions}{46}{}%
 \contentsline {chapter}{\numberline {4}Introduction to hypothesis testing}{51}{}%
 \contentsline {section}{\numberline {4.1}Prediction vs inference}{51}{}%
-\contentsline {section}{\numberline {4.2}Hypothesis, significance, p-values}{52}{}%
+\contentsline {section}{\numberline {4.2}Hypothesis, significance, p-values}{53}{}%
 \contentsline {section}{\numberline {4.3}Statistical tests: some examples}{55}{}%
 \contentsline {subsection}{\numberline {4.3.1}Compare sample mean with hypothesized value - One sample t-test}{55}{}%
 \contentsline {subsection}{\numberline {4.3.2}Compare sample means of two independent groups - Two sample t-test}{57}{}%
-\contentsline {subsection}{\numberline {4.3.3}Compare sample variances of two groups - Fisher's exact test}{59}{}%
+\contentsline {subsection}{\numberline {4.3.3}Compare sample variances of two groups - Fisher's exact test}{58}{}%
 \contentsline {subsection}{\numberline {4.3.4}Compare variation on more than two groups - Fisher's ANOVA}{61}{}%
 \contentsline {subsection}{\numberline {4.3.5}Compare distributions and testing for normality - $\chi ^{2}$ test}{63}{}%
-\contentsline {section}{\numberline {4.4}Parametric and non-parametric}{65}{}%
-\contentsline {section}{\numberline {4.5}Comparing data and normalization}{67}{}%
+\contentsline {section}{\numberline {4.4}Parametric and non-parametric}{66}{}%
+\contentsline {section}{\numberline {4.5}Comparing data and normalization}{68}{}%
 \contentsline {chapter}{\numberline {5}Introduction to bayesian probability}{71}{}%
 \contentsline {section}{\numberline {5.1}Motivation and philosophy}{71}{}%
 \contentsline {section}{\numberline {5.2}Foundations of conditional probability}{71}{}%
@@ -53,6 +53,6 @@
 \contentsline {section}{\numberline {B.2}Change, slope and minima: derivatives}{83}{}%
 \contentsline {section}{\numberline {B.3}Divergence and gradient: differential calculus}{85}{}%
 \contentsline {chapter}{\numberline {C}Appendix: Integrals: a quick review}{87}{}%
-\contentsline {section}{\numberline {C.1}Indefinite integral as antiderivative}{88}{}%
-\contentsline {section}{\numberline {C.2}Define definite integral as area under a curve}{89}{}%
-\contentsline {section}{\numberline {C.3}The fundamental theorem of calculus}{90}{}%
+\contentsline {section}{\numberline {C.1}Indefinite integral as antiderivative}{89}{}%
+\contentsline {section}{\numberline {C.2}Define definite integral as area under a curve}{90}{}%
+\contentsline {section}{\numberline {C.3}The fundamental theorem of calculus}{91}{}%
