@@ -3,11 +3,381 @@
 
 \epigraph{\textit{Statistics is the grammar of science.}}{— Karl Pearson}
 
-\section{Population and sampling}
+In this chapter we will discuss the nature of prediction and inference, population and sampling, and estatistical estimators. (...) A large part of history of science could be summarized as an effort to translate observations of reality into precise, mathematical understanding. A record of the continuous human striving for a formulation and description of the real world in mathematical terms. To define mathematically the phenomena we find in the natural world, it is necessary to develop tools that relate the one or more relevant quantities - sometimes called \textit{variables} - and how they relate or change depending on one another. The purpose of modelling might be, for instance, to determine the distance from the earth to the sun, to estimate the number of stars in the observable universe, relating the boiling point of water to the external pressure, or the number of lung cancer patients to pollution levels around smoking areas.\\
+ 
+Colombian mathematician Luis C. Recalde marvellously summarizes the mathematical endeavour as three core tasks. For him, mathematics could be reduced to all tasks related to count, measure, and sort. When it comes to the description of populations, sampling, and chance, the fields of statistics and probability develop ideas such as randomness, relationship, correlation, confidence and reproducibility, among others. Inspired by Recalde's aim to simplify, we could summarize all statistical issues as concern with \textit{uncertainty}, or \textit{variation} among observations.
+
+Hence, a philosophical position often adopted is that statistics is essentially the study of uncertainty, and that the statistician's role is to assist workers in other fields who encounter uncertainty in their work. In practice, there is a restriction in that statistics is ordinarily associated with data; and it is the link between the uncertainty, or variability, in the data and that in the topic itself that has occupied statisticians. Statistics does not have a monopoly of studies of uncertainty. Probability discusses how randomness in one part of a system affects other parts.
+
+\medskip
+
+Historically, uncertainty has been associated with games of chance and gambling. The Royal Statistical Society, together with many other statistical groups, was originally set up
+to gather and publish data, as an attempt to reduction in uncertainty. It remains an essential part of statistical activity today and most Governments have statistical offices whose function is the acquisition and presentation of statistics. It did not take long before statisticians wondered how the data might best be used and modern \textit{statistical inference} was born.
+
+\medskip
+
+The mathematical formalization of decision-making is actually quite a recent development. It is usually attributed to British mathematician Frank P. Ramsey (1903–1930), who in his 1926 paper \textit{Truth and Probability} \cite{ramsey_1926_truth} introduced a formal, subjective interpretation of probability, laying the groundwork for what later became expected utility theory in decision-making under uncertainty. In short, Ramsey formalized how rational agents should assign probabilities and make decisions based on personal beliefs and preferences. All starting from the apparantley-simple question \textit{'how should we make decisions in the face of uncertainty?'}.\\
+
+\section{Sampling and data types}
+ 
+All statistical inquiries begins with observations and measurements, which we normally refer to as \textit{data}. And data begins with the act of selection, or \textit{sampling}. The natural world overflows with phenomena, offering endless opportunities for observation, but only a finite subset can ever be recorded. This distinction gives rise to two central notions: the \textit{population} $\mathcal{P}$, and the \textit{sample} $\mathcal{S}$. By \textit{population} we mean the complete set of all possible observations under study, normally written as 
+\begin{equation}
+	\mathcal{P} = \{x_1, x_2, \dots, x_N\} \; .
+\end{equation}
+
+The \textit{sample}, on the other hand, is the finite subset actually collected. For a series of $N$ observations $x_1$, $x_2$, ..., $x_N$, a sample of just $n$ elements - less than the total, which is normally denoted by the upper case $N$ - is defined as
+\begin{equation}
+	\mathcal{S} = \{x_{i_1}, x_{i_2}, \dots, x_{i_n}\}, \quad n < N \; ,
+\end{equation}
+
+where the $i$-subscripts remind us that the sample consists of selected observations from the population, not necessarily consecutive or all of them. The population represents the ideal object of inference, while the sample is the concrete, finite evidence available to us. This distinction is far from trivial; a poorly chosen sample often misrepresents the population and may induce bias, whereas a carefully constructed one mirrors its essential features, and can be used to describe the underlying nature.
+
+\medskip
+
+Equally important is the recognition that not all data are of the same kind. A common distinction is to  consider \textit{categorical} and \textit{numerical} data. Categorical - or \textit{qualitative} -  data describes qualities or labels such as the eye colour of students in a classroom (blue, brown, green), the brand of a purchased smartphone, etc. Sometimes they are further divided into \textit{nominal} categories, with no natural order, like the eye colour or the smartphone brand, and \textit{ordinal} categories with a meaningful order. Examples of these would be the finishing places in a race (first, second, third), survey responses ranging from \textit{strongly disagree} to \textit{strongly agree}, etc.
+
+\medskip
+
+The other big group is normally referred to as numerical - or \textit{quantitative} - data. These measure numerical quantities and are often subdivided into \textit{discrete}, countable numbers, such as the number of books on a shelf (4, 5, 6) or the number of goals scored in a match, and \textit{continuous} values that can take any number within a range, such as the time a sprinter takes to run 100 meters, or the height of a person measured with some arbitrary precision.
+
+\medskip
+
+Distinguishing between these types is no mere slang; different types of observations require different mathematical tools, and will be described in different ways. For example, it would not make sense to compute a mean out of smartphone brands, but to compute the mean of their prices is informative. Similarly, the distribution of finishing places after a race might be summarized by a median position, whereas heights of athletes could be studied with averages and measures of spread. A correct classification of data is thus a safeguard against misuse and a guide toward insight.
+
+\medskip
+
+As a summary, sampling and proper description of data establish the ground upon which statistics is built. Before calculating, summarizing, or diving into inference, one must ensure that the information collected is both representative and properly understood. Without these foundations, descriptive measures risk floating unmoored, detached from the reality they claim to represent. Accurate sampling and rigorous description will lead to a faithful representation of the phenomena under study and their relationships, detecting anomalies, and even building accurate predictions.
+
+\medskip
+
+Andrew Lang's famous quote \textit{"most people use statistics as a drunken man uses lamp-posts—for support rather than illumination"}, highlights the tendency to use statistics as a crutch, relying on them for validation rather than seeking genuine understanding. Lang's observation serves as a cautionary reminder to approach statistical data with critical thinking and not merely as a tool to bolster preconceived notions.
+
+\begin{figure}[ht]
+    \centering
+
+    % ================== ROW 1 ==================
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_1.png}
+        \caption{Clean Gaussian distribution, no outliers.}
+        \label{fig:histogram1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_2.png}
+        \caption{Skewed Gaussian due to outlier data.}
+        \label{fig:histogram2}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ================== ROW 2 ==================
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram1_bins_small.png}
+        \caption{Clean Gaussian (narrow bins).}
+        \label{fig:histogram1_bins_small}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram2_bins_small.png}
+        \caption{Skewed Gaussian (narrow bins).}
+        \label{fig:histogram2_bins_small}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ================== ROW 3 ==================
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram1_bins_large.png}
+        \caption{Clean Gaussian (wide bins).}
+        \label{fig:histogram1_bins_large}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram2_bins_large.png}
+        \caption{Skewed Gaussian (wide bins).}
+        \label{fig:histogram2_bins_large}
+    \end{subfigure}
+
+    % ============== GLOBAL CAPTION ==============
+    \caption{
+        Comparison of histogram representations of $n = 100$ Gaussian observations under three binning conditions.
+        Top row: standard binning;  
+        middle row: narrow bins (higher resolution, more sensitive to outliers);  
+        bottom row: wide bins (lower resolution, more robust to outliers).  
+        In each pair, the left panel shows a clean Gaussian sample, while the right panel shows a skewed, outlier-affected sample.
+    }
+    \label{fig:histogram_comparison}
+\end{figure}
+
 
 \section{Central tendency and variation}
 
+Once observations have been collected, a natural question arises: what is the \textit{center}, or \textit{typical} value of this data set? Mathematical quantities that measure the central tendency will be useful to summarize our data with a single representative number, providing an immediate sense of location within the distribution.
+
+\medskip
+
+The \textit{mean}, or \textit{average} is perhaps the most familiar measure of central tendency. Imagine we are doing an experiment where we measure some variable, and let's call it $x$ for simplicity. $x$ can be anything we could measure, like number of tomatoes in a bag, position at a given time, energy of some system, concentration of a specific substance, etc. Let's imagine we repeat the measurement $n$ times, and we obtain the values $x_1, x_2, \dots, x_n$. That will be our set of observations, or our \textit{sample} $\textbf{x}$. We could simply write it as a list - or a \textit{vector} - in the following way:
+\begin{equation}
+	\textbf{x} = \{x_1, x_2, \dots, x_n\} \; . \nonumber  
+\end{equation}
+
+Keep in mind that from the mathematics perspective the word \textit{vector} has a slightly different meaning, with subtleties related to algebraic operations and relations they should satisfy, but for the purpose of this course, where we prioritize above all simplicity, a vector and a list of numbers will be essentially the same thing.
+
+\medskip
+
+We can define a quantity called the \textit{mean} - or \textit{average} - of an arbitrary large sample of $n$ observations, as the sum of all elements divided by the total. We will write it as $\bar{x}$, and define it as follows:
+\begin{equation}
+	\bar{x} = \frac{1}{n} (x_{1} + x_{2} + ... + x_{n}) \; .
+	\label{eq:sample_mean1}
+\end{equation}
+
+We can write this in a slightly more compact way as a \textit{summation}, as follows:
+\begin{equation}
+	\bar{x} = \frac{1}{n} \sum_{i = 1}^{n} x_{i} \; .
+	\label{eq:sample_mean2}
+\end{equation}
+
+Here we denote the sum of all elements $x_{i}$ with the greek letter $\sum$, starting with the first one ($x_1$, for $i = 1$) and until the last one ($x_n$, for $i = n$). The expressions \eqref{eq:sample_mean1} and \eqref{eq:sample_mean2} mean \textit{exactly} the same thing, just written in different ways.
+
+\medskip
+
+Let's pause here for a second, and give a note about notation. Remember the difference we made at the very beginning between sample and population, as notations may differ between different books and literature sources. Normally, the sample mean is written just as \eqref{eq:sample_mean2}, while for the full population of $N$ elements $x_1, x_2, \dots, x_N$ - before any sampling - the \textit{population mean} is normally denoted as $\mu$, and defined accordingly
+\begin{equation}
+	\mu = \frac{1}{N} \sum_{i=1}^{N} x_i \; .
+	\label{eq:population_mean}
+\end{equation}
+
+We will see more about the difference between sample mean and population mean when we discuss parameter estimation in Chapter 3. For now just keep in mind that $\bar{x}$ is the mean of our sample of just $n$ drawn observations, while $\mu$ refers to the mean of the idealized, complete population.
+
+\medskip
+
+Let's illustrate with an example. Suppose we repeat a measurement three times, obtaining the results $x_1 = 1$, $x_2 = 2$, and $x_3 = 3$. Our sample is then $\textbf{x} = \{1, 2, 3\}$, and the sample mean is
+\begin{equation}
+	\bar{x} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (1 + 2 + 3) = 2 \; . \nonumber
+\end{equation}
+
+As a warm-up exercise, try computing the same mean value for a second sample, let's say $\textbf{x} = \{4, 5, 6\}$. Substituting into the general expression \eqref{eq:sample_mean2} gives
+\begin{equation}
+	\bar{x} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (4 + 5 + 6) = 5 \; . \nonumber
+\end{equation}
+
+The mean captures information about the "central" value, where most events cluster. Although useful, it is sensitive to extreme values or \textit{outliers}, which motivates the definition additional, more robust measures of central tendency.
+
+\medskip
+
+The \textit{median} represent similar information, as the value that splits the ordered data set in half. For an ordered sample $x_{(1)} \le x_{(2)} \le \dots \le x_{(n)}$, the median $M$ is defined as
+\begin{equation}
+	M = \begin{cases} 
+		x_{(k+1)} \; , & \text{if } n = 2k+1 \text{ (odd)} \; , \\[2mm]
+		\dfrac{x_{(k)} + x_{(k+1)}}{2} \; , & \text{if } n = 2k \text{ (even)} \; .
+	\end{cases}
+	\label{eq:median}
+\end{equation}
+
+Note that here $k$ is just an integer that helps locate the middle position of an ordered data set of size $n$. If the sample size $n$ is even, we write $n = 2k$, while for $n$ odd, we write $n = 2k + 1$. In the case of an odd-sized sample, the median is just the middle-point, while for an even size, it is computed as the average of the two middle points. The mathematical definition \eqref{eq:median} may seem a bit unnatural at first, so let's navigate it with a couple of examples. Consider the sample $\textbf{x} = \{1, 2, 3, 5, 3, 2, 7\}$. First, we order the data: 
+\begin{equation}
+	\textbf{x}_{\text{ordered}} = \{1, 2, 2, 3, 3, 5, 7\} \; .
+\end{equation}
+
+Since the sample has an odd number of elements ($n = 7$), the median is just the middle value: 
+\begin{equation}
+	M = x_{(4)} = 3 \; .
+\end{equation}
+
+Now consider an even-sized sample $\textbf{x} = \{1, 2, 3, 5, 4, 3, 2, 7\}$. Ordering the data gives 
+\begin{equation}
+	\textbf{x}_{\text{ordered}} = \{1, 2, 2, 3, 3, 4, 5, 7\}.
+\end{equation}
+With has an even number of elements now, $n = 8$. Hence, applying such case in \eqref{eq:median}, the median is the average of the two middle values
+\begin{equation}
+	M = \frac{x_{(4)} + x_{(5)}}{2} = \frac{3 + 3}{2} = 3 \; .
+\end{equation}
+
+Unlike the mean, the median is robust to outliers and skewed data, capturing the central position of the dataset even with repeated values. For instance, the data represented in LHS of Figure \ref{fig:histogram_comparison} will be accurately described by computing the mean, given its symmetric behaviour, while the one in the RHS will be better addressed with a median, accounting for the skewness and the presence of outliers.
+
+\medskip
+
+The \textit{mode} is the value - or values - that appear most frequently in the observation set, which is quite a straightforward measure. For the first sample $\textbf{x} = \{1, 2, 3, 5, 3, 2, 7\}$ we just count the frequency of each value, and conclude that since both $2$ and $3$ occur most frequently, the dataset is \textit{bimodal}, with modes $2$ and $3$. In the case of categorical data, such as eye colour or smartphone brands, the mode corresponds to the most common category.
+
+\medskip
+
+Beyond central location, it is important to understand the \textit{spread} of the data. We can define the \textit{variance} $s^2$ of a set as a quantity that captures how far are the elements from the mean value,
+\begin{equation}
+	s^2 = \frac{1}{n - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2} \; ,
+	\label{eq:sample_variance}. 
+\end{equation}
+
+and again, we will use a different notation for the \textit{population variance}
+\begin{equation}
+	\sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2 \; .
+	\label{eq:population_variance}
+\end{equation}
+
+If we pay close attention, we see that the definitions of $s^2$ and $\sigma^{2}$ are not identical. The $n-1$ in the denominator of \eqref{eq:sample_variance} is called the Bessel correction factor, and it arises from the fact that treating finite samples is not the same as referring to the complete population. We will return to this topic in Chapter 3, when we discuss the concept of estimators and Maximum Likelihood Estimation.
+
+\medskip
+
+Note that the variance is just a sum of differences, and squared just so that we obtain a positive value. It is a measure starting with the first element ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$), of how far is each element from the mean value. If all elements in our sample are very close to the mean, then the sum of differences will be a small number, and we would get a variance $s^2$ close to zero. Meanwhile, if the elements are very different, we would obtain a larger variance. 
+
+\medskip
+
+Again, let's illustrate with an example. If we compute the variance of our very first example set $\textbf{x} = \{1, 2, 3\}$, which has just $n = 3$ observations, we get
+\begin{equation}
+	s^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; , \nonumber
+\end{equation}
+
+which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean. 
+
+\medskip
+
+As a warm up exercise, try to compute the variance for a second sample, let's say $\textbf{x} = \{4, 5, 6\}$. By substituting in the general expression \eqref{eq:sample_variance} you should get the result
+\begin{equation}
+	s^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((4 - 5)^{2} + (5 - 5)^{2} + (6 - 5)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; . \nonumber
+\end{equation}
+
+We obtain again a variance $s^2 = 1$, indicating as in the previous example, that the elements of this sample $\textbf{x}$ are also \textit{one unit} away from the mean.
+
+\medskip
+
+Another useful quantity used to characterize variability is the so called \textit{standard deviation}, which is just the square root of the variance,
+\begin{equation}
+	s = \sqrt{\frac{1}{n - 1} \sum_{i = 1}^{n} (x_{i} - \bar{x})^{2}} \; ,
+	\label{eq:sample_std}
+\end{equation}
+
+and for the entire population,
+\begin{equation}
+	\sigma = \sqrt{\frac{1}{N } \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2}} \; .
+	\label{eq:population_std} 
+\end{equation}
+
+At a glance, variance and standard deviation quantify how much the elements of a dataset deviate from the mean, capturing the notion of \textit{spread}.
+
+\medskip
+
+Finally, \textit{quantiles} divide the ordered data into equal proportions. The $p$-th quantile $Q_p$ is the value below which a fraction $p$ of the data lies. Special cases include the \textit{first quartile} ($Q_1$, 25th percentile), the \textit{median} ($Q_2$, 50th percentile), and the \textit{third quartile} ($Q_3$, 75th percentile). Formally, for a continuous cumulative distribution function (CDF) $F$, the $p$-th quantile satisfies
+\begin{equation}
+	Q_p = \inf \{ x : F(x) \ge p \}.
+	\label{eq:quantiles}
+\end{equation}
+
+In summary, mean, median, mode, variance, standard deviation, and quantiles provide a rich, complementary view of the dataset’s central tendency and variability, allowing for both numerical and graphical summaries that capture the essence of the data.
+
+\medskip
+
+Variation is not merely a technicality; it is the very essence of uncertainty. Without spread, probability would be trivial, for every outcome would be the same. It is in the differences among observations that statistical inquiry finds its substance. Hence, central tendency and variation together provide the complementary lenses through which data becomes intelligible. They allow us to say whether two groups are alike or unlike, whether a new result is ordinary or surprising, whether the observed variation is too great to be dismissed as chance. In this sense, descriptive statistics foreshadows the inferential methods to come, hinting at deeper laws beneath the numbers.
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter1/box_1.png}
+        \caption{Clean Gaussian distribution, no outliers.}
+        \label{fig:box1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter1/box_2.png}
+        \caption{Skewed Gaussian due to outlier data.}
+        \label{fig:box2}
+    \end{subfigure}
+    \caption{Box plots representing $n = 100$ observations drawn from a Gaussian distribution. The central black line shows the mean value, representing the central tendency where the bulk of events lie. The shadowed area highlights the standard deviation, as measure of the variability and spread the observations with respect to the mean}
+    \label{fig:box_comparison}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter1/violin_1.png}
+        \caption{Clean Gaussian distribution, no outliers.}
+        \label{fig:violin1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter1/violin_2.png}
+        \caption{Skewed Gaussian due to outlier data.}
+        \label{fig:violin2}
+    \end{subfigure}
+    \caption{Violin plots representing $n = 100$ observations drawn from a Gaussian distribution. The central black line shows the mean value, representing the central tendency where the bulk of events lie. The shadowed area highlights the standard deviation, as measure of the variability and spread the observations with respect to the mean}
+    \label{fig:violin_comparison}
+\end{figure}
+
 \section{Data visualization}
+
+
+\begin{figure}[ht]
+    \centering
+
+    % ----------- Subfigure 1 -----------
+    \begin{subfigure}{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{5_figures/chapter1/mean_std_hist.png}
+        \caption{Three sets of observations, with the mean value and standard deviation 
+        represented as a histogram-based plot [...].}
+        \label{fig:mean_std_hist}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ----------- Subfigure 2 -----------
+    \begin{subfigure}{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{5_figures/chapter1/mean_std_box.png}
+        \caption{Three sets of observations, with the mean value and standard deviation 
+        represented as a box plot [...].}
+        \label{fig:mean_std_box}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ----------- Subfigure 3 -----------
+    \begin{subfigure}{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{5_figures/chapter1/mean_std_violin.png}
+        \caption{Three sets of observations, with the mean value and standard deviation 
+        represented as a violin plot [...].}
+        \label{fig:mean_std_violin}
+    \end{subfigure}
+
+    % ----------- Global caption -----------
+    \caption{
+        Comparison of three visualization methods—histogram, box plot, and violin plot—
+        showing the mean and variability of three samples of size $n = 100$.
+    }
+    \label{fig:mean_std_all}
+\end{figure}
+
+
+While numerical summaries are useful, the human mind often understands patterns much faster through vision than calculation. By \textit{data visualization} we mean a series of techniques used to transform numbers and sequences into shapes, colours and structures that are easier to interpret, and that can be grasped at a glance. It turns abstraction into perception and often reveals regularities invisible to formulas alone. Nowadays, a broad series of fields falling under the name of data visualization - or data \textit{representation} - have become among the pillars of any scientific or data related topic.
+
+\medskip
+
+The \textit{histogram} is found among the oldest and most fundamental visualization tools. The concept of dividing data into intervals to visualize frequency dates back to Karl Pearson in the late 19th century, who formalized it as a graphical representation of probability distributions \cite{pearson_1892_grammar}. A histogram divides the range of a dataset into consecutive intervals, or \textit{bins}, and represents the the amount - or relative \textit{frequency}- of observations falling within each bin as the height of a bar. This simple yet powerful plot provides an immediate visual impression of the dataset’s distribution, allowing one to identify symmetry, skewness, concentration of values, and potential gaps. For example, a symmetric histogram, like the one in LHS of Figure \ref{fig:histogram_comparison} suggests a roughly balanced distribution around the mean, while a right-skewed histogram, like the one displayed in the RHS of Figure \ref{fig:histogram_comparison}, indicates that higher values are less frequent - or less \textit{probable} - but can yet influence measures like the mean. This is the state of the art in physical sciences and whenever data is supposed to fit a mathematical prediction. 
+
+\medskip
+
+Building a histogram in an informative way is extremely powerful, and there are some subtleties to consider. As a rule of thumb, look for natural divisions in the data, and keep all bins the same size, covering the whole range under study. Outliers can skew, so they must be treated carefully. Figures \ref{fig:histogram_comparison} and \ref{fig:histogram_comparison} show how the binning size can affect the distribution of data. Smaller binning leads to more resolution but can be easily distorted in the presence of outliers, while few large bins are robust agains though losing the accuracy in resolution. For skewed distributions it is normally better to use the median and the IQR.
+
+\medskip
+
+The box plot, also known as the \textit{box-and-whisker} plot, was introduced by John Tukey in 1970 as part of his work on exploratory data analysis \cite{tukey_1977_eda}. The box plot offers a compact summary of a dataset’s central tendency, spread, and potential outliers. Constructed from five key statistics - the minimum, first quartile ($Q_1$), median ($Q_2$), third quartile ($Q_3$), and maximum - it clearly shows the \textit{interquartile range} (IQR = $Q_3 - Q_1$) and highlights points that fall outside 1.5 times the IQR as outliers. This representation allows for quick comparisons across multiple groups, and it is particularly useful for detecting asymmetry and variability without being overly influenced by extreme values. It is widely used in biological and clinical sciences where an experiment can be repeated many times with relatively small sizes. Figure \ref{fig:box_comparison} displays the same data represented as histograms in Figures \ref{fig:histogram_comparison} as box plots.
+
+\medskip
+
+Finally, the \textit{violin} plot is a more recent innovation, combining the box plot with a series of mathematical tools that represent as well the shape of the distribution. While the precise origin is less formally documented, it gained prominence in the late 20th century in statistical software environments, such as R, during the 1990s \cite{hintze_1997_violin}. Essentially, the violin plot extends the concept of the box plot by combining it with a kernel density estimate of the data. This plot not only displays the median and quartiles but also provides a smooth depiction of the distribution’s shape, revealing features such as multimodality or skewness that might be obscured in a simple box plot. By showing both summary statistics and the underlying density, the violin plot gives a richer, more nuanced view of the dataset, particularly when comparing several groups side by side. As an example of such comparison, see Figure [...].
+
+\medskip
+
+Quote to Anscombe \cite{anscombe_1973_graphs} and Spearman \cite{spearman_1904_association}
 
 \newpage
 

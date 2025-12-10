@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+
+\bibitem{anscombe_1973_graphs}
+F.~J. Anscombe.
+\newblock Graphs in statistical analysis.
+\newblock {\em The American Statistician}, 27(1):17--21, 1973.
+
+\bibitem{bernoulli_1713_ars}
+Jacob Bernoulli.
+\newblock {\em Ars Conjectandi}.
+\newblock Thurneysen Brothers, Basel, 1713.
+
+\bibitem{cardano_1663_ludo}
+Gerolamo Cardano.
+\newblock {\em Liber de Ludo Aleae}.
+\newblock Apud Joannem Baptistam Ferrarium, Paris, 1663.
+
+\bibitem{cicero_45bce_divination}
+Marcus~Tullius Cicero.
+\newblock {\em De Divinatione}.
+\newblock Ancient Sources Edition, 45 BCE.
+
+\bibitem{david_1962_games}
+F.~N. David.
+\newblock {\em Games, Gods and Gambling}.
+\newblock Griffin, 1962.
+
+\bibitem{devlin_2008_unfinished}
+Keith Devlin.
+\newblock {\em The Unfinished Game}.
+\newblock Basic Books, 2008.
+
+\bibitem{finkel_2007_dice}
+Irving~L. Finkel.
+\newblock ``the ancient origins of dice".
+\newblock {\em Antiquity}, 81(314):176--187, 2007.
+
+\bibitem{hald_1990_history}
+Anders Hald.
+\newblock {\em A History of Probability and Statistics and Their Applications
+  before 1750}.
+\newblock Wiley, 1990.
+
+\bibitem{hintze_1997_violin}
+J.~L. Hintze and R.~D. Nelson.
+\newblock Violin plots: A box plot-density trace synergism.
+\newblock {\em The American Statistician}, 52(2):181--184, 1997.
+
+\bibitem{huygens_1657_ratiociniis}
+Christiaan Huygens.
+\newblock {\em De Ratiociniis in Ludo Aleae}.
+\newblock Elzevier, Leiden, 1657.
+
+\bibitem{kolmogorov_1933_grundbegriffe}
+Andrey Kolmogorov.
+\newblock {\em Grundbegriffe der Wahrscheinlichkeitsrechnung}.
+\newblock Springer, Berlin, 1933.
+
+\bibitem{pearson_1892_grammar}
+Karl Pearson.
+\newblock {\em The Grammar of Science}.
+\newblock Adam and Charles Black, London, 1892.
+\newblock Introduces the term and concept of histogram.
+
+\bibitem{ramsey_1926_truth}
+Frank~P. Ramsey.
+\newblock Truth and probability.
+\newblock In D.~H. Mellor, editor, {\em The Foundations of Mathematics and
+  Other Logical Essays}, pages 156--198. Routledge and Kegan Paul, London,
+  1926.
+
+\bibitem{spearman_1904_association}
+Charles Spearman.
+\newblock The proof and measurement of association between two things.
+\newblock {\em The American Journal of Psychology}, 15(1):72--101, 1904.
+
+\bibitem{tukey_1977_eda}
+John~W. Tukey.
+\newblock {\em Exploratory Data Analysis}.
+\newblock Addison-Wesley, 1977.
+
+\end{thebibliography}
