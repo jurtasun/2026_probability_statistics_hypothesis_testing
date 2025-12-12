@@ -5,10 +5,21 @@ F.~J. Anscombe.
 \newblock Graphs in statistical analysis.
 \newblock {\em The American Statistician}, 27(1):17--21, 1973.
 
+\bibitem{bayes_1763_doctrine}
+Thomas Bayes.
+\newblock An essay towards solving a problem in the doctrine of chances.
+\newblock {\em Philosophical Transactions of the Royal Society of London},
+  1763.
+
 \bibitem{bernoulli_1713_ars}
 Jacob Bernoulli.
 \newblock {\em Ars Conjectandi}.
 \newblock Thurneysen Brothers, Basel, 1713.
+
+\bibitem{billingsley_1995_measure}
+Patrick Billingsley.
+\newblock {\em Probability and Measure}.
+\newblock Wiley, 1995.
 
 \bibitem{cardano_1663_ludo}
 Gerolamo Cardano.
@@ -25,10 +36,20 @@ F.~N. David.
 \newblock {\em Games, Gods and Gambling}.
 \newblock Griffin, 1962.
 
+\bibitem{definetti_1974_probability}
+Bruno de~Finetti.
+\newblock {\em Theory of Probability}.
+\newblock Wiley, 1974.
+
 \bibitem{devlin_2008_unfinished}
 Keith Devlin.
 \newblock {\em The Unfinished Game}.
 \newblock Basic Books, 2008.
+
+\bibitem{doob_1953_processes}
+Joseph~L. Doob.
+\newblock {\em Stochastic Processes}.
+\newblock Wiley, 1953.
 
 \bibitem{finkel_2007_dice}
 Irving~L. Finkel.
@@ -56,6 +77,16 @@ Andrey Kolmogorov.
 \newblock {\em Grundbegriffe der Wahrscheinlichkeitsrechnung}.
 \newblock Springer, Berlin, 1933.
 
+\bibitem{laplace_1812_theorie}
+Pierre-Simon Laplace.
+\newblock {\em Théorie Analytique des Probabilités}.
+\newblock Courcier, Paris, 1812.
+
+\bibitem{lebesgue_1902_integrale}
+Henri Lebesgue.
+\newblock {\em Intégrale, longueur, aire}.
+\newblock 1902.
+
 \bibitem{pearson_1892_grammar}
 Karl Pearson.
 \newblock {\em The Grammar of Science}.
@@ -78,5 +109,10 @@ Charles Spearman.
 John~W. Tukey.
 \newblock {\em Exploratory Data Analysis}.
 \newblock Addison-Wesley, 1977.
+
+\bibitem{vonmises_1928_truth}
+Richard von Mises.
+\newblock {\em Probability, Statistics and Truth}.
+\newblock 1928.
 
 \end{thebibliography}
