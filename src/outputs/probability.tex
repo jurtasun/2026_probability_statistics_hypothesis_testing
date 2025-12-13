@@ -7,15 +7,16 @@
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{bookmark}
-\usepackage{csquotes}
 \usepackage{epigraph}
 \usepackage{titlesec}
-\usepackage{minitoc}
 
-% Language packages
+% Language / encoding
 \usepackage[utf8]{inputenc}
 \usepackage[LGR,T1]{fontenc}
 \usepackage[greek,english]{babel}
+
+% Quotation handling
+\usepackage{csquotes}
 
 % Custom macros
 \input{0_config/macros.tex}
@@ -23,9 +24,38 @@
 \begin{document}
 
 \frontmatter
-\title{A minimal introduction to probability theory, \\ statistical inference \& hypothesis testing}
-\author{Jesús Urtasun Elizari}
-\maketitle
+% \title{A minimal introduction to probability theory, \\ statistical inference \& hypothesis testing}
+% \author{Jesús Urtasun Elizari}
+% \maketitle
+
+\begin{titlepage}
+    \centering
+
+    % Logo at the top
+    \vspace*{2cm}
+    \includegraphics[width=0.4\textwidth]{5_figures/icl_logo.jpeg}
+
+    \vspace{2.5cm}
+
+    % Title
+    {\LARGE
+    A minimal introduction to probability theory,\\[0.5em]
+    statistical inference \& hypothesis testing
+    \par}
+
+    \vspace{2cm}
+
+    % Author
+    {\large
+    Jesús Urtasun Elizari
+    \par}
+
+    \vfill
+
+    % Optional date
+    {\large \today\par}
+
+\end{titlepage}
 
 \tableofcontents
 
