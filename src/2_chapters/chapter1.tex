@@ -4,42 +4,48 @@
 
 \epigraph{\textit{Statistics is the grammar of science.}}{— Karl Pearson}
 
-In this chapter, \ref{chapter1} we will discuss the nature of prediction and inference, population and sampling, and estatistical estimators. (...) A large part of history of science could be summarized as an effort to translate observations of reality into precise, mathematical understanding. A record of the continuous human striving for a formulation and description of the real world in mathematical terms. To define mathematically the phenomena we find in the natural world, it is necessary to develop tools that relate the one or more relevant quantities - sometimes called \textit{variables} - and how they relate or change depending on one another. The purpose of modelling might be, for instance, to determine the distance from the earth to the sun, to estimate the number of stars in the observable universe, relating the boiling point of water to the external pressure, or the number of lung cancer patients to pollution levels around smoking areas.\\
- 
-Colombian mathematician Luis C. Recalde marvellously summarizes the mathematical endeavour as three core tasks. For him, mathematics could be reduced to all tasks related to count, measure, and sort. When it comes to the description of populations, sampling, and chance, the fields of statistics and probability develop ideas such as randomness, relationship, correlation, confidence and reproducibility, among others. Inspired by Recalde's aim to simplify, we could summarize all statistical issues as concern with \textit{uncertainty}, or \textit{variation} among observations.
-
-Hence, a philosophical position often adopted is that statistics is essentially the study of uncertainty, and that the statistician's role is to assist workers in other fields who encounter uncertainty in their work. In practice, there is a restriction in that statistics is ordinarily associated with data; and it is the link between the uncertainty, or variability, in the data and that in the topic itself that has occupied statisticians. Statistics does not have a monopoly of studies of uncertainty. Probability discusses how randomness in one part of a system affects other parts.
+As a first approach to probabilty and statistics, we should properly define both topics and their main fields of study. Even deeply related, and both rooted in \textit{combinatorics}—the study of uncertainty and things that change—they constitute well differentiated fields of mathematical analysis. A clear distinction often made is that probability is a \textit{predictive} branch of mathematics, dealing with random events, also referred to as \textit{stochastic}, aiming to compute expected values for such unknown outcomes. On the other hand, statistics would be a \textit{descriptive} way of dealing with uncertainty, by sampling finite sets of observations from a given population, and building informative quantities, called statistical \textit{estimators} to explore central tendency and variation. Such distinction has been extensively debated and discussed by mathematicians, experimental scientists, and philosoplers of science. 
 
 \medskip
 
-Historically, uncertainty has been associated with games of chance and gambling. The Royal Statistical Society, together with many other statistical groups, was originally set up
-to gather and publish data, as an attempt to reduction in uncertainty. It remains an essential part of statistical activity today and most Governments have statistical offices whose function is the acquisition and presentation of statistics. It did not take long before statisticians wondered how the data might best be used and modern \textit{statistical inference} was born.
+As a rule of thumb, probability provides a formal language for modelling uncertainty, whereas statistics concerns the epistemic problem of learning from data. Through this chapter we will introduce basic ideas on statistical inference such as population, sampling, and estimators of central tendency and variation, together with some notions of representation and visualization. The foundations of probability theory, rooted in the works of Bernoulli, Laplace, and Gauss, among others, will be covered in Chapter \ref{chapter2}. Hence, a philosophical position often adopted is that statistics is essentially the study of uncertainty, and that the statistician's role is to assist other fields who encounter uncertainty in their work. In practice, there is a restriction in that statistics is ordinarily associated with data; and it is the link between the uncertainty, or variability, in the data and that in the topic itself that has occupied statisticians. Statistics does not have a monopoly of studies of uncertainty. Probability discusses how randomness in one part of a system affects other parts.
+
 
 \medskip
 
-The mathematical formalization of decision-making is actually quite a recent development. It is usually attributed to British mathematician Frank P. Ramsey (1903–1930), who in his 1926 paper \textit{Truth and Probability} \cite{ramsey_1926_truth} introduced a formal, subjective interpretation of probability, laying the groundwork for what later became expected utility theory in decision-making under uncertainty. In short, Ramsey formalized how rational agents should assign probabilities and make decisions based on personal beliefs and preferences. All starting from the apparantley-simple question \textit{'how should we make decisions in the face of uncertainty?'}.\\
+As a note, let us emphasize how these two approaches can and do coexist in science. We have many times heard that science works by making hypothesis and then predictions, that are compared and bechmarked with an experiment. This is a simplification, and it is not always true. Some sciences, like Newtonian mechanics, most of physics, chemistry, and certainly parts of biology, do rely on building accurate models and predictions, that are later compared with an experimental result. A clear example would be to use Newtonian mechanics as our theory, or model, to compute a prediction on where and when would a stone fall if I throw it. Then the experiment would be simply to measure, when and where. On the other hand, the archetypical example of an inference problem, which does not aim to build a prediction, but to give—or \textit{reconstruct} or \textit{infer}—an explanation given a set of observations, would be Darwinian evolution. This distinction is worth mentioning, since the usual definitions of sciences tend to rely heavily on the predictive power, which can be inaccurate and misleading [...]. Different sciences may strongly differ on methods, instrumentation, or conceptual tools, but they are all equally legitimate, regarltends to be defined 
 
+
+
+% Sampling and data types .............................................................................................
 \section{Sampling and data types}
- 
-All statistical inquiries begins with observations and measurements, which we normally refer to as \textit{data}. And data begins with the act of selection, or \textit{sampling}. The natural world overflows with phenomena, offering endless opportunities for observation, but only a finite subset can ever be recorded. This distinction gives rise to two central notions: the \textit{population} $\mathcal{P}$, and the \textit{sample} $\mathcal{S}$. By \textit{population} we mean the complete set of all possible observations under study, normally written as 
+
+A large part of history of science could be summarized as a continous effort to translate observations of reality into precise, mathematical terms. To such endeavour, of describing the vast phenomena we find in the natural world with numerical language, it is necessary to develop tools that relate the one or more relevant quantities—sometimes called \textit{variables}—and how they relate or change depending on one another. The purpose of modelling might be, for instance, to determine the distance from the earth to the sun, estimate the number of stars in the observable universe, or relate the number of lung cancer patients to pollution levels around smoking areas.
+
+\medskip
+
+In the same way mathematics as a whole has been summarized as three simple tasks—\textit{count}, \textit{measure}, and \textit{sort}—we could group statistical problems in three main groups. The problem of \textit{sampling}—selecting a finite group of observations from a larger, unknown population— the \textit{estimation}—build some mathematical quantity that represents how the measurements of my sample are distributed, and finally \textit{visualization}—how my observations look like, and how that changes if I represent them in one way or another. Again, all of these problems are related to the phenomenon of \textit{uncertainty}, or \textit{variation} among measurements.
+
+\medskip
+
+Hence, all statistical inquiries begin with observations and measurements, which we normally refer to as \textit{data}. And data begins with the act of selection, or \textit{sampling}. The natural world overflows with phenomena, offering endless opportunities for observation, but only a finite subset can ever be recorded. This distinction gives rise to two central notions: the \textit{population}, which we denote by $\mathcal{P}$, represents the complete set of all possible observations under study. We will write it as
 \begin{equation}
 	\mathcal{P} = \{x_1, x_2, \dots, x_N\} \; .
 \end{equation}
 
-The \textit{sample}, on the other hand, is the finite subset actually collected. For a series of $N$ observations $x_1$, $x_2$, ..., $x_N$, a sample of just $n$ elements - less than the total, which is normally denoted by the upper case $N$ - is defined as
+The \textit{sample} $\mathcal{S}$, on the other hand, is the finite subset actually collected. For a series of $N$ observations $x_1$, $x_2$, ..., $x_N$, a sample of just $n$ elements—less than the total, which is denoted by the upper case $N$—is defined as
 \begin{equation}
-	\mathcal{S} = \{x_{i_1}, x_{i_2}, \dots, x_{i_n}\}, \quad n < N \; ,
+	\mathcal{S} = \{x_1, x_2, \dots, \chi_n\}, \quad n < N \; ,
 \end{equation}
-
-where the $i$-subscripts remind us that the sample consists of selected observations from the population, not necessarily consecutive or all of them. The population represents the ideal object of inference, while the sample is the concrete, finite evidence available to us. This distinction is far from trivial; a poorly chosen sample often misrepresents the population and may induce bias, whereas a carefully constructed one mirrors its essential features, and can be used to describe the underlying nature.
-
-\medskip
-
-Equally important is the recognition that not all data are of the same kind. A common distinction is to  consider \textit{categorical} and \textit{numerical} data. Categorical - or \textit{qualitative} -  data describes qualities or labels such as the eye colour of students in a classroom (blue, brown, green), the brand of a purchased smartphone, etc. Sometimes they are further divided into \textit{nominal} categories, with no natural order, like the eye colour or the smartphone brand, and \textit{ordinal} categories with a meaningful order. Examples of these would be the finishing places in a race (first, second, third), survey responses ranging from \textit{strongly disagree} to \textit{strongly agree}, etc.
+where the elements the sample $x_i$ consist of just a selected group of observations from the population, not necessarily consecutive or in the same order. The population represents the ideal object of inference, while the sample is the concrete, finite evidence available to us.  As an example, if I want to study some disease and its relation smokers in a given country, I will never have access to the \textit{complete population}, but only the amout of them that I am able to question, measure, or survey. This distinction is far from trivial. A poorly chosen sample often misrepresents the population and may induce bias, whereas a carefully constructed one mirrors its essential features, and can be used to describe the underlying nature.
 
 \medskip
 
-The other big group is normally referred to as numerical - or \textit{quantitative} - data. These measure numerical quantities and are often subdivided into \textit{discrete}, countable numbers, such as the number of books on a shelf (4, 5, 6) or the number of goals scored in a match, and \textit{continuous} values that can take any number within a range, such as the time a sprinter takes to run 100 meters, or the height of a person measured with some arbitrary precision.
+Equally important is the recognition that not all data is equal, neither behaves in the same way. A common distinction is to consider \textit{categorical} and \textit{numerical} data. Categorical—or \textit{qualitative}—data describes qualities or labels such as the eye colour of students in a classroom (blue, brown, green), the brand of a purchased smartphone, etc. Sometimes they are further divided into \textit{nominal} categories, with no natural order, like the eye colour or the smartphone brand, and \textit{ordinal} categories with a meaningful order. Examples of these would be the finishing places in a race (first, second, third), survey responses ranging from \textit{strongly disagree} to \textit{strongly agree}, etc.
+
+\medskip
+
+The other big family is normally referred to as numerical—or \textit{quantitative}—data. It represents numerical quantities and is often subdivided into \textit{discrete}, countable numbers, such as the number of books on a shelf (4, 5, 6) or the number of goals scored in a match, and \textit{continuous} values that can take any number within a range, such as the time a sprinter takes to run 100 meters, or the height of a person measured with some arbitrary precision.
 
 \medskip
 
@@ -47,7 +53,11 @@ Distinguishing between these types is no mere slang; different types of observat
 
 \medskip
 
-As a summary, sampling and proper description of data establish the ground upon which statistics is built. Before calculating, summarizing, or diving into inference, one must ensure that the information collected is both representative and properly understood. Without these foundations, descriptive measures risk floating unmoored, detached from the reality they claim to represent. Accurate sampling and rigorous description will lead to a faithful representation of the phenomena under study and their relationships, detecting anomalies, and even building accurate predictions.
+As a summary, sampling and proper description of data establish the ground upon which statistics is built. Before calculating, summarizing, or diving into inference, one must ensure that the information collected is both \textit{representative and properly understood}. Without these foundations, descriptive measures risk floating unmoored, detached from the reality they claim to represent. Accurate sampling and rigorous description will lead to a faithful representation of the phenomena under study and their relationships, detecting anomalies, and even building accurate predictions.
+
+\medskip
+
+Let's end this section with a historical note. As we have mentioned, uncertainty has been associated with games of chance and gambling from quite old times, but it was not adressed as a statistics problem until much later. The Royal Statistical Society, founded in 1834, together with many other statistical groups, was originally set up to just gather and publish data, as an attempt to reduce such uncertainty. It did not take long before statisticians wondered how the data might best be used and modern \textit{statistical inference} was born. Charles Babbage, Adolphe Quetelet [...]. Among its famous members was Florence Nightingale, the society's first female member in 1858, whose work was shaped by this same intellectual climate. [...] Other notable RSS presidents have included William Beveridge, Ronald Fisher, which we will discuss in Chapter \ref{chapter4}.
 
 \medskip
 
@@ -55,68 +65,21 @@ Andrew Lang's famous quote \textit{"most people use statistics as a drunken man 
 
 \begin{figure}[ht]
     \centering
+    \includegraphics[width=0.6\textwidth]{5_figures/chapter1/prediction_vs_inference.png}
+    \caption{Representation of the predictive (from theory, or model, to experimental verification) and inferential (from data, measurement, observation to underlying truth) approaches to natural phenomena. As an example of the predictive branch of mathematics dealing with uncertainty we would find the theory of probability, while the descriptive way of addressing the same problem is normally regarded as statistical inference.}
+    \label{fig:prediction_vs_inference1}
+\end{figure}
 
-    % ================== ROW 1 ==================
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_1.png}
-        \caption{Clean Gaussian distribution, no outliers.}
-        \label{fig:histogram1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_2.png}
-        \caption{Skewed Gaussian due to outlier data.}
-        \label{fig:histogram2}
-    \end{subfigure}
-
-    \vspace{1.2em}
-
-    % ================== ROW 2 ==================
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram1_bins_small.png}
-        \caption{Clean Gaussian (narrow bins).}
-        \label{fig:histogram1_bins_small}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram2_bins_small.png}
-        \caption{Skewed Gaussian (narrow bins).}
-        \label{fig:histogram2_bins_small}
-    \end{subfigure}
-
-    \vspace{1.2em}
-
-    % ================== ROW 3 ==================
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram1_bins_large.png}
-        \caption{Clean Gaussian (wide bins).}
-        \label{fig:histogram1_bins_large}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram2_bins_large.png}
-        \caption{Skewed Gaussian (wide bins).}
-        \label{fig:histogram2_bins_large}
-    \end{subfigure}
-
-    % ============== GLOBAL CAPTION ==============
-    \caption{
-        Comparison of histogram representations of $n = 100$ Gaussian observations under three binning conditions.
-        Top row: standard binning;  
-        middle row: narrow bins (higher resolution, more sensitive to outliers);  
-        bottom row: wide bins (lower resolution, more robust to outliers).  
-        In each pair, the left panel shows a clean Gaussian sample, while the right panel shows a skewed, outlier-affected sample.
-    }
-    \label{fig:histogram_comparison}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5_figures/chapter1/estimators.png}
+    \caption{Representation of the true / population mean value $\mu$, in black, accessble only through the computation of an expected value. In red, the sample / observed mean $\bar{x}$, computed as an estimator of the finite sample.}
+    \label{fig:estimators1}
 \end{figure}
 
 
+
+% Central tendency and variation ......................................................................................
 \section{Central tendency and variation}
 
 Once observations have been collected, a natural question arises: what is the \textit{center}, or \textit{typical} value of this data set? Mathematical quantities that measure the central tendency will be useful to summarize our data with a single representative number, providing an immediate sense of location within the distribution.
@@ -275,6 +238,71 @@ In summary, mean, median, mode, variance, standard deviation, and quantiles prov
 Variation is not merely a technicality; it is the very essence of uncertainty. Without spread, probability would be trivial, for every outcome would be the same. It is in the differences among observations that statistical inquiry finds its substance. Hence, central tendency and variation together provide the complementary lenses through which data becomes intelligible. They allow us to say whether two groups are alike or unlike, whether a new result is ordinary or surprising, whether the observed variation is too great to be dismissed as chance. In this sense, descriptive statistics foreshadows the inferential methods to come, hinting at deeper laws beneath the numbers.
 
 \begin{figure}[ht]
+
+    \centering
+
+    % Row 1 ...............................................
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_1.png}
+        \caption{Clean Gaussian distribution, no outliers.}
+        \label{fig:histogram1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_2.png}
+        \caption{Skewed Gaussian due to outlier data.}
+        \label{fig:histogram2}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % Row 2 ...............................................
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram1_bins_small.png}
+        \caption{Clean Gaussian (narrow bins).}
+        \label{fig:histogram1_bins_small}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram2_bins_small.png}
+        \caption{Skewed Gaussian (narrow bins).}
+        \label{fig:histogram2_bins_small}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % Row 3 ...............................................
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram1_bins_large.png}
+        \caption{Clean Gaussian (wide bins).}
+        \label{fig:histogram1_bins_large}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram2_bins_large.png}
+        \caption{Skewed Gaussian (wide bins).}
+        \label{fig:histogram2_bins_large}
+    \end{subfigure}
+
+    % Global caption ......................................
+    \caption{
+        Comparison of histogram representations of $n = 100$ Gaussian observations under three binning conditions.
+        Top row: standard binning;  
+        middle row: narrow bins (higher resolution, more sensitive to outliers);  
+        bottom row: wide bins (lower resolution, more robust to outliers).  
+        In each pair, the left panel shows a clean Gaussian sample, while the right panel shows a skewed, outlier-affected sample.
+    }
+    \label{fig:histogram_comparison}
+
+\end{figure}
+
+\begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
@@ -312,6 +340,9 @@ Variation is not merely a technicality; it is the very essence of uncertainty. W
     \label{fig:violin_comparison}
 \end{figure}
 
+
+
+% Data visualization ..................................................................................................
 \section{Data visualization}
 
 

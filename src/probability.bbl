@@ -5,6 +5,12 @@ F.~J. Anscombe.
 \newblock Graphs in statistical analysis.
 \newblock {\em The American Statistician}, 27(1):17--21, 1973.
 
+\bibitem{bandyopadhyay_2011_philosophy}
+P.~S. Bandyopadhyay and M.~R. Forster, editors.
+\newblock {\em ``Philosophy of Statistics''}, volume~7 of {\em Handbook of the
+  Philosophy of Science}.
+\newblock Elsevier, 2011.
+
 \bibitem{bernoulli_1713_ars}
 Jacob Bernoulli.
 \newblock {\em Ars Conjectandi}.
@@ -25,10 +31,20 @@ F.~N. David.
 \newblock {\em Games, Gods and Gambling}.
 \newblock Griffin, 1962.
 
+\bibitem{degroot_2012_probability}
+Morris~H. DeGroot and Mark~J. Schervish.
+\newblock {\em ``Probability and Statistics''}.
+\newblock Pearson, 4 edition, 2012.
+
 \bibitem{devlin_2008_unfinished}
 Keith Devlin.
 \newblock {\em The Unfinished Game}.
 \newblock Basic Books, 2008.
+
+\bibitem{diez_2025_openintro}
+M.~Diez, D.~Barr, and Mine Çetinkaya{-}Rundel.
+\newblock {\em ``OpenIntro Statistics''}.
+\newblock OpenIntro, 2025.
 
 \bibitem{finkel_2007_dice}
 Irving~L. Finkel.
@@ -51,6 +67,11 @@ Christiaan Huygens.
 \newblock {\em De Ratiociniis in Ludo Aleae}.
 \newblock Elzevier, Leiden, 1657.
 
+\bibitem{ioannidis_2005_false}
+John P.~A. Ioannidis.
+\newblock ``why most published research findings are false''.
+\newblock {\em PLoS Medicine}, 2(8):e124, 2005.
+
 \bibitem{kolmogorov_1933_grundbegriffe}
 Andrey Kolmogorov.
 \newblock {\em Grundbegriffe der Wahrscheinlichkeitsrechnung}.
@@ -62,17 +83,21 @@ Karl Pearson.
 \newblock Adam and Charles Black, London, 1892.
 \newblock Introduces the term and concept of histogram.
 
-\bibitem{ramsey_1926_truth}
-Frank~P. Ramsey.
-\newblock Truth and probability.
-\newblock In D.~H. Mellor, editor, {\em The Foundations of Mathematics and
-  Other Logical Essays}, pages 156--198. Routledge and Kegan Paul, London,
-  1926.
+\bibitem{pishronik_2014_introduction}
+Hossein Pishro{-}Nik.
+\newblock {\em ``Introduction to Probability, Statistics and Random
+  Processes''}.
+\newblock Kappa Research LLC, 2014.
 
 \bibitem{spearman_1904_association}
 Charles Spearman.
 \newblock The proof and measurement of association between two things.
 \newblock {\em The American Journal of Psychology}, 15(1):72--101, 1904.
+
+\bibitem{spiegelhalter_2019_art}
+David Spiegelhalter.
+\newblock {\em ``The Art of Statistics: How to Learn from Data''}.
+\newblock Basic Books, 2019.
 
 \bibitem{tukey_1977_eda}
 John~W. Tukey.
