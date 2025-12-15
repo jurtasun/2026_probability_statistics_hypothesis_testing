@@ -1,10 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{anscombe_1973_graphs}
-F.~J. Anscombe.
-\newblock Graphs in statistical analysis.
-\newblock {\em The American Statistician}, 27(1):17--21, 1973.
-
 \bibitem{bandyopadhyay_2011_philosophy}
 P.~S. Bandyopadhyay and M.~R. Forster, editors.
 \newblock {\em ``Philosophy of Statistics''}, volume~7 of {\em Handbook of the
@@ -57,11 +52,6 @@ Anders Hald.
   before 1750}.
 \newblock Wiley, 1990.
 
-\bibitem{hintze_1997_violin}
-J.~L. Hintze and R.~D. Nelson.
-\newblock Violin plots: A box plot-density trace synergism.
-\newblock {\em The American Statistician}, 52(2):181--184, 1997.
-
 \bibitem{huygens_1657_ratiociniis}
 Christiaan Huygens.
 \newblock {\em De Ratiociniis in Ludo Aleae}.
@@ -77,31 +67,22 @@ Andrey Kolmogorov.
 \newblock {\em Grundbegriffe der Wahrscheinlichkeitsrechnung}.
 \newblock Springer, Berlin, 1933.
 
-\bibitem{pearson_1892_grammar}
-Karl Pearson.
-\newblock {\em The Grammar of Science}.
-\newblock Adam and Charles Black, London, 1892.
-\newblock Introduces the term and concept of histogram.
-
 \bibitem{pishronik_2014_introduction}
 Hossein Pishro{-}Nik.
 \newblock {\em ``Introduction to Probability, Statistics and Random
   Processes''}.
 \newblock Kappa Research LLC, 2014.
 
-\bibitem{spearman_1904_association}
-Charles Spearman.
-\newblock The proof and measurement of association between two things.
-\newblock {\em The American Journal of Psychology}, 15(1):72--101, 1904.
+\bibitem{ramsey_1926_truth}
+Frank~P. Ramsey.
+\newblock Truth and probability.
+\newblock In D.~H. Mellor, editor, {\em The Foundations of Mathematics and
+  Other Logical Essays}, pages 156--198. Routledge and Kegan Paul, London,
+  1926.
 
 \bibitem{spiegelhalter_2019_art}
 David Spiegelhalter.
 \newblock {\em ``The Art of Statistics: How to Learn from Data''}.
 \newblock Basic Books, 2019.
-
-\bibitem{tukey_1977_eda}
-John~W. Tukey.
-\newblock {\em Exploratory Data Analysis}.
-\newblock Addison-Wesley, 1977.
 
 \end{thebibliography}

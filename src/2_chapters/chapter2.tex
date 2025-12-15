@@ -5,9 +5,22 @@
 \epigraph{\textit{It is through the calculation of probabilities that the divine order becomes visible.}}{— Jacob Bernoulli}
 
 The study of probability, though having very ancient roots, began its modern development in the seventeenth century through the famous correspondence between Blaise Pascal and Pierre de Fermat. Their discussion on games of chance, and in particular the ``problem of the division of stakes,'' laid the groundwork for the systematic analysis of uncertain events. Years later, Jacob Bernoulli’s \textit{Ars Conjectandi} established the first classical definition of probability, providing the study of random events with mathematical clarity. Refinements by De Moivre and Laplace transformed it into a powerful analytical theory, while its true axiomatic structure only crystallised in the twentieth century with Kolmogorov’s \textit{Grundbegriffe der Wahrscheinlichkeitsrechnung} in 1933 \cite{kolmogorov_1933_grundbegriffe}.
+
+\medskip
+
+The mathematical formalization of decision-making is actually quite a recent development. It is usually attributed to British mathematician Frank P. Ramsey (1903–1930), who in his 1926 paper \textit{Truth and Probability} \cite{ramsey_1926_truth} introduced a formal, subjective interpretation of probability, laying the groundwork for what later became expected utility theory in decision-making under uncertainty. In short, Ramsey formalized how rational agents should assign probabilities and make decisions based on personal beliefs and preferences. All starting from the apparantley-simple question \textit{'how should we make decisions in the face of uncertainty?'}.\\to the twentieth-century developments of Pearson, Fisher, and Neyman addressed the latter rather than establishing the former distinction.
+
 \medskip
 
 At its heart, probability is nothing more - and nothing less - a branch of mathematics developed to describe random events, also referred to as \textit{stochastic}. Indeed, the word “stochastic” comes from the Greek word \textgreek{στοχαστικός}, which literally means “to guess” or “to aim.” The way we describe such events, characterized by the uncertainty of their outcome, is by defining a quantity we will call $\mathbb{P}$, of probability. That quantity $\mathbb{P}$ will denote a number between $0$ and $1$, which reflects the degree of uncertainty, or \textit{surprise}, with which the random event produces a specific outcome. For an event $A$, such as observing a heads when tossing a coin, or a given face when rolling dice, the numerical convention is written as follows,
+
+
+
+% What is probability? ................................................................................................
+\section{What is probability?}
+
+At its heart, probability is nothing more - and nothing less - a branch of mathematics developed to describe random events, also referred to as \textit{stochastic}. Indeed, the word “stochastic” comes from the Greek word \textgreek{στοχαστικός}, which literally means “to guess” or “to aim.” The way we describe such events, characterized by the uncertainty of their outcome, is by defining a quantity we will call $\mathbb{P}$, of probability. That quantity $\mathbb{P}$ will denote a number between $0$ and $1$, which reflects the degree of uncertainty, or \textit{surprise}, with which the random event produces a specific outcome. For an event $A$, such as observing a heads when tossing a coin, or a given face when rolling dice, the numerical convention is written as follows,
+
 \begin{itemize}
     \item If I am sure $A$ will never occur, $\mathbb{P}(A)=0$.
     \item If I am sure $A$ will always occur, $\mathbb{P}(A)=1$.
@@ -15,4 +28,34 @@ At its heart, probability is nothing more - and nothing less - a branch of mathe
 \end{itemize}
 where the $\in$ symbol just means "belongs to". Thus, probability measures the whole span between impossibility and absolute certainty. 
 
-% The mathematical formalization of decision-making is actually quite a recent development. It is usually attributed to British mathematician Frank P. Ramsey (1903–1930), who in his 1926 paper \textit{Truth and Probability} \cite{ramsey_1926_truth} introduced a formal, subjective interpretation of probability, laying the groundwork for what later became expected utility theory in decision-making under uncertainty. In short, Ramsey formalized how rational agents should assign probabilities and make decisions based on personal beliefs and preferences. All starting from the apparantley-simple question \textit{'how should we make decisions in the face of uncertainty?'}.\\to the twentieth-century developments of Pearson, Fisher, and Neyman addressed the latter rather than establishing the former distinction.
+
+
+% Discrete events .....................................................................................................
+\section{Discrete events}
+
+By \textit{discrete} we mean that the number of possible outcomes is a finite or countable number [...]. In such cases, distributions will exactly represent a probability, and they are referred to as \textit{mass} distributions [...]
+
+\subsection{Bernoulli trials}
+
+\subsection{Binomial distribution}
+
+\subsection{Poisson distribution}
+
+\subsection{Discrete uniform distribution}
+
+
+
+% Continous events ....................................................................................................
+\section{Continous events}
+
+By \textit{continous} we mean that the number of possible outcomes is an infinite, uncountable number, in a continuous range [...]. In such cases, we will need to build a new mathematical object, referred as a probability \textit{density} [...]
+
+\subsection{Gaussian distribution}
+
+\subsection{Exponential distribution}
+
+\subsection{Continous uniform distribution}
+
+% Expected values .....................................................................................................
+\section{Expected values}
+
