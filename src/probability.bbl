@@ -6,6 +6,12 @@ P.~S. Bandyopadhyay and M.~R. Forster, editors.
   Philosophy of Science}.
 \newblock Elsevier, 2011.
 
+\bibitem{bayes_1763_doctrine}
+Thomas Bayes.
+\newblock An essay towards solving a problem in the doctrine of chances.
+\newblock {\em Philosophical Transactions of the Royal Society of London},
+  1763.
+
 \bibitem{bernoulli_1713_ars}
 Jacob Bernoulli.
 \newblock {\em Ars Conjectandi}.
@@ -21,10 +27,20 @@ Marcus~Tullius Cicero.
 \newblock {\em De Divinatione}.
 \newblock Ancient Sources Edition, 45 BCE.
 
+\bibitem{cox_2006_principles}
+David~R. Cox.
+\newblock {\em Principles of Statistical Inference}.
+\newblock Cambridge University Press, 2006.
+
 \bibitem{david_1962_games}
 F.~N. David.
 \newblock {\em Games, Gods and Gambling}.
 \newblock Griffin, 1962.
+
+\bibitem{definetti_1974_probability}
+Bruno de~Finetti.
+\newblock {\em Theory of Probability}.
+\newblock Wiley, 1974.
 
 \bibitem{degroot_2012_probability}
 Morris~H. DeGroot and Mark~J. Schervish.
@@ -45,6 +61,16 @@ M.~Diez, D.~Barr, and Mine Çetinkaya{-}Rundel.
 Irving~L. Finkel.
 \newblock ``the ancient origins of dice".
 \newblock {\em Antiquity}, 81(314):176--187, 2007.
+
+\bibitem{fisher_1925_statistical}
+Ronald~A. Fisher.
+\newblock {\em Statistical Methods for Research Workers}.
+\newblock Oliver and Boyd, 1925.
+
+\bibitem{fisher_1935_design}
+Ronald~A. Fisher.
+\newblock {\em The Design of Experiments}.
+\newblock Oliver and Boyd, 1935.
 
 \bibitem{hald_1990_history}
 Anders Hald.
@@ -67,11 +93,37 @@ Andrey Kolmogorov.
 \newblock {\em Grundbegriffe der Wahrscheinlichkeitsrechnung}.
 \newblock Springer, Berlin, 1933.
 
+\bibitem{lehmann_1959_testing}
+Erich~L. Lehmann.
+\newblock {\em Testing Statistical Hypotheses}.
+\newblock Wiley, 1959.
+
+\bibitem{mayo_1996_error}
+Deborah~G. Mayo.
+\newblock {\em Error and the Growth of Experimental Knowledge}.
+\newblock University of Chicago Press, 1996.
+
+\bibitem{mayo_2018_severe}
+Deborah~G. Mayo.
+\newblock {\em Statistical Inference as Severe Testing}.
+\newblock Cambridge University Press, 2018.
+
+\bibitem{neyman_pearson_1933_efficient}
+Jerzy Neyman and Egon~S. Pearson.
+\newblock On the problem of the most efficient tests of statistical hypotheses.
+\newblock {\em Philosophical Transactions of the Royal Society of London A},
+  1933.
+
 \bibitem{pishronik_2014_introduction}
 Hossein Pishro{-}Nik.
 \newblock {\em ``Introduction to Probability, Statistics and Random
   Processes''}.
 \newblock Kappa Research LLC, 2014.
+
+\bibitem{popper_1934_logic}
+Karl Popper.
+\newblock {\em Logik der Forschung}.
+\newblock Springer, 1934.
 
 \bibitem{ramsey_1926_truth}
 Frank~P. Ramsey.
@@ -79,6 +131,11 @@ Frank~P. Ramsey.
 \newblock In D.~H. Mellor, editor, {\em The Foundations of Mathematics and
   Other Logical Essays}, pages 156--198. Routledge and Kegan Paul, London,
   1926.
+
+\bibitem{reichenbach_1938_prediction}
+Hans Reichenbach.
+\newblock {\em Experience and Prediction}.
+\newblock University of Chicago Press, 1938.
 
 \bibitem{spiegelhalter_2019_art}
 David Spiegelhalter.

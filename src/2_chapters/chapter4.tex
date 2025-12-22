@@ -4,38 +4,310 @@
 
 \epigraph{\textit{The object of statistical science is the reduction of data to relevant information.}}{— Ronald A. Fisher}
 
-The term hypothesis testing lies on top of the two pillars we have mentioned in previous chapters. 
+The term \textit{hypothesis testing} lies on top of the two pillars we have mentioned in previous chapters. On the one hand, we will use probability theory to predict expected values about the true popuplation parameters, assuming certain distributions, etc. Then, applying the tools of descipive stastistics we discussed in Chapter \ref{chapter1} and Chapter \ref{chapter3}, we will compute estimators that reliably represent our samples, quantifying their central tendency and variations. Out of these, we will define a new type of \textit{informative quantity} normally referred to as \textit{statistic}, or \textit{statistic test}, that quantifies how much our expectation match—or differ from–our data, obtained throug measure and observation. Finally, following the so-called modern approach, or Pearson-Neyman, we will learn how to compute significance through the computaiton of the Pearson value—or P-value, for short.
 
-\medskip
+\medskip 
 
-Once we know the foundations of probability theory, we can make assumptions about the true popuplation parameters, through expected values [...].
-
-Once we have some notions of descipive stastistics, we can make assumptions about the true popuplation parameters, through expected values [...].
-
-\subsection*{Historical Note}
-Fisher (1922, 1925) connected least squares, likelihood, and sampling distributions, establishing the foundations of modern inference.
-Neyman (1937) formalized confidence intervals as frequentist procedures, contributing to philosophical debates on inference that continue today.
+Fisher (1922, 1925) connected least squares, likelihood, and sampling distributions, establishing the foundations of modern inference. Neyman (1937) formalized confidence intervals as frequentist procedures, contributing to philosophical debates on inference that continue today.
 
 
 \section{Prediction vs inference revisted}
 
+Here we shall review, one last time, the main difference between predictive—or modelling—statments, and inferential—also referred to as reconstructive. When formulating hypothesis about natural phenomena, there is normally a bit of both. The very idea of \textit{hypothesis} in the modern sense is a recent one [...] and it is normally explained in tearms of a mathematical prediction. If I believe in Newtonian mechanics, a hypothesis could be to write down Newont's second law and use it to predict where and when a stone would fall when dropped from a certain height. If my hypothesis is that a gene has a cerain impact in a known disease, or in response to stress, . Or, if I am studying the relation between smokers in the UK and their probability to develop lung cancer [...]. In any of these cases, upon hypothesis, I would need samples, or groups, of measurements, normally referred to simply as \textit{data}.
+
+\medskip
+
+Here we shall review, one last time, the main difference between predictive—or modelling—statments, and inferential—also referred to as reconstructive. When formulating hypothesis about natural phenomena, there is normally a bit of both. The very idea of \textit{hypothesis} in the modern sense is a recent one [...] and it is normally explained in tearms of a mathematical prediction. If I believe in Newtonian mechanics, a hypothesis could be to write down Newont's second law and use it to predict where and when a stone would fall when dropped from a certain height. If my hypothesis is that a gene has a cerain impact in a known disease, or in response to stress, . Or, if I am studying the relation between smokers in the UK and their probability to develop lung cancer [...]. In any of these cases, upon hypothesis, I would need samples, or groups, of measurements, normally referred to simply as \textit{data}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{5_figures/chapter1/prediction_vs_inference.png}
+    \caption{Representation of the predictive (from theory, or model, to experimental verification) and inferential (from data, measurement, observation to underlying truth) approaches to natural phenomena. As an example of the predictive branch of mathematics dealing with uncertainty we would find the theory of probability, while the descriptive way of addressing the same problem is normally regarded as statistical inference.}
+    \label{fig:prediction_vs_inference2}
+\end{figure}
+
+\medskip
+
 \section{General approach to hypothesis testing}
+
+When dealing with hypothesis, predictions, experiments and data, there is plenty of approaches and formulations, as many as instruments, scales and fields of study. These do change form one field to another, and they do change in time. Our very idea of hypothsis, prediction, measurement, and law [...]. Nowadays, when people refer to \textit{hypothesis testing} they mean very specific approach, almost and algorithmc-wise set of rules, that is applied in general to inference and data science problems. We will define such approach as the "modern", or "general" approach to hypothesis testing, that asumes some basic notions of probability theory, distributions and randomness, with some of statistics, estimators and sample description [...]. The whole idea of statistic test, P-value and significance, that we will discuss now, ranges indeed from quite recent times, back to Pearson, Fisher, and Neyman in the early 1900s.
+
+\begin{itemize}
+    \item Formulate hypothesis. Normally referred to as \textit{null} hypothesis \(H_0\), as the expectation that our prediction or expectation will follow, and \textit{alternative} hypothesis \(H_1\), representing the case of finding a surpsing observation, that deviates from \(H_0\). These hypothesis will \textit{always} be made about the \textit{true population parameters}, and commonly formulated as the computation of an expected value, that we discussed in Chapter \ref{chapter2}.
+    \item Experiment, measurement, observation. Any process, regardless of instrumentation and object of study, that involves a measurement, an observation, or data collection of any kind from one or more samples.
+    \item Compute statistic, or statistic test. Out of our random data we can caompute any \textit{informative quantity}, which can be an estimator like the sample mean, the variance, etc, or a more abstract quantity that represents how close are the these mean and variance from their expected values, given \(H_0\) 
+    \item Copute P-value: the probability that, given a certain assumtion for our true population parameters and our random data, we obtained a value at least as extreme as the one we got for our statistic.
+    \item interpretation of the result, normally accept / reject the null hypothesis based on the P-value and some significance threshold.
+\end{itemize}
+
+A couple of notes about this general roadmap. A statistic can be just an estimator, like the sample mean [...]. Fisher's definition of P-value as extream [...]. The approach is a mixed of Fisher and Pearson-Neyman [...].
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5_figures/chapter1/estimators.png}
+    \caption{Representation of the \textit{true} population mean $\mu$, in black, and the observed \textit{sample} mean $\bar{x}$. The true mean is and ideal and unaccessible quantity, while the sample mean can be computed as an estimator of the finite sample.}
+    \label{fig:estimators2}
+\end{figure}
 
 \section{Statistical tests: some examples}
 
 \subsection{Compare sample mean with hypothesized value - One sample t-test}
 
+The \(t\)-test is arguably the simplest example of statistic test we will discuss. It was introduced by W.\,S.~Gosset, a statistician working at the Guiness factory in Dublin, trying to accurately describe error of the mean when the population variance is unknown, as part of the brewing process. Due to his affiliation to the Guiness company we has not allowed to share his work and hence we submitted to the \textit{Biometrika} statistics journal under the pseudonym \textit{Student}. This is why it remains nowadays known as the Student's \(t\)-test.
+
+\medskip
+
+We start by formulating some hypotheis about the true population parameters, \textit{prior to collect data from any sample}. It is important here to stop and think carefully about \textit{what is the physical quantity that we are eventually goint to measure}. Normally, the null hypotheis is simply written as "the true population mean is given by \(\mu\)". Remember that such quantity can be computed as an expected value of a random variable.
+\begin{equation}
+    \mu = \mathbb{E}[x] = \frac{1}{N}\sum_{i = 1}^{\infty} x_i \; \mathbb{P}(x_i)
+    \label{population_mean_discrete}
+\end{equation}
+ 
+If \(x\) is a discrete random variable, or 
+\begin{equation}
+    \mu = \mathbb{E}[x] = \int_{i = -\infty}^{\infty} x_i * \; f(x) \; dx
+    \label{population_mean_continous}
+\end{equation}
+
+if \(x\) is a continous random variable.
+
+\medskip
+
+We will now take a series of observations, or measurements, from a given sample \(x = \{x_1, x_2, \dots, x_n\}\). Out of them, we can compute the sample mean \(\bar{x}\), as an estimator of the true population mean.
+
+\begin{equation}
+    \bar{x} = \frac{1}{n}\sum_{i = 1}^{\infty} x_i
+    \label{sample_mean}
+\end{equation}
+
+and the observed sample variance
+\begin{equation}
+    s = \sqrt{ \frac{1}{n - 1}\sum_{i = 1}^{\infty} (x_i - \bar{x})^2 }
+    \label{sample_variance}
+\end{equation}
+
+\medskip
+
+Now, given these two elements, the expected true mean \(\mu\) and the observed sample mean \(\bar{x}\) \(\bar X\) and standard deviation \(S\),
+\[
+T
+=
+\frac{\bar X-\mu_0}{S/\sqrt{n}},
+\qquad
+T\sim t_\nu,\ \nu=n-1 \ \text{ under } H_0:\mu=\mu_0 .
+\]
+
+\emph{p-values.}
+\[
+\text{One-sided: }\;
+p=\mathbb P(T\ge t_{\text{obs}})
+=
+\int_{t_{\text{obs}}}^{\infty} f_{t_\nu}(t)\,dt,
+\]
+\[
+\text{Two-sided: }\;
+p=\mathbb P(|T|\ge |t_{\text{obs}}|)
+=
+2\int_{|t_{\text{obs}}|}^{\infty} f_{t_\nu}(t)\,dt .
+\]
+
+\emph{Example.}
+If \(n=10\), \(\bar X=5.2\), \(S=1.0\), \(\mu_0=5\), then
+\[
+t_{\text{obs}}=\frac{5.2-5}{1/\sqrt{10}}\approx0.63,
+\]
+with \(\nu=9\), giving a two-sided p-value \(p\approx0.54\).
+As \(\nu\to\infty\), \(t_\nu\to\mathcal N(0,1)\).
+
+\begin{figure}[ht]
+
+    \centering
+
+    % Subfigure 1 .............................................................
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/t_distribution.png}
+        \caption{The Student's t distribution of the t-statistic, given different values of the degrees of freedom $\nu$.}
+        \label{fig:t_distribution_dof}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % Subfigure 2 .............................................................
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/t_test_1_sample_p_one_tailed.png}
+        \caption{Representation of the 1-sided P-value, computed as the integral of the right tail of the t distribution.}
+        \label{fig:t_distribution_1_sided_p}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % Subfigure 3 .............................................................
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/t_test_1_sample_p_two_tailed.png}
+        \caption{Representation of the 2-sided P-value. Given the symmetry of the t-distribution, it can be obtained as double in size of the 1-sided integral.}
+        \label{fig:t_distribution_2_sided_p}
+    \end{subfigure}
+
+    \label{fig:t_test_comparison}
+
+\end{figure}
+
 \subsection{Compare sample means of two independent groups - Two sample t-test}
 
 \subsection{Compare variation on two groups - Fisher's exact test}
+
+\paragraph{Fisher’s variance-ratio test and the \(F\) distribution.}
+Fisher introduced the variance-ratio test in the 1920s in the context of ANOVA.  
+For two independent normal samples,
+\[
+F=\frac{S_1^2}{S_2^2},
+\qquad
+F\sim F_{\nu_1,\nu_2},
+\quad
+\nu_1=n_1-1,\ \nu_2=n_2-1,
+\]
+under \(H_0:\sigma_1^2=\sigma_2^2\).
+
+\emph{p-values.}
+\[
+\text{One-sided: }\;
+p=\mathbb P(F\ge f_{\text{obs}})
+=
+\int_{f_{\text{obs}}}^{\infty} f_{F_{\nu_1,\nu_2}}(f)\,df,
+\]
+\[
+\text{Two-sided: }\;
+p
+=
+2\min\!\left\{
+\int_{0}^{f_{\text{obs}}} f_{F_{\nu_1,\nu_2}}(f)\,df,\;
+\int_{f_{\text{obs}}}^{\infty} f_{F_{\nu_1,\nu_2}}(f)\,df
+\right\}.
+\]
+
+\emph{Example.}
+If \(n_1=n_2=10\), \(S_1^2=4\), \(S_2^2=2\), then
+\[
+f_{\text{obs}}=2,\qquad \nu_1=\nu_2=9,
+\]
+yielding a one-sided p-value \(p\approx0.12\).
+As \(\nu_1,\nu_2\to\infty\), \(F_{\nu_1,\nu_2}\) concentrates at \(1\) and \(\log F\) becomes approximately Gaussian.
+
+\begin{figure}[ht]
+
+    \centering
+
+    % Subfigure 1 .............................................................
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/f_distribution.png}
+        \caption{The Student's t distribution of the t-statistic, given different values of the degrees of freedom $\nu$.}
+        \label{fig:f_distribution_dof}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % Subfigure 2 .............................................................
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/f_test_one_tailed.png}
+        \caption{Representation of the 1-sided P-value, computed as the integral of the right tail of the t distribution.}
+        \label{fig:f_distribution_1_sided_p}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % Subfigure 3 .............................................................
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/f_test_two_tailed.png}
+        \caption{Representation of the 2-sided P-value. Given the symmetry of the t-distribution, it can be obtained as double in size of the 1-sided integral.}
+        \label{fig:f_distribution_2_sided_p}
+    \end{subfigure}
+
+    \label{fig:f_test_comparison}
+
+\end{figure}
 
 \subsection{Compare variation o multiple groups - Fisher's ANOVA}
 
 \subsection{Compare distributions and testing for normality - $\chi^{2}$ test}
 
+
+\paragraph{Pearson’s \(\chi^2\) test and the chi-square distribution.}
+Pearson’s \(\chi^2\) test (1900) assesses agreement between observed and expected frequencies.  
+With observed counts \(O_i\) and expected counts \(E_i\),
+\[
+X^2
+=
+\sum_{i=1}^{k}\frac{(O_i-E_i)^2}{E_i},
+\qquad
+X^2\sim\chi^2_\nu,
+\]
+where \(\nu=k-1-p\) and \(p\) is the number of estimated parameters.
+
+\emph{p-values.}
+\[
+\text{One-sided (standard): }\;
+p=\mathbb P(X\ge x_{\text{obs}})
+=
+\int_{x_{\text{obs}}}^{\infty} f_{\chi^2_\nu}(x)\,dx,
+\]
+\[
+\text{Two-sided: }\;
+p
+=
+2\min\!\left\{
+\int_{0}^{x_{\text{obs}}} f_{\chi^2_\nu}(x)\,dx,\;
+\int_{x_{\text{obs}}}^{\infty} f_{\chi^2_\nu}(x)\,dx
+\right\}.
+\]
+
+\emph{Example.}
+For \(k=4\) categories with \(\nu=3\) and observed statistic \(x_{\text{obs}}=6\),
+the right-tailed p-value is \(p\approx0.11\).
+As \(\nu\to\infty\),
+\[
+\frac{X^2-\nu}{\sqrt{2\nu}}\xrightarrow[]{d}\mathcal N(0,1),
+\]
+so the chi-square becomes approximately Gaussian after centering and scaling.
+
 \section{Parametric and non-parametric tests}
 
-\section{Comparing data and normalization}
+\section{Error types in hypothesis testing}
+
+Modern hypothesis testing emerged in the early twentieth century as an attempt to formalize uncertainty, error, and decision making in empirical science.  Three major approaches—Fisherian significance testing, Neyman–Pearson hypothesis testing, and Bayesian inference—address these issues in fundamentally different ways, while later philosophical analyses by Reichenbach and Popper clarified their distinct aims.  Subsequent commentators such as Cox, Mayo, and Lehmann have emphasized both the strengths of each framework and the conceptual tensions created by their later amalgamation in textbook practice.
+
+\medskip
+
+Ronald A.\ Fisher introduced significance tests in the 1920s as tools for assessing the \emph{strength of evidence} against a null hypothesis \cite{fisher_1925_statistical,fisher_1935_design}.  In Fisher’s view, a null hypothesis \(H_0\) is a reference model, and the p-value is defined as the probability, under \(H_0\), of observing data at least as extreme as those obtained.  Small p-values indicate discordance between data and model, but Fisher rejected fixed decision thresholds and did not formalize Type~II errors or power.  Type~I error appears implicitly as the tail probability under \(H_0\), not as a long-run operating characteristic.  Hypothesis testing, for Fisher, is evidential rather than decisional: it informs scientific judgment but does not prescribe action.
+
+\medskip
+
+Jerzy Neyman and Egon Pearson developed a sharply different framework in the 1930s, motivated by repeated decision making \cite{neyman_pearson_1933_efficient}.  Here, hypotheses \(H_0\) and \(H_1\) are competing models, and tests are designed to control error rates in the long run.  Type~I error (\(\alpha\)) and Type~II error (\(\beta\)) are central primitives, and optimal tests maximize power subject to a fixed \(\alpha\).  P-values play no essential role; instead, decisions are based on pre-specified critical regions.  This approach interprets hypothesis testing as a rule for action under uncertainty rather than as a measure of evidential support.
+
+\medskip
+
+Bayesian inference, originating in Bayes’s posthumous essay \cite{bayes_1763_doctrine} and developed by Laplace and later subjectivists such as de~Finetti \cite{definetti_1974_probability}, rejects Type~I and Type~II errors as fundamental concepts.  Probability is interpreted as rational degree of belief, and hypotheses themselves are assigned probabilities.  Inference proceeds by updating prior beliefs via Bayes’ theorem to obtain posterior probabilities or Bayes factors.  Hypothesis testing becomes model comparison, and decisions—if required—are made by minimizing expected loss.  The Bayesian framework thus dissolves the classical error dichotomy by reframing uncertainty epistemically rather than behaviorally.
+
+\medskip
+
+Hans Reichenbach provided the clearest philosophical articulation of the frequentist stance underlying Neyman–Pearson theory \cite{reichenbach_1938_prediction}. He distinguished \emph{prediction}—statements about long-run frequencies—from \emph{inference}—claims about truth or belief.  Statistical tests, on this view, justify actions and predictions through their error properties, not through probabilistic assertions about hypotheses.  This position sharply contrasts with Bayesian epistemology and clarifies why frequentist testing can function without assigning probabilities to hypotheses.
+
+\medskip
+
+Karl Popper rejected probabilistic confirmation altogether, arguing that science advances through bold conjectures and severe attempts at falsification \cite{popper_1934_logic}.  Statistical tests, in his view, contribute by formulating risky predictions whose failure can refute theories, not by accumulating evidence or controlling long-run errors.  Popper’s philosophy is incompatible with Bayesian confirmation and only partially aligned with frequentist testing, insofar as both emphasize error and refutation rather than belief.
+
+\medskip
+
+Erich Lehmann, in his definitive treatment of hypothesis testing \cite{lehmann_1959_testing}, emphasized the formal coherence and optimality of Neyman–Pearson theory while explicitly distinguishing it from Fisher’s evidential approach.  D.\,R.~Cox later argued that the routine combination of p-values with fixed significance thresholds conflates logically distinct inferential goals \cite{cox_2006_principles}.  Deborah Mayo further developed an error-statistical philosophy in which evidential interpretation is grounded in the severity with which hypotheses are tested \cite{mayo_1996_error,mayo_2018_severe}.  Together, these authors converge on a common diagnosis: the modern textbook procedure of hypothesis testing is a pragmatic but conceptually hybrid construct, blending incompatible foundations.
+
+\medskip
+
+The coexistence of Fisherian evidence, Neyman–Pearson decision rules, Bayesian belief updating, Popperian falsification, and Reichenbach’s predictive frequentism reflects not confusion but plurality.  Each framework answers a different question—about evidence, action, belief, or prediction—and Type~I and Type~II errors acquire meaning only within the Neyman–Pearson decision-theoretic context.  Understanding these distinctions is essential for the principled use and interpretation of hypothesis tests in modern statistics.
 
 \newpage
 
