@@ -4,20 +4,71 @@
 
 \epigraph{\textit{The object of statistical science is the reduction of data to relevant information.}}{— Ronald A. Fisher}
 
-The term \textit{hypothesis testing} lies on top of the two pillars we have mentioned in previous chapters. On the one hand, we will use probability theory to predict expected values about the true popuplation parameters, assuming certain distributions, etc. Then, applying the tools of descipive stastistics we discussed in Chapter \ref{chapter1} and Chapter \ref{chapter3}, we will compute estimators that reliably represent our samples, quantifying their central tendency and variations. Out of these, we will define a new type of \textit{informative quantity} normally referred to as \textit{statistic}, or \textit{statistic test}, that quantifies how much our expectation match—or differ from–our data, obtained throug measure and observation. Finally, following the so-called modern approach, or Pearson-Neyman, we will learn how to compute significance through the computaiton of the Pearson value—or P-value, for short.
-
-\medskip 
-
-Fisher (1922, 1925) connected least squares, likelihood, and sampling distributions, establishing the foundations of modern inference. Neyman (1937) formalized confidence intervals as frequentist procedures, contributing to philosophical debates on inference that continue today.
-
-
-\section{Prediction vs inference revisted}
-
-Here we shall review, one last time, the main difference between predictive—or modelling—statments, and inferential—also referred to as reconstructive. When formulating hypothesis about natural phenomena, there is normally a bit of both. The very idea of \textit{hypothesis} in the modern sense is a recent one [...] and it is normally explained in tearms of a mathematical prediction. If I believe in Newtonian mechanics, a hypothesis could be to write down Newont's second law and use it to predict where and when a stone would fall when dropped from a certain height. If my hypothesis is that a gene has a cerain impact in a known disease, or in response to stress, . Or, if I am studying the relation between smokers in the UK and their probability to develop lung cancer [...]. In any of these cases, upon hypothesis, I would need samples, or groups, of measurements, normally referred to simply as \textit{data}.
+The term \textit{hypothesis testing} lies on top of the two pillars we have mentioned in previous chapters. On the one hand, we will use the basic statistical analysis tools we described in Chapter \ref{chapter1}, such as sampling, estimators and general of data visualization. At the same time, we will rely on probability theory to predict expected values about the true popuplation parameters, assuming certain distributions, etc, following what we discussed in Chapter \ref{chapter2}. Most of our examples will assume that our data is simple, smooth, and Gaussian distributed—what people normality refer to as \textit{parametric}—given the Law of Large Numbers and the Central Limit Theorem, and building confidence intervals and critical regions to ensure our estimators—sample mean and variance—reliably represent the population under study, quantifying their central tendency and variation. All these have been discussed in Chapter \ref{chapter3}. 
 
 \medskip
 
-Here we shall review, one last time, the main difference between predictive—or modelling—statments, and inferential—also referred to as reconstructive. When formulating hypothesis about natural phenomena, there is normally a bit of both. The very idea of \textit{hypothesis} in the modern sense is a recent one [...] and it is normally explained in tearms of a mathematical prediction. If I believe in Newtonian mechanics, a hypothesis could be to write down Newont's second law and use it to predict where and when a stone would fall when dropped from a certain height. If my hypothesis is that a gene has a cerain impact in a known disease, or in response to stress, . Or, if I am studying the relation between smokers in the UK and their probability to develop lung cancer [...]. In any of these cases, upon hypothesis, I would need samples, or groups, of measurements, normally referred to simply as \textit{data}.
+With all these properly covered, we can now start formulating and testing hypotheses. With a predictive mathematical theory, such as probability and combinatorics, we can compute expected values for the true population mean or variance of a given population. With statistical analysis we can build estimators that quantify central tendency and variation, and visualize distribution and outlier behaviors. Finally, we can rely on the results given by the LLN and CLT, and confidence intervals to ensure that bout our expectations and data is smooth and simple to address. With all these, we will be able to to define a new type of \textit{informative quantity} normally referred to as \textit{statistic}, or \textit{statistic test}, that quantifies how much our observed data approaches—or differs from–the expected or hypothesized value. Finally, following the so-called modern, or Pearson-Neyman approach to hypotheis testing, we will learn how to quantify significance through the computaiton of the Pearson value—or P-value, for short.
+
+\medskip 
+
+Before rushing to mathematical or technical definitions, we would like to pencil a brief historical note, that we hope will shed some light on this topic, sometimes rather obscure. The very idea of hypothesis, and verification against experimental observations, is indeed old, and can be traced back to [...]. But quantities such as the arithmetic mean or other estimators we discussed in previous chapters were not properly defined or become a standard in scientific research until quite later [...]. Similarly, the very foundations of probability theory, including the idea of random variable, unitarity, or distributions—Uniform, Binomial, Gaussian—, were not properly until the work of Kolmogorov in 1933 [...]. The problem of mathematically quantify how much an expectation matches or approaches empirical data, is indeed even younger. It is only since the early 1920s with the works of Karl Pearson and Ronald Fisher, among others, that the very idea of statistic tests were developed, and indeed quite different that the modern approach we are used to nowadays. It was Fisher in the (1922, 1925) connected least squares, likelihood, and sampling distributions, establishing the foundations of modern inference. The original development of either the $\chi^2$, the $t$-test, or the Fisher $F$-test, \textit{was not linked to the acceptance / rejectance of hypotheis based on P-values}. The whole philosophy of relying on P-values to accept / reject null hypotheses, and the very formulation of null / alternative hypotheis on the first place, traces back to Egon Pearson and Neyman (1937), as part of their work on formalizing the idea of confidence intervals as frequentist procedures. The meaning of all these quantifies and their interpretation remains nowadays an open philosophical debate, hence we will define them carefully and walk throug each of them with clear examples. We will revisit the interpretation and historical discussion further in this chapter, and hope this brief disclamer will help to start dismantling now preconceived notions, and approach the topic carefully.
+
+% Prediction vs inference revisited ...................................................................................
+\section{Prediction vs inference revisted}
+
+When formulating hypothesis about natural phenomena, we shall remember once again the difference betwen population and smapling. On the one hand, we have an idealized, unaccessible population with unaccessible true mean, variance, etc. The way I can compute a mathematical prediction for a random variable, whatever it represents, is through the calculation of an expected value—also referred to \textit{momentum}—given a random variable and its distribution.
+
+\medskip
+
+Given a random variable, we can compute expected values, or momenta of the distriutions:
+
+\medskip
+
+Population mean for a discrete random variable \(x_i\)
+\begin{equation}
+    \mu = \mathbb{E}[x] = \frac{1}{N}\sum_{i = 1}^{N} x_i \; \mathbb{P}(x_i)
+    \label{population_mean_discrete}
+\end{equation}
+
+Population variance for a discrete random variable \(x_i\)
+\begin{equation}
+    \sigma^2 = \mathbb{E}[x - \mu] = \frac{1}{N}\sum_{i = 1}^{N} (x_i - \mu)^2 \; \mathbb{P}(x_i)
+    \label{population_var_discrete}
+\end{equation}
+
+Population mean for a continous random variable \(x\)
+\begin{equation}
+    \mu = \mathbb{E}[x] = \int_{i = -\infty}^{\infty} x_i * \; f(x) \; dx
+    \label{population_mean_continous}
+\end{equation}
+
+Population variance for a continous random variable \(x\)
+\begin{equation}
+    \mu = \mathbb{E}[x - \mu] = \int_{i = -\infty}^{\infty} (x_i - \mu) * \; f(x) \; dx
+    \label{population_var_continous}
+\end{equation}
+
+if \(x\) is a continous random variable.
+
+\medskip
+
+Hence hypotheses will \textit{always be formulated in terms of a mathematical predictions about the population parameters}. If I believe in Newtonian mechanics, a hypothesis could be to write down Newont's second law and use it to predict where and when a stone would fall when dropped from a certain height—its position and time. If my hypothesis is that a gene has a cerain impact in a known disease, or in response to stress, —its expression level, or counts. Or, if I am studying the relation between smokers in the UK and their probability to develop lung cancer [...]. In any of these cases, upon hypothesis. I would need samples, or groups, of measurements, normally referred to simply as \textit{data}.
+
+\medskip
+
+Observed sample mean for a sample \(\chi = \{x_1, x_2, ..., x_n\}\)
+\begin{equation}
+    \bar{x} = \frac{1}{n}\sum_{i = 1}^{\infty} x_i
+    \label{sample_mean}
+\end{equation}
+
+Observed sample variance for a sample \(\chi = \{x_1, x_2, ..., x_n\}\)
+\begin{equation}
+    s^2 = \frac{1}{n - 1}\sum_{i = 1}^{\infty} (x_i - \bar{x})^2
+    \label{sample_variance}
+\end{equation}
+
 
 \begin{figure}[ht]
     \centering
@@ -53,71 +104,46 @@ A couple of notes about this general roadmap. A statistic can be just an estimat
 
 \subsection{Compare sample mean with hypothesized value - One sample t-test}
 
-The \(t\)-test is arguably the simplest example of statistic test we will discuss. It was introduced by W.\,S.~Gosset, a statistician working at the Guiness factory in Dublin, trying to accurately describe error of the mean when the population variance is unknown, as part of the brewing process. Due to his affiliation to the Guiness company we has not allowed to share his work and hence we submitted to the \textit{Biometrika} statistics journal under the pseudonym \textit{Student}. This is why it remains nowadays known as the Student's \(t\)-test.
+The \(t\)-test is arguably the simplest example of statistic test we will discuss. It was developed in 1908 by William S. Gosset, a statistician working at the Guiness factory in Dublin, trying to accurately describe the error of the mean when the population variance is unknown, as part of the brewing process. Due to his affiliation to the Guiness company we has not allowed to share his work and hence he submitted it to the \textit{Biometrika} statistics journal under the pseudonym \textit{Student}. This is why it remains nowadays known as the Student's \(t\)-test.
 
 \medskip
 
-We start by formulating some hypotheis about the true population parameters, \textit{prior to collect data from any sample}. It is important here to stop and think carefully about \textit{what is the physical quantity that we are eventually goint to measure}. Normally, the null hypotheis is simply written as "the true population mean is given by \(\mu\)". Remember that such quantity can be computed as an expected value of a random variable.
-\begin{equation}
-    \mu = \mathbb{E}[x] = \frac{1}{N}\sum_{i = 1}^{\infty} x_i \; \mathbb{P}(x_i)
-    \label{population_mean_discrete}
-\end{equation}
- 
-If \(x\) is a discrete random variable, or 
-\begin{equation}
-    \mu = \mathbb{E}[x] = \int_{i = -\infty}^{\infty} x_i * \; f(x) \; dx
-    \label{population_mean_continous}
-\end{equation}
-
-if \(x\) is a continous random variable.
+We start by formulating some hypotheis about the true population mean and variance, \textit{prior to any sampling or data collection}. It is important here to stop and think carefully about \textit{what is the physical quantity that we are eventually goint to measure}. Normally, the null hypotheis is simply written as "the true population mean is expected to take the value \(\mu\)". Remember that such quantity can be computed as an expected value of a random variable.
 
 \medskip
 
-We will now take a series of observations, or measurements, from a given sample \(x = \{x_1, x_2, \dots, x_n\}\). Out of them, we can compute the sample mean \(\bar{x}\), as an estimator of the true population mean.
-
-\begin{equation}
-    \bar{x} = \frac{1}{n}\sum_{i = 1}^{\infty} x_i
-    \label{sample_mean}
-\end{equation}
-
-and the observed sample variance
-\begin{equation}
-    s = \sqrt{ \frac{1}{n - 1}\sum_{i = 1}^{\infty} (x_i - \bar{x})^2 }
-    \label{sample_variance}
-\end{equation}
+Now take a series of observations, or measurements, and groupd them in a given sample \(\chi = \{x_1, x_2, \dots, x_n\}\). Out of them, we can compute the sample mean \(\bar{x}\), as an estimator of the true population mean, and the sample standard deviation \(s\), as an estimator of the true population standard deviation.
 
 \medskip
 
-Now, given these two elements, the expected true mean \(\mu\) and the observed sample mean \(\bar{x}\) \(\bar X\) and standard deviation \(S\),
+Now, given these three elements, we can compute the \(t\)-\textit{statistic}, or \(t\)-\textit{statistic test}, as
 \[
-T
-=
-\frac{\bar X-\mu_0}{S/\sqrt{n}},
-\qquad
-T\sim t_\nu,\ \nu=n-1 \ \text{ under } H_0:\mu=\mu_0 .
+    t = \frac{\bar{x} - \mu}{s/\sqrt{n}},
 \]
 
-\emph{p-values.}
+Let's look at this quantitty for a second. We will notice that as the sample mean \(\bar{x}\) approaches the expected value \(\mu\), the \(t\)-variable tends to zero. It was designed for this precise purpose, to quantify how different our data is from the expected value, and in the ideal case \(\bar{x} = \mu\), then \(t = 0\). 
+
+\medskip
+
+Finally, towards the computation of the P-value, it is important to note that \(t\) is computed out of a set of random observations. If I repeat the same measurements in a different sample, or a different day, they may lead to a different sample mean and variance, hence arriving to a different \(t\). And Hence, textit{\(t\) is a random variable} itself. This is important because, back to the well known Fisher's definition of P-value, \textit{the probability of obtaining a value at least as extreme as the one we observed for our statistic, asuming the expected value given by \(H_0\) and our random data}, we see that we just need to know what is the \textit{distribution} of the \(t\)-statistic, and then compute the cumulative probability—the integral—of such distribution. For a review of cumulative probabilities and integrating probability distributions, go back to Chapter \ref{chapter2}, and for a review on integral calculus and some examples, see Appendix \ref{appendix3}.
+
+\medskip
+
+It is known to follow a Student's \(t\)-distribution with $\nu$ degrees of freedom. Normally written as \(t \sim t_\nu,\ \nu = n-1 \). As \(\nu\to\infty\), \(t_\nu\to\mathcal N(0,1)\).
+
 \[
-\text{One-sided: }\;
-p=\mathbb P(T\ge t_{\text{obs}})
-=
-\int_{t_{\text{obs}}}^{\infty} f_{t_\nu}(t)\,dt,
-\]
-\[
-\text{Two-sided: }\;
-p=\mathbb P(|T|\ge |t_{\text{obs}}|)
-=
-2\int_{|t_{\text{obs}}|}^{\infty} f_{t_\nu}(t)\,dt .
+    \text{One-sided: }\; p=\mathbb P(T\ge t_{\text{obs}}) = \int_{t_{\text{obs}}}^{\infty} f_{t_\nu}(t) \; dt \; ,
 \]
 
-\emph{Example.}
-If \(n=10\), \(\bar X=5.2\), \(S=1.0\), \(\mu_0=5\), then
 \[
-t_{\text{obs}}=\frac{5.2-5}{1/\sqrt{10}}\approx0.63,
+    \text{Two-sided: }\; p=\mathbb P(|T|\ge |t_{\text{obs}}|) = 2\int_{|t_{\text{obs}}|}^{\infty} f_{t_\nu}(t) \; dt \; .
 \]
-with \(\nu=9\), giving a two-sided p-value \(p\approx0.54\).
-As \(\nu\to\infty\), \(t_\nu\to\mathcal N(0,1)\).
+
+\emph{Example.} For a sample of size \(n = 10\), observed average \(\bar{x} = 5.2\), variance \(s = 1.0\), and \(\mu_0 = 5\), then
+\[
+    t_{\text{obs}} = \frac{5.2-5}{1/\sqrt{10}} \approx 0.63,
+\]
+Given this observed value, and the degrees of freedom \(\nu=9\), the two-sided p-value would be \(p\approx0.54\).
 
 \begin{figure}[ht]
 
