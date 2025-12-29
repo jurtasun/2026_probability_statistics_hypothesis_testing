@@ -69,7 +69,6 @@ Observed sample variance for a sample \(\chi = \{x_1, x_2, ..., x_n\}\)
     \label{sample_variance}
 \end{equation}
 
-
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{5_figures/chapter1/prediction_vs_inference.png}
@@ -77,8 +76,7 @@ Observed sample variance for a sample \(\chi = \{x_1, x_2, ..., x_n\}\)
     \label{fig:prediction_vs_inference2}
 \end{figure}
 
-\medskip
-
+% General approach to hypothesis testing ..............................................................................
 \section{General approach to hypothesis testing}
 
 When dealing with hypothesis, predictions, experiments and data, there is plenty of approaches and formulations, as many as instruments, scales and fields of study. These do change form one field to another, and they do change in time. Our very idea of hypothsis, prediction, measurement, and law [...]. Nowadays, when people refer to \textit{hypothesis testing} they mean very specific approach, almost and algorithmc-wise set of rules, that is applied in general to inference and data science problems. We will define such approach as the "modern", or "general" approach to hypothesis testing, that asumes some basic notions of probability theory, distributions and randomness, with some of statistics, estimators and sample description [...]. The whole idea of statistic test, P-value and significance, that we will discuss now, ranges indeed from quite recent times, back to Pearson, Fisher, and Neyman in the early 1900s.
@@ -100,49 +98,64 @@ A couple of notes about this general roadmap. A statistic can be just an estimat
     \label{fig:estimators2}
 \end{figure}
 
-\section{Statistical tests: some examples}
+% Statistic tests: some examples ......................................................................................
+\section{Statistic tests: common examples}
 
-\subsection{Compare sample mean with hypothesized value - One sample t-test}
+% Subsection ..........................................................................................................
+\subsection{One sample \(t\)-test: Compare sample mean with hypothesized value}
 
-The \(t\)-test is arguably the simplest example of statistic test we will discuss. It was developed in 1908 by William S. Gosset, a statistician working at the Guiness factory in Dublin, trying to accurately describe the error of the mean when the population variance is unknown, as part of the brewing process. Due to his affiliation to the Guiness company we has not allowed to share his work and hence he submitted it to the \textit{Biometrika} statistics journal under the pseudonym \textit{Student}. This is why it remains nowadays known as the Student's \(t\)-test.
-
-\medskip
-
-We start by formulating some hypotheis about the true population mean and variance, \textit{prior to any sampling or data collection}. It is important here to stop and think carefully about \textit{what is the physical quantity that we are eventually goint to measure}. Normally, the null hypotheis is simply written as "the true population mean is expected to take the value \(\mu\)". Remember that such quantity can be computed as an expected value of a random variable.
+The \(t\)-test is arguably the simplest example of statistic test we will discuss. It was developed in 1908 by William S. Gosset, a statistician working at the Guinness factory in Dublin, trying to accurately estimate the error of the mean when the population variance is unknown, as part of the brewing process. Due to his affiliation to the Guinness company he has not allowed to publicly share his work and hence he submitted it to the \textit{Biometrika} statistics journal under the pseudonym \textit{Student}. This is why it remains nowadays known as the \textit{Student's \(t\)-test}.
 
 \medskip
 
-Now take a series of observations, or measurements, and groupd them in a given sample \(\chi = \{x_1, x_2, \dots, x_n\}\). Out of them, we can compute the sample mean \(\bar{x}\), as an estimator of the true population mean, and the sample standard deviation \(s\), as an estimator of the true population standard deviation.
+The test begins by formulating some null hypothesis about the true population mean, \textit{prior to any sampling or data collection}. Normally, the null hypothesis is simply written as \textit{the true population mean is expected to take the value \(\mu\)}. It is important here to stop and think carefully about what is the physical quantity that we are actually going to measure. Remember that such quantity, unaccessible in theory, can be either fitted from data, or predicted through the computation of an expected value, as we discussed in Chapter \ref{chapter2}.
 
 \medskip
 
-Now, given these three elements, we can compute the \(t\)-\textit{statistic}, or \(t\)-\textit{statistic test}, as
+Now take a series of observations, or measurements, and group them in a given sample \(\chi = \{x_1, x_2, \dots, x_n\}\). Out of them, we can compute the sample mean \(\bar{x}\), as an estimator of the true population mea \(\mu\), and the sample standard deviation \(s\), as an estimator of the true population standard deviation \(\sigma\).
+
+\medskip
+
+Given these three elements (the expected value \(\mu\), given by our null hypothesis \(H_0\), the sample mean \(\bar{x}\) and the sample standard deviation \(s\), as our estimators) we can compute the \(t\)-\textit{statistic}, or \(t\)-\textit{statistic test}, defined as
+\begin{equation}
+    t = \dfrac{\bar{x} - \mu}{s/\sqrt{n}} \; .
+    \label{t_statistic_one_sample}
+\end{equation}
+Let's look at this quantity for a second. We will notice that as the sample mean \(\bar{x}\) approaches the expected value \(\mu\), the \(t\)-variable tends to zero. It was designed for this precise purpose, to quantify how different—or similar—our data is from the hipothesized value, and in the ideal case \(\bar{x} \rightarrow \mu\), then \(t \rightarrow 0\). 
+
+\medskip
+
+It is important to note here that \(t\) is obtained out of a set of random observations. If I repeat the same measurements in a different sample, or a different day, or under different conditions, they may lead to different values of \(\bar{x}\) and \(s\), hence producing a different \(t\). This means that \textit{\(t\) is a real-valued random variable itself}, and it will follow \textit{some} distribution. The mathematical definition of such distribution—or density—of the \(t\)-variable, as introduced in Gosset's work [...], is called the \textit{Student's \(t\)-distribution},
+\begin{equation}
+    f(t; \nu) = \dfrac{\Gamma \bigg( \dfrac{\nu + 1}{2} \bigg)}{\sqrt{\pi\nu} \; \Gamma \big(\dfrac{\nu}{2} \big)} \; \bigg( 1 + \dfrac{t^2}{\nu} \bigg)^{(\nu + 1) / 2} \; ,
+    \label{t_distribution}
+\end{equation}
+where the parameter \(\nu\) is referred to as the \textit{degrees of freedom}, and it is simply related to the length of the sample \textit{\(\nu = n - 1\)}. You may see that some textbooks and literature sources write it as \(t_\nu\), which is perfectly fine and common standard, but we prefere to use here the letter \(t\) just for the statistic, and \(f(t; \nu)\) for the distribution of \(t\) given \(\nu\) degrees of freedom, rather than referring to both elements with the same symbol. It can be demonstrated that as the degrees of freedom increase, the \(t\)-distribution tends asymptotically to a Gaussian distribution, normally written as \(f(t; \nu) \to \mathcal N(0,1)\) for \(\nu\to\infty\). The explicit demonstration is out of the scope of this course, but it can be found at [...].
+
+\medskip
+
+We arrive now to the final step; the computation of the P-value. Back to the well known Fisher's definition of P-value, \textit{the probability of obtaining a value at least as extreme as the one observed for our statistic, asuming the expected value—or values—given by our null hypothesis \(H_0\) and our random data}, we see that once known the distribution of the \(t\)-statistic, we just need to compute the cumulative probability—that is, the integral—of such distribution. 
+
+\medskip
+
+If we ask for the probability of obtaining a value \textit{strictly greater or strictly smaller than the one we observed for our statistic}, \(\mathbb{P}(t \ge t_{\text{obs}})\), we just need to compute the integral of one of the distribution tales, and it is referred to as a \textit{one-sided}—or one-\textit{tailed}—P-value. On the other hand, if we ask for the probability of obtaining a value \textit{more extreme, regardless of the direction, than the one we observed}, \(\mathbb{P}(|t| \ge |t_{\text{obs}}|)\), that would require the integral of both tails, and it is referred to as a \textit{two-sided}—or two-\textit{tailed}—P-value. Given the symmetry of the \(t\)-distribution, this reduces to double the size of the one-sided P-value. 
 \[
-    t = \frac{\bar{x} - \mu}{s/\sqrt{n}},
+    P_{\text{one-sided}} = \mathbb{P}(t \ge t_{\text{obs}}) = \int_{t_{\text{obs}}}^{\infty} f(t; \nu) \; dt \; ,
 \]
 
-Let's look at this quantitty for a second. We will notice that as the sample mean \(\bar{x}\) approaches the expected value \(\mu\), the \(t\)-variable tends to zero. It was designed for this precise purpose, to quantify how different our data is from the expected value, and in the ideal case \(\bar{x} = \mu\), then \(t = 0\). 
+\[
+    P_{\text{two-sided}} = \mathbb{P}(|t| \ge |t_{\text{obs}}|) = 2 \int_{|t_{\text{obs}}|}^{\infty} f(t; \nu) \; dt \; .
+\]
+
+For a review of cumulative probabilities and integrating probability distributions, go back to Chapter \ref{chapter2}, and for a review on integral calculus and some warm-up examples, see Appendix \ref{appendix3}. If this feels a bit heavy, this is where computer softwares and libraries become particularly useful, as they not only implement the calculation of the statistic but the numerical integration of such distribution, yealding to the P-value without the need for manual integral calculus. Examples of these will be \texttt{scipy} library of \texttt{Python}, and the \texttt{stats} package of \texttt{R}, among many others [...].
 
 \medskip
 
-Finally, towards the computation of the P-value, it is important to note that \(t\) is computed out of a set of random observations. If I repeat the same measurements in a different sample, or a different day, they may lead to a different sample mean and variance, hence arriving to a different \(t\). And Hence, textit{\(t\) is a random variable} itself. This is important because, back to the well known Fisher's definition of P-value, \textit{the probability of obtaining a value at least as extreme as the one we observed for our statistic, asuming the expected value given by \(H_0\) and our random data}, we see that we just need to know what is the \textit{distribution} of the \(t\)-statistic, and then compute the cumulative probability—the integral—of such distribution. For a review of cumulative probabilities and integrating probability distributions, go back to Chapter \ref{chapter2}, and for a review on integral calculus and some examples, see Appendix \ref{appendix3}.
-
-\medskip
-
-It is known to follow a Student's \(t\)-distribution with $\nu$ degrees of freedom. Normally written as \(t \sim t_\nu,\ \nu = n-1 \). As \(\nu\to\infty\), \(t_\nu\to\mathcal N(0,1)\).
-
-\[
-    \text{One-sided: }\; p=\mathbb P(T\ge t_{\text{obs}}) = \int_{t_{\text{obs}}}^{\infty} f_{t_\nu}(t) \; dt \; ,
-\]
-
-\[
-    \text{Two-sided: }\; p=\mathbb P(|T|\ge |t_{\text{obs}}|) = 2\int_{|t_{\text{obs}}|}^{\infty} f_{t_\nu}(t) \; dt \; .
-\]
-
-\emph{Example.} For a sample of size \(n = 10\), observed average \(\bar{x} = 5.2\), variance \(s = 1.0\), and \(\mu_0 = 5\), then
+\textbf{Example.} For a sample of size \(n = 10\), observed average \(\bar{x} = 5.2\), variance \(s = 1.0\), and \(\mu_0 = 5\), then
 \[
     t_{\text{obs}} = \frac{5.2-5}{1/\sqrt{10}} \approx 0.63,
 \]
+
 Given this observed value, and the degrees of freedom \(\nu=9\), the two-sided p-value would be \(p\approx0.54\).
 
 \begin{figure}[ht]
@@ -181,46 +194,112 @@ Given this observed value, and the degrees of freedom \(\nu=9\), the two-sided p
 
 \end{figure}
 
-\subsection{Compare sample means of two independent groups - Two sample t-test}
+% Subsection ..........................................................................................................
+\subsection{Two sample \(t\)-test: Compare sample means of two independent groups}
 
-\subsection{Compare variation on two groups - Fisher's exact test}
+The two-sample \(t\)-test is an extension of the one-sample case, hence the general approach will be almost identical as the one discussed in previous section. It is used to test two independent samples, \(chi_1\) and \(\chi_2\), of lengths \(n_1\) and \(n_2\). The null hypothesis is still formulated about the true population means, as \textit{both observations come—are sampled from—the same distribution, with an expected true mean \(\mu\)}. Remember again that such quantity, unaccessible in theory, can be either fitted from previous data, or predicted through the computation of an expected value, as we discussed in Chapter \ref{chapter2}.
 
-\paragraph{Fisher’s variance-ratio test and the \(F\) distribution.}
-Fisher introduced the variance-ratio test in the 1920s in the context of ANOVA.  
-For two independent normal samples,
+\medskip
+
+Now take a series of measurements for both samples, and compute the sample means \(\bar{x}_1\), \(\bar{x}_2\), as estimators of the true population mea \(\mu\), and the sample variances \(s_1^2\), \(s_2^2\), as estimators of the true population variance \(\sigma^2\).
+
+\medskip
+
+In the same way we proceeded for the one-sample case, we combine the expectation given by our \(H_0\) and the estimators computed out of our data, into the \textit{two-sample \(t\)-statistic}, or \textit{two-sample \(t\)-statistic test}, defined as
+\begin{equation}
+    t = \dfrac{\bar{x}_1 - \bar{x}_2}{\sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2 }}} \; .
+    \label{t_statistic_two_sample}
+\end{equation}
+The denominator is normally called \textit{pooled standard deviation}, and denoted by \(s_p\). We can see that this quantity behaves in the same way as the one-sample case, tending to zero, as the sample means of both groups tend to each other, \(t \rightarrow 0\) as \(\bar{x}_1 \rightarrow \bar{x}_2\),
+
+\medskip
+
+Again, \(t\) is a real-valued random variable, and it follows the same Student's \(t\)-distribution of eq. \eqref{t_distribution}. The only difference is that the degrees of freedom \(\nu\) are now obtained by combining the lengths of both samples \textit{\(\nu = n_1 + n_2 - 2\)}.
+
+\medskip
+
+The computation of the P-value, is identical to the one-sample case, as we just need to integrate the \(t\)-distribution. Again, given the symmetry of the \(t\)-distribution, the two-sided P-value is just double the size of the one-sided case. For a review of cumulative probabilities and integrating probability distributions, go back to Chapter \ref{chapter2}, and for a review on integral calculus and some warm-up examples, see Appendix \ref{appendix3}.
+
+\medskip
+
+\textbf{Example.} For sample of size \(n_1 = 10\), observed average \(\bar{x} = 5.2\), variance \(s = 1.0\), and \(\mu_0 = 5\), then
 \[
-F=\frac{S_1^2}{S_2^2},
-\qquad
-F\sim F_{\nu_1,\nu_2},
-\quad
-\nu_1=n_1-1,\ \nu_2=n_2-1,
+    t_{\text{obs}} = \frac{5.2-5}{1/\sqrt{10}} \approx 0.63,
 \]
+
+Given this observed value, and the degrees of freedom \(\nu=9\), the two-sided p-value would be \(p\approx0.54\).
+
+% Subsection ..........................................................................................................
+\subsection{Fisher's \(F\) test: Compare variation of two independent groups}
+
+The Fisher variance-ratio test, or \(F\)-test for short, was introduced by Fisher in the 1920s in the context of analysis of variation in agrary research. \textit{The testing of hypotheses} and the \textit{the design of experiments}. The impact of Fisher's work, not only in statistics but also in evolutionary biology and experimental design, is credited still nowadays as one of the greatest among the twentieth century, by far [...].
+
+\medskip
+
+The test begins by formulating some null hypothesis about the true population variance, \textit{prior to any sampling or data collection}. Normally, the null hypothesis is simply written as \textit{the samples under study come from the same distribution, with true population variance \(\sigma^2\)}. It is important here to stop and think carefully about what is the physical quantity that we are actually going to measure. Remember that such quantity, unaccessible in theory, can be either fitted from data, or predicted through the computation of an expected value, as we discussed in Chapter \ref{chapter2}.
+
+\medskip
+
+Now take a series of measurements for two independent samples, and compute the sample variances \(s_1^2\), \(s_2^2\), as estimators of the true population variance \(\sigma^2\).
+
+\medskip
+
+Given the expected values given by our null hypothesis \(H_0\), and the sample variances \(s_1^2\), \(s_2^2\), we can compute the Fisher \(F\)-\textit{statistic}, or \(F\)-\textit{statistic test}, defined as
+\begin{equation}
+    F = \dfrac{s_1^2}{s_2^2} \; .
+    \label{f_statistic_exact}
+\end{equation}
+Let's look at this quantity for a second. We will notice that as the sample variances \(s_1^2\), \(s_2^2\) approache each other—and then expected value \(\sigma^2\)—the \(F\)-variable tends to one. It was designed for this precise purpose, to quantify how different—or similar—our data is from the hipothesized value, and in the ideal case \(s_1^2 \rightarrow s_2^2\), then \(F \rightarrow 1\). Recall here the definition of the \(t\)-test, as here we can start noticing that, in general, statistic tests are normally defined such that, in the case of \(H_0\) being true, they reduce to a small, simple value.
+
+\medskip
+
+It is important to note, same as what happened with previous tests, that \(F\) is obtained out of a set of random observations. If I repeat the same measurements in a different sample, or a different day, or under different conditions, they may lead to different values \(s_1\) and \(s_2\), hence producing a different \(F\). This means that \textit{\(F\) is a real-valued random variable itself}, and it will follow \textit{some} distribution. The mathematical definition of such distribution—or density—of the \(F\)-variable, as introduced in Fisher's [...], is called the Fisher's \textit{\(F\)-distribution},
+\begin{equation}
+    f(F; \nu_1, \nu_2) = \dfrac{1}{B \bigg( \dfrac{\nu_1}{2}, \dfrac{\nu_2}{2} \bigg)} \; \bigg( \dfrac{\nu_1}{\nu_2} \bigg)^{\frac{\nu_1}{2}}\; F^{\frac{\nu_1}{2} - 1} \;  \bigg( 1 + \dfrac{\nu_1}{\nu_2} F \bigg)^{-\frac{(\nu_1 + \nu_2)}{2}} \; ,
+    \label{f_distribution}
+\end{equation}
+
+where the parameters \(\nu_1\), \(\nu_2\) represent the \textit{degrees of freedom}, and they are related to the length of the samples \(\nu_1 = n_1 - 1\), \(\nu_2 = n_2 - 1\). You may see that some textbooks and literature sources write it as \(F_{\nu_1, \nu_2}\), which is perfectly fine and common standard, but we prefere to use here the letter \(F\) just for the statistic, and \(f(F; \nu_1, \nu_2)\) for the distribution of \(F\) given \(\nu_1\) and \(\nu_2\) degrees of freedom, rather than referring to both elements with the same symbol. It can be demonstrated that as the degrees of freedom increase, the \(t\)-distribution tends asymptotically to a Gaussian distribution, normally written as \(f(t; \nu) \to \mathcal N(0,1)\) for \(\nu\to\infty\). The explicit demonstration is out of the scope of this course, but it can be found at [...].
+As \(\nu_1,\nu_2\to\infty\), \(F_{\nu_1,\nu_2}\) concentrates at \(1\) and \(\log F\) becomes approximately Gaussian.
+For two independent normal samples,
+\(
+    F\sim F_{\nu_1,\nu_2}, \quad \nu_1=n_1-1,\ \nu_2=n_2-1,
+\)
 under \(H_0:\sigma_1^2=\sigma_2^2\).
 
-\emph{p-values.}
+\medskip
+
+We arrive now to the final step; the computation of the P-value. Back to the well known Fisher's definition of P-value, \textit{the probability of obtaining a value at least as extreme as the one observed for our statistic, asuming the expected value—or values—given by our null hypothesis \(H_0\) and our random data}, we see that once known the distribution of the \(t\)-statistic, we just need to compute the cumulative probability—that is, the integral—of such distribution. 
+
+\medskip
+
+If we ask for the probability of obtaining a value \textit{strictly greater or strictly smaller than the one we observed for our statistic}, \(\mathbb{P}(t \ge t_{\text{obs}})\), we just need to compute the integral of one of the distribution tales, and it is referred to as a \textit{one-sided}—or one-\textit{tailed}—P-value. On the other hand, if we ask for the probability of obtaining a value \textit{more extreme, regardless of the direction, than the one we observed}, \(\mathbb{P}(|t| \ge |t_{\text{obs}}|)\), that would require the integral of both tails, and it is referred to as a \textit{two-sided}—or two-\textit{tailed}—P-value. Given the symmetry of the \(t\)-distribution, this reduces to double the size of the one-sided P-value. 
 \[
-\text{One-sided: }\;
-p=\mathbb P(F\ge f_{\text{obs}})
-=
-\int_{f_{\text{obs}}}^{\infty} f_{F_{\nu_1,\nu_2}}(f)\,df,
-\]
-\[
-\text{Two-sided: }\;
-p
-=
-2\min\!\left\{
-\int_{0}^{f_{\text{obs}}} f_{F_{\nu_1,\nu_2}}(f)\,df,\;
-\int_{f_{\text{obs}}}^{\infty} f_{F_{\nu_1,\nu_2}}(f)\,df
-\right\}.
+    P_{\text{one-sided}} = \mathbb{P}(t \ge t_{\text{obs}}) = \int_{t_{\text{obs}}}^{\infty} f(t; \nu) \; dt \; ,
 \]
 
-\emph{Example.}
+\[
+    P_{\text{two-sided}} = \mathbb{P}(|t| \ge |t_{\text{obs}}|) = 2 \int_{|t_{\text{obs}}|}^{\infty} f(t; \nu) \; dt \; .
+\]
+
+\[
+    \text{One-sided: }\; p = \mathbb P(F\ge f_{\text{obs}}) = \int_{f_{\text{obs}}}^{\infty} f_{F_{\nu_1,\nu_2}}(f)\,df,
+\]
+
+\[
+    \text{Two-sided: }\; p = 2 \min \!\left\{ \int_{0}^{f_{\text{obs}}} f_{F_{\nu_1,\nu_2}}(f)\,df,\; \int_{f_{\text{obs}}}^{\infty} f_{F_{\nu_1,\nu_2}}(f)\,df \right\}.
+\]
+
+For a review of cumulative probabilities and integrating probability distributions, go back to Chapter \ref{chapter2}, and for a review on integral calculus and some warm-up examples, see Appendix \ref{appendix3}. If this feels a bit heavy, this is where computer softwares and libraries become particularly useful, as they not only implement the calculation of the statistic but the numerical integration of such distribution, yealding to the P-value without the need for manual integral calculus. Examples of these will be \texttt{scipy} library of \texttt{Python}, and the \texttt{stats} package of \texttt{R}, among many others [...].
+
+\medskip
+
+\textbf{Example.}
 If \(n_1=n_2=10\), \(S_1^2=4\), \(S_2^2=2\), then
 \[
 f_{\text{obs}}=2,\qquad \nu_1=\nu_2=9,
 \]
 yielding a one-sided p-value \(p\approx0.12\).
-As \(\nu_1,\nu_2\to\infty\), \(F_{\nu_1,\nu_2}\) concentrates at \(1\) and \(\log F\) becomes approximately Gaussian.
 
 \begin{figure}[ht]
 
@@ -258,9 +337,11 @@ As \(\nu_1,\nu_2\to\infty\), \(F_{\nu_1,\nu_2}\) concentrates at \(1\) and \(\lo
 
 \end{figure}
 
-\subsection{Compare variation o multiple groups - Fisher's ANOVA}
+% Subsection ..........................................................................................................
+\subsection{Fisher's ANOVA: Compare variation of multiple groups}
 
-\subsection{Compare distributions and testing for normality - $\chi^{2}$ test}
+% Subsection ..........................................................................................................
+\subsection{Pearson's $\chi^{2}$ test: Compare distributions and testing for normality}
 
 
 \paragraph{Pearson’s \(\chi^2\) test and the chi-square distribution.}
@@ -301,8 +382,35 @@ As \(\nu\to\infty\),
 \]
 so the chi-square becomes approximately Gaussian after centering and scaling.
 
+% Subsection ..........................................................................................................
+\subsection{The Wald test: assymptotic behavior}
+
+The Wald test is parametric because it tests hypotheses about finite-dimensional model parameters using an estimator whose—asymptotic—distribution is derived from an assumed parametric model.
+
+% Parametric and non-parametric tests .................................................................................
 \section{Parametric and non-parametric tests}
 
+% Subsection ..........................................................................................................
+\subsection{Wilcoxon signed-ranked test}
+
+% Subsection ..........................................................................................................
+\subsection{Mann–Whitney \(U\) test}
+
+% Subsection ..........................................................................................................
+\subsection{Levene median-based test}
+
+% Subsection ..........................................................................................................
+\subsection{Kruskal-Wallis test}
+
+% Subsection ..........................................................................................................
+\subsection{The Kolmogorov-Smirnov test}
+
+% Subsection ..........................................................................................................
+\subsection{The Saphiro-Wilk test}
+
+The Shapiro–Wilk test addresses the same goodness-of-fit problem as the \(chi_2\) and Kolmogorov–Smirnov tests, but differs fundamentally in construction: rather than measuring global discrepancies between empirical and theoretical distributions, it exploits the structure of normal order statistics, yielding substantially higher power for detecting departures from normality [...].
+
+% Error types in hypothesis testing ...................................................................................
 \section{Error types in hypothesis testing}
 
 Modern hypothesis testing emerged in the early twentieth century as an attempt to formalize uncertainty, error, and decision making in empirical science.  Three major approaches—Fisherian significance testing, Neyman–Pearson hypothesis testing, and Bayesian inference—address these issues in fundamentally different ways, while later philosophical analyses by Reichenbach and Popper clarified their distinct aims.  Subsequent commentators such as Cox, Mayo, and Lehmann have emphasized both the strengths of each framework and the conceptual tensions created by their later amalgamation in textbook practice.
