@@ -232,62 +232,49 @@ Given this observed value, and the degrees of freedom \(\nu=9\), the two-sided p
 % Subsection ..........................................................................................................
 \subsection{Fisher's \(F\) test: Compare variation of two independent groups}
 
-The Fisher variance-ratio test, or \(F\)-test for short, was introduced by Fisher in the 1920s in the context of analysis of variation in agrary research. \textit{The testing of hypotheses} and the \textit{the design of experiments}. The impact of Fisher's work, not only in statistics but also in evolutionary biology and experimental design, is credited still nowadays as one of the greatest among the twentieth century, by far [...].
+The Fisher's variance-ratio test, or \(F\)-test for short, was introduced by Fisher in the 1920s and formally developed in his works \textit{Statistical methods for research workers} and \textit{The design of experiments}, in 1925 and 1935. The impact of Fisher's work, not only in statistics but also in evolutionary biology, experimental design, hypothesis tesing and mathematical modelling is credited still nowadays as one of the greatest among the twentieth century, by far [...].
 
 \medskip
 
-The test begins by formulating some null hypothesis about the true population variance, \textit{prior to any sampling or data collection}. Normally, the null hypothesis is simply written as \textit{the samples under study come from the same distribution, with true population variance \(\sigma^2\)}. It is important here to stop and think carefully about what is the physical quantity that we are actually going to measure. Remember that such quantity, unaccessible in theory, can be either fitted from data, or predicted through the computation of an expected value, as we discussed in Chapter \ref{chapter2}.
+The \(F\) test begins by formulating some null hypothesis about the true population variance, \textit{prior to any sampling or data collection}. Normally, the null hypothesis is simply written as \textit{both samples under study come from the same distribution, with true population variance \(\sigma^2\)}. As we did in previous cases, remember that such quantity is hypothesized value about the true population, and it can be either fitted from data, or predicted through the computation of an expected value, as we discussed in Chapter \ref{chapter2}.
 
 \medskip
 
-Now take a series of measurements for two independent samples, and compute the sample variances \(s_1^2\), \(s_2^2\), as estimators of the true population variance \(\sigma^2\).
-
-\medskip
-
-Given the expected values given by our null hypothesis \(H_0\), and the sample variances \(s_1^2\), \(s_2^2\), we can compute the Fisher \(F\)-\textit{statistic}, or \(F\)-\textit{statistic test}, defined as
+Now take a series of measurements for two independent samples \(\chi_1\), \(chi_2\) of sizes \(n_1\) and \(n_2\), compute the sample variances \(s_1^2\), \(s_2^2\), as estimators of the true population variances \(\sigma_1^2\) and \(\sigma_2^2\). Then the Fisher \(F\)-\textit{statistic}, or \(F\)-\textit{statistic test}, is defined just as the ratio
 \begin{equation}
     F = \dfrac{s_1^2}{s_2^2} \; .
     \label{f_statistic_exact}
 \end{equation}
-Let's look at this quantity for a second. We will notice that as the sample variances \(s_1^2\), \(s_2^2\) approache each other—and then expected value \(\sigma^2\)—the \(F\)-variable tends to one. It was designed for this precise purpose, to quantify how different—or similar—our data is from the hipothesized value, and in the ideal case \(s_1^2 \rightarrow s_2^2\), then \(F \rightarrow 1\). Recall here the definition of the \(t\)-test, as here we can start noticing that, in general, statistic tests are normally defined such that, in the case of \(H_0\) being true, they reduce to a small, simple value.
+Similarly to what happend in previous cases, we can notice that as the sample variances \(s_1^2\), \(s_2^2\) approach each other, the \(F\)-variable tends to one. It was designed for this precise purpose, to quantify how different—or similar—two independent groups are from each other, and in the ideal case \(s_1^2 \rightarrow s_2^2\), then \(F \rightarrow 1\). Recall the definition of the \(t\)-statistic, as here we can start noticing that, in general, statistic tests are normally defined such that, in the case of \(H_0\) being true, they reduce to a small, simple value.
 
 \medskip
 
-It is important to note, same as what happened with previous tests, that \(F\) is obtained out of a set of random observations. If I repeat the same measurements in a different sample, or a different day, or under different conditions, they may lead to different values \(s_1\) and \(s_2\), hence producing a different \(F\). This means that \textit{\(F\) is a real-valued random variable itself}, and it will follow \textit{some} distribution. The mathematical definition of such distribution—or density—of the \(F\)-variable, as introduced in Fisher's [...], is called the Fisher's \textit{\(F\)-distribution},
+If we pay close attention, we can notice that unlike the \(t\)-test, where the null hypothesis was stated directly in terms of a \(\mu\) parameter, appearing explicitly in the definition of the \(t\)-statistic, there is no explicit trace of \(H_0\) in the definition of our \(F\), which is computed just as the ratio of two sample variances. There is a historical reason for this, that we will revisit further in this chapter, related to how the very idea of hypotheis, parameter and statistic test were used in Fisher's time, different from modern usage. As we will see, the classical \(F\)-test encodes the null hypothesis through the \textit{condition under which the ratio of \(F\) of sample variances follow a specific distribution}. In practice, this reflects the fact that the \(t\)-test is formulated around an explicit parameter hypothesis, whereas the \(F\)-test arose from Fisher's analysis of sampling distributions.
+
+\medskip
+
+Same as in the two previous examples, the \(F\)-statistic is obtained out of a set of random observations. If I repeat the same measurements in a different sample, or a different day, or under different conditions, they may lead to different values \(s_1\) and \(s_2\), hence producing a different \(F\). This means that \textit{\(F\) is a real-valued random variable itself}, and it will follow \textit{some} distribution. The mathematical definition of such distribution—or density—of the \(F\)-variable, as introduced in Fisher's [...], is called the Fisher's \textit{\(F\)-distribution},
 \begin{equation}
     f(F; \nu_1, \nu_2) = \dfrac{1}{B \bigg( \dfrac{\nu_1}{2}, \dfrac{\nu_2}{2} \bigg)} \; \bigg( \dfrac{\nu_1}{\nu_2} \bigg)^{\frac{\nu_1}{2}}\; F^{\frac{\nu_1}{2} - 1} \;  \bigg( 1 + \dfrac{\nu_1}{\nu_2} F \bigg)^{-\frac{(\nu_1 + \nu_2)}{2}} \; ,
     \label{f_distribution}
 \end{equation}
+where the parameters \(\nu_1\), \(\nu_2\) represent the \textit{degrees of freedom}, and they are related to the length of the samples \(\nu_1 = n_1 - 1\), \(\nu_2 = n_2 - 1\). You may see that some textbooks and literature sources write it as \(F_{\nu_1, \nu_2}\), which is perfectly fine and common standard, but we prefere to use here the letter \(F\) just for the statistic, and \(f(F; \nu_1, \nu_2)\) for the distribution of \(F\) given \(\nu_1\) and \(\nu_2\) degrees of freedom, rather than referring to both elements with the same symbol. It can be demonstrated that as \(\nu_1,\nu_2 \to \infty\), \(f(t; \nu_1, \nu_2)\) concentrates at \(1\) and \(\log f(F; \nu_1, \nu_2)\) becomes approximately Gaussian. The explicit demonstration is out of the scope of this course, but it can be found at [...].
 
-where the parameters \(\nu_1\), \(\nu_2\) represent the \textit{degrees of freedom}, and they are related to the length of the samples \(\nu_1 = n_1 - 1\), \(\nu_2 = n_2 - 1\). You may see that some textbooks and literature sources write it as \(F_{\nu_1, \nu_2}\), which is perfectly fine and common standard, but we prefere to use here the letter \(F\) just for the statistic, and \(f(F; \nu_1, \nu_2)\) for the distribution of \(F\) given \(\nu_1\) and \(\nu_2\) degrees of freedom, rather than referring to both elements with the same symbol. It can be demonstrated that as the degrees of freedom increase, the \(t\)-distribution tends asymptotically to a Gaussian distribution, normally written as \(f(t; \nu) \to \mathcal N(0,1)\) for \(\nu\to\infty\). The explicit demonstration is out of the scope of this course, but it can be found at [...].
-As \(\nu_1,\nu_2\to\infty\), \(F_{\nu_1,\nu_2}\) concentrates at \(1\) and \(\log F\) becomes approximately Gaussian.
-For two independent normal samples,
-\(
-    F\sim F_{\nu_1,\nu_2}, \quad \nu_1=n_1-1,\ \nu_2=n_2-1,
-\)
-under \(H_0:\sigma_1^2=\sigma_2^2\).
+As we mentioned alread, it is under the null hypothesis \(H_0: \sigma_1^2 = \sigma_2^2\) that the \(F\)-statistic follows the Fisher distribution. Modern Wald and likelihood-ratio tests provide a unified parameter-based framework.
 
 \medskip
 
-We arrive now to the final step; the computation of the P-value. Back to the well known Fisher's definition of P-value, \textit{the probability of obtaining a value at least as extreme as the one observed for our statistic, asuming the expected value—or values—given by our null hypothesis \(H_0\) and our random data}, we see that once known the distribution of the \(t\)-statistic, we just need to compute the cumulative probability—that is, the integral—of such distribution. 
+Back to the computation of the P-value, given Fisher's definition, \textit{the probability of obtaining a value at least as extreme as the one observed for our statistic, asuming the expected value—or values—given by our null hypothesis \(H_0\) and our random data}, we just need to compute the cumulative probability—that is, the integral—of the \(F\) distribution. 
 
 \medskip
 
-If we ask for the probability of obtaining a value \textit{strictly greater or strictly smaller than the one we observed for our statistic}, \(\mathbb{P}(t \ge t_{\text{obs}})\), we just need to compute the integral of one of the distribution tales, and it is referred to as a \textit{one-sided}—or one-\textit{tailed}—P-value. On the other hand, if we ask for the probability of obtaining a value \textit{more extreme, regardless of the direction, than the one we observed}, \(\mathbb{P}(|t| \ge |t_{\text{obs}}|)\), that would require the integral of both tails, and it is referred to as a \textit{two-sided}—or two-\textit{tailed}—P-value. Given the symmetry of the \(t\)-distribution, this reduces to double the size of the one-sided P-value. 
+If we ask for the probability of obtaining a value \textit{strictly greater or strictly smaller than the one we observed for our statistic}, \(\mathbb{P}(F \ge F_{\text{obs}})\), we just need to compute the integral of one of the distribution tales, and it give the one-sided P-value. But the two-sided case, the probability of obtaining a value \textit{more extreme, regardless of the direction} would require the integral of both tails, and given the asymmetry of the \(F\)-distribution, becomes a non-trivial task. The common formulation is written as follows
 \[
-    P_{\text{one-sided}} = \mathbb{P}(t \ge t_{\text{obs}}) = \int_{t_{\text{obs}}}^{\infty} f(t; \nu) \; dt \; ,
+    P_{\text{one-sided}} = \mathbb{P}(F \ge F_{\text{obs}}) = \int_{F_{\text{obs}}}^{\infty} f(F; \nu_1, \nu_2) \; df \; ,
 \]
 
 \[
-    P_{\text{two-sided}} = \mathbb{P}(|t| \ge |t_{\text{obs}}|) = 2 \int_{|t_{\text{obs}}|}^{\infty} f(t; \nu) \; dt \; .
-\]
-
-\[
-    \text{One-sided: }\; p = \mathbb P(F\ge f_{\text{obs}}) = \int_{f_{\text{obs}}}^{\infty} f_{F_{\nu_1,\nu_2}}(f)\,df,
-\]
-
-\[
-    \text{Two-sided: }\; p = 2 \min \!\left\{ \int_{0}^{f_{\text{obs}}} f_{F_{\nu_1,\nu_2}}(f)\,df,\; \int_{f_{\text{obs}}}^{\infty} f_{F_{\nu_1,\nu_2}}(f)\,df \right\}.
+    P_{\text{two-sided}} = 2 \min \!\left\{ \int_{0}^{F_{\text{obs}}} f(F; \nu_1, \nu_2) \; df, \; \int_{F_{\text{obs}}}^{\infty} f(F; \nu_1, \nu_2) \; df \right\}.
 \]
 
 For a review of cumulative probabilities and integrating probability distributions, go back to Chapter \ref{chapter2}, and for a review on integral calculus and some warm-up examples, see Appendix \ref{appendix3}. If this feels a bit heavy, this is where computer softwares and libraries become particularly useful, as they not only implement the calculation of the statistic but the numerical integration of such distribution, yealding to the P-value without the need for manual integral calculus. Examples of these will be \texttt{scipy} library of \texttt{Python}, and the \texttt{stats} package of \texttt{R}, among many others [...].
@@ -309,7 +296,7 @@ yielding a one-sided p-value \(p\approx0.12\).
     \begin{subfigure}{0.8\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{5_figures/chapter4/f_distribution.png}
-        \caption{The Student's t distribution of the t-statistic, given different values of the degrees of freedom $\nu$.}
+        \caption{The Fisher's \(F\) distribution of the \(F\)-statistic, given different values of the degrees of freedom $\nu$.}
         \label{fig:f_distribution_dof}
     \end{subfigure}
 
@@ -340,38 +327,107 @@ yielding a one-sided p-value \(p\approx0.12\).
 % Subsection ..........................................................................................................
 \subsection{Fisher's ANOVA: Compare variation of multiple groups}
 
+In the same case the two-sample \(t\)-test was an extension of the one-sample case, both wollowing Gosset's formulation of the statistic and corresponding distribution, Fisher's Analysis of Variance, or ANOVA test, is a specific case of the general \(F\) test we just discussed. It was developed as part of his investigation of the sampling distributions of quadratic forms under normality, aiming to check whether two sources of variability could plausibly be attributed to the same underlying variance, without an explicit parameter-first formulation of hypotheses. Rather than comparing two variances in isolation, Fisher decomposed total variability into components attributable to multiple factors and experimental design.
+
+\medskip
+
+In short, ANOVA tests whether the variability between group means is large relative to the variability within groups.
+
+\medskip
+
+Now take a series of measurements for two independent samples \(\chi_1\), \(chi_2\) of sizes \(n_1\) and \(n_2\), compute the sample variances \(s_1^2\), \(s_2^2\), as estimators of the true population variances \(\sigma_1^2\) and \(\sigma_2^2\). Then the Fisher \(F\)-\textit{statistic}, or \(F\)-\textit{statistic test}, is defined just as the ratio
+\begin{equation}
+    F = \dfrac{s_{\text{between}}^2}{s_{\text{withinn}}^2} \; .
+    \label{f_statistic_anova}
+\end{equation}
+Similarly to what happend in previous cases, we can notice that as the sample variances \(s_1^2\), \(s_2^2\) approach each other, the \(F\)-variable tends to one. It was designed for this precise purpose, to quantify how different—or similar—two independent groups are from each other, and in the ideal case \(s_1^2 \rightarrow s_2^2\), then \(F \rightarrow 1\). Recall the definition of the \(t\)-statistic, as here we can start noticing that, in general, statistic tests are normally defined such that, in the case of \(H_0\) being true, they reduce to a small, simple value.
+
+\medskip
+
+If we pay close attention, we can notice that unlike the \(t\)-test, where the null hypothesis was stated directly in terms of a \(\mu\) parameter, appearing explicitly in the definition of the \(t\)-statistic, there is no explicit trace of \(H_0\) in the definition of our \(F\), which is computed just as the ratio of two sample variances. There is a historical reason for this, that we will revisit further in this chapter, related to how the very idea of hypotheis, parameter and statistic test were used in Fisher's time, different from modern usage. As we will see, the classical \(F\)-test encodes the null hypothesis through the \textit{condition under which the ratio of \(F\) of sample variances follow a specific distribution}. In practice, this reflects the fact that the \(t\)-test is formulated around an explicit parameter hypothesis, whereas the \(F\)-test arose from Fisher's analysis of sampling distributions.
+
+\medskip
+
+Same as in the two previous examples, the \(F\)-statistic is obtained out of a set of random observations. If I repeat the same measurements in a different sample, or a different day, or under different conditions, they may lead to different values \(s_1\) and \(s_2\), hence producing a different \(F\). This means that \textit{\(F\) is a real-valued random variable itself}, and it will follow \textit{some} distribution. The mathematical definition of such distribution—or density—of the \(F\)-variable, as introduced in Fisher's [...], is called the Fisher's \textit{\(F\)-distribution},
+[...]
+where the parameters \(\nu_1\), \(\nu_2\) represent the \textit{degrees of freedom}, and they are related to the length of the samples \(\nu_1 = n_1 - 1\), \(\nu_2 = n_2 - 1\). You may see that some textbooks and literature sources write it as \(F_{\nu_1, \nu_2}\), which is perfectly fine and common standard, but we prefere to use here the letter \(F\) just for the statistic, and \(f(F; \nu_1, \nu_2)\) for the distribution of \(F\) given \(\nu_1\) and \(\nu_2\) degrees of freedom, rather than referring to both elements with the same symbol. It can be demonstrated that as \(\nu_1,\nu_2 \to \infty\), \(f(t; \nu_1, \nu_2)\) concentrates at \(1\) and \(\log f(F; \nu_1, \nu_2)\) becomes approximately Gaussian. The explicit demonstration is out of the scope of this course, but it can be found at [...].
+
+As we mentioned alread, it is under the null hypothesis \(H_0: \sigma_1^2 = \sigma_2^2\) that the \(F\)-statistic follows the Fisher distribution. Modern Wald and likelihood-ratio tests provide a unified parameter-based framework.
+
+\medskip
+
+Back to the computation of the P-value, given Fisher's definition, \textit{the probability of obtaining a value at least as extreme as the one observed for our statistic, asuming the expected value—or values—given by our null hypothesis \(H_0\) and our random data}, we just need to compute the cumulative probability—that is, the integral—of the \(F\) distribution. 
+
+\medskip
+
+If we ask for the probability of obtaining a value \textit{strictly greater or strictly smaller than the one we observed for our statistic}, \(\mathbb{P}(F \ge F_{\text{obs}})\), we just need to compute the integral of one of the distribution tales, and it give the one-sided P-value. But the two-sided case, the probability of obtaining a value \textit{more extreme, regardless of the direction} would require the integral of both tails, and given the asymmetry of the \(F\)-distribution, becomes a non-trivial task. The common formulation is written as follows
+\[
+    P_{\text{one-sided}} = \mathbb{P}(F \ge F_{\text{obs}}) = \int_{F_{\text{obs}}}^{\infty} f(F; \nu_1, \nu_2) \; df \; ,
+\]
+
+\[
+    P_{\text{two-sided}} = 2 \min \!\left\{ \int_{0}^{F_{\text{obs}}} f(F; \nu_1, \nu_2) \; df, \; \int_{F_{\text{obs}}}^{\infty} f(F; \nu_1, \nu_2) \; df \right\}.
+\]
+
+For a review of cumulative probabilities and integrating probability distributions, go back to Chapter \ref{chapter2}, and for a review on integral calculus and some warm-up examples, see Appendix \ref{appendix3}. If this feels a bit heavy, this is where computer softwares and libraries become particularly useful, as they not only implement the calculation of the statistic but the numerical integration of such distribution, yealding to the P-value without the need for manual integral calculus. Examples of these will be \texttt{scipy} library of \texttt{Python}, and the \texttt{stats} package of \texttt{R}, among many others [...].
+
+\medskip
+
+\textbf{Example.}
+If \(n_1=n_2=10\), \(S_1^2=4\), \(S_2^2=2\), then
+\[
+f_{\text{obs}}=2,\qquad \nu_1=\nu_2=9,
+\]
+yielding a one-sided p-value \(p\approx0.12\).
+
 % Subsection ..........................................................................................................
 \subsection{Pearson's $\chi^{2}$ test: Compare distributions and testing for normality}
-
 
 \paragraph{Pearson’s \(\chi^2\) test and the chi-square distribution.}
 Pearson’s \(\chi^2\) test (1900) assesses agreement between observed and expected frequencies.  
 With observed counts \(O_i\) and expected counts \(E_i\),
 \[
-X^2
-=
-\sum_{i=1}^{k}\frac{(O_i-E_i)^2}{E_i},
-\qquad
-X^2\sim\chi^2_\nu,
+    X^2 = \sum_{i=1}^{k}\frac{(O_i-E_i)^2}{E_i}, \qquad X^2\sim\chi^2_\nu,
 \]
 where \(\nu=k-1-p\) and \(p\) is the number of estimated parameters.
 
 \emph{p-values.}
 \[
-\text{One-sided (standard): }\;
-p=\mathbb P(X\ge x_{\text{obs}})
-=
-\int_{x_{\text{obs}}}^{\infty} f_{\chi^2_\nu}(x)\,dx,
+    \text{One-sided (standard): }\; p=\mathbb P(X\ge x_{\text{obs}}) = \int_{x_{\text{obs}}}^{\infty} f_{\chi^2_\nu}(x)\,dx,
 \]
 \[
-\text{Two-sided: }\;
-p
-=
-2\min\!\left\{
-\int_{0}^{x_{\text{obs}}} f_{\chi^2_\nu}(x)\,dx,\;
-\int_{x_{\text{obs}}}^{\infty} f_{\chi^2_\nu}(x)\,dx
-\right\}.
+    \text{Two-sided: }\; p = 2\min\!\left\{ \int_{0}^{x_{\text{obs}}} f_{\chi^2_\nu}(x)\,dx, \; \int_{x_{\text{obs}}}^{\infty} f_{\chi^2_\nu}(x)\,dx \right\}.
 \]
+
+\paragraph{The chi-square test: historical and modern perspectives.}
+The chi-square test was introduced by Karl Pearson in 1900 as part of his work on goodness-of-fit and contingency tables.  Pearson’s original formulation was rooted in biometric practice rather than formal hypothesis testing: the statistic
+\[
+    \chi^2 = \sum_{i} \frac{(O_i - E_i)^2}{E_i}
+\]
+was conceived as a numerical measure of discrepancy between observed and expected frequencies under a proposed model.  Large values of \(\chi^2\) indicated poor agreement, but early usage emphasized comparison with tabulated
+critical values and qualitative judgment, reflecting a period that predates the formal Neyman--Pearson framework.\footnote{Pearson’s original work does not
+distinguish null and alternative hypotheses in the modern sense, nor does it invoke Type~I and Type~II errors; these concepts were introduced later by Neyman and Pearson in the late 1920s and early 1930s.}
+
+\medskip
+
+In the modern framework, the chi-square test is formulated with an explicit null hypothesis and a p-value.  One specifies
+\[
+    H_0:\ \text{the observed frequencies follow the model } F_0
+\]
+(or independence in a contingency table), derives the asymptotic distribution
+\[
+    \chi^2 \sim \chi^2_{\nu} \quad\text{under } H_0,
+\]
+and evaluates significance via the tail probability of the observed statistic. This reformulation transformed Pearson’s discrepancy measure into a decision-theoretic test with controlled error rates, fully aligned with modern parametric inference.
+
+A deeper theoretical connection appears through likelihood-based testing. In many settings, Pearson’s chi-square statistic is asymptotically equivalent to the likelihood-ratio statistic
+\[
+    -2 \log \Lambda,
+\]
+a result formalized by Wilks in the 1930s.  Both statistics converge in distribution to a chi-square law under the null hypothesis, reflecting the
+quadratic approximation of the log-likelihood near the true parameter. From this perspective, the classical chi-square test can be viewed as an early
+large-sample approximation to likelihood-based inference, with likelihood-ratio, Wald, and score tests providing a unified parametric framework that generalizes
+Pearson’s original idea.
 
 \emph{Example.}
 For \(k=4\) categories with \(\nu=3\) and observed statistic \(x_{\text{obs}}=6\),
@@ -381,6 +437,42 @@ As \(\nu\to\infty\),
 \frac{X^2-\nu}{\sqrt{2\nu}}\xrightarrow[]{d}\mathcal N(0,1),
 \]
 so the chi-square becomes approximately Gaussian after centering and scaling.
+
+\begin{figure}[ht]
+
+    \centering
+
+    % Subfigure 1 .............................................................
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/chi2_distribution.png}
+        \caption{The Pearson's \(\chi^2\) distribution of the \(\chi^2\)-statistic, given different values of the degrees of freedom $\nu$.}
+        \label{fig:chi2_distribution_dof}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % Subfigure 2 .............................................................
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/chi2_test_one_tailed.png}
+        \caption{Representation of the 1-sided P-value, computed as the integral of the right tail of the t distribution.}
+        \label{fig:chi2_distribution_1_sided_p}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % Subfigure 3 .............................................................
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/chi2_test_two_tailed.png}
+        \caption{Representation of the 2-sided P-value. Given the symmetry of the t-distribution, it can be obtained as double in size of the 1-sided integral.}
+        \label{fig:chi2_distribution_2_sided_p}
+    \end{subfigure}
+
+    \label{fig:chi2_test_comparison}
+
+\end{figure}
 
 % Subsection ..........................................................................................................
 \subsection{The Wald test: assymptotic behavior}
@@ -442,23 +534,3 @@ Erich Lehmann, in his definitive treatment of hypothesis testing \cite{lehmann_1
 \medskip
 
 The coexistence of Fisherian evidence, Neyman–Pearson decision rules, Bayesian belief updating, Popperian falsification, and Reichenbach’s predictive frequentism reflects not confusion but plurality.  Each framework answers a different question—about evidence, action, belief, or prediction—and Type~I and Type~II errors acquire meaning only within the Neyman–Pearson decision-theoretic context.  Understanding these distinctions is essential for the principled use and interpretation of hypothesis tests in modern statistics.
-
-\newpage
-
-\subsection*{Exercises}
-
-\textbf{1.} Exercise [...].\\
-
-\textbf{2.} Exercise [...].\\
-
-\textbf{3.} Exercise [...].\\
-
-\newpage
-
-\subsection*{Solutions}
-
-\textbf{1.} Solution [...].\\
-
-\textbf{2.} Solution [...].\\
-
-\textbf{3.} Solution [...].\\

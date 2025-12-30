@@ -59,3 +59,104 @@ By \textit{continous} we mean that the number of possible outcomes is an infinit
 % Expected values .....................................................................................................
 \section{Expected values}
 
+\paragraph{Expectation.}
+The \emph{expected value} (or mean) of a random variable formalizes the idea of a probability–weighted average of all possible outcomes. For a discrete random variable \(X\) with probability mass function \(p_X\), the expectation is obtained by summing each possible value weighted by its probability. For a continuous random variable with density \(f_X\), the sum is replaced by an integral. In both cases, expectation is defined whenever the corresponding series or integral converges absolutely.
+
+\paragraph{Variance.}
+The \emph{variance} measures dispersion around the mean. It is defined as the expected squared deviation from the mean,
+\[
+\operatorname{Var}(X)=\mathbb{E}\!\left[(X-\mathbb{E}[X])^2\right].
+\]
+Expanding the square yields the useful identity
+\[
+\operatorname{Var}(X)=\mathbb{E}[X^2]-\bigl(\mathbb{E}[X]\bigr)^2,
+\]
+which simplifies most computations and highlights that variance depends on the second moment of the distribution.
+
+% =====================================================================
+\subsection*{Discrete Distributions}
+
+\paragraph{Bernoulli distribution.}
+Let \(X\sim\mathrm{Bern}(p)\) with \(\mathbb{P}(X=1)=p\) and \(\mathbb{P}(X=0)=1-p\).
+\[
+\mathbb{E}[X]=1\cdot p+0\cdot(1-p)=p,
+\]
+\[
+\operatorname{Var}(X)=\mathbb{E}[X^2]-\mathbb{E}[X]^2=p-p^2=p(1-p).
+\]
+
+\paragraph{Binomial distribution.}
+Let \(X\sim\mathrm{Bin}(n,p)\). Writing \(X=\sum_{i=1}^n X_i\), where the \(X_i\) are i.i.d.\ Bernoulli\((p)\),
+\[
+\mathbb{E}[X]=\sum_{i=1}^n \mathbb{E}[X_i]=np,
+\]
+\[
+\operatorname{Var}(X)=\sum_{i=1}^n \operatorname{Var}(X_i)=np(1-p).
+\]
+
+\paragraph{Discrete uniform distribution.}
+Let \(X\) be uniformly distributed on \(\{1,\dots,n\}\).
+\[
+\mathbb{E}[X]=\frac{1}{n}\sum_{k=1}^n k=\frac{n+1}{2},
+\]
+\[
+\operatorname{Var}(X)
+=\frac{1}{n}\sum_{k=1}^n k^2-\left(\frac{n+1}{2}\right)^2
+=\frac{n^2-1}{12}.
+\]
+
+\paragraph{Poisson distribution.}
+Let \(X\sim\mathrm{Pois}(\lambda)\).
+Using the series definition of the exponential function,
+\[
+\mathbb{E}[X]
+=\sum_{k=0}^\infty k\frac{\lambda^k e^{-\lambda}}{k!}
+=\lambda,
+\qquad
+\operatorname{Var}(X)=\lambda.
+\]
+
+% =====================================================================
+\subsection*{Continuous Distributions}
+
+\paragraph{Gaussian distribution.}
+Let \(X\sim\mathcal{N}(\mu,\sigma^2)\).
+Symmetry of the density about \(\mu\) implies \(\mathbb{E}[X]=\mu\). A direct computation of
+\(\mathbb{E}[(X-\mu)^2]\) using Gaussian integrals yields
+\[
+\operatorname{Var}(X)=\sigma^2.
+\]
+
+\paragraph{Exponential distribution.}
+Let \(X\sim\mathrm{Exp}(\lambda)\) with density \(f(x)=\lambda e^{-\lambda x}\) for \(x\ge0\).
+\[
+\mathbb{E}[X]=\int_0^\infty x\lambda e^{-\lambda x}\,dx=\frac{1}{\lambda},
+\]
+\[
+\operatorname{Var}(X)
+=\int_0^\infty x^2\lambda e^{-\lambda x}\,dx-\frac{1}{\lambda^2}
+=\frac{1}{\lambda^2}.
+\]
+
+\paragraph{Continuous uniform distribution.}
+Let \(X\sim\mathrm{Unif}(a,b)\).
+\[
+\mathbb{E}[X]=\frac{1}{b-a}\int_a^b x\,dx=\frac{a+b}{2},
+\]
+\[
+\operatorname{Var}(X)
+=\frac{1}{b-a}\int_a^b (x-\mu)^2\,dx=\frac{(b-a)^2}{12}.
+\]
+
+% =====================================================================
+\subsection*{Conceptual Summary}
+
+Expectation is a \emph{first-moment} quantity: it captures location but ignores spread. Its defining feature is linearity,
+\[
+\mathbb{E}\!\left[\sum_i X_i\right]=\sum_i \mathbb{E}[X_i],
+\]
+which holds without independence and underlies most statistical estimators.
+
+Variance is a \emph{second-moment} quantity, measuring dispersion relative to the mean. Unlike expectation, it is not linear, but it is additive for independent random variables. This property explains the appearance of variances in limit theorems and error propagation.
+
+Together, mean and variance form the basic quantitative summary of a distribution. Classical inference procedures—such as confidence intervals, \(t\)-tests, and Wald statistics—are built on estimators of these moments and on their sampling distributions.
