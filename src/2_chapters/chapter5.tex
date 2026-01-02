@@ -1,44 +1,16 @@
 % Chapter - Introduction to conditional probability ...................................................................
-\chapter{Modelling, dependency and correlation}
+\chapter{Introduction to conditional probability}
 \label{chapter5}
 
-\epigraph{\textit{The theory of probabilities is at bottom nothing but common sense reduced to calculation.}}{— Pierre-Simon Laplace}
+\epigraph{\textit{Probability statements are just summaries of repeated observations.}}{— W. V. Quine}
 
-\section{Introduction and Philosophy}
+The topic of conditional—sometimes referred as \textit{bayesian}—probability has its roots in one most fundamental princples know by human nature. That is, the idea that we all have bias, and that purely objective knowledge is beyond our reach.
 
-Matrix-based linear modelling was systematized in the mid-20th century, notably in the work of C. R. Rao (1945, \emph{Bulletin of the Calcutta Mathematical Society}), who developed the Cramér–Rao bound and unified estimation in linear models.
+\section{Motivation and philosophy}
 
-\section{Estimation and Inference}
-Model estimation chooses parameter values that best describe the data; inference quantifies uncertainty around these estimates.
+\section{Dependent and independent events}
 
-\subsection*{Mathematical Formulation}
-The ordinary least squares estimator is
-\[
-\widehat{\beta} = (X^\top X)^{-1}X^\top\mathbf{Y},
-\]
-with residuals $\widehat{\varepsilon}=\mathbf{Y}-X\widehat{\beta}$.
-Under the normal-error model,
-\[
-\widehat{\beta}\sim\mathcal{N}\bigl(\beta,\sigma^2(X^\top X)^{-1}\bigr).
-\]
-
-\subsection*{Numerical Example}
-For
-\[
-X=\begin{pmatrix}
-1&1\\
-1&2\\
-1&3
-\end{pmatrix},
-\qquad
-Y=\begin{pmatrix}2\\3\\5\end{pmatrix},
-\]
-one obtains
-\[
-\widehat{\beta}=
-\begin{pmatrix}0.333\\1.5\end{pmatrix},
-\]
-so $\widehat{Y}=0.333+1.5X$.
+\section{Some examples of conditional probability}
 
 \newpage
 

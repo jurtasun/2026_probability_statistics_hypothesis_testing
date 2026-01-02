@@ -4,70 +4,72 @@
 
 \epigraph{\textit{The object of statistical science is the reduction of data to relevant information.}}{— Ronald A. Fisher}
 
-The term \textit{hypothesis testing} lies on top of the two pillars we have mentioned in previous chapters. On the one hand, we will use the basic statistical analysis tools we described in Chapter \ref{chapter1}, such as sampling, estimators and general of data visualization. At the same time, we will rely on probability theory to predict expected values about the true popuplation parameters, assuming certain distributions, etc, following what we discussed in Chapter \ref{chapter2}. Most of our examples will assume that our data is simple, smooth, and Gaussian distributed—what people normality refer to as \textit{parametric}—given the Law of Large Numbers and the Central Limit Theorem, and building confidence intervals and critical regions to ensure our estimators—sample mean and variance—reliably represent the population under study, quantifying their central tendency and variation. All these have been discussed in Chapter \ref{chapter3}. 
+The term \textit{hypothesis testing} lies on top of the two pillars we have mentioned in previous chapters. From statistical analysis, as discussed in Chapter \ref{chapter1}, we will use sampling, estimators, and graphical summaries to describe data. From probability theory, as discussed in Chapter \ref{chapter2}, we will rely on probability distributions and expected values to model random variation and uncertainty. Through this chapter, we will mostly work in a \textit{parametric} setting, where data is assumed to follow a simple, smooth and well-behaved distribution—most often the Gaussian distribution. Under these assumptions, and supported by the Law of Large Numbers and the Central Limit Theorem, estimators such as the sample mean and variance provide reliable information about the true population parameters. Confidence intervals and critical regions, introduced in Chapter \ref{chapter3}, formalize this idea of reliability.
 
 \medskip
 
-With all these properly covered, we can now start formulating and testing hypotheses. With a predictive mathematical theory, such as probability and combinatorics, we can compute expected values for the true population mean or variance of a given population. With statistical analysis we can build estimators that quantify central tendency and variation, and visualize distribution and outlier behaviors. Finally, we can rely on the results given by the LLN and CLT, and confidence intervals to ensure that bout our expectations and data is smooth and simple to address. With all these, we will be able to to define a new type of \textit{informative quantity} normally referred to as \textit{statistic}, or \textit{statistic test}, that quantifies how much our observed data approaches—or differs from–the expected or hypothesized value. Finally, following the so-called modern, or Pearson-Neyman approach to hypotheis testing, we will learn how to quantify significance through the computaiton of the Pearson value—or P-value, for short.
+Within this framework, we introduce the notion of a \textit{statistic}, or \textit{statistic test}: a numerical quantity computed from data, designed to measure how close our observations are to what we would expect under a given hypothesis. Statistical tests are built by comparing such statistics to their behavior under an assumed model. In the modern Neyman--Pearson framework, this comparison is summarized through the \textit{P-value}, which quantifies how unusual the observed data would be if the null hypothesis were true \cite{pearson_neyman_1933_efficient}.
 
-\medskip 
+\medskip
 
-Before rushing to mathematical or technical definitions, we would like to pencil a brief historical note, that we hope will shed some light on this topic, sometimes rather obscure. The very idea of hypothesis, and verification against experimental observations, is indeed old, and can be traced back to [...]. But quantities such as the arithmetic mean or other estimators we discussed in previous chapters were not properly defined or become a standard in scientific research until quite later [...]. Similarly, the very foundations of probability theory, including the idea of random variable, unitarity, or distributions—Uniform, Binomial, Gaussian—, were not properly until the work of Kolmogorov in 1933 [...]. The problem of mathematically quantify how much an expectation matches or approaches empirical data, is indeed even younger. It is only since the early 1920s with the works of Karl Pearson and Ronald Fisher, among others, that the very idea of statistic tests were developed, and indeed quite different that the modern approach we are used to nowadays. It was Fisher in the (1922, 1925) connected least squares, likelihood, and sampling distributions, establishing the foundations of modern inference. The original development of either the $\chi^2$, the $t$-test, or the Fisher $F$-test, \textit{was not linked to the acceptance / rejectance of hypotheis based on P-values}. The whole philosophy of relying on P-values to accept / reject null hypotheses, and the very formulation of null / alternative hypotheis on the first place, traces back to Egon Pearson and Neyman (1937), as part of their work on formalizing the idea of confidence intervals as frequentist procedures. The meaning of all these quantifies and their interpretation remains nowadays an open philosophical debate, hence we will define them carefully and walk throug each of them with clear examples. We will revisit the interpretation and historical discussion further in this chapter, and hope this brief disclamer will help to start dismantling now preconceived notions, and approach the topic carefully.
+Let us begin with a brief historical note, often skipped. The ideas behind hypothesis testing did not emerge all at once. While the general notion of testing expectations against observations is very old, the mathematical tools required for modern statistical testing are relatively recent. Systematic use of estimators and probability models developed gradually during the nineteenth and early twentieth centuries, and the axiomatic foundations of probability were only formalized in 1933 with Kolmogorov's work \cite{kolmogorov_1933_grundbegriffe}. The first statistical tests were developed in the early twentieth century by researchers such as Pearson and Fisher, among many other, and were originally designed to measure discrepancies between data and theoretical expectations, not to support automatic accept-reject decisions. The formal structure of hypothesis testing, including null and alternative hypotheses, error rates, and P-values, was later introduced by Neyman and Pearson. Because these ideas developed in stages, their interpretation requires some care. Throughout this chapter, we will emphasize both the practical use of statistical tests and the assumptions on which they are based.
 
 % Prediction vs inference revisited ...................................................................................
 \section{Prediction vs inference revisted}
 
-When formulating hypothesis about natural phenomena, we shall remember once again the difference betwen population and smapling. On the one hand, we have an idealized, unaccessible population with unaccessible true mean, variance, etc. The way I can compute a mathematical prediction for a random variable, whatever it represents, is through the calculation of an expected value—also referred to \textit{momentum}—given a random variable and its distribution.
+When formulating hypotheses about natural phenomena, it is important to recall the distinction between population and sampling. On the one hand, we consider an idealized and generally inaccessible population, characterized by true but unknown quantities such as the mean and variance. Mathematical prediction, in this context, refers to the computation of expected values—also known as statistical moments—defined for a random variable together with its probability distribution.
 
 \medskip
 
-Given a random variable, we can compute expected values, or momenta of the distriutions:
+Given a random variable, expected values (or moments) can be computed directly from its distribution.
 
 \medskip
 
-Population mean for a discrete random variable \(x_i\)
+Population mean for a discrete random variable \(x\) with support \(\{x_i\}\)
 \begin{equation}
-    \mu = \mathbb{E}[x] = \frac{1}{N}\sum_{i = 1}^{N} x_i \; \mathbb{P}(x_i)
+    \mu = \mathbb{E}[x] = \sum_{i} x_i \, \mathbb{P}(x = x_i)
     \label{population_mean_discrete}
 \end{equation}
 
-Population variance for a discrete random variable \(x_i\)
+Population variance for a discrete random variable \(x\)
 \begin{equation}
-    \sigma^2 = \mathbb{E}[x - \mu] = \frac{1}{N}\sum_{i = 1}^{N} (x_i - \mu)^2 \; \mathbb{P}(x_i)
+    \sigma^2 = \mathbb{E}\!\left[(x - \mu)^2\right] = \sum_{i} (x_i - \mu)^2 \, \mathbb{P}(x = x_i)
     \label{population_var_discrete}
 \end{equation}
 
-Population mean for a continous random variable \(x\)
+Population mean for a continuous random variable \(x\) with density \(f(x)\)
 \begin{equation}
-    \mu = \mathbb{E}[x] = \int_{i = -\infty}^{\infty} x_i * \; f(x) \; dx
-    \label{population_mean_continous}
+    \mu = \mathbb{E}[x] = \int_{-\infty}^{\infty} x \, f(x)\, dx
+    \label{population_mean_continuous}
 \end{equation}
 
-Population variance for a continous random variable \(x\)
+Population variance for a continuous random variable \(x\)
 \begin{equation}
-    \mu = \mathbb{E}[x - \mu] = \int_{i = -\infty}^{\infty} (x_i - \mu) * \; f(x) \; dx
-    \label{population_var_continous}
+    \sigma^2 = \mathbb{E}\!\left[(x - \mu)^2\right] = \int_{-\infty}^{\infty} (x - \mu)^2 \, f(x)\, dx
+    \label{population_var_continuous}
 \end{equation}
-
-if \(x\) is a continous random variable.
 
 \medskip
 
-Hence hypotheses will \textit{always be formulated in terms of a mathematical predictions about the population parameters}. If I believe in Newtonian mechanics, a hypothesis could be to write down Newont's second law and use it to predict where and when a stone would fall when dropped from a certain height—its position and time. If my hypothesis is that a gene has a cerain impact in a known disease, or in response to stress, —its expression level, or counts. Or, if I am studying the relation between smokers in the UK and their probability to develop lung cancer [...]. In any of these cases, upon hypothesis. I would need samples, or groups, of measurements, normally referred to simply as \textit{data}.
+Hypotheses are therefore always formulated in terms of mathematical predictions about population-level parameters. For example, under Newtonian mechanics, a hypothesis may consist of Newton’s second law, from which predictions can be made about the position of a falling object as a function of time. In biology, a hypothesis may concern the effect of a gene on a disease or on stress response, formulated in terms of expected expression levels or counts. In epidemiology, one may hypothesize a relationship between smoking prevalence and lung cancer risk. In all such cases, hypotheses concern population properties, while access to them is obtained only through finite samples of observations, collectively referred to as \textit{data}.
 
 \medskip
 
-Observed sample mean for a sample \(\chi = \{x_1, x_2, ..., x_n\}\)
+Observed sample mean for a sample \(\mathcal{X} = \{x_1, x_2, \dots, x_n\}\)
 \begin{equation}
-    \bar{x} = \frac{1}{n}\sum_{i = 1}^{\infty} x_i
+    \bar{x} = \frac{1}{n}\sum_{i = 1}^{n} x_i
     \label{sample_mean}
 \end{equation}
 
-Observed sample variance for a sample \(\chi = \{x_1, x_2, ..., x_n\}\)
+Observed sample variance for the same sample
 \begin{equation}
-    s^2 = \frac{1}{n - 1}\sum_{i = 1}^{\infty} (x_i - \bar{x})^2
+    s^2 = \frac{1}{n - 1}\sum_{i = 1}^{n} (x_i - \bar{x})^2
     \label{sample_variance}
 \end{equation}
+
+\medskip
+
+Hypothesis testing formalizes this comparison between population-level predictions and sample-based estimates by quantifying how compatible the observed data are with a hypothesized model.
 
 \begin{figure}[ht]
     \centering
@@ -79,17 +81,23 @@ Observed sample variance for a sample \(\chi = \{x_1, x_2, ..., x_n\}\)
 % General approach to hypothesis testing ..............................................................................
 \section{General approach to hypothesis testing}
 
-When dealing with hypothesis, predictions, experiments and data, there is plenty of approaches and formulations, as many as instruments, scales and fields of study. These do change form one field to another, and they do change in time. Our very idea of hypothsis, prediction, measurement, and law [...]. Nowadays, when people refer to \textit{hypothesis testing} they mean very specific approach, almost and algorithmc-wise set of rules, that is applied in general to inference and data science problems. We will define such approach as the "modern", or "general" approach to hypothesis testing, that asumes some basic notions of probability theory, distributions and randomness, with some of statistics, estimators and sample description [...]. The whole idea of statistic test, P-value and significance, that we will discuss now, ranges indeed from quite recent times, back to Pearson, Fisher, and Neyman in the early 1900s.
+When dealing with hypotheses, predictions, experiments, and data, there exist many approaches and formulations, as many as instruments, scales, and fields of study. These approaches change from one field to another, and they also change over time. Our very ideas of hypothesis, prediction, measurement, and scientific law have evolved historically. Nowadays, when people refer to \textit{hypothesis testing}, they usually mean a very specific approach: an almost algorithmic set of rules applied broadly to inference and data analysis problems. In this chapter, we will define such an approach as the \textit{modern} or \textit{general} approach to hypothesis testing. It assumes basic notions of probability theory, randomness, and probability distributions, together with statistical concepts such as estimators and sample-based descriptions. The core ideas of statistical tests, p-values, and significance that we discuss here are relatively recent, tracing back to the work of Pearson, Fisher, and Neyman in the early twentieth century.
+
+\medskip
+
+The general approach to hypothesis testing can be summarized in the following steps:
 
 \begin{itemize}
-    \item Formulate hypothesis. Normally referred to as \textit{null} hypothesis \(H_0\), as the expectation that our prediction or expectation will follow, and \textit{alternative} hypothesis \(H_1\), representing the case of finding a surpsing observation, that deviates from \(H_0\). These hypothesis will \textit{always} be made about the \textit{true population parameters}, and commonly formulated as the computation of an expected value, that we discussed in Chapter \ref{chapter2}.
-    \item Experiment, measurement, observation. Any process, regardless of instrumentation and object of study, that involves a measurement, an observation, or data collection of any kind from one or more samples.
-    \item Compute statistic, or statistic test. Out of our random data we can caompute any \textit{informative quantity}, which can be an estimator like the sample mean, the variance, etc, or a more abstract quantity that represents how close are the these mean and variance from their expected values, given \(H_0\) 
-    \item Copute P-value: the probability that, given a certain assumtion for our true population parameters and our random data, we obtained a value at least as extreme as the one we got for our statistic.
-    \item interpretation of the result, normally accept / reject the null hypothesis based on the P-value and some significance threshold.
+    \item \textbf{Formulate hypotheses.} One specifies a \textit{null hypothesis} \(H_0\), representing the expected or reference case, and an \textit{alternative hypothesis} \(H_1\), representing a departure from \(H_0\) that would be considered surprising. These hypotheses are always formulated in terms of true population parameters, and are often expressed through expected values or related quantities discussed in Chapter~\ref{chapter2}.
+    \item \textbf{Experiment, measurement, observation.} Any process—regardless of instrumentation or field of study—that produces measurements or observations, resulting in one or more samples of data.
+    \item \textbf{Compute a statistic or test statistic.} From the observed data, one computes an informative quantity, which may be a simple estimator such as the sample mean or variance, or a more elaborate statistic designed to quantify how far the observed data deviate from what is expected under \(H_0\).
+    \item \textbf{Compute a p-value.} The p-value is the probability that, assuming the null hypothesis and its associated population parameters are true, one would obtain a value of the statistic at least as extreme as the one observed.
+    \item \textbf{Interpret the result.} The p-value is compared to a chosen significance level, leading to a decision or conclusion, commonly phrased as rejecting or not rejecting the null hypothesis.
 \end{itemize}
 
-A couple of notes about this general roadmap. A statistic can be just an estimator, like the sample mean [...]. Fisher's definition of P-value as extream [...]. The approach is a mixed of Fisher and Pearson-Neyman [...].
+\medskip
+
+A few remarks are in order regarding this general roadmap. A statistic may be as simple as an estimator, such as the sample mean, or a more abstract quantity derived from the data. Fisher originally introduced the p-value as a continuous measure of evidence against the null hypothesis, rather than as a strict decision rule. The widespread practice of fixed significance thresholds and accept--reject decisions reflects a later synthesis of Fisher’s ideas with the Neyman--Pearson framework. As a result, the modern approach to hypothesis testing combines elements of both traditions, a point we will return to later in this chapter. \textit{Warning.} A p-value does not measure the probability that a hypothesis is true or false, but rather how compatible the observed data are with the null hypothesis under the assumed model.
 
 \begin{figure}[ht]
     \centering
@@ -104,59 +112,57 @@ A couple of notes about this general roadmap. A statistic can be just an estimat
 % Subsection ..........................................................................................................
 \subsection{One sample \(t\)-test: Compare sample mean with hypothesized value}
 
-The \(t\)-test is arguably the simplest example of statistic test we will discuss. It was developed in 1908 by William S. Gosset, a statistician working at the Guinness factory in Dublin, trying to accurately estimate the error of the mean when the population variance is unknown, as part of the brewing process. Due to his affiliation to the Guinness company he has not allowed to publicly share his work and hence he submitted it to the \textit{Biometrika} statistics journal under the pseudonym \textit{Student}. This is why it remains nowadays known as the \textit{Student's \(t\)-test}.
+The \(t\)-test is arguably the simplest example of a statistical test we will discuss. It was developed in 1908 by William S.~Gosset, a statistician working at the Guinness factory in Dublin, who was trying to accurately estimate the error of the mean when the population variance is unknown, as part of the brewing process. Due to his affiliation with the Guinness company, he was not allowed to publicly share his work, and therefore submitted it to the journal \textit{Biometrika} under the pseudonym \textit{Student}. For this reason, it remains nowadays known as the \textit{Student’s \(t\)-test} \cite{student_1908_mean}.
 
 \medskip
 
-The test begins by formulating some null hypothesis about the true population mean, \textit{prior to any sampling or data collection}. Normally, the null hypothesis is simply written as \textit{the true population mean is expected to take the value \(\mu\)}. It is important here to stop and think carefully about what is the physical quantity that we are actually going to measure. Remember that such quantity, unaccessible in theory, can be either fitted from data, or predicted through the computation of an expected value, as we discussed in Chapter \ref{chapter2}.
+The test begins by formulating a null hypothesis about the true population mean, \textit{prior to any sampling or data collection}. Normally, the null hypothesis is written as \textit{the true population mean is expected to take the value \(\mu\)}. It is important here to stop and think carefully about what physical quantity we are actually going to measure. Recall that such a quantity, inaccessible in principle, can be either predicted through the computation of an expected value or estimated from data, as discussed in Chapter~\ref{chapter2}.
 
 \medskip
 
-Now take a series of observations, or measurements, and group them in a given sample \(\chi = \{x_1, x_2, \dots, x_n\}\). Out of them, we can compute the sample mean \(\bar{x}\), as an estimator of the true population mea \(\mu\), and the sample standard deviation \(s\), as an estimator of the true population standard deviation \(\sigma\).
+Now take a series of observations or measurements and group them into a sample \(\chi = \{x_1, x_2, \dots, x_n\}\). From this sample, we can compute the sample mean \(\bar{x}\) as an estimator of the true population mean \(\mu\), and the sample standard deviation \(s\) as an estimator of the true population standard deviation \(\sigma\).
 
 \medskip
 
-Given these three elements (the expected value \(\mu\), given by our null hypothesis \(H_0\), the sample mean \(\bar{x}\) and the sample standard deviation \(s\), as our estimators) we can compute the \(t\)-\textit{statistic}, or \(t\)-\textit{statistic test}, defined as
+Given these three elements (the expected value \(\mu\), given by our null hypothesis \(H_0\), together with the sample mean \(\bar{x}\) and the sample standard deviation \(s\), obtained from data) we can compute the \(t\)-\textit{statistic}, or \(t\)-\textit{test statistic}, defined as
 \begin{equation}
     t = \dfrac{\bar{x} - \mu}{s/\sqrt{n}} \; .
     \label{t_statistic_one_sample}
 \end{equation}
-Let's look at this quantity for a second. We will notice that as the sample mean \(\bar{x}\) approaches the expected value \(\mu\), the \(t\)-variable tends to zero. It was designed for this precise purpose, to quantify how different—or similar—our data is from the hipothesized value, and in the ideal case \(\bar{x} \rightarrow \mu\), then \(t \rightarrow 0\). 
+Let us pause for a moment to examine this quantity. As the sample mean \(\bar{x}\) approaches the expected value \(\mu\), the \(t\)-statistic tends to zero. It was designed precisely for this purpose: to quantify how different—or how similar—our observed data are with respect to the hypothesized value, so that in the ideal case \(\bar{x} \to \mu\), we have \(t \to 0\).
 
 \medskip
 
-It is important to note here that \(t\) is obtained out of a set of random observations. If I repeat the same measurements in a different sample, or a different day, or under different conditions, they may lead to different values of \(\bar{x}\) and \(s\), hence producing a different \(t\). This means that \textit{\(t\) is a real-valued random variable itself}, and it will follow \textit{some} distribution. The mathematical definition of such distribution—or density—of the \(t\)-variable, as introduced in Gosset's work [...], is called the \textit{Student's \(t\)-distribution},
+It is important to note that \(t\) is computed from a set of random observations. If we repeat the same measurements using a different sample, or at a different time, or under different conditions, we may obtain different values of \(\bar{x}\) and \(s\), and therefore a different value of \(t\). This means that \textit{\(t\) is itself a real-valued random variable}, and it follows some probability distribution. The mathematical form of this distribution, introduced in Gosset’s original work, is known as the \textit{Student’s \(t\)-distribution},
 \begin{equation}
-    f(t; \nu) = \dfrac{\Gamma \bigg( \dfrac{\nu + 1}{2} \bigg)}{\sqrt{\pi\nu} \; \Gamma \big(\dfrac{\nu}{2} \big)} \; \bigg( 1 + \dfrac{t^2}{\nu} \bigg)^{(\nu + 1) / 2} \; ,
+    f(t; \nu) = \dfrac{\Gamma\!\left(\dfrac{\nu + 1}{2}\right)}{\sqrt{\pi\nu}\,\Gamma\!\left(\dfrac{\nu}{2}\right)} \left( 1 + \dfrac{t^2}{\nu} \right)^{-(\nu + 1)/2} \; ,
     \label{t_distribution}
 \end{equation}
-where the parameter \(\nu\) is referred to as the \textit{degrees of freedom}, and it is simply related to the length of the sample \textit{\(\nu = n - 1\)}. You may see that some textbooks and literature sources write it as \(t_\nu\), which is perfectly fine and common standard, but we prefere to use here the letter \(t\) just for the statistic, and \(f(t; \nu)\) for the distribution of \(t\) given \(\nu\) degrees of freedom, rather than referring to both elements with the same symbol. It can be demonstrated that as the degrees of freedom increase, the \(t\)-distribution tends asymptotically to a Gaussian distribution, normally written as \(f(t; \nu) \to \mathcal N(0,1)\) for \(\nu\to\infty\). The explicit demonstration is out of the scope of this course, but it can be found at [...].
+where the parameter \(\nu\) is referred to as the \textit{degrees of freedom} and is simply related to the sample size by \(\nu = n - 1\). Some textbooks write the statistic as \(t_\nu\), which is standard notation, but here we reserve the symbol \(t\) for the statistic itself and \(f(t;\nu)\) for its distribution. It can be shown that as the degrees of freedom increase, the \(t\)-distribution converges to the standard normal distribution, written as \(f(t;\nu) \to \mathcal{N}(0,1)\) as \(\nu \to \infty\); the explicit proof is beyond the scope of this course.
 
 \medskip
 
-We arrive now to the final step; the computation of the P-value. Back to the well known Fisher's definition of P-value, \textit{the probability of obtaining a value at least as extreme as the one observed for our statistic, asuming the expected value—or values—given by our null hypothesis \(H_0\) and our random data}, we see that once known the distribution of the \(t\)-statistic, we just need to compute the cumulative probability—that is, the integral—of such distribution. 
+We now arrive at the final step: the computation of the p-value. Returning to Fisher’s definition of the p-value as \textit{the probability of obtaining a value at least as extreme as the one observed for the statistic, assuming the null hypothesis \(H_0\) is true}, we see that once the distribution of the \(t\)-statistic is known, the p-value can be computed by evaluating an appropriate cumulative probability.
 
 \medskip
 
-If we ask for the probability of obtaining a value \textit{strictly greater or strictly smaller than the one we observed for our statistic}, \(\mathbb{P}(t \ge t_{\text{obs}})\), we just need to compute the integral of one of the distribution tales, and it is referred to as a \textit{one-sided}—or one-\textit{tailed}—P-value. On the other hand, if we ask for the probability of obtaining a value \textit{more extreme, regardless of the direction, than the one we observed}, \(\mathbb{P}(|t| \ge |t_{\text{obs}}|)\), that would require the integral of both tails, and it is referred to as a \textit{two-sided}—or two-\textit{tailed}—P-value. Given the symmetry of the \(t\)-distribution, this reduces to double the size of the one-sided P-value. 
+If we ask for the probability of obtaining a value strictly greater (or strictly smaller) than the observed statistic, \(\mathbb{P}(t \ge t_{\text{obs}})\), we compute the integral of one tail of the distribution; this is called a \textit{one-sided} (or one-tailed) p-value. If instead we ask for the probability of obtaining a value more extreme than the observed one, regardless of direction, \(\mathbb{P}(|t| \ge |t_{\text{obs}}|)\), we integrate both tails of the distribution; this is called a \textit{two-sided} (or two-tailed) p-value. Due to the symmetry of the \(t\)-distribution, the two-sided p-value is simply twice the one-sided p-value.
 \[
-    P_{\text{one-sided}} = \mathbb{P}(t \ge t_{\text{obs}}) = \int_{t_{\text{obs}}}^{\infty} f(t; \nu) \; dt \; ,
+    p_{\text{one-sided}} = \mathbb{P}(t \ge t_{\text{obs}}) = \int_{t_{\text{obs}}}^{\infty} f(t; \nu)\, dt \; ,
+\]
+\[
+    p_{\text{two-sided}} = \mathbb{P}(|t| \ge |t_{\text{obs}}|) = 2 \int_{|t_{\text{obs}}|}^{\infty} f(t; \nu)\, dt \; .
 \]
 
-\[
-    P_{\text{two-sided}} = \mathbb{P}(|t| \ge |t_{\text{obs}}|) = 2 \int_{|t_{\text{obs}}|}^{\infty} f(t; \nu) \; dt \; .
-\]
-
-For a review of cumulative probabilities and integrating probability distributions, go back to Chapter \ref{chapter2}, and for a review on integral calculus and some warm-up examples, see Appendix \ref{appendix3}. If this feels a bit heavy, this is where computer softwares and libraries become particularly useful, as they not only implement the calculation of the statistic but the numerical integration of such distribution, yealding to the P-value without the need for manual integral calculus. Examples of these will be \texttt{scipy} library of \texttt{Python}, and the \texttt{stats} package of \texttt{R}, among many others [...].
+For a review of cumulative probabilities and probability integrals, see Chapter~\ref{chapter2}, and for a brief refresher on integral calculus, consult Appendix~\ref{appendix3}. In practice, numerical computation of p-values is typically carried out using statistical software, which evaluates both the test statistic and the corresponding tail probabilities; common examples include the \texttt{scipy} library in \texttt{Python} and the \texttt{stats} package in \texttt{R}.
 
 \medskip
 
-\textbf{Example.} For a sample of size \(n = 10\), observed average \(\bar{x} = 5.2\), variance \(s = 1.0\), and \(\mu_0 = 5\), then
+\textbf{Example.} For a sample of size \(n = 10\), observed mean \(\bar{x} = 5.2\), sample standard deviation \(s = 1.0\), and hypothesized value \(\mu = 5\), we obtain
 \[
-    t_{\text{obs}} = \frac{5.2-5}{1/\sqrt{10}} \approx 0.63,
+    t_{\text{obs}} = \frac{5.2 - 5}{1/\sqrt{10}} \approx 0.63.
 \]
-
-Given this observed value, and the degrees of freedom \(\nu=9\), the two-sided p-value would be \(p\approx0.54\).
+With \(\nu = 9\) degrees of freedom, the corresponding two-sided p-value is approximately \(p \approx 0.54\).
 
 \begin{figure}[ht]
 
@@ -232,7 +238,7 @@ Given this observed value, and the degrees of freedom \(\nu=9\), the two-sided p
 % Subsection ..........................................................................................................
 \subsection{Fisher's \(F\) test: Compare variation of two independent groups}
 
-The Fisher's variance-ratio test, or \(F\)-test for short, was introduced by Fisher in the 1920s and formally developed in his works \textit{Statistical methods for research workers} and \textit{The design of experiments}, in 1925 and 1935. The impact of Fisher's work, not only in statistics but also in evolutionary biology, experimental design, hypothesis tesing and mathematical modelling is credited still nowadays as one of the greatest among the twentieth century, by far [...].
+The Fisher's variance-ratio test, or \(F\)-test for short, was introduced by Fisher in the 1920s and formally developed in his works \textit{Statistical methods for research workers} and \textit{The design of experiments}, in 1925 and 1935. The impact of Fisher's work, not only in statistics but also in evolutionary biology, experimental design, hypothesis tesing and mathematical modelling is credited still nowadays as one of the greatest among the twentieth century, by far \cite{fisher_1924_distribution, fisher_1925_statistical, fisher_1935_design}.
 
 \medskip
 
@@ -327,7 +333,7 @@ yielding a one-sided p-value \(p\approx0.12\).
 % Subsection ..........................................................................................................
 \subsection{Fisher's ANOVA: Compare variation of multiple groups}
 
-In the same case the two-sample \(t\)-test was an extension of the one-sample case, both wollowing Gosset's formulation of the statistic and corresponding distribution, Fisher's Analysis of Variance, or ANOVA test, is a specific case of the general \(F\) test we just discussed. It was developed as part of his investigation of the sampling distributions of quadratic forms under normality, aiming to check whether two sources of variability could plausibly be attributed to the same underlying variance, without an explicit parameter-first formulation of hypotheses. Rather than comparing two variances in isolation, Fisher decomposed total variability into components attributable to multiple factors and experimental design.
+In the same way the two-sample \(t\)-test is an extension of the one-sample case, Fisher’s analysis of variance (ANOVA) can be seen as a natural extension of the variance-ratio \(F\)-test to more than two groups. It was developed by Fisher in the 1920s as part of his investigation of sampling distributions under normality and of experimental design, aiming to assess whether several sources of variability could plausibly be attributed to the same underlying population variance \cite{fisher_1925_statistical}.
 
 \medskip
 
@@ -335,72 +341,64 @@ In short, ANOVA tests whether the variability between group means is large relat
 
 \medskip
 
-Now take a series of measurements for two independent samples \(\chi_1\), \(chi_2\) of sizes \(n_1\) and \(n_2\), compute the sample variances \(s_1^2\), \(s_2^2\), as estimators of the true population variances \(\sigma_1^2\) and \(\sigma_2^2\). Then the Fisher \(F\)-\textit{statistic}, or \(F\)-\textit{statistic test}, is defined just as the ratio
+Now consider \(k\) independent samples \(\chi_1, \chi_2, \dots, \chi_k\), with sizes \(n_1, n_2, \dots, n_k\), sample means \(\bar{x}_1, \bar{x}_2, \dots, \bar{x}_k\), and an overall mean \(\bar{x}\). The null hypothesis is formulated as \textit{all groups come from populations with the same true mean}, that is \(H_0:\mu_1=\mu_2=\cdots=\mu_k\).
+
+\medskip
+
+The ANOVA \(F\)-statistic is defined as the ratio of the variance between groups to the variance within groups,
 \begin{equation}
-    F = \dfrac{s_{\text{between}}^2}{s_{\text{withinn}}^2} \; .
+    F = \dfrac{s_{\text{between}}^2}{s_{\text{within}}^2} \; ,
     \label{f_statistic_anova}
 \end{equation}
-Similarly to what happend in previous cases, we can notice that as the sample variances \(s_1^2\), \(s_2^2\) approach each other, the \(F\)-variable tends to one. It was designed for this precise purpose, to quantify how different—or similar—two independent groups are from each other, and in the ideal case \(s_1^2 \rightarrow s_2^2\), then \(F \rightarrow 1\). Recall the definition of the \(t\)-statistic, as here we can start noticing that, in general, statistic tests are normally defined such that, in the case of \(H_0\) being true, they reduce to a small, simple value.
+where
+\[
+    s_{\text{between}}^2 = \frac{1}{k-1}\sum_{i=1}^{k} n_i(\bar{x}_i-\bar{x})^2,
+    \qquad
+    s_{\text{within}}^2 = \frac{1}{N-k}\sum_{i=1}^{k}\sum_{j=1}^{n_i}(x_{ij}-\bar{x}_i)^2,
+\]
+and \(N=\sum_{i=1}^k n_i\). As in the previous cases, the statistic is constructed so that, when the null hypothesis is true and group means are similar, the ratio remains close to one.
 
 \medskip
 
-% Subsection ..........................................................................................................
+The \(F\)-statistic is again a real-valued random variable, and under the null hypothesis it follows a Fisher \(F\)-distribution with degrees of freedom \(\nu_1=k-1\) and \(\nu_2=N-k\). P-values are computed by integrating the right tail of this distribution, exactly as in the two-sample \(F\)-test.
+
+%% Subsection ..........................................................................................................
 \subsection{Pearson's $\chi^{2}$ test: Compare distributions and testing for normality}
 
-The chi-square test was introduced by Karl Pearson in 1900 as part of his work on goodness-of-fit and contingency tables. Pearson's original formulation was oriented towards evaluating distriutions and quantify similarly, rather than formal hypothesis testing: Given a list of observations \{\(O_1, O_2, \dots, O_n\)\} and a series of expectations \{\(E_1, E_2, \dots, E_n\)\}, the \(\chi^2\) statistic
+The chi-square test was introduced by Karl Pearson in 1900 as part of his work on goodness-of-fit and contingency tables \cite{pearson_1900_chisquare}. Pearson’s original formulation was oriented toward measuring discrepancy between observed and expected frequencies, rather than toward formal decision-based hypothesis testing. Given observed counts \(\{O_1,O_2,\dots,O_k\}\) and expected counts \(\{E_1,E_2,\dots,E_k\}\), the \(\chi^2\)-statistic
 \begin{equation}
-    \chi^2 = \sum_{i} \frac{(O_i - E_i)^2}{E_i}
+    \chi^2 = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}
     \label{chi2_statistic}
 \end{equation}
-was conceived as a numerical measure of discrepancy between observed and expected frequencies under a proposed model. Large values of \(\chi^2\) indicated poor agreement, while a \(\chi^2\) close to zero indicates point-wise similarly. \footnote{Pearson’s original work does not distinguish null and alternative hypotheses in the modern sense, nor does it invoke Type~I and Type~II errors; these concepts were introduced later by Neyman and Pearson in the late 1920s and early 1930s.}
+was conceived as a numerical measure of lack of agreement between data and model, with larger values indicating poorer fit.\footnote{Pearson’s original formulation predates the modern null/alternative hypothesis framework and the notion of Type~I and Type~II errors.}
 
 \medskip
 
-Same as in the two previous examples, the \(\chi^2\)-statistic is obtained out of a set of random observations. If I repeat the same measurements in a different sample, or a different day, or under different conditions, they may lead to different values \(O_i\), hence producing a different \(\chi^2\). This means that \textit{\(\chi^2\) is a real-valued random variable itself}, and it will follow \textit{some} distribution. The mathematical definition of such distribution—or density—of the \(\chi^2\)-variable, as introduced by Pearson in his work [...], is called the Pearson's \textit{\(\chi^2\)-distribution},
+As in the previous examples, the \(\chi^2\)-statistic is computed from random data, and repeating the experiment would generally lead to different observed counts and hence a different value of \(\chi^2\). This means that \textit{\(\chi^2\) is itself a random variable}, and it follows a probability distribution known as the Pearson \(\chi^2\)-distribution,
 \begin{equation}
-    f(\chi^2; \nu) = \dfrac{(\chi^2)^{\nu/2 - 1} \; e^{-\chi^2/2}}{2^{\nu/2} \; \Gamma \bigg( \dfrac{\nu}{2} \bigg)} \; ,
+    f(\chi^2;\nu) = \frac{(\chi^2)^{\nu/2-1}e^{-\chi^2/2}}{2^{\nu/2}\Gamma(\nu/2)} \; ,
     \label{chi2_distribution}
 \end{equation}
+defined for \(\chi^2>0\).
 
-where \(\chi^2\) is a strictly positive quantity, and the degrees of freedom \(\nu\) depend on the number of constraints imposed by the data structure and on the number of parameters estimated under the null hypothesis, unlike the \(t\)-test where the degrees of freedom are always \(n-1\) due to the estimation of a single mean, now they are defined as. 
+\medskip
+
+Unlike the \(t\)-test, where the degrees of freedom are always \(n-1\), the degrees of freedom \(\nu\) of the \(\chi^2\)-test depend on the structure of the data and on how many parameters are estimated under the null hypothesis. In particular:
 \begin{itemize}
-    \item When used to evaluate the goodness-of-fit test (multinomial, with \(k\) categories) \(\nu = n - 1 - p,\) where \(p\) is the number of parameters estimated from the data.  In particular, \(\nu = n - 1\) if no parameters are estimated, and \(\nu = n - 2\) if one parameter is estimated (e.g. a mean). 
-    \item When used to test of independence in a contingency table (\(r \times c\)). \(\nu = (r-1)(c-1)\). In all cases, the degrees of freedom reflect the effective number of independent components remaining after accounting for normalization constraints and parameter estimation. 
+    \item For a goodness-of-fit test with \(k\) categories, \(\nu = k - 1 - p\), where \(p\) is the number of parameters estimated from the data.
+    \item For a test of independence in an \(r\times c\) contingency table, \(\nu = (r-1)(c-1)\).
 \end{itemize}
 
 \medskip
 
-In the modern framework, the chi-square test is formulated with an explicit null hypothesis and a P-value. One specifies
+In the modern framework, the chi-square test is formulated with an explicit null hypothesis and a p-value. One specifies a null hypothesis \(H_0\) describing the expected distribution or independence structure, derives the asymptotic distribution \(\chi^2\sim\chi^2_\nu\) under \(H_0\), and computes the p-value as the right-tail probability
 \[
-    H_0:\ \text{the observed frequencies follow the model } F_0
+    p = \mathbb{P}(\chi^2 \ge \chi^2_{\text{obs}}) = \int_{\chi^2_{\text{obs}}}^{\infty} f(\chi^2;\nu)\,d\chi^2.
 \]
-(or independence in a contingency table), derives the asymptotic distribution
-
-\[
-    \chi^2 \sim \chi^2_{\nu} \quad\text{under } H_0,
-\]
-and evaluates significance via the tail probability of the observed statistic. This reformulation transformed Pearson’s discrepancy measure into a decision-theoretic test with controlled error rates, fully aligned with modern parametric inference.
 
 \medskip
 
-If we ask for the probability of obtaining a value \textit{strictly greater or strictly smaller than the one we observed for our statistic}, \(\mathbb{P}(F \ge F_{\text{obs}})\), we just need to compute the integral of one of the distribution tales, and it give the one-sided P-value. But the two-sided case, the probability of obtaining a value \textit{more extreme, regardless of the direction} would require the integral of both tails, and given the asymmetry of the \(F\)-distribution, becomes a non-trivial task. The common formulation is written as follows
-\[
-    P_{\text{one-sided}} = \mathbb{P} (\chi^2 \ge \chi^2_{\text{obs}}) = \int_{\chi^2_{\text{obs}}}^{\infty} f(\chi^2; \nu) \; d\chi^2,
-\]
-
-\[
-    P_{\text{two-sided}} = 2 \min \!\left\{ \int_{0}^{\chi^2_{\text{obs}}} f(\chi^2; \nu) \; d\chi^2, \; \int_{x_{\text{obs}}}^{\infty} f(\chi^2; \nu) \; d\chi^2 \right\}.
-\]
-
-For a review of cumulative probabilities and integrating probability distributions, go back to Chapter \ref{chapter2}, and for a review on integral calculus and some warm-up examples, see Appendix \ref{appendix3}. If this feels a bit heavy, this is where computer softwares and libraries become particularly useful, as they not only implement the calculation of the statistic but the numerical integration of such distribution, yealding to the P-value without the need for manual integral calculus. Examples of these will be \texttt{scipy} library of \texttt{Python}, and the \texttt{stats} package of \texttt{R}, among many others [...].
-
-\medskip
-
-A deeper theoretical connection appears through likelihood-based testing. In many settings, Pearson’s chi-square statistic is asymptotically equivalent to the likelihood-ratio statistic
-\[
-    -2 \log \Lambda,
-\]
-a result formalized by Wilks in the 1930s.  Both statistics converge in distribution to a chi-square law under the null hypothesis, reflecting the quadratic approximation of the log-likelihood near the true parameter. From this perspective, the classical chi-square test can be viewed as an early large-sample approximation to likelihood-based inference, with likelihood-ratio, Wald, and score tests providing a unified parametric framework that generalizes Pearson’s original idea.
+A deeper theoretical connection appears through likelihood-based testing: Pearson’s \(\chi^2\)-statistic is asymptotically equivalent to the likelihood-ratio statistic \(-2\log\Lambda\), a result formalized by Wilks in the 1930s. Both converge to a chi-square distribution under the null hypothesis, providing a unifying asymptotic framework together with Wald and score tests.
 
 \begin{figure}[ht]
 
@@ -441,17 +439,15 @@ a result formalized by Wilks in the 1930s.  Both statistics converge in distribu
 % Subsection ..........................................................................................................
 \subsection{The Wald test: asymptotic behavior}
 
-The Wald test was developed in the 1930s by Abraham Wald in the context of general parametric inference and decision theory. Its purpose is to test hypotheses about finite-dimensional parameters in statistical models using
-large-sample approximations. Unlike classical tests tailored to specific settings, the Wald test provides a general framework applicable to linear models, generalized linear models, and maximum likelihood estimation.
+The Wald test was developed by Abraham Wald in the 1930s as part of a general asymptotic theory of hypothesis testing for parametric models with large samples \cite{wald_1943_tests}. Its purpose is to test hypotheses about finite-dimensional parameters in statistical models using large-sample approximations. Unlike classical tests tailored to specific settings, the Wald test provides a general framework applicable to linear models, generalized linear models, and maximum likelihood estimation.
 
 \medskip
 
-Conceptually, the Wald test generalizes classical parametric tests such as the \(t\)- and \(F\)-tests by formulating hypotheses directly in terms of model parameters. It thus unifies earlier procedures within a common asymptotic theory.
+Conceptually, the Wald test generalizes classical parametric tests such as the \(t\)- and \(F\)-tests by formulating hypotheses directly in terms of model parameters. In this sense, it unifies earlier procedures within a common asymptotic theory.
 
 \medskip
 
-Let \(\hat\theta\) be an estimator of a parameter \(\theta\). The Wald statistic
-is
+Let \(\hat\theta\) be an estimator of a parameter \(\theta\). The Wald statistic is defined as
 \[
     W = (\hat\theta - \theta_0)^\top \widehat{\mathrm{Var}}(\hat\theta)^{-1} (\hat\theta - \theta_0).
 \]
@@ -459,7 +455,7 @@ Under the null hypothesis and suitable regularity conditions,
 \[
     W \xrightarrow{d} \chi^2_p,
 \]
-where \(p\) is the number of tested constraints.  P-values are computed from the upper tail of the chi-square distribution.
+where \(p\) is the number of tested constraints. P-values are computed from the upper tail of the chi-square distribution.
 
 % Parametric and non-parametric tests .................................................................................
 \section{Parametric and non-parametric tests}
@@ -485,16 +481,16 @@ To organize the tests presented in this section, it is helpful to focus on their
 % Subsection ..........................................................................................................
 \subsection{Wilcoxon signed-rank test}
 
-The Wilcoxon signed-rank test was introduced by Frank Wilcoxon in 1945 as a distribution-free alternative to the one-sample and paired-sample \(t\)-tests. It was motivated by situations in which normality could not be assumed but a test of central location was still desired. The parametric analogue is the one-sample or paired \(t\)-test, which tests a hypothesis about a mean. By contrast, the Wilcoxon signed-rank test targets symmetry of the distribution about a specified location.
+The Wilcoxon signed-rank test was introduced by Frank Wilcoxon in 1945 as a distribution-free alternative to the one-sample and paired-sample \(t\)-tests \cite{wilcoxon_1945_ranks}. It was motivated by situations in which normality could not be assumed but a test of central location was still desired. The parametric analogue is the one-sample or paired \(t\)-test, which tests a hypothesis about a mean. By contrast, the Wilcoxon signed-rank test targets symmetry of the distribution about a specified location.
 
 \medskip
 
-The test statistic is based on the ranks of the absolute deviations \(|X_i - \theta_0|\), with signs retained. Under the null hypothesis of symmetry, the statistic has a known finite-sample distribution; for moderate to large samples, it is commonly approximated by a normal distribution, from which p-values are obtained.
+The test statistic is based on the ranks of the absolute deviations \(|x_i - \theta_0|\), with signs retained. Under the null hypothesis of symmetry, the statistic has a known finite-sample distribution; for moderate to large samples, it is commonly approximated by a normal distribution, from which p-values are obtained.
 
 % Subsection ..........................................................................................................
 \subsection{Mann--Whitney \(U\) test}
 
-The Mann--Whitney \(U\) test, independently introduced by Mann and Whitney in 1947, provides a non-parametric alternative to the two-sample \(t\)-test for independent samples.  It was designed to compare two populations without assuming normality or equal variances. The parametric analogue is the two-sample \(t\)-test, which compares population means. The Mann--Whitney test instead assesses whether one distribution tends to produce larger observations than the other.
+The Mann--Whitney \(U\) test, introduced by Mann and Whitney in 1947, provides a non-parametric alternative to the two-sample \(t\)-test for independent samples \cite{mann_whitney_1947_test}. It was designed to compare two populations without assuming normality or equal variances. The parametric analogue is the two-sample \(t\)-test, which compares population means. The Mann--Whitney test instead assesses whether one distribution tends to produce larger observations than the other.
 
 \medskip
 
@@ -503,17 +499,17 @@ The test statistic \(U\) is constructed from the ranks of the pooled samples. Un
 % Subsection ..........................................................................................................
 \subsection{Levene median-based test}
 
-Levene’s test was proposed by Howard Levene in 1960 as a robust alternative to Fisher’s variance-ratio test.  The median-based version, later emphasized by Brown and Forsythe, improves robustness against non-normality. The parametric analogue is the classical \(F\)-test for equality of variances, which is highly sensitive to departures from normality.  Levene’s test replaces variances by absolute deviations from group centers.
+Levene's test was proposed by Howard Levene in 1960 as a robust alternative to Fisher’s variance-ratio test \cite{levene_1960_variances}. The median-based version, later emphasized by Brown and Forsythe, improves robustness against non-normality. The parametric analogue is the classical \(F\)-test for equality of variances, which is highly sensitive to departures from normality. Levene’s test replaces variances by absolute deviations from group centers.
 
 \medskip
 
-The statistic is computed by applying a one-way ANOVA to the transformed data \(|X_{ij} - \tilde X_i|\), where \(\tilde X_i\) is the group median. Under the null hypothesis of equal spreads, the test statistic follows approximately an \(F\) distribution, from which p-values are obtained.
+The statistic is computed by applying a one-way ANOVA to the transformed data \(|x_{ij} - \tilde{x}_i|\), where \(\tilde{x}_i\) is the group median. Under the null hypothesis of equal spreads, the test statistic follows approximately an \(F\) distribution, from which p-values are obtained.
 
 % Subsection ..........................................................................................................
 \subsection{Kruskal--Wallis test}
 
 The Kruskal--Wallis test was introduced in 1952 by Kruskal and Wallis as a non-parametric extension of one-way ANOVA.  It was motivated by the need to compare more than two groups without assuming normality. The parametric analogue is Fisher’s one-way ANOVA, which tests equality of group
-means. The Kruskal--Wallis test instead evaluates whether the group distributions are identical.
+means. The Kruskal--Wallis test instead evaluates whether the group distributions are identical \cite{kruskal_wallis_1952_use}.
 
 \medskip
 
@@ -526,7 +522,7 @@ Under the null hypothesis, \(H\) converges in distribution to \(\chi^2_{k-1}\). 
 % Subsection ..........................................................................................................
 \subsection{The Kolmogorov--Smirnov test}
 
-The Kolmogorov--Smirnov test was developed in the 1930s by Kolmogorov and later extended by Smirnov as a general goodness-of-fit procedure.  It compares an empirical distribution to a fully specified theoretical distribution. The parametric analogue is the chi-square goodness-of-fit test, which relies on binning and asymptotic approximations.  The Kolmogorov--Smirnov test instead measures the maximum discrepancy between distribution functions.
+The Kolmogorov--Smirnov test was developed in the 1930s by Kolmogorov and later extended by Smirnov as a general goodness-of-fit procedure \cite{kolmogorov_1933_sulla,smirnov_1948_table}. It compares an empirical distribution to a fully specified theoretical distribution. The parametric analogue is the chi-square goodness-of-fit test, which relies on binning and asymptotic approximations. The Kolmogorov--Smirnov test instead measures the maximum discrepancy between distribution functions.
 
 The test statistic is
 \[
@@ -537,13 +533,13 @@ Under the null hypothesis, \(D\) has a known distribution independent of \(F_0\)
 % Subsection ..........................................................................................................
 \subsection{The Shapiro--Wilk test}
 
-The Shapiro--Wilk test was introduced by Shapiro and Wilk in 1965 as a powerful goodness-of-fit test specifically designed to assess normality. It was motivated by the low power of general-purpose tests when applied to normal models. The parametric analogue is not a test of means or variances, but rather the assumption of normality underlying \(t\)-tests, \(F\)-tests, and ANOVA. The Shapiro--Wilk test directly targets this assumption.
+The Shapiro--Wilk test was introduced by Shapiro and Wilk in 1965 as a powerful goodness-of-fit test specifically designed to assess normality \cite{shapiro_wilk_1965_normality}. It was motivated by the low power of general-purpose tests when applied to normal models. The parametric analogue is not a test of means or variances, but rather the assumption of normality underlying \(t\)-tests, \(F\)-tests, and ANOVA. The Shapiro--Wilk test directly targets this assumption.
 
 The test statistic is
 \[
-    W = \frac{\left(\sum_{i=1}^n a_i x_{(i)}\right)^2}{\sum_{i=1}^n (x_i - \bar x)^2} \; ,
+    W = \frac{\left(\sum_{i=1}^n a_i x_{(i)}\right)^2}{\sum_{i=1}^n (x_i - \bar{x})^2} \; ,
 \]
-where the coefficients \(a_i\) depend on normal order statistics.  The distribution of \(W\) under the null hypothesis is obtained via approximation or simulation, and p-values are computed accordingly.
+where the coefficients \(a_i\) depend on normal order statistics. The distribution of \(W\) under the null hypothesis is obtained via approximation or simulation, and p-values are computed accordingly.
 
 % Error types in hypothesis testing ...................................................................................
 \section{Error types in hypothesis testing}
