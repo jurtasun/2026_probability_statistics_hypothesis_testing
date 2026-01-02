@@ -344,99 +344,63 @@ Similarly to what happend in previous cases, we can notice that as the sample va
 
 \medskip
 
-If we pay close attention, we can notice that unlike the \(t\)-test, where the null hypothesis was stated directly in terms of a \(\mu\) parameter, appearing explicitly in the definition of the \(t\)-statistic, there is no explicit trace of \(H_0\) in the definition of our \(F\), which is computed just as the ratio of two sample variances. There is a historical reason for this, that we will revisit further in this chapter, related to how the very idea of hypotheis, parameter and statistic test were used in Fisher's time, different from modern usage. As we will see, the classical \(F\)-test encodes the null hypothesis through the \textit{condition under which the ratio of \(F\) of sample variances follow a specific distribution}. In practice, this reflects the fact that the \(t\)-test is formulated around an explicit parameter hypothesis, whereas the \(F\)-test arose from Fisher's analysis of sampling distributions.
+% Subsection ..........................................................................................................
+\subsection{Pearson's $\chi^{2}$ test: Compare distributions and testing for normality}
+
+The chi-square test was introduced by Karl Pearson in 1900 as part of his work on goodness-of-fit and contingency tables. Pearson's original formulation was oriented towards evaluating distriutions and quantify similarly, rather than formal hypothesis testing: Given a list of observations \{\(O_1, O_2, \dots, O_n\)\} and a series of expectations \{\(E_1, E_2, \dots, E_n\)\}, the \(\chi^2\) statistic
+\begin{equation}
+    \chi^2 = \sum_{i} \frac{(O_i - E_i)^2}{E_i}
+    \label{chi2_statistic}
+\end{equation}
+was conceived as a numerical measure of discrepancy between observed and expected frequencies under a proposed model. Large values of \(\chi^2\) indicated poor agreement, while a \(\chi^2\) close to zero indicates point-wise similarly. \footnote{Pearson’s original work does not distinguish null and alternative hypotheses in the modern sense, nor does it invoke Type~I and Type~II errors; these concepts were introduced later by Neyman and Pearson in the late 1920s and early 1930s.}
 
 \medskip
 
-Same as in the two previous examples, the \(F\)-statistic is obtained out of a set of random observations. If I repeat the same measurements in a different sample, or a different day, or under different conditions, they may lead to different values \(s_1\) and \(s_2\), hence producing a different \(F\). This means that \textit{\(F\) is a real-valued random variable itself}, and it will follow \textit{some} distribution. The mathematical definition of such distribution—or density—of the \(F\)-variable, as introduced in Fisher's [...], is called the Fisher's \textit{\(F\)-distribution},
-[...]
-where the parameters \(\nu_1\), \(\nu_2\) represent the \textit{degrees of freedom}, and they are related to the length of the samples \(\nu_1 = n_1 - 1\), \(\nu_2 = n_2 - 1\). You may see that some textbooks and literature sources write it as \(F_{\nu_1, \nu_2}\), which is perfectly fine and common standard, but we prefere to use here the letter \(F\) just for the statistic, and \(f(F; \nu_1, \nu_2)\) for the distribution of \(F\) given \(\nu_1\) and \(\nu_2\) degrees of freedom, rather than referring to both elements with the same symbol. It can be demonstrated that as \(\nu_1,\nu_2 \to \infty\), \(f(t; \nu_1, \nu_2)\) concentrates at \(1\) and \(\log f(F; \nu_1, \nu_2)\) becomes approximately Gaussian. The explicit demonstration is out of the scope of this course, but it can be found at [...].
+Same as in the two previous examples, the \(\chi^2\)-statistic is obtained out of a set of random observations. If I repeat the same measurements in a different sample, or a different day, or under different conditions, they may lead to different values \(O_i\), hence producing a different \(\chi^2\). This means that \textit{\(\chi^2\) is a real-valued random variable itself}, and it will follow \textit{some} distribution. The mathematical definition of such distribution—or density—of the \(\chi^2\)-variable, as introduced by Pearson in his work [...], is called the Pearson's \textit{\(\chi^2\)-distribution},
+\begin{equation}
+    f(\chi^2; \nu) = \dfrac{(\chi^2)^{\nu/2 - 1} \; e^{-\chi^2/2}}{2^{\nu/2} \; \Gamma \bigg( \dfrac{\nu}{2} \bigg)} \; ,
+    \label{chi2_distribution}
+\end{equation}
 
-As we mentioned alread, it is under the null hypothesis \(H_0: \sigma_1^2 = \sigma_2^2\) that the \(F\)-statistic follows the Fisher distribution. Modern Wald and likelihood-ratio tests provide a unified parameter-based framework.
+where \(\chi^2\) is a strictly positive quantity, and the degrees of freedom \(\nu\) depend on the number of constraints imposed by the data structure and on the number of parameters estimated under the null hypothesis, unlike the \(t\)-test where the degrees of freedom are always \(n-1\) due to the estimation of a single mean, now they are defined as. 
+\begin{itemize}
+    \item When used to evaluate the goodness-of-fit test (multinomial, with \(k\) categories) \(\nu = n - 1 - p,\) where \(p\) is the number of parameters estimated from the data.  In particular, \(\nu = n - 1\) if no parameters are estimated, and \(\nu = n - 2\) if one parameter is estimated (e.g. a mean). 
+    \item When used to test of independence in a contingency table (\(r \times c\)). \(\nu = (r-1)(c-1)\). In all cases, the degrees of freedom reflect the effective number of independent components remaining after accounting for normalization constraints and parameter estimation. 
+\end{itemize}
 
 \medskip
 
-Back to the computation of the P-value, given Fisher's definition, \textit{the probability of obtaining a value at least as extreme as the one observed for our statistic, asuming the expected value—or values—given by our null hypothesis \(H_0\) and our random data}, we just need to compute the cumulative probability—that is, the integral—of the \(F\) distribution. 
+In the modern framework, the chi-square test is formulated with an explicit null hypothesis and a P-value. One specifies
+\[
+    H_0:\ \text{the observed frequencies follow the model } F_0
+\]
+(or independence in a contingency table), derives the asymptotic distribution
+
+\[
+    \chi^2 \sim \chi^2_{\nu} \quad\text{under } H_0,
+\]
+and evaluates significance via the tail probability of the observed statistic. This reformulation transformed Pearson’s discrepancy measure into a decision-theoretic test with controlled error rates, fully aligned with modern parametric inference.
 
 \medskip
 
 If we ask for the probability of obtaining a value \textit{strictly greater or strictly smaller than the one we observed for our statistic}, \(\mathbb{P}(F \ge F_{\text{obs}})\), we just need to compute the integral of one of the distribution tales, and it give the one-sided P-value. But the two-sided case, the probability of obtaining a value \textit{more extreme, regardless of the direction} would require the integral of both tails, and given the asymmetry of the \(F\)-distribution, becomes a non-trivial task. The common formulation is written as follows
 \[
-    P_{\text{one-sided}} = \mathbb{P}(F \ge F_{\text{obs}}) = \int_{F_{\text{obs}}}^{\infty} f(F; \nu_1, \nu_2) \; df \; ,
+    P_{\text{one-sided}} = \mathbb{P} (\chi^2 \ge \chi^2_{\text{obs}}) = \int_{\chi^2_{\text{obs}}}^{\infty} f(\chi^2; \nu) \; d\chi^2,
 \]
 
 \[
-    P_{\text{two-sided}} = 2 \min \!\left\{ \int_{0}^{F_{\text{obs}}} f(F; \nu_1, \nu_2) \; df, \; \int_{F_{\text{obs}}}^{\infty} f(F; \nu_1, \nu_2) \; df \right\}.
+    P_{\text{two-sided}} = 2 \min \!\left\{ \int_{0}^{\chi^2_{\text{obs}}} f(\chi^2; \nu) \; d\chi^2, \; \int_{x_{\text{obs}}}^{\infty} f(\chi^2; \nu) \; d\chi^2 \right\}.
 \]
 
 For a review of cumulative probabilities and integrating probability distributions, go back to Chapter \ref{chapter2}, and for a review on integral calculus and some warm-up examples, see Appendix \ref{appendix3}. If this feels a bit heavy, this is where computer softwares and libraries become particularly useful, as they not only implement the calculation of the statistic but the numerical integration of such distribution, yealding to the P-value without the need for manual integral calculus. Examples of these will be \texttt{scipy} library of \texttt{Python}, and the \texttt{stats} package of \texttt{R}, among many others [...].
 
 \medskip
 
-\textbf{Example.}
-If \(n_1=n_2=10\), \(S_1^2=4\), \(S_2^2=2\), then
-\[
-f_{\text{obs}}=2,\qquad \nu_1=\nu_2=9,
-\]
-yielding a one-sided p-value \(p\approx0.12\).
-
-% Subsection ..........................................................................................................
-\subsection{Pearson's $\chi^{2}$ test: Compare distributions and testing for normality}
-
-\paragraph{Pearson’s \(\chi^2\) test and the chi-square distribution.}
-Pearson’s \(\chi^2\) test (1900) assesses agreement between observed and expected frequencies.  
-With observed counts \(O_i\) and expected counts \(E_i\),
-\[
-    X^2 = \sum_{i=1}^{k}\frac{(O_i-E_i)^2}{E_i}, \qquad X^2\sim\chi^2_\nu,
-\]
-where \(\nu=k-1-p\) and \(p\) is the number of estimated parameters.
-
-\emph{p-values.}
-\[
-    \text{One-sided (standard): }\; p=\mathbb P(X\ge x_{\text{obs}}) = \int_{x_{\text{obs}}}^{\infty} f_{\chi^2_\nu}(x)\,dx,
-\]
-\[
-    \text{Two-sided: }\; p = 2\min\!\left\{ \int_{0}^{x_{\text{obs}}} f_{\chi^2_\nu}(x)\,dx, \; \int_{x_{\text{obs}}}^{\infty} f_{\chi^2_\nu}(x)\,dx \right\}.
-\]
-
-\paragraph{The chi-square test: historical and modern perspectives.}
-The chi-square test was introduced by Karl Pearson in 1900 as part of his work on goodness-of-fit and contingency tables.  Pearson’s original formulation was rooted in biometric practice rather than formal hypothesis testing: the statistic
-\[
-    \chi^2 = \sum_{i} \frac{(O_i - E_i)^2}{E_i}
-\]
-was conceived as a numerical measure of discrepancy between observed and expected frequencies under a proposed model.  Large values of \(\chi^2\) indicated poor agreement, but early usage emphasized comparison with tabulated
-critical values and qualitative judgment, reflecting a period that predates the formal Neyman--Pearson framework.\footnote{Pearson’s original work does not
-distinguish null and alternative hypotheses in the modern sense, nor does it invoke Type~I and Type~II errors; these concepts were introduced later by Neyman and Pearson in the late 1920s and early 1930s.}
-
-\medskip
-
-In the modern framework, the chi-square test is formulated with an explicit null hypothesis and a p-value.  One specifies
-\[
-    H_0:\ \text{the observed frequencies follow the model } F_0
-\]
-(or independence in a contingency table), derives the asymptotic distribution
-\[
-    \chi^2 \sim \chi^2_{\nu} \quad\text{under } H_0,
-\]
-and evaluates significance via the tail probability of the observed statistic. This reformulation transformed Pearson’s discrepancy measure into a decision-theoretic test with controlled error rates, fully aligned with modern parametric inference.
-
 A deeper theoretical connection appears through likelihood-based testing. In many settings, Pearson’s chi-square statistic is asymptotically equivalent to the likelihood-ratio statistic
 \[
     -2 \log \Lambda,
 \]
-a result formalized by Wilks in the 1930s.  Both statistics converge in distribution to a chi-square law under the null hypothesis, reflecting the
-quadratic approximation of the log-likelihood near the true parameter. From this perspective, the classical chi-square test can be viewed as an early
-large-sample approximation to likelihood-based inference, with likelihood-ratio, Wald, and score tests providing a unified parametric framework that generalizes
-Pearson’s original idea.
-
-\emph{Example.}
-For \(k=4\) categories with \(\nu=3\) and observed statistic \(x_{\text{obs}}=6\),
-the right-tailed p-value is \(p\approx0.11\).
-As \(\nu\to\infty\),
-\[
-\frac{X^2-\nu}{\sqrt{2\nu}}\xrightarrow[]{d}\mathcal N(0,1),
-\]
-so the chi-square becomes approximately Gaussian after centering and scaling.
+a result formalized by Wilks in the 1930s.  Both statistics converge in distribution to a chi-square law under the null hypothesis, reflecting the quadratic approximation of the log-likelihood near the true parameter. From this perspective, the classical chi-square test can be viewed as an early large-sample approximation to likelihood-based inference, with likelihood-ratio, Wald, and score tests providing a unified parametric framework that generalizes Pearson’s original idea.
 
 \begin{figure}[ht]
 
@@ -475,32 +439,111 @@ so the chi-square becomes approximately Gaussian after centering and scaling.
 \end{figure}
 
 % Subsection ..........................................................................................................
-\subsection{The Wald test: assymptotic behavior}
+\subsection{The Wald test: asymptotic behavior}
 
-The Wald test is parametric because it tests hypotheses about finite-dimensional model parameters using an estimator whose—asymptotic—distribution is derived from an assumed parametric model.
+The Wald test was developed in the 1930s by Abraham Wald in the context of general parametric inference and decision theory. Its purpose is to test hypotheses about finite-dimensional parameters in statistical models using
+large-sample approximations. Unlike classical tests tailored to specific settings, the Wald test provides a general framework applicable to linear models, generalized linear models, and maximum likelihood estimation.
+
+\medskip
+
+Conceptually, the Wald test generalizes classical parametric tests such as the \(t\)- and \(F\)-tests by formulating hypotheses directly in terms of model parameters. It thus unifies earlier procedures within a common asymptotic theory.
+
+\medskip
+
+Let \(\hat\theta\) be an estimator of a parameter \(\theta\). The Wald statistic
+is
+\[
+    W = (\hat\theta - \theta_0)^\top \widehat{\mathrm{Var}}(\hat\theta)^{-1} (\hat\theta - \theta_0).
+\]
+Under the null hypothesis and suitable regularity conditions,
+\[
+    W \xrightarrow{d} \chi^2_p,
+\]
+where \(p\) is the number of tested constraints.  P-values are computed from the upper tail of the chi-square distribution.
 
 % Parametric and non-parametric tests .................................................................................
 \section{Parametric and non-parametric tests}
 
-% Subsection ..........................................................................................................
-\subsection{Wilcoxon signed-ranked test}
+Statistical tests are often described as \emph{parametric} or \emph{non-parametric}, a distinction that reflects both historical development and underlying philosophical views about statistical modeling. Parametric tests were developed first, at the beginning of the twentieth century, in a context where probability models were seen as idealized descriptions of data. These tests assume that observations come from a distribution belonging to a family described by a small number of parameters, such as the mean and variance. Statistical inference then focuses directly on these parameters.
+
+\medskip
+
+In practice, parametric tests are frequently associated with the Gaussian (normal) distribution. This historical association arises because many of the foundational procedures of classical statistics—such as the \(t\)-test, the \(F\)-test, and analysis of variance—are exact under normality. As a result, the parametric versus non-parametric distinction is often informally described as “Gaussian versus non-Gaussian.”  This simplification is useful pedagogically, but it should be remembered that parametric models also include many non-Gaussian distributions, such as the binomial or Poisson.
+
+\medskip
+
+Non-parametric tests emerged later, largely in the 1940s and 1950s, motivated by the recognition that real data often deviate from idealized models. Rather than assuming a specific distributional form, these methods aim to remain valid under broad and unspecified distributions.  They typically rely on ranks, signs, or empirical distributions, and therefore make fewer assumptions about the shape of the data.
+
+\medskip
+
+From a historical perspective, the development of statistical testing can be roughly organized as a timeline. Early work by Pearson and Fisher between 1900 and 1930 established the foundations of parametric inference, including the chi-square test, the \(t\)-test, and analysis of variance. In the mid-twentieth century, researchers such as Wilcoxon, Mann, and Whitney introduced distribution-free methods to address practical limitations of these classical procedures. Later developments, including asymptotic theory and robust statistics, provided a unifying framework that connects parametric and non-parametric approaches.
+
+\medskip
+
+To organize the tests presented in this section, it is helpful to focus on their \emph{goal} rather than on their label. Some tests are designed to compare central tendencies between samples, others to assess variability, and others to evaluate the overall agreement between data and a theoretical model. Viewed this way, non-parametric tests are not simply substitutes for parametric ones, but complementary tools that reflect different assumptions, historical traditions, and inferential aims.
 
 % Subsection ..........................................................................................................
-\subsection{Mann–Whitney \(U\) test}
+\subsection{Wilcoxon signed-rank test}
+
+The Wilcoxon signed-rank test was introduced by Frank Wilcoxon in 1945 as a distribution-free alternative to the one-sample and paired-sample \(t\)-tests. It was motivated by situations in which normality could not be assumed but a test of central location was still desired. The parametric analogue is the one-sample or paired \(t\)-test, which tests a hypothesis about a mean. By contrast, the Wilcoxon signed-rank test targets symmetry of the distribution about a specified location.
+
+\medskip
+
+The test statistic is based on the ranks of the absolute deviations \(|X_i - \theta_0|\), with signs retained. Under the null hypothesis of symmetry, the statistic has a known finite-sample distribution; for moderate to large samples, it is commonly approximated by a normal distribution, from which p-values are obtained.
+
+% Subsection ..........................................................................................................
+\subsection{Mann--Whitney \(U\) test}
+
+The Mann--Whitney \(U\) test, independently introduced by Mann and Whitney in 1947, provides a non-parametric alternative to the two-sample \(t\)-test for independent samples.  It was designed to compare two populations without assuming normality or equal variances. The parametric analogue is the two-sample \(t\)-test, which compares population means. The Mann--Whitney test instead assesses whether one distribution tends to produce larger observations than the other.
+
+\medskip
+
+The test statistic \(U\) is constructed from the ranks of the pooled samples. Under the null hypothesis that the two distributions are identical, \(U\) has a known exact distribution and, asymptotically, a normal distribution. P-values are computed either exactly or via the normal approximation.
 
 % Subsection ..........................................................................................................
 \subsection{Levene median-based test}
 
-% Subsection ..........................................................................................................
-\subsection{Kruskal-Wallis test}
+Levene’s test was proposed by Howard Levene in 1960 as a robust alternative to Fisher’s variance-ratio test.  The median-based version, later emphasized by Brown and Forsythe, improves robustness against non-normality. The parametric analogue is the classical \(F\)-test for equality of variances, which is highly sensitive to departures from normality.  Levene’s test replaces variances by absolute deviations from group centers.
+
+\medskip
+
+The statistic is computed by applying a one-way ANOVA to the transformed data \(|X_{ij} - \tilde X_i|\), where \(\tilde X_i\) is the group median. Under the null hypothesis of equal spreads, the test statistic follows approximately an \(F\) distribution, from which p-values are obtained.
 
 % Subsection ..........................................................................................................
-\subsection{The Kolmogorov-Smirnov test}
+\subsection{Kruskal--Wallis test}
+
+The Kruskal--Wallis test was introduced in 1952 by Kruskal and Wallis as a non-parametric extension of one-way ANOVA.  It was motivated by the need to compare more than two groups without assuming normality. The parametric analogue is Fisher’s one-way ANOVA, which tests equality of group
+means. The Kruskal--Wallis test instead evaluates whether the group distributions are identical.
+
+\medskip
+
+The test statistic is based on the ranks of all observations:
+\[
+    H = \frac{12}{N(N+1)} \sum_{i=1}^k n_i (\bar R_i - \bar R)^2 \; .
+\]
+Under the null hypothesis, \(H\) converges in distribution to \(\chi^2_{k-1}\). P-values are computed from the chi-square distribution.
 
 % Subsection ..........................................................................................................
-\subsection{The Saphiro-Wilk test}
+\subsection{The Kolmogorov--Smirnov test}
 
-The Shapiro–Wilk test addresses the same goodness-of-fit problem as the \(chi_2\) and Kolmogorov–Smirnov tests, but differs fundamentally in construction: rather than measuring global discrepancies between empirical and theoretical distributions, it exploits the structure of normal order statistics, yielding substantially higher power for detecting departures from normality [...].
+The Kolmogorov--Smirnov test was developed in the 1930s by Kolmogorov and later extended by Smirnov as a general goodness-of-fit procedure.  It compares an empirical distribution to a fully specified theoretical distribution. The parametric analogue is the chi-square goodness-of-fit test, which relies on binning and asymptotic approximations.  The Kolmogorov--Smirnov test instead measures the maximum discrepancy between distribution functions.
+
+The test statistic is
+\[
+    D = \sup_x |F_n(x) - F_0(x)| \; .
+\]
+Under the null hypothesis, \(D\) has a known distribution independent of \(F_0\). P-values are computed from this distribution or its asymptotic form.
+
+% Subsection ..........................................................................................................
+\subsection{The Shapiro--Wilk test}
+
+The Shapiro--Wilk test was introduced by Shapiro and Wilk in 1965 as a powerful goodness-of-fit test specifically designed to assess normality. It was motivated by the low power of general-purpose tests when applied to normal models. The parametric analogue is not a test of means or variances, but rather the assumption of normality underlying \(t\)-tests, \(F\)-tests, and ANOVA. The Shapiro--Wilk test directly targets this assumption.
+
+The test statistic is
+\[
+    W = \frac{\left(\sum_{i=1}^n a_i x_{(i)}\right)^2}{\sum_{i=1}^n (x_i - \bar x)^2} \; ,
+\]
+where the coefficients \(a_i\) depend on normal order statistics.  The distribution of \(W\) under the null hypothesis is obtained via approximation or simulation, and p-values are computed accordingly.
 
 % Error types in hypothesis testing ...................................................................................
 \section{Error types in hypothesis testing}
