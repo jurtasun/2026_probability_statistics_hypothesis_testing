@@ -86,6 +86,52 @@ Frank~P. Ramsey.
   Other Logical Essays}, pages 156--198. Routledge and Kegan Paul, London,
   1926.
 
+\bibitem{vonmises_1928_truth}
+Richard von Mises.
+\newblock {\em Probability, Statistics and Truth}.
+\newblock 1928.
+
+\bibitem{bayes_1763_doctrine}
+Thomas Bayes.
+\newblock An essay towards solving a problem in the doctrine of chances.
+\newblock {\em Philosophical Transactions of the Royal Society of London},
+  1763.
+
+\bibitem{definetti_1974_probability}
+Bruno de~Finetti.
+\newblock {\em Theory of Probability}.
+\newblock Wiley, 1974.
+
+\bibitem{jaynes_2003_logic}
+E.~T. Jaynes.
+\newblock {\em Probability Theory: The Logic of Science}.
+\newblock Cambridge University Press, 2003.
+
+\bibitem{bernoulli_1713_arsconjectandi}
+Jacob Bernoulli.
+\newblock {\em Ars Conjectandi}.
+\newblock Thurneysen Brothers, Basel, 1713.
+
+\bibitem{gauss_1809_astronomy}
+Carl~Friedrich Gauss.
+\newblock {\em Theoria Motus Corporum Coelestium}.
+\newblock 1809.
+
+\bibitem{poisson_1837_judgements}
+Siméon-Denis Poisson.
+\newblock {\em Recherches sur la probabilité des jugements}.
+\newblock 1837.
+
+\bibitem{doob_1953_processes}
+Joseph~L. Doob.
+\newblock {\em Stochastic Processes}.
+\newblock Wiley, 1953.
+
+\bibitem{laplace_1812_theorie}
+Pierre-Simon Laplace.
+\newblock {\em Théorie Analytique des Probabilités}.
+\newblock Courcier, Paris, 1812.
+
 \bibitem{pearson_neyman_1933_efficient}
 Jerzy Neyman and Egon~S. Pearson.
 \newblock On the problem of the most efficient tests of statistical hypotheses.
@@ -171,17 +217,6 @@ Jerzy Neyman and Egon~S. Pearson.
 \newblock On the problem of the most efficient tests of statistical hypotheses.
 \newblock {\em Philosophical Transactions of the Royal Society of London A},
   1933.
-
-\bibitem{bayes_1763_doctrine}
-Thomas Bayes.
-\newblock An essay towards solving a problem in the doctrine of chances.
-\newblock {\em Philosophical Transactions of the Royal Society of London},
-  1763.
-
-\bibitem{definetti_1974_probability}
-Bruno de~Finetti.
-\newblock {\em Theory of Probability}.
-\newblock Wiley, 1974.
 
 \bibitem{reichenbach_1938_prediction}
 Hans Reichenbach.
