@@ -1,61 +1,114 @@
 % Chapter - Introduction to conditional probability ...................................................................
-\chapter{Modelling, dependency and correlation}
-\label{chapter5}
+\chapter{Introduction to Bayesian probability}
+\label{chapter6}
 
-\epigraph{\textit{The theory of probabilities is at bottom nothing but common sense reduced to calculation.}}{— Pierre-Simon Laplace}
+\epigraph{\textit{Probability statements are just summaries of repeated observations.}}{— W. V. Quine}
 
-\section{Introduction and Philosophy}
 
-Matrix-based linear modelling was systematized in the mid-20th century, notably in the work of C. R. Rao (1945, \emph{Bulletin of the Calcutta Mathematical Society}), who developed the Cramér–Rao bound and unified estimation in linear models.
 
-\section{Estimation and Inference}
-Model estimation chooses parameter values that best describe the data; inference quantifies uncertainty around these estimates.
+% Section .............................................................................................................
+\section{Motivation and philosophy}
 
-\subsection*{Mathematical Formulation}
-The ordinary least squares estimator is
-\[
-\widehat{\beta} = (X^\top X)^{-1}X^\top\mathbf{Y},
-\]
-with residuals $\widehat{\varepsilon}=\mathbf{Y}-X\widehat{\beta}$.
-Under the normal-error model,
-\[
-\widehat{\beta}\sim\mathcal{N}\bigl(\beta,\sigma^2(X^\top X)^{-1}\bigr).
-\]
+Probability is often introduced as a way to describe randomness in repeated experiments, such as tossing a coin or rolling a die, but this interpretation does not cover all situations in which uncertainty arises. 
 
-\subsection*{Numerical Example}
-For
-\[
-X=\begin{pmatrix}
-1&1\\
-1&2\\
-1&3
-\end{pmatrix},
-\qquad
-Y=\begin{pmatrix}2\\3\\5\end{pmatrix},
-\]
-one obtains
-\[
-\widehat{\beta}=
-\begin{pmatrix}0.333\\1.5\end{pmatrix},
-\]
-so $\widehat{Y}=0.333+1.5X$.
+\medskip
+
+In everyday reasoning, we regularly make probability judgments about unique events, such as whether it will rain tomorrow or whether a medical treatment will be effective, even though these events are not repeated under identical conditions. 
+
+\medskip
+
+Bayesian probability extends the meaning of probability to represent degrees of uncertainty or belief, allowing probability to summarize what is known, what is unknown, and how new information changes our understanding. 
+
+\medskip
+
+This interpretation originates in the eighteenth-century work of Bayes and Laplace, who viewed probability as a tool for rational reasoning under incomplete knowledge \cite{bayes_1763_doctrine,laplace_1812_theorie}. 
+
+
+
+% Section .............................................................................................................
+\section{Dependent and independent events}
+
+To reason about uncertainty, we must understand how events relate to one another, and in particular whether the occurrence of one event affects the likelihood of another. 
+
+\medskip
+
+Two events are said to be \textit{independent} if knowing that one has occurred provides no information about the other, while they are \textit{dependent} if information about one changes our assessment of the other. 
+
+\medskip
+
+This idea is expressed mathematically using conditional probability, written as
+\begin{equation}
+    \mathbb{P}(A \mid B),
+\end{equation}
+which denotes the probability of an event \(A\) given that another event \(B\) has occurred. 
+
+\medskip
+
+When events are independent, conditioning has no effect and
+\begin{equation}
+    \mathbb{P}(A \mid B) = \mathbb{P}(A),
+\end{equation}
+capturing the idea that information about \(B\) is irrelevant for predicting \(A\). 
+
+\medskip
+
+The formal structure of conditional probability was clarified by Kolmogorov’s axiomatization, which placed dependence and independence at the foundation of modern probability theory \cite{kolmogorov_1933_foundations}. 
+
+
+
+% Section .............................................................................................................
+\section{Frequentist vs Bayesian}
+
+The frequentist interpretation defines probability as the long-run relative frequency of an event in repeated experiments, emphasizing objective procedures and repeatability. 
+
+\medskip
+
+Under this view, probability statements describe hypothetical sequences of observations rather than uncertainty about specific unknown quantities. 
+
+\medskip
+
+The Bayesian interpretation, by contrast, treats probability as a measure of uncertainty that can be assigned to events, hypotheses, or parameters, even when they are not repeatable. 
+
+\medskip
+
+As new information becomes available, probabilities are updated to reflect improved knowledge, allowing learning to be expressed directly through probability itself. 
+
+\medskip
+
+This philosophical divide was shaped by debates between von Mises, who defended frequency interpretations, and thinkers such as Ramsey and de Finetti, who argued for probability as coherent belief \cite{vonmises_1928_truth,ramsey_1926_truth,definetti_1974_probability}. 
+
+
+
+% Section .............................................................................................................
+\section{The Bayes rule}
+
+The central mathematical tool of Bayesian probability is Bayes’ rule, which describes how conditional probabilities are related to one another.
+
+\medskip
+
+Bayes’ rule follows directly from the definition of conditional probability and can be written as
+\begin{equation}
+    \mathbb{P}(A \mid B) = \frac{\mathbb{P}(B \mid A)\,\mathbb{P}(A)}{\mathbb{P}(B)}.
+\end{equation}
+
+\medskip
+
+In this expression, \(\mathbb{P}(A)\) represents prior uncertainty about \(A\), while \(\mathbb{P}(A \mid B)\) represents updated uncertainty after observing \(B\). 
+
+\medskip
+
+Although mathematically simple, Bayes’ rule acquired its modern philosophical importance through Laplace and was later framed by Jaynes as a general logic of scientific inference \cite{laplace_1812_theorie,jaynes_2003_logic}. 
+
+
+
+% Exercises ............................................................................................................
 
 \newpage
 
 \subsection*{Exercises}
 
-\textbf{1.} Exercise [...].\\
+\textbf{1.} Give an example of a situation where learning new information changes your assessment of uncertainty.\\
 
-\textbf{2.} Exercise [...].\\
+\textbf{2.} Explain in words the difference between independent and dependent events.\\
 
-\textbf{3.} Exercise [...].\\
-
-\newpage
-
-\subsection*{Solutions}
-
-\textbf{1.} Solution [...].\\
-
-\textbf{2.} Solution [...].\\
-
-\textbf{3.} Solution [...].\\
+\textbf{3.} Describe the role of prior information in Bayesian reasoning.

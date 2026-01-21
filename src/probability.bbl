@@ -248,4 +248,19 @@ Deborah~G. Mayo.
 \newblock {\em Statistical Inference as Severe Testing}.
 \newblock Cambridge University Press, 2018.
 
+\bibitem{pearson_1895_evolution}
+Karl Pearson.
+\newblock {\em Contributions to the Mathematical Theory of Evolution}.
+\newblock 1895.
+
+\bibitem{spearman_1904_association}
+Charles Spearman.
+\newblock The proof and measurement of association between two things.
+\newblock {\em The American Journal of Psychology}, 15(1):72--101, 1904.
+
+\bibitem{kolmogorov_1933_foundations}
+Andrey~N. Kolmogorov.
+\newblock {\em Foundations of the Theory of Probability}.
+\newblock Springer, 1933.
+
 \end{thebibliography}
