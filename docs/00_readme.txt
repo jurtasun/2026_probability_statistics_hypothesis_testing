@@ -73,3 +73,10 @@ Add ordered references.
 How to access presaved versions, apart from manually pressing "Save". Ctrl+S does not really save content.
 
 Paragraphs, spacing and indentation.
+
+
+26/01/2026
+
+    Jan Grabowski, Lancaster - OER mathematics, Sage Math
+    Alex Best, Sheffield - Jupyter Books Plugin
+    Steel Waagstaff, Pressboks - Onboarding para Library Services
