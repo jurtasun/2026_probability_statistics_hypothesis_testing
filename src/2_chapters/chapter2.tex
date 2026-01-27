@@ -118,6 +118,43 @@ Bernoulli trials are used whenever an experiment has exactly two possible outcom
     \label{fig:bernoulli_dist}
 \end{figure}
 
+\subsection{Discrete uniform distribution}
+
+The discrete uniform distribution has its roots in classical symmetry arguments used in early probability theory. It formalizes the idea that, in the absence of distinguishing information, all outcomes should be treated equally. This idea reflects a principle already present in early probability theory: when no outcome can be distinguished from another based on available information, they should be treated symmetrically. Laplace formalized this reasoning as the principle of insufficient reason.
+
+\medskip
+
+If a random variable $X$ can take $n$ distinct values $\{x_1,\dots,x_n\}$, the discrete uniform distribution assigns
+\begin{equation}
+    \mathbb{P}(x_i; \; n) = \frac{1}{n}, \qquad i = 1, \dots, n.
+    \label{dist_uniform1}
+\end{equation}
+
+Discrete uniform distributions appear whenever outcomes are assumed to be equally likely. Examples include lotteries, card draws from a well-shuffled deck, or randomized experimental assignments where each category is given equal probability.
+
+\medskip
+
+\textit{Example.} Rolling a fair six-sided die can be modeled as a discrete uniform distribution on $\{1,2,3,4,5,6\}$, where each face has probability $1/6$.
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter2/duniform_1.png}
+        \caption{Probability distribution.}
+        \label{fig:duniform_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter2/duniform_1_cum.png}
+        \caption{Cumulative probability.}
+        \label{fig:duniform_2}
+    \end{subfigure}
+    \caption{Probability distribuion}
+    \label{fig:duniform_dist}
+\end{figure}
+
 \subsection{Binomial distribution}
 
 The binomial distribution was systematically studied by Abraham de Moivre in the early eighteenth century. His analysis of repeated Bernoulli trials led not only to the binomial formula but also to the first appearance of the normal approximation. De Moivre introduced the binomial distribution while studying games of chance, but its importance quickly extended far beyond gambling. By considering repeated trials under identical conditions, the binomial distribution became a central model for understanding variability in counting processes.
@@ -153,25 +190,6 @@ Binomial models naturally arise when we count how many times a certain event occ
     \end{subfigure}
     \caption{Probability distribuion}
     \label{fig:binomial_dist}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter2/binomial_2.png}
-        \caption{Probability distribution.}
-        \label{fig:binomial_1_cum}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter2/binomial_2_cum.png}
-        \caption{Cumulative probability.}
-        \label{fig:binomial_2_cum}
-    \end{subfigure}
-    \caption{Cumulative probability}
-    \label{fig:binomial_cum}
 \end{figure}
 
 \subsection{Poisson distribution}
@@ -210,43 +228,6 @@ Poisson distributions are commonly used to model events that occur independently
     \end{subfigure}
     \caption{Probability distribuion}
     \label{fig:poisson_dist}
-\end{figure}
-
-\subsection{Discrete uniform distribution}
-
-The discrete uniform distribution has its roots in classical symmetry arguments used in early probability theory. It formalizes the idea that, in the absence of distinguishing information, all outcomes should be treated equally. This idea reflects a principle already present in early probability theory: when no outcome can be distinguished from another based on available information, they should be treated symmetrically. Laplace formalized this reasoning as the principle of insufficient reason.
-
-\medskip
-
-If a random variable $X$ can take $n$ distinct values $\{x_1,\dots,x_n\}$, the discrete uniform distribution assigns
-\begin{equation}
-    \mathbb{P}(x_i; \; n) = \frac{1}{n}, \qquad i = 1, \dots, n.
-    \label{dist_uniform1}
-\end{equation}
-
-Discrete uniform distributions appear whenever outcomes are assumed to be equally likely. Examples include lotteries, card draws from a well-shuffled deck, or randomized experimental assignments where each category is given equal probability.
-
-\medskip
-
-\textit{Example.} Rolling a fair six-sided die can be modeled as a discrete uniform distribution on $\{1,2,3,4,5,6\}$, where each face has probability $1/6$.
-
-\begin{figure}[ht]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter2/duniform_1.png}
-        \caption{Probability distribution.}
-        \label{fig:duniform_1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter2/duniform_1_cum.png}
-        \caption{Cumulative probability.}
-        \label{fig:duniform_2}
-    \end{subfigure}
-    \caption{Probability distribuion}
-    \label{fig:duniform_dist}
 \end{figure}
 
 % Continuous events ..........................................................................

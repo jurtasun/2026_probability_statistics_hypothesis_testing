@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: probability.aux
+A level-1 auxiliary file: 1_frontmatter/preface.aux
+A level-1 auxiliary file: 1_frontmatter/introduction.aux
+A level-1 auxiliary file: 2_chapters/chapter1.aux
+A level-1 auxiliary file: 2_chapters/chapter2.aux
+A level-1 auxiliary file: 2_chapters/chapter3.aux
+A level-1 auxiliary file: 2_chapters/chapter4.aux
+A level-1 auxiliary file: 2_chapters/chapter5.aux
+A level-1 auxiliary file: 2_chapters/chapter6.aux
+A level-1 auxiliary file: 2_chapters/chapter7.aux
+A level-1 auxiliary file: 3_backmatter/appendix1.aux
+A level-1 auxiliary file: 3_backmatter/appendix2.aux
+A level-1 auxiliary file: 3_backmatter/appendix3.aux
+The style file: unsrt.bst
+Database file #1: 4_bibliography/references.bib
+Warning--empty publisher in vonmises_1928_truth
+Warning--empty publisher in gauss_1809_astronomy
+Warning--empty publisher in poisson_1837_judgements
+You've used 25 entries,
+            1791 wiz_defined-function locations,
+            588 strings with 6283 characters,
+and the built_in function-call counts, 4127 in all, are:
+= -- 352
+> -- 120
+< -- 2
++ -- 55
+- -- 30
+* -- 149
+:= -- 652
+add.period$ -- 76
+call.type$ -- 25
+change.case$ -- 5
+chr.to.int$ -- 0
+cite$ -- 28
+duplicate$ -- 260
+empty$ -- 499
+format.name$ -- 30
+if$ -- 969
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 45
+newline$ -- 128
+num.names$ -- 28
+pop$ -- 151
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 66
+stack$ -- 0
+substring$ -- 69
+swap$ -- 36
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 3
+while$ -- 32
+width$ -- 27
+write$ -- 262
+(There were 3 warnings)

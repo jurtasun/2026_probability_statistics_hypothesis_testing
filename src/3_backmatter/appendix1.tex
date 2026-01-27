@@ -1,14 +1,50 @@
-\chapter{Appendix 1}
+\chapter{Linear algebra: core topics on vectors and matrices}
 \label{appendix1}
 
-The integral
+Linear algebra is one of the central languages of modern mathematics and science. It provides the formal framework for describing linear relations, symmetry, and structure, and it underlies vast areas of analysis, probability, statistics, physics, computer science, and data science. Historically, linear algebra did not arise as a single theory, but rather as a collection of methods developed to solve systems of linear equations, study geometry, and understand transformations of space. Only in the late nineteenth and early twentieth centuries was it unified into the abstract theory now taught under the name \emph{linear algebra}.
 
-\begin{equation}
-\int_a^{b} \; f(x) \; dx = \lim_{n \rightarrow \infty} \; \sum_{i = 0}^{n} \; f(x_i) \; \Delta x
-\end{equation}
+\medskip
 
-Equivalently
+From a philosophical perspective, linear algebra marks a transition from concrete computation to structural thinking. Instead of focusing on individual equations or numerical solutions, the subject emphasizes vector spaces, mappings between them, and invariant properties under change of coordinates. This abstraction allows the same mathematical ideas to apply equally to geometry, differential equations, probability models, and statistical inference.
 
-\begin{equation}
-\int_a^{b} \; f(x) \; dx = \lim_{n \rightarrow \infty} \; \sum_{i = 0}^{n} \; f(x_i) \; \Delta x
-\end{equation}
+\medskip
+
+A solid background in linear algebra typically includes the following core topics, which are either required or strongly recommended for further study in probability, statistics, and applied mathematics:
+
+\medskip
+
+\noindent\textbf{Vectors and vector spaces.}
+Understanding vectors as elements of a vector space over a field, together with the operations of addition and scalar multiplication. This includes linear combinations, span, linear independence, bases, and dimension. These concepts formalize the idea of degrees of freedom and coordinate representations.
+
+\medskip
+
+\noindent\textbf{Matrices and systems of linear equations.}
+Matrices arise naturally as representations of linear maps. Key topics include matrix operations, matrix inversion, rank, row reduction, and the solution of linear systems. Historically, these ideas trace back to the work of Carl Friedrich Gauss and the development of systematic elimination methods.
+
+\medskip
+
+\noindent\textbf{Linear transformations.}
+The interpretation of matrices as functions between vector spaces is essential. Topics include kernel and image, injectivity and surjectivity, change of basis, and composition of linear maps. This viewpoint emphasizes structure over computation and clarifies the geometric meaning of matrices.
+
+\medskip
+
+\noindent\textbf{Inner products and geometry.}
+Inner product spaces introduce notions of length, angle, and orthogonality. Important concepts include norms, orthogonal projections, orthonormal bases, and the Gram--Schmidt process. These ideas are foundational for least squares methods, regression, and statistical estimation.
+
+\medskip
+
+\noindent\textbf{Eigenvalues and eigenvectors.}
+Eigenvalues describe intrinsic directions and scaling properties of linear transformations. Diagonalization, spectral decomposition, and symmetric matrices play a central role in applications ranging from differential equations to principal component analysis.
+
+\medskip
+
+\noindent\textbf{Determinants and volume.}
+Although less central in modern abstract treatments, determinants provide geometric insight into volume, orientation, and invertibility. They also play a role in change-of-variables formulas and multivariate analysis.
+
+\medskip
+
+Historically, the development of linear algebra is associated with several key figures and works. Gauss laid the foundations for systematic solution of linear systems. Hermann Grassmann introduced abstract vector spaces in his \emph{Ausdehnungslehre} (1844), a work far ahead of its time. Arthur Cayley and James Joseph Sylvester developed matrix theory in the nineteenth century, while David Hilbert and Emmy Noether contributed decisively to the structural and axiomatic understanding of linear spaces and linear operators.
+
+\medskip
+
+In modern mathematics, linear algebra serves both as a computational toolkit and as a conceptual foundation. Mastery of its basic structures is essential not only for solving concrete problems, but also for understanding more advanced theories where linear spaces provide local or approximate descriptions of complex phenomena. As such, linear algebra is best learned not merely as a collection of techniques, but as a coherent framework for reasoning about structure, symmetry, and linearity.

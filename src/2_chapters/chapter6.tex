@@ -2,113 +2,113 @@
 \chapter{Introduction to Bayesian probability}
 \label{chapter6}
 
-\epigraph{\textit{Probability statements are just summaries of repeated observations.}}{— W. V. Quine}
+% \epigraph{\textit{Probability statements are just summaries of repeated observations.}}{— W. V. Quine}
 
 
 
-% Section .............................................................................................................
-\section{Motivation and philosophy}
+% % Section .............................................................................................................
+% \section{Motivation and philosophy}
 
-Probability is often introduced as a way to describe randomness in repeated experiments, such as tossing a coin or rolling a die, but this interpretation does not cover all situations in which uncertainty arises. 
+% Probability is often introduced as a way to describe randomness in repeated experiments, such as tossing a coin or rolling a die, but this interpretation does not cover all situations in which uncertainty arises. 
 
-\medskip
+% \medskip
 
-In everyday reasoning, we regularly make probability judgments about unique events, such as whether it will rain tomorrow or whether a medical treatment will be effective, even though these events are not repeated under identical conditions. 
+% In everyday reasoning, we regularly make probability judgments about unique events, such as whether it will rain tomorrow or whether a medical treatment will be effective, even though these events are not repeated under identical conditions. 
 
-\medskip
+% \medskip
 
-Bayesian probability extends the meaning of probability to represent degrees of uncertainty or belief, allowing probability to summarize what is known, what is unknown, and how new information changes our understanding. 
+% Bayesian probability extends the meaning of probability to represent degrees of uncertainty or belief, allowing probability to summarize what is known, what is unknown, and how new information changes our understanding. 
 
-\medskip
+% \medskip
 
-This interpretation originates in the eighteenth-century work of Bayes and Laplace, who viewed probability as a tool for rational reasoning under incomplete knowledge \cite{bayes_1763_doctrine,laplace_1812_theorie}. 
-
-
-
-% Section .............................................................................................................
-\section{Dependent and independent events}
-
-To reason about uncertainty, we must understand how events relate to one another, and in particular whether the occurrence of one event affects the likelihood of another. 
-
-\medskip
-
-Two events are said to be \textit{independent} if knowing that one has occurred provides no information about the other, while they are \textit{dependent} if information about one changes our assessment of the other. 
-
-\medskip
-
-This idea is expressed mathematically using conditional probability, written as
-\begin{equation}
-    \mathbb{P}(A \mid B),
-\end{equation}
-which denotes the probability of an event \(A\) given that another event \(B\) has occurred. 
-
-\medskip
-
-When events are independent, conditioning has no effect and
-\begin{equation}
-    \mathbb{P}(A \mid B) = \mathbb{P}(A),
-\end{equation}
-capturing the idea that information about \(B\) is irrelevant for predicting \(A\). 
-
-\medskip
-
-The formal structure of conditional probability was clarified by Kolmogorov’s axiomatization, which placed dependence and independence at the foundation of modern probability theory \cite{kolmogorov_1933_foundations}. 
+% This interpretation originates in the eighteenth-century work of Bayes and Laplace, who viewed probability as a tool for rational reasoning under incomplete knowledge \cite{bayes_1763_doctrine,laplace_1812_theorie}. 
 
 
 
-% Section .............................................................................................................
-\section{Frequentist vs Bayesian}
+% % Section .............................................................................................................
+% \section{Dependent and independent events}
 
-The frequentist interpretation defines probability as the long-run relative frequency of an event in repeated experiments, emphasizing objective procedures and repeatability. 
+% To reason about uncertainty, we must understand how events relate to one another, and in particular whether the occurrence of one event affects the likelihood of another. 
 
-\medskip
+% \medskip
 
-Under this view, probability statements describe hypothetical sequences of observations rather than uncertainty about specific unknown quantities. 
+% Two events are said to be \textit{independent} if knowing that one has occurred provides no information about the other, while they are \textit{dependent} if information about one changes our assessment of the other. 
 
-\medskip
+% \medskip
 
-The Bayesian interpretation, by contrast, treats probability as a measure of uncertainty that can be assigned to events, hypotheses, or parameters, even when they are not repeatable. 
+% This idea is expressed mathematically using conditional probability, written as
+% \begin{equation}
+%     \mathbb{P}(A \mid B),
+% \end{equation}
+% which denotes the probability of an event \(A\) given that another event \(B\) has occurred. 
 
-\medskip
+% \medskip
 
-As new information becomes available, probabilities are updated to reflect improved knowledge, allowing learning to be expressed directly through probability itself. 
+% When events are independent, conditioning has no effect and
+% \begin{equation}
+%     \mathbb{P}(A \mid B) = \mathbb{P}(A),
+% \end{equation}
+% capturing the idea that information about \(B\) is irrelevant for predicting \(A\). 
 
-\medskip
+% \medskip
 
-This philosophical divide was shaped by debates between von Mises, who defended frequency interpretations, and thinkers such as Ramsey and de Finetti, who argued for probability as coherent belief \cite{vonmises_1928_truth,ramsey_1926_truth,definetti_1974_probability}. 
-
-
-
-% Section .............................................................................................................
-\section{The Bayes rule}
-
-The central mathematical tool of Bayesian probability is Bayes’ rule, which describes how conditional probabilities are related to one another.
-
-\medskip
-
-Bayes’ rule follows directly from the definition of conditional probability and can be written as
-\begin{equation}
-    \mathbb{P}(A \mid B) = \frac{\mathbb{P}(B \mid A)\,\mathbb{P}(A)}{\mathbb{P}(B)}.
-\end{equation}
-
-\medskip
-
-In this expression, \(\mathbb{P}(A)\) represents prior uncertainty about \(A\), while \(\mathbb{P}(A \mid B)\) represents updated uncertainty after observing \(B\). 
-
-\medskip
-
-Although mathematically simple, Bayes’ rule acquired its modern philosophical importance through Laplace and was later framed by Jaynes as a general logic of scientific inference \cite{laplace_1812_theorie,jaynes_2003_logic}. 
+% The formal structure of conditional probability was clarified by Kolmogorov’s axiomatization, which placed dependence and independence at the foundation of modern probability theory \cite{kolmogorov_1933_foundations}. 
 
 
 
-% Exercises ............................................................................................................
+% % Section .............................................................................................................
+% \section{Frequentist vs Bayesian}
 
-\newpage
+% The frequentist interpretation defines probability as the long-run relative frequency of an event in repeated experiments, emphasizing objective procedures and repeatability. 
 
-\subsection*{Exercises}
+% \medskip
 
-\textbf{1.} Give an example of a situation where learning new information changes your assessment of uncertainty.\\
+% Under this view, probability statements describe hypothetical sequences of observations rather than uncertainty about specific unknown quantities. 
 
-\textbf{2.} Explain in words the difference between independent and dependent events.\\
+% \medskip
 
-\textbf{3.} Describe the role of prior information in Bayesian reasoning.
+% The Bayesian interpretation, by contrast, treats probability as a measure of uncertainty that can be assigned to events, hypotheses, or parameters, even when they are not repeatable. 
+
+% \medskip
+
+% As new information becomes available, probabilities are updated to reflect improved knowledge, allowing learning to be expressed directly through probability itself. 
+
+% \medskip
+
+% This philosophical divide was shaped by debates between von Mises, who defended frequency interpretations, and thinkers such as Ramsey and de Finetti, who argued for probability as coherent belief \cite{vonmises_1928_truth,ramsey_1926_truth,definetti_1974_probability}. 
+
+
+
+% % Section .............................................................................................................
+% \section{The Bayes rule}
+
+% The central mathematical tool of Bayesian probability is Bayes’ rule, which describes how conditional probabilities are related to one another.
+
+% \medskip
+
+% Bayes’ rule follows directly from the definition of conditional probability and can be written as
+% \begin{equation}
+%     \mathbb{P}(A \mid B) = \frac{\mathbb{P}(B \mid A)\,\mathbb{P}(A)}{\mathbb{P}(B)}.
+% \end{equation}
+
+% \medskip
+
+% In this expression, \(\mathbb{P}(A)\) represents prior uncertainty about \(A\), while \(\mathbb{P}(A \mid B)\) represents updated uncertainty after observing \(B\). 
+
+% \medskip
+
+% Although mathematically simple, Bayes’ rule acquired its modern philosophical importance through Laplace and was later framed by Jaynes as a general logic of scientific inference \cite{laplace_1812_theorie,jaynes_2003_logic}. 
+
+
+
+% % Exercises ............................................................................................................
+
+% \newpage
+
+% \subsection*{Exercises}
+
+% \textbf{1.} Give an example of a situation where learning new information changes your assessment of uncertainty.\\
+
+% \textbf{2.} Explain in words the difference between independent and dependent events.\\
+
+% \textbf{3.} Describe the role of prior information in Bayesian reasoning.

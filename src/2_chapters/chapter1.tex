@@ -241,25 +241,64 @@ Variation is not merely a technicality; it is the very essence of uncertainty. W
 
 While numerical summaries are useful, the human mind often understands patterns much faster through vision than calculation. By \textit{data visualization} we mean a series of techniques used to transform numbers and sequences into shapes, colours and structures that are easier to interpret, and that can be grasped at a glance. It turns abstraction into perception and often reveals regularities invisible to formulas alone. Nowadays, a broad series of fields falling under the name of data visualization - or data \textit{representation} - have become among the pillars of any scientific or data related topic.
 
-\newpage
 \begin{figure}[ht]
     \centering
+
+    % ---------------- Row 1: Histograms ----------------
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter1/histogram_1.png}
-        \caption{Clean Gaussian distribution, no outliers.}
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_1.png}
+        \caption{Histogram (clean data).}
         \label{fig:histogram_1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter1/histogram_2.png}
-        \caption{Skewed Gaussian due to outlier data.}
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_2.png}
+        \caption{Histogram (with outliers).}
         \label{fig:histogram_2}
     \end{subfigure}
-    \caption{Box plots representing $n = 100$ observations drawn from a Gaussian distribution. The central black line shows the mean value, representing the central tendency where the bulk of events lie. The shadowed area highlights the standard deviation, as measure of the variability and spread the observations with respect to the mean}
-    \label{fig:histogram_comparison1}
+
+    \medskip
+
+    % ---------------- Row 2: Box plots ----------------
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/box_1.png}
+        \caption{Box plot (clean data).}
+        \label{fig:box_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/box_2.png}
+        \caption{Box plot (with outliers).}
+        \label{fig:box_2}
+    \end{subfigure}
+
+    \medskip
+
+    % ---------------- Row 3: Violin plots ----------------
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/violin_1.png}
+        \caption{Violin plot (clean data).}
+        \label{fig:violin_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/violin_2.png}
+        \caption{Violin plot (with outliers).}
+        \label{fig:violin_2}
+    \end{subfigure}
+
+    \caption{Comparison of graphical summaries for $n=100$ observations drawn from a Gaussian distribution.  
+    Left column: uncontaminated data. Right column: data affected by outliers.  
+    The rows show, respectively, histograms, box plots, and violin plots, illustrating how different visualization techniques respond to skewness and extreme observations.}
+    \label{fig:distribution_visual_comparison}
 \end{figure}
+
 
 % \medskip
 
@@ -283,14 +322,14 @@ While numerical summaries are useful, the human mind often understands patterns 
 
 
 \begin{figure}[ht]
+    
     \centering
 
     % ----------- Subfigure 1 -----------
     \begin{subfigure}{0.8\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{5_figures/chapter1/mean_std_hist.png}
-        \caption{Three sets of observations, with the mean value and standard deviation 
-        represented as a histogram-based plot [...].}
+        \caption{Three sets of observations, with the mean value and standard deviation represented as a histogram-based plot [...].}
         \label{fig:mean_std_hist}
     \end{subfigure}
 
@@ -300,8 +339,7 @@ While numerical summaries are useful, the human mind often understands patterns 
     \begin{subfigure}{0.8\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{5_figures/chapter1/mean_std_box.png}
-        \caption{Three sets of observations, with the mean value and standard deviation 
-        represented as a box plot [...].}
+        \caption{Three sets of observations, with the mean value and standard deviation represented as a box plot [...].}
         \label{fig:mean_std_box}
     \end{subfigure}
 
@@ -311,17 +349,14 @@ While numerical summaries are useful, the human mind often understands patterns 
     \begin{subfigure}{0.8\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{5_figures/chapter1/mean_std_violin.png}
-        \caption{Three sets of observations, with the mean value and standard deviation 
-        represented as a violin plot [...].}
+        \caption{Three sets of observations, with the mean value and standard deviation represented as a violin plot [...].}
         \label{fig:mean_std_violin}
     \end{subfigure}
 
     % ----------- Global caption -----------
-    \caption{
-        Comparison of three visualization methods—histogram, box plot, and violin plot—
-        showing the mean and variability of three samples of size $n = 100$.
-    }
+    \caption{Comparison of three visualization methods—histogram, box plot, and violin plot—showing the mean and variability of three samples of size $n = 100$.}
     \label{fig:mean_std_all}
+
 \end{figure}
 
 
