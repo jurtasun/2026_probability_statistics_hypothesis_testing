@@ -2,89 +2,197 @@
 
 \bibitem{ioannidis_2005_false}
 John P.~A. Ioannidis.
-\newblock ``why most published research findings are false''.
+\newblock {``\emph{Why Most Published Research Findings Are False}''}.
 \newblock {\em PLoS Medicine}, 2(8):e124, 2005.
 
 \bibitem{spiegelhalter_2019_art}
 David Spiegelhalter.
-\newblock {\em ``The Art of Statistics: How to Learn from Data''}.
+\newblock {\em ``{The Art of Statistics: How to Learn from Data}''}.
 \newblock Basic Books, 2019.
 
 \bibitem{degroot_2012_probability}
 Morris~H. DeGroot and Mark~J. Schervish.
-\newblock {\em ``Probability and Statistics''}.
+\newblock {\em ``{Probability and Statistics}''}.
 \newblock Pearson, 4 edition, 2012.
 
 \bibitem{bandyopadhyay_2011_philosophy}
 P.~S. Bandyopadhyay and M.~R. Forster, editors.
-\newblock {\em ``Philosophy of Statistics''}, volume~7 of {\em Handbook of the
-  Philosophy of Science}.
+\newblock {\em ``{Philosophy of Statistics}''}, volume~7 of {\em Handbook of
+  the Philosophy of Science}.
 \newblock Elsevier, 2011.
 
 \bibitem{diez_2025_openintro}
 M.~Diez, D.~Barr, and Mine Çetinkaya{-}Rundel.
-\newblock {\em ``OpenIntro Statistics''}.
+\newblock {\em ``{OpenIntro Statistics}''}.
 \newblock OpenIntro, 2025.
 
 \bibitem{pishronik_2014_introduction}
 Hossein Pishro{-}Nik.
-\newblock {\em ``Introduction to Probability, Statistics and Random
-  Processes''}.
+\newblock {\em ``{Introduction to Probability, Statistics and Random
+  Processes}''}.
 \newblock Kappa Research LLC, 2014.
 
 \bibitem{finkel_2007_dice}
 Irving~L. Finkel.
-\newblock ``the ancient origins of dice".
+\newblock {``\emph{The Ancient Origins of Dice}''}.
 \newblock {\em Antiquity}, 81(314):176--187, 2007.
 
 \bibitem{david_1962_games}
 F.~N. David.
-\newblock {\em Games, Gods and Gambling}.
+\newblock {\em ``{Games, Gods and Gambling}''}.
 \newblock Griffin, 1962.
 
 \bibitem{cicero_45bce_divination}
 Marcus~Tullius Cicero.
-\newblock {\em De Divinatione}.
+\newblock {\em ``{De Divinatione (On Divination}''}.
 \newblock Ancient Sources Edition, 45 BCE.
 
 \bibitem{cardano_1663_ludo}
 Gerolamo Cardano.
-\newblock {\em Liber de Ludo Aleae}.
+\newblock {\em ``{Liber de Ludo Aleae (Book on Games of Chance)}''}.
 \newblock Apud Joannem Baptistam Ferrarium, Paris, 1663.
 
 \bibitem{devlin_2008_unfinished}
 Keith Devlin.
-\newblock {\em The Unfinished Game}.
+\newblock {\em ``{The Unfinished Game: Pascal, Fermat, and the
+  seventeenth-century letter that made the world modern}''}.
 \newblock Basic Books, 2008.
 
 \bibitem{huygens_1657_ratiociniis}
 Christiaan Huygens.
-\newblock {\em De Ratiociniis in Ludo Aleae}.
+\newblock {\em ``{De Ratiociniis in Ludo Aleae (On Reasoning in Games of
+  Chance)}''}.
 \newblock Elzevier, Leiden, 1657.
 
 \bibitem{bernoulli_1713_ars}
 Jacob Bernoulli.
-\newblock {\em Ars Conjectandi}.
+\newblock {\em ``{Ars Conjectandi (The Art of Conjecturing)}''}.
 \newblock Thurneysen Brothers, Basel, 1713.
 
 \bibitem{hald_1990_history}
 Anders Hald.
-\newblock {\em A History of Probability and Statistics and Their Applications
-  before 1750}.
+\newblock {\em ``{A History of Probability and Statistics and Their
+  Applications before 1750}''}.
 \newblock Wiley, 1990.
+
+\bibitem{gauss_1809_theoria}
+Carl~Friedrich Gauss.
+\newblock {\em ``{Theoria motus corporum coelestium in sectionibus conicis
+  solem ambientium}''}.
+\newblock Perthes et Besser, Hamburg, 1809.
+
+\bibitem{laplace_1812_theorie}
+Pierre-Simon Laplace.
+\newblock {\em ``{Théorie Analytique des Probabilités}''}.
+\newblock Courcier, Paris, 1812.
+
+\bibitem{quetelet_1835_homme}
+Adolphe Quetelet.
+\newblock {\em ``{Sur l'homme et le d{\'e}veloppement de ses facult{\'e}s, ou
+  essai de physique sociale}''}.
+\newblock Bachelier, Paris, 1835.
+
+\bibitem{nightingale_1858_notes}
+Florence Nightingale.
+\newblock {\em ``{Notes on Matters Affecting the Health, Efficiency, and
+  Hospital Administration of the British Army}''}.
+\newblock Harrison and Sons, London, 1858.
+
+\bibitem{markov_1906_extension}
+Andrey~Andreyevich Markov.
+\newblock {\em ``{Rasprostranenie zakona bol'shikh chisel na velichiny,
+  zavisyashchie drug ot druga (Extension of the Law of Large Numbers to
+  Dependent Variables)}''}.
+\newblock Imperatorskaya Akademiya Nauk, St. Petersburg, 1906.
+
+\bibitem{doob_1953_stochastic}
+Joseph~L. Doob.
+\newblock {\em ``{Stochastic Processes}''}.
+\newblock John Wiley \& Sons, New York, 1953.
 
 \bibitem{kolmogorov_1933_grundbegriffe}
 Andrey Kolmogorov.
-\newblock {\em Grundbegriffe der Wahrscheinlichkeitsrechnung (Foundations on
-  the Theory of Probability)}.
+\newblock {\em ``{Grundbegriffe der Wahrscheinlichkeitsrechnung (Foundations on
+  the Theory of Probability)}''}.
 \newblock Springer, Berlin, 1933.
 
-\bibitem{ramsey_1926_truth}
+\bibitem{salmon_1984_scientific}
+Wesley~C. Salmon.
+\newblock {\em ``{Scientific Explanation and the Causal Structure of the
+  World}''}.
+\newblock Princeton University Press, Princeton, 1984.
+
+\bibitem{glymour_1980_theory}
+Clark Glymour.
+\newblock {\em ``{Theory and Evidence}''}.
+\newblock Princeton University Press, Princeton, 1980.
+
+\bibitem{stigler_1986_history}
+Stephen~M. Stigler.
+\newblock {\em ``{The History of Statistics: The Measurement of Uncertainty
+  before 1900}''}.
+\newblock Harvard University Press, Cambridge, MA, 1986.
+
+\bibitem{hacking_1975_emergence}
+Ian Hacking.
+\newblock {\em ``{The Emergence of Probability}''}.
+\newblock Cambridge University Press, Cambridge, 1975.
+
+\bibitem{ramsey_1931_foundations}
 Frank~P. Ramsey.
-\newblock Truth and probability.
-\newblock In D.~H. Mellor, editor, {\em The Foundations of Mathematics and
-  Other Logical Essays}, pages 156--198. Routledge and Kegan Paul, London,
-  1926.
+\newblock {\em ``{The Foundations of Mathematics and Other Logical Essays}''}.
+\newblock Routledge \& Kegan Paul, London, 1931.
+
+\bibitem{pearson_1892_grammar}
+Karl Pearson.
+\newblock {\em ``{The Grammar of Science}''}.
+\newblock Adam and Charles Black, London, 1892.
+\newblock Foundational work on statistical reasoning and frequency
+  distributions.
+
+\bibitem{pearson_1895_contributions}
+Karl Pearson.
+\newblock {``\emph{Contributions to the Mathematical Theory of Evolution. II.
+  Skew Variation in Homogeneous Material}''}.
+\newblock {\em Philosophical Transactions of the Royal Society of London A},
+  186:343--414, 1895.
+
+\bibitem{tukey_1977_eda}
+John~W. Tukey.
+\newblock {\em ``{Exploratory Data Analysis}''}.
+\newblock Addison-Wesley, 1977.
+
+\bibitem{hintze_1997_violin}
+J.~L. Hintze and R.~D. Nelson.
+\newblock {``\emph{Violin Plots: A Box Plot-Density Trace Synergism}''}.
+\newblock {\em The American Statistician}, 52(2):181--184, 1997.
+
+\bibitem{spearman_1904_association}
+Charles Spearman.
+\newblock {``\emph{The Proof and Measurement of Association Between Two
+  Things}''}.
+\newblock {\em The American Journal of Psychology}, 15(1):72--101, 1904.
+
+\bibitem{anscombe_1973_graphs}
+F.~J. Anscombe.
+\newblock {``\emph{Graphs in Statistical Analysis}''}.
+\newblock {\em The American Statistician}, 27(1):17--21, 1973.
+
+\bibitem{descartes_1637_geometry}
+René Descartes.
+\newblock {\em ``{La Géométrie}''}.
+\newblock Jan Maire, Leiden, 1637.
+
+\bibitem{minard_1862_graphique}
+Charles~Joseph Minard.
+\newblock {\em ``{Tableau Graphique des Pertes Successives en Hommes de
+  l'Armée Française dans la Campagne de Russie 1812--1813}''}.
+\newblock Imprimerie Nationale, Paris, 1862.
+
+\bibitem{playfair_1786_atlas}
+William Playfair.
+\newblock {\em ``{The Commercial and Political Atlas}''}.
+\newblock J. Debrett, London, 1786.
 
 \bibitem{vonmises_1928_truth}
 Richard von Mises.
@@ -126,10 +234,5 @@ Siméon-Denis Poisson.
 Joseph~L. Doob.
 \newblock {\em Stochastic Processes}.
 \newblock Wiley, 1953.
-
-\bibitem{laplace_1812_theorie}
-Pierre-Simon Laplace.
-\newblock {\em Théorie Analytique des Probabilités}.
-\newblock Courcier, Paris, 1812.
 
 \end{thebibliography}

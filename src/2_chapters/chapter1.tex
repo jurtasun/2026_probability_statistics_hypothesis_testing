@@ -4,38 +4,37 @@
 
 \epigraph{\textit{Statistics is the grammar of science.}}{— Karl Pearson}
 
-As a first approach to probabilty and statistics, we should properly define both topics and their main fields of study. Even deeply related, and both rooted in \textit{combinatorics}—the study of uncertainty and things that change—they constitute well differentiated fields of mathematical analysis. A clear distinction often made is that probability is a \textit{predictive} branch of mathematics, dealing with random events, also referred to as \textit{stochastic}, aiming to compute expected values for such unknown outcomes. On the other hand, statistics would be a \textit{descriptive} way of dealing with uncertainty, by sampling finite sets of observations from a given population, and building informative quantities, called statistical \textit{estimators} to explore central tendency and variation. Such distinction has been extensively debated and discussed by mathematicians, experimental scientists, and philosoplers of science. 
+As a first approach to probability and statistics, we should properly define both topics and their main fields of study. Although deeply related, and both historically rooted in \textit{combinatorics}—the mathematical study of counting discrete structures, and how they change—they constitute well-differentiated fields of mathematical analysis. A clear distinction often made is that probability is a \textit{predictive} branch of mathematics, dealing with random events, and aiming to compute expected values for unknown outcomes. On the other hand, statistics can be viewed as a \textit{descriptive} approach to uncertainty, based on sampling finite sets of observations from a given population and constructing informative quantities, called \textit{estimators}, to explore central tendency and variation. Such distinctions have been extensively debated by mathematicians, experimental scientists, and philosophers of science \cite{salmon_1984_scientific}.
 
 \medskip
 
-As a rule of thumb, probability provides a formal language for modelling uncertainty, whereas statistics concerns the epistemic problem of learning from data. Through this chapter we will introduce basic ideas on statistical inference such as population, sampling, and estimators of central tendency and variation, together with some notions of representation and visualization. The foundations of probability theory, rooted in the works of Bernoulli, Laplace, and Gauss, among others, will be covered in Chapter \ref{chapter2}. Hence, a philosophical position often adopted is that statistics is essentially the study of uncertainty, and that the statistician's role is to assist other fields who encounter uncertainty in their work. In practice, there is a restriction in that statistics is ordinarily associated with data; and it is the link between the uncertainty, or variability, in the data and that in the topic itself that has occupied statisticians. Statistics does not have a monopoly of studies of uncertainty. Probability discusses how randomness in one part of a system affects other parts.
-
+As a rule of thumb, probability provides a formal language for modelling uncertainty, whereas statistics concerns the epistemic problem of learning from data. In this chapter, we introduce basic ideas of statistical inference such as population, sampling, and estimators of central tendency and variation, together with notions of representation and visualization. The foundations of probability theory, rooted in the works of Bernoulli, Laplace, and Gauss, among others, will be covered in Chapter \ref{chapter2}. A philosophical position often adopted is that statistics is essentially the study of uncertainty, and that the statistician’s role is to assist other fields that encounter uncertainty in their work. In practice, statistics is ordinarily associated with data, and it is the link between the variability in the data and the uncertainty inherent in the phenomenon under study that has occupied statisticians \cite{glymour_1980_theory}.
 
 \medskip
 
-As a note, let us emphasize how these two approaches can and do coexist in science. We have many times heard that science works by making hypothesis and then predictions, that are compared and bechmarked with an experiment. This is a simplification, and it is not always true. Some sciences, like Newtonian mechanics, most of physics, chemistry, and certainly parts of biology, do rely on building accurate models and predictions, that are later compared with an experimental result. A clear example would be to use Newtonian mechanics as our theory, or model, to compute a prediction on where and when would a stone fall if I throw it. Then the experiment would be simply to measure, when and where. On the other hand, the archetypical example of an inference problem, which does not aim to build a prediction, but to give—or \textit{reconstruct} or \textit{infer}—an explanation given a set of observations, would be Darwinian evolution. This distinction is worth mentioning, since the usual definitions of sciences tend to rely heavily on the predictive power, which can be inaccurate and misleading [...]. Different sciences may strongly differ on methods, instrumentation, or conceptual tools, but they are all equally legitimate, regarltends to be defined 
+As a final note, let us emphasize how these two approaches can and do coexist in science. It is often said that science proceeds by formulating hypotheses and making predictions, which are then compared and benchmarked against experimental results. While this description applies well to many areas, it is a simplification and not universally accurate. Some sciences—such as Newtonian mechanics, much of physics, and chemistry—rely on building precise models that generate quantitative predictions later tested by experiment. A clear example is the use of Newtonian mechanics to predict where and when a stone will fall when thrown, followed by experimental measurement.
 
+By contrast, a paradigmatic example of an inference-driven scientific theory is Darwinian evolution, which does not aim primarily to predict individual outcomes but rather to reconstruct and explain observed patterns from available evidence. This distinction is worth emphasizing, as definitions of science that focus exclusively on predictive power can be misleading. Different sciences may differ substantially in methods, instrumentation, and conceptual tools, yet they are all equally legitimate in their aims and explanatory roles \cite{stigler_1986_history, hacking_1975_emergence}.
 
+% Population and sampling .............................................................................................
+\section{Population and sampling}
 
-% Sampling and data types .............................................................................................
-\section{Sampling and data types}
-
-A large part of history of science could be summarized as a continous effort to translate observations of reality into precise, mathematical terms. To such endeavour, of describing the vast phenomena we find in the natural world with numerical language, it is necessary to develop tools that relate the one or more relevant quantities—sometimes called \textit{variables}—and how they relate or change depending on one another. The purpose of modelling might be, for instance, to determine the distance from the earth to the sun, estimate the number of stars in the observable universe, or relate the number of lung cancer patients to pollution levels around smoking areas.
+A large part of the history of science can be seen as a continuous effort to translate observations of reality into precise mathematical terms. Describing natural phenomena in numerical language requires tools that relate one or more relevant quantities—often called \textit{variables}—and explain how they change with respect to one another. The goal of modelling may be, for example, to determine the distance from the Earth to the Sun, estimate the number of stars in the observable universe, or relate the incidence of lung cancer to environmental or behavioral factors, such as smoking.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{5_figures/chapter1/prediction_vs_inference.png}
-    \caption{Representation of the predictive (from theory, or model, to experimental verification) and inferential (from data, measurement, observation to underlying truth) approaches to natural phenomena. As an example of the predictive branch of mathematics dealing with uncertainty we would find the theory of probability, while the descriptive way of addressing the same problem is normally regarded as statistical inference.}
+    \caption{Representation of two complementary approaches to randomness and variability: a predictive, theory-driven path from model to experiment, and a descriptive, inference-based path from data to explanation. Probability and statistics are normally undestdood as the branches of mathematics addressing both ways.}
     \label{fig:prediction_vs_inference}
 \end{figure}
 
 \medskip
 
-In the same way mathematics as a whole has been summarized as three simple tasks—\textit{count}, \textit{measure}, and \textit{sort}—we could group statistical problems in three main groups. The problem of \textit{sampling}—selecting a finite group of observations from a larger, unknown population— the \textit{estimation}—build some mathematical quantity that represents how the measurements of my sample are distributed, and finally \textit{visualization}—how my observations look like, and how that changes if I represent them in one way or another. Again, all of these problems are related to the phenomenon of \textit{uncertainty}, or \textit{variation} among measurements.
+In the same way mathematics is often summarized as the tasks related to \textit{count}, \textit{measure}, and \textit{sort}, statistical problems can be grouped into three broad categories. \textit{Sampling} concerns the selection of a finite set of observations from a larger, typically unknown population. \textit{Estimation} involves constructing numerical summaries that describe how the data are distributed, while \textit{visualization} addresses how observations are represented and how such representations influence interpretation. All three are fundamentally concerned with uncertainty and variability.
 
 \medskip
 
-Hence, all statistical inquiries begin with observations and measurements, which we normally refer to as \textit{data}. And data begins with the act of selection, or \textit{sampling}. The natural world overflows with phenomena, offering endless opportunities for observation, but only a finite subset can ever be recorded. This distinction gives rise to two central notions: the \textit{population}, which we denote by $\mathcal{P}$, represents the complete set of all possible observations under study. We will write it as
+Hence, all statistical inquiries begin with observations and measurements, which we normally refer to as \textit{data}. And data begins with the act of selection, or \textit{sampling}. The natural world offers a vast abundance of phenomena, with endless opportunities for observation, but only a finite subset can ever be recorded. This distinction gives rise to two central notions: the \textit{population}, which we denote by $\mathcal{P}$, represents the complete set of all possible observations under study. We will write it as
 \begin{equation}
 	\mathcal{P} = \{x_1, x_2, \dots, x_N\} \; .
 \end{equation}
@@ -44,7 +43,7 @@ The \textit{sample} $\mathcal{S}$, on the other hand, is the finite subset actua
 \begin{equation}
 	\mathcal{S} = \{x_1, x_2, \dots, x_n\}, \quad n < N \; ,
 \end{equation}
-where the elements the sample $x_i$ consist of just a selected group of observations from the population, not necessarily consecutive or in the same order. The population represents the ideal object of inference, while the sample is the concrete, finite evidence available to us.  As an example, if I want to study some disease and its relation smokers in a given country, I will never have access to the \textit{complete population}, but only the amout of them that I am able to question, measure, or survey. This distinction is far from trivial. A poorly chosen sample often misrepresents the population and may induce bias, whereas a carefully constructed one mirrors its essential features, and can be used to describe the underlying nature.
+The population represents the ideal object of inference, while the sample is the concrete, finite evidence available to us.  As an example, if I want to study some disease and its relation smokers in a given country, the behavior of a specific population, or the active genes in the genome, I will never have access to the \textit{complete population}, but only the amount of them that I am able to question, measure, or survey. This distinction is far from trivial. A poorly chosen sample often misrepresents the population and may induce bias, whereas a carefully constructed one mirrors its essential features, and can be used to describe the underlying nature.
 
 \medskip
 
@@ -64,18 +63,18 @@ As a summary, sampling and proper description of data establish the ground upon 
 
 \medskip
 
-Let's end this section with a historical note. As we have mentioned, uncertainty has been associated with games of chance and gambling from quite old times, but it was not adressed as a statistics problem until much later. The Royal Statistical Society, founded in 1834, together with many other statistical groups, was originally set up to just gather and publish data, as an attempt to reduce such uncertainty. It did not take long before statisticians wondered how the data might best be used and modern \textit{statistical inference} was born. Charles Babbage, Adolphe Quetelet [...]. Among its famous members was Florence Nightingale, the society's first female member in 1858, whose work was shaped by this same intellectual climate. [...] Other notable RSS presidents have included William Beveridge, Ronald Fisher, which we will discuss in Chapter \ref{chapter4}.
+Let's end this section with a historical note. As we have mentioned, uncertainty has long been associated with games of chance and gambling, but it was not addressed as a statistical problem until much later. The Royal Statistical Society, founded in 1834, together with many other early statistical organizations, was originally established to gather and publish data, with the aim of informing social and economic questions through systematic measurement. It did not take long before statisticians began to ask how such data might best be analyzed and interpreted, and modern \textit{statistical inference} gradually emerged. Among the Society’s influential early figures were Adolphe Quetelet, whose work helped establish statistics as a tool for studying social phenomena, and Charles Babbage, who advocated quantitative approaches to scientific and administrative problems.
+
+Among its most famous members was Florence Nightingale, admitted in 1858 as the Society’s first female member, whose work exemplified the practical use of statistical reasoning in policy and public health. In the early twentieth century, foundational questions concerning probability and inference were further clarified through the work of thinkers such as Frank P. Ramsey, who connected probability with rational belief and decision-making \cite{ramsey_1931_foundations}. Other notable presidents of the Royal Statistical Society have included William Beveridge and Ronald Fisher, whose contributions will be discussed in Chapter~\ref{chapter4}.
 
 \medskip
 
 Andrew Lang's famous quote \textit{"most people use statistics as a drunken man uses lamp-posts—for support rather than illumination"}, highlights the tendency to use statistics as a crutch, relying on them for validation rather than seeking genuine understanding. Lang's observation serves as a cautionary reminder to approach statistical data with critical thinking and not merely as a tool to bolster preconceived notions.
 
-
-
 % Central tendency and variation ......................................................................................
 \section{Central tendency and variation}
 
-Once we have a clear distinction between the population under study and the selected sample, we face a problem. Neither the population—referred as the \textit{true}—mean value, sometimes written as $\mu$, nor its variance–referred as the \textit{true} variance, and written as $\sigma^2$ are available to us. As we just saw, the \textit{only thing we have is the finite set of observations in our sample}, hence we could try to build some "informative quantities" out of out data that would give us a hint of the central value, a measure of spread, etc. Such quantities are called \textit{statistical estimators}. Common examples of such estimators are the \textit{sample mean}, the \textit{median}, and the \textit{variance}, among others.
+Once we have drawn a clear distinction between the population under study and the selected sample, we immediately face a fundamental problem. Neither the population mean—often referred to as the \textit{true} mean and usually denoted by $\mu$—nor the population variance, known as the \textit{true} variance and written as $\sigma^2$, are directly available to us. As we have seen, the only information at our disposal is the finite set of observations contained in our sample. From this limited information, we therefore seek to construct quantities that provide insight into key features of the population, such as its central value or its variability. These quantities are known as \textit{statistical estimators}. Common examples include the \textit{sample mean}, the \textit{median}, the \textit{variance} and the \textit{standard deviation}.
 
 \begin{figure}[ht]
     \centering
@@ -86,7 +85,11 @@ Once we have a clear distinction between the population under study and the sele
 
 \medskip
 
-Once observations have been collected, a natural question arises: what is the \textit{center}, or \textit{typical} value of this data set? Mathematical quantities that measure the central tendency will be useful to summarize our data with a single representative number, providing an immediate sense of location within the distribution.
+Once observations have been collected, a natural question arises: what is the \textit{center}, or \textit{typical}, value of this data set? Measures of central tendency address this question by summarizing the data with a single representative number, offering an immediate sense of where the observations are located within the distribution.
+
+\medskip
+
+\textbf{The sample mean:}
 
 \medskip
 
@@ -112,7 +115,6 @@ We can write this in a slightly more compact way as a \textit{summation}, as fol
 \end{equation}
 
 Here we denote the sum of all elements $x_{i}$ with the greek letter $\sum$, starting with the first one ($x_1$, for $i = 1$) and until the last one ($x_n$, for $i = n$). The expressions \eqref{eq:sample_mean1} and \eqref{eq:sample_mean2} mean \textit{exactly} the same thing, just written in different ways.
-
 \medskip
 
 Let's illustrate with an example. Suppose we repeat a measurement three times, obtaining the results $x_1 = 1$, $x_2 = 2$, and $x_3 = 3$. Our sample is then $\mathcal{S} = \{1, 2, 3\}$, and the sample mean is
@@ -125,7 +127,11 @@ As a warm-up exercise, try computing the same mean value for a second sample, le
 	\bar{x} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (4 + 5 + 6) = 5 \; . \nonumber
 \end{equation}
 
-As we see, the sample mean captures information about the "central" value, where most events cluster. Although useful, it is sensitive to extreme values—often called \textit{outliers}—which motivates the definition additional, more robust measures of central tendency.
+As we see, the sample mean captures information about the "central" value, where most events cluster. Although useful, it is sensitive to extreme values—often called \textit{outliers}—which motivates the definition of additional, more robust measures of central tendency.
+
+\medskip
+
+\textbf{The median:}
 
 \medskip
 
@@ -167,43 +173,43 @@ Unlike the mean, the median is robust to outliers and skewed data, capturing the
 	\bar{x} = \frac{1}{7}(1 + 2 + 3 + 3 + 4 + 4 + 200) = \frac{217}{7} = 31 \; . \nonumber
 \end{equation}
 
-While the meadian, given a size $n = 7$ would just be the midde (4th) value
+While the median, given a size $n = 7$ would just be the middle (4th) value
 \begin{equation}
     M = 3 \; . \nonumber
 \end{equation}
 
-For instance, the data represented in LHS of Figure [...] will be accurately described by computing the mean, given its symmetric behaviour, while the one in the RHS will be better addressed with a median, accounting for the skewness and the presence of outliers.
+For instance, the data represented in LHS of Figure \ref{fig:distribution_visual_comparison} will be accurately described by computing the mean, given its symmetric behaviour, while the one in the RHS will be better addressed with a median, accounting for the skewness and the presence of outliers.
 
 \medskip
 
-A straightforward measure ofter used is the \textit{mode}, the value—or values—that appear most frequently in the observation set. For the first sample $\mathcal{S} = \{1, 2, 3, 5, 3, 2, 7\}$ we just count the frequency of each value, and conclude that since both $2$ and $3$ occur most frequently, the dataset is \textit{bimodal}, with modes $2$ and $3$. In the case of categorical data, such as eye colour or smartphone brands, the mode corresponds to the most common category.
+\textbf{The sample variance:}
 
 \medskip
 
-Beyond central location, it is important to understand the \textit{spread} of the data. We can define the \textit{sample variance} $s^2$ of a set as a quantity that captures how far are the elements from the mean value,
+Beyond central location, it is important to understand the \textit{spread} of the data. We define the \textit{sample variance} $s^2$ of a data set as a quantity that captures how far the elements are from the mean value:
 \begin{equation}
-	s^2 = \frac{1}{n - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2} \; ,
-	\label{eq:sample_variance}. 
+	s^2 = \frac{1}{n - 1} \sum_{i = 1}^{n} (x_{i} - \bar{x})^{2} \; .
+	\label{eq:sample_variance}
 \end{equation}
 
-The $n-1$ in the denominator of \eqref{eq:sample_variance} is called the Bessel correction factor, which ensures that only out of at leas $n = 2$ elements we can compute a finite variance. A more techical explanation is that it ensures that $s^2$ is an \textit{unbiased estimator}, which we will discuss in Chapter \ref{chapter3}
+The factor $n - 1$ in the denominator of \eqref{eq:sample_variance} is called the \textit{Bessel correction factor}. A technical explanation is that this correction ensures that $s^2$ is an \textit{unbiased estimator} of the population variance, a concept we will discuss in Chapter \ref{chapter3}. In particular, it reflects the fact that the sample mean $\bar{x}$ is itself estimated from the data.
 
 \medskip
 
-Note that the variance is just a sum of differences, and squared just so that we obtain a positive value. It is a measure starting with the first element ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$), of how far is each element from the mean value. If all elements in our sample are very close to the mean, then the sum of differences will be a small number, and we would get a variance $s^2$ close to zero. Meanwhile, if the elements are very different, we would obtain a larger variance. 
+Note that the variance is obtained by summing the squared differences between each observation and the mean. The differences are squared so that positive and negative deviations do not cancel and the result is always non-negative. If all elements in the sample are very close to the mean, the variance $s^2$ will be small; if the elements are widely spread, the variance will be larger.
 
 \medskip
 
-Again, let's illustrate with an example. If we compute the variance of our very first example set $\mathcal{S} = \{1, 2, 3\}$, which has just $n = 3$ observations, we get
+Let us illustrate this definition with an example. For the sample $\mathcal{S} = \{1, 2, 3\}$, which has $n = 3$ observations and sample mean $\bar{x} = 2$, the variance is
 \begin{equation}
-	s^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; , \nonumber
+	s^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (3 - 2)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; , \nonumber
 \end{equation}
 
 which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean. 
 
 \medskip
 
-As a warm up exercise, try to compute the variance for a second sample, let's say $\mathcal{S} = \{4, 5, 6\}$. By substituting in the general expression \eqref{eq:sample_variance} you should get the result
+As a warm-up exercise, try to compute the variance for a second sample, let's say $\mathcal{S} = \{4, 5, 6\}$. By substituting in the general expression \eqref{eq:sample_variance} you should get the result
 \begin{equation}
 	s^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((4 - 5)^{2} + (5 - 5)^{2} + (6 - 5)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; . \nonumber
 \end{equation}
@@ -212,34 +218,102 @@ We obtain again a variance $s^2 = 1$, indicating as in the previous example, tha
 
 \medskip
 
-Another useful quantity used to characterize variability is the so called \textit{standard deviation}, which is just the square root of the variance,
+\noindent\textbf{The standard deviation:}
+
+\medskip
+
+Another useful quantity used to characterize variability is the so-called \textit{standard deviation}, which is simply the square root of the variance,
 \begin{equation}
 	s = \sqrt{\frac{1}{n - 1} \sum_{i = 1}^{n} (x_{i} - \bar{x})^{2}} \; ,
 	\label{eq:sample_std}
 \end{equation}
+and therefore has the same units as the original data. While the variance measures spread in squared units, the standard deviation provides a more interpretable measure of how far, on average, observations lie from the mean.
 
-At a glance, variance and standard deviation quantify how much the elements of a dataset deviate from the mean, capturing the notion of \textit{spread}.
+At a glance, variance and standard deviation both quantify how much the elements of a data set deviate from the mean, capturing the notion of \textit{spread}.
 
 \medskip
 
-Finally, \textit{quantiles} divide the ordered data into equal proportions. The $p$-th quantile $Q_p$ is the value below which a fraction $p$ of the data lies. Special cases include the \textit{first quartile} ($Q_1$, 25th percentile), the \textit{median} ($Q_2$, 50th percentile), and the \textit{third quartile} ($Q_3$, 75th percentile). A rigurous definition of quantiles requires the idea of distribution and cumulative probability, so we will discuss them in next chapter. As a note, for a continuous cumulative distribution function (CDF) $F$, the $p$-th quantile satisfies
+\noindent\textbf{Quantiles:}
+
+\medskip
+
+Finally, \textit{quantiles} provide another way to describe the distribution of data by dividing an ordered data set into equal proportions. The $p$-th quantile $Q_p$ is defined as the value below which a fraction $p$ of the data lies. Common special cases include the \textit{first quartile} ($Q_1$, corresponding to the 25th percentile), the \textit{median} ($Q_2$, the 50th percentile), and the \textit{third quartile} ($Q_3$, the 75th percentile). Informally, they answer questions of the form: \emph{“What value separates the lowest $p\%$ of observations from the rest?”} They are particularly useful for describing skewed data and for comparing distributions without relying solely on the mean. To illustrate this idea with a simple example, consider the ordered sample
+\[
+	\mathcal{S} = \{1, 2, 3, 4, 5, 6, 7, 8\} \; .
+\]
+Since there are $n = 8$ observations, the median $Q_2$ lies halfway between the fourth and fifth elements and is therefore
+\[
+	Q_2 = \frac{4 + 5}{2} = 4.5 \; .
+\]
+The first quartile $Q_1$ separates the lowest $25\%$ of the data and lies between the second and third elements, while the third quartile $Q_3$ lies between the sixth and seventh elements. In this way, quartiles summarize the distribution by marking its lower tail, central region, and upper tail.
+
+\medskip
+
+A rigorous definition of quantiles requires the notion of a distribution function and cumulative probability, which we will introduce in the next chapter. For a continuous cumulative distribution function (CDF) $F$, the $p$-th quantile satisfies
 \begin{equation}
-	Q_p = \inf \{ x : F(x) \ge p \}.
+	Q_p = \inf \{ x : F(x) \ge p \} \; .
 	\label{eq:quantiles}
 \end{equation}
 
-In summary, mean, median, mode, variance, standard deviation, and quantiles provide a rich, complementary view of the dataset’s central tendency and variability, allowing for both numerical and graphical summaries that capture the essence of the data.
+\medskip
+
+In summary, the mean, median, mode, variance, standard deviation, and quantiles provide a rich and complementary view of a data set’s central tendency and variability. Together, they allow for both numerical and graphical summaries that capture essential features of the data.
 
 \medskip
 
-Variation is not merely a technicality; it is the very essence of uncertainty. Without spread, probability would be trivial, for every outcome would be the same. It is in the differences among observations that statistical inquiry finds its substance. Hence, central tendency and variation together provide the complementary lenses through which data becomes intelligible. They allow us to say whether two groups are alike or unlike, whether a new result is ordinary or surprising, whether the observed variation is too great to be dismissed as chance. In this sense, descriptive statistics foreshadows the inferential methods to come, hinting at deeper laws beneath the numbers.
-
-
+Variation is not merely a technical detail; it is the essence of uncertainty. Without spread, probability would be trivial, as every outcome would be identical. It is precisely in the differences among observations that statistical inquiry finds its substance. Central tendency and variation thus form complementary lenses through which data become intelligible: they allow us to assess whether groups are similar or different, whether an observation is ordinary or surprising, and whether observed variation can plausibly be attributed to chance. In this sense, descriptive statistics foreshadows the inferential methods to come, hinting at deeper regularities beneath the numbers.
 
 % Data visualization ..................................................................................................
 \section{Data visualization}
 
-While numerical summaries are useful, the human mind often understands patterns much faster through vision than calculation. By \textit{data visualization} we mean a series of techniques used to transform numbers and sequences into shapes, colours and structures that are easier to interpret, and that can be grasped at a glance. It turns abstraction into perception and often reveals regularities invisible to formulas alone. Nowadays, a broad series of fields falling under the name of data visualization - or data \textit{representation} - have become among the pillars of any scientific or data related topic.
+While numerical summaries are useful, the human mind often grasps patterns much more quickly through vision than through calculation. By \textit{data visualization} we mean a family of techniques used to transform numbers and sequences into shapes, colours, and spatial structures that are easier to interpret and can often be understood at a glance. Visualization turns abstraction into perception and frequently reveals regularities that remain hidden when data are examined only through formulas or numerical summaries. Today, a broad range of disciplines grouped under the name of data visualization—or data \textit{representation}—have become central pillars of scientific practice and data-driven inquiry.
+
+\begin{figure}[ht]
+
+    \centering
+
+    % ---------------- Row 1: Small bins ----------------
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_1_bins_small.png}
+        \caption{Histogram (clean data).}
+        \label{fig:histogram_1_small}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_2_bins_small.png}
+        \caption{Histogram (with outliers).}
+        \label{fig:histogram_2_small}
+    \end{subfigure}
+
+    \medskip
+
+    % ---------------- Row 2: Large bins ----------------
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_1_bins_large.png}
+        \caption{Histogram (clean data).}
+        \label{fig:histogram_1_large}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter1/histogram_2_bins_large.png}
+        \caption{Histogram (with outliers).}
+        \label{fig:histogram_2_large}
+    \end{subfigure}
+
+    \medskip
+
+    \caption{Comparison of graphical summaries for $n=100$ observations drawn from a Gaussian distribution. Left column: uncontaminated data. Right column: data affected by outliers. The rows show, respectively, histograms, box plots, and violin plots, illustrating how different visualization techniques respond to skewness and extreme observations.}
+    \label{fig:histogram_comparison}
+    
+\end{figure}
+
+\medskip
+
+Among the oldest and most fundamental visualization tools is the \textit{histogram}. The idea of dividing data into intervals in order to visualize frequency dates back to the late nineteenth century, when Karl Pearson formalized the histogram as a graphical representation closely connected to probability distributions \cite{pearson_1892_grammar, pearson_1895_contributions}. A histogram divides the range of a data set into consecutive intervals, or \textit{bins}, and represents the number—or relative \textit{frequency}—of observations falling within each bin by the height of a bar. This simple yet powerful plot provides an immediate visual impression of the distribution, allowing one to identify symmetry, skewness, concentration of values, and potential gaps. For instance, a symmetric histogram suggests a roughly balanced distribution around the mean, whereas a right-skewed histogram indicates that large values are less frequent but may still exert a strong influence on measures such as the mean. Histograms are therefore widely used in the physical sciences and in contexts where data are compared to theoretical or mathematical predictions.
 
 \begin{figure}[ht]
     \centering
@@ -297,29 +371,12 @@ While numerical summaries are useful, the human mind often understands patterns 
     Left column: uncontaminated data. Right column: data affected by outliers.  
     The rows show, respectively, histograms, box plots, and violin plots, illustrating how different visualization techniques respond to skewness and extreme observations.}
     \label{fig:distribution_visual_comparison}
+
 \end{figure}
 
+\medskip
 
-% \medskip
-
-% The \textit{histogram} is found among the oldest and most fundamental visualization tools. The concept of dividing data into intervals to visualize frequency dates back to Karl Pearson in the late 19th century, who formalized it as a graphical representation of probability distributions \cite{pearson_1892_grammar}. A histogram divides the range of a dataset into consecutive intervals, or \textit{bins}, and represents the the amount - or relative \textit{frequency}- of observations falling within each bin as the height of a bar. This simple yet powerful plot provides an immediate visual impression of the dataset’s distribution, allowing one to identify symmetry, skewness, concentration of values, and potential gaps. For example, a symmetric histogram, like the one in LHS of Figure \ref{fig:histogram_comparison} suggests a roughly balanced distribution around the mean, while a right-skewed histogram, like the one displayed in the RHS of Figure \ref{fig:histogram_comparison}, indicates that higher values are less frequent - or less \textit{probable} - but can yet influence measures like the mean. This is the state of the art in physical sciences and whenever data is supposed to fit a mathematical prediction. 
-
-% \medskip
-
-% Building a histogram in an informative way is extremely powerful, and there are some subtleties to consider. As a rule of thumb, look for natural divisions in the data, and keep all bins the same size, covering the whole range under study. Outliers can skew, so they must be treated carefully. Figures \ref{fig:histogram_comparison} and \ref{fig:histogram_comparison} show how the binning size can affect the distribution of data. Smaller binning leads to more resolution but can be easily distorted in the presence of outliers, while few large bins are robust agains though losing the accuracy in resolution. For skewed distributions it is normally better to use the median and the IQR.
-
-% \medskip
-
-% The box plot, also known as the \textit{box-and-whisker} plot, was introduced by John Tukey in 1970 as part of his work on exploratory data analysis \cite{tukey_1977_eda}. The box plot offers a compact summary of a dataset’s central tendency, spread, and potential outliers. Constructed from five key statistics - the minimum, first quartile ($Q_1$), median ($Q_2$), third quartile ($Q_3$), and maximum - it clearly shows the \textit{interquartile range} (IQR = $Q_3 - Q_1$) and highlights points that fall outside 1.5 times the IQR as outliers. This representation allows for quick comparisons across multiple groups, and it is particularly useful for detecting asymmetry and variability without being overly influenced by extreme values. It is widely used in biological and clinical sciences where an experiment can be repeated many times with relatively small sizes. Figure \ref{fig:box_comparison} displays the same data represented as histograms in Figures \ref{fig:histogram_comparison} as box plots.
-
-% \medskip
-
-% Finally, the \textit{violin} plot is a more recent innovation, combining the box plot with a series of mathematical tools that represent as well the shape of the distribution. While the precise origin is less formally documented, it gained prominence in the late 20th century in statistical software environments, such as R, during the 1990s \cite{hintze_1997_violin}. Essentially, the violin plot extends the concept of the box plot by combining it with a kernel density estimate of the data. This plot not only displays the median and quartiles but also provides a smooth depiction of the distribution’s shape, revealing features such as multimodality or skewness that might be obscured in a simple box plot. By showing both summary statistics and the underlying density, the violin plot gives a richer, more nuanced view of the dataset, particularly when comparing several groups side by side. As an example of such comparison, see Figure [...].
-
-% \medskip
-
-% Quote to Anscombe \cite{anscombe_1973_graphs} and Spearman \cite{spearman_1904_association}
-
+Constructing an informative histogram requires some care. As a general rule, bins should be of equal width and together cover the entire range of the data, while reflecting natural groupings when possible. The choice of bin width plays a crucial role: using many narrow bins increases resolution but can introduce spurious fluctuations, especially in the presence of outliers, whereas using a small number of wide bins produces a smoother and more robust picture at the cost of detail. Because extreme values can strongly affect the appearance of a histogram, they must be handled thoughtfully. For highly skewed distributions, numerical summaries such as the median and the interquartile range (IQR) often provide a more stable description than the mean.
 
 \begin{figure}[ht]
     
@@ -359,7 +416,26 @@ While numerical summaries are useful, the human mind often understands patterns 
 
 \end{figure}
 
+\medskip
 
+Another widely used visualization is the \textit{box plot}, also known as the \textit{box-and-whisker} plot, introduced by John Tukey in 1970 as part of his work on exploratory data analysis \cite{tukey_1977_eda}. The box plot offers a compact summary of a data set’s central tendency, spread, and potential outliers. It is constructed from five key statistics: the minimum, first quartile ($Q_1$), median ($Q_2$), third quartile ($Q_3$), and maximum. The box itself represents the interquartile range ($\mathrm{IQR} = Q_3 - Q_1$), while observations lying more than 1.5 times the IQR from the quartiles are typically flagged as outliers. Box plots allow for rapid comparisons across multiple groups and are particularly effective at revealing asymmetry and variability without being overly influenced by extreme values. For this reason, they are especially common in biological, medical, and clinical sciences, where experiments are often repeated many times with relatively small sample sizes.
+
+\medskip
+
+More recently, the \textit{violin plot} has emerged as a refinement of the box plot, combining summary statistics with a smooth representation of the distribution’s shape. Although its precise origin is less sharply documented, the violin plot gained prominence in the late twentieth century with the development of statistical software environments such as \textsf{R} and \textsf{Python}, particularly following the work of Hintze and Nelson in the 1990s \cite{hintze_1997_violin}. A violin plot augments the box plot by incorporating a kernel density estimate of the data, producing a mirrored shape that reflects the underlying distribution. In addition to displaying the median and quartiles, violin plots reveal features such as skewness and multimodality that may be obscured in simpler summaries, making them especially useful for comparing several groups side by side.
+
+\medskip
+
+The importance of visualization extends beyond convenience. Early work by Spearman on association \cite{spearman_1904_association} and later demonstrations such as Anscombe’s quartet \cite{anscombe_1973_graphs} highlighted a crucial lesson: data sets with nearly identical numerical summaries can exhibit dramatically different graphical structures. Visualization is therefore not merely a tool for presentation, but a fundamental instrument of statistical reasoning. By complementing numerical summaries, graphical representations help guard against misinterpretation and deepen our understanding of variability, structure, and uncertainty in data.
+
+\medskip
+
+As a note, the roots of data visualization can be traced back well before modern statistics, to the early development of analytical geometry in the seventeenth century. A decisive step was taken by René Descartes, whose introduction of coordinate systems in La Géométrie (1637) provided a systematic way to represent numerical relationships geometrically. By associating quantities with positions in space, Descartes established the conceptual framework underlying graphs, curves, and plots as representations of functional relationships. Although his work was not statistical in intent, it laid the mathematical foundation upon which later visual representations of empirical data would be built. Over the following centuries, this geometric perspective was gradually adapted to observational and social data, culminating in the nineteenth-century development of statistical graphics—such as frequency plots and histograms—as tools for exploring variability, association, and uncertainty \cite{descartes_1637_geometry}.
+
+\medskip
+
+Following Descartes’ geometric framework, graphical representations of data evolved through the work of figures such as William Playfair, who in the late eighteenth century introduced line and bar charts to depict economic time series, and Adolphe Quetelet, who applied statistical regularities to social phenomena. In the nineteenth century, visualization became both an analytical and persuasive tool, exemplified by Florence Nightingale’s use of statistical graphics in public health and Charles Joseph Minard’s multivariate maps. These developments established visualization as a central instrument for exploring, communicating, and reasoning about data, long before the formalization of modern statistical theory \cite{minard_1862_graphique, playfair_1786_atlas}.
+.
 
 % Exercises ............................................................................................................
 
