@@ -4,27 +4,27 @@
 
 \epigraph{\textit{It is through the calculation of probabilities that the divine order becomes visible.}}{— Jacob Bernoulli}
 
-The study of probability, though having very ancient roots, began its modern development in the seventeenth century through the famous correspondence between Blaise Pascal and Pierre de Fermat. Their discussion of games of chance, and in particular the “problem of the division of stakes,” laid the groundwork for a systematic mathematical analysis of uncertain events. A few decades later, Jacob Bernoulli’s \textit{Ars Conjectandi} provided the first sustained theoretical treatment of probability, including an early formulation of the law of large numbers. Subsequent refinements by De Moivre and Laplace transformed probability into a powerful analytical theory, while its fully axiomatic structure only crystallised in the twentieth century, as we will see.
+The study of probability, though having very ancient roots, began its modern development in the $17^{\text{th}}$ century through the famous correspondence between Blaise Pascal and Pierre de Fermat. Their discussion of games of chance, and in particular the ``problem of the division of stakes'', laid the groundwork for a systematic mathematical analysis of uncertain events. A few decades later, Jacob Bernoulli’s \textit{"Ars Conjectandi"} provided the first sustained theoretical treatment of probability, including an early formulation of the law of large numbers \cite{bernoulli_1713_ars,hald_1990_history}. Subsequent refinements by Abraham de Moivre, particularly his work on normal approximation, and by Pierre-Simon Laplace transformed probability into a powerful analytical theory, while its fully axiomatic structure only crystallised in the $20^{\text{th}}$ century, as we will see \cite{laplace_1812_theorie}.
 
 \medskip
 
-Beyond games of chance, probability rapidly became essential for the understanding of natural phenomena and human affairs. Astronomy, population studies, and various physical problems required tools to reason quantitatively about variability, error, and incomplete information. In this sense, probability emerged not merely as a mathematical curiosity, but as a response to practical problems involving uncertainty and regularity in the empirical world.
+Beyond games of chance, probability rapidly became essential for the understanding of natural phenomena and human affairs. Astronomy, population studies, and various physical problems required tools to reason quantitatively about variability, error, and incomplete information. During the nineteenth century, thinkers such as Antoine Augustin Cournot emphasized the connection between probabilistic laws and empirical regularities, arguing that probability acquires meaning through its relation to observable frequencies in the world. In this sense, probability emerged not merely as a mathematical curiosity, but as a response to practical problems involving uncertainty and regularity in the empirical world.
 
 \medskip
 
-A decisive step toward mathematical rigor was taken by Andrey Kolmogorov in 1933. In his \textit{Grundbegriffe der Wahrscheinlichkeitsrechnung} \cite{kolmogorov_1933_grundbegriffe}, Kolmogorov showed that probability could be treated as a branch of measure theory, independent of any specific interpretation. Rather than defining probability by intuition, symmetry, or frequency, he postulated a small set of axioms from which the entire formal theory follows.
+As we have mentioned already, a decisive step toward mathematical rigor was taken by Andrey Kolmogorov in 1933. In his \textit{"Grundbegriffe der Wahrscheinlichkeitsrechnung"} \cite{kolmogorov_1933_grundbegriffe}, Kolmogorov showed that probability could be treated as a branch of measure theory, independent of any specific interpretation. Rather than defining probability through intuition, symmetry, or frequency, he postulated a small set of axioms from which the entire formal theory follows.
 
 \medskip
 
-This axiomatic approach provided a common mathematical framework within which classical, frequentist, and Bayesian interpretations could coexist. While philosophical disagreements about the meaning of probability persist, Kolmogorov’s formulation ensures that all interpretations obey the same internal rules of consistency. In this sense, modern probability theory is less concerned with what probability \textit{means} and more with how probabilistic reasoning must behave if it is to be logically coherent.
+This axiomatic approach provided a common mathematical framework within which classical, frequentist, and Bayesian interpretations could coexist. In the early $20^{\text{th}}$ century, frequentist views—most prominently articulated by Richard von Mises—defined probability in terms of long-run relative frequencies in repeatable experiments, while alternative approaches interpreted probability as a rational degree of belief. While philosophical disagreements about the meaning of probability persist, Kolmogorov’s formulation ensures that all interpretations obey the same internal rules of consistency. In this sense, modern probability theory is less concerned with what probability \textit{means} and more with how probabilistic reasoning must behave if it is to be logically coherent.
 
 \medskip
 
-The explicit mathematical formalization of decision-making under uncertainty is, however, a relatively recent development. It is usually attributed to the British mathematician Frank P. Ramsey (1903–1930), who in his 1926 paper \textit{Truth and Probability} \cite{ramsey_1931_foundations} introduced a subjective interpretation of probability grounded in rational preference. Ramsey showed that coherent choices imply numerical probabilities and utilities, thereby laying the foundations of expected utility theory. His work marked a shift from viewing probability solely as a property of random mechanisms to treating it as a rational measure of belief.
+The explicit mathematical formalization of decision-making under uncertainty is, however, a relatively recent development. It is usually attributed to the British mathematician Frank P.~Ramsey (1903--1930), who in his 1926 paper \textit{Truth and Probability} \cite{ramsey_1931_foundations} introduced a subjective interpretation of probability grounded in rational preference. Ramsey showed that coherent choices imply numerical probabilities and utilities, thereby laying the foundations of expected utility theory. His work marked a shift from viewing probability solely as a property of random mechanisms to treating it as a rational measure of belief. Bayesian developments building on these ideas, as well as alternative statistical frameworks, will be discussed in later chapters.
 
 \medskip
 
-Parallel developments in the early twentieth century—most notably by Pearson, Fisher, and Neyman—focused on statistical inference from data rather than individual decision-making. These approaches emphasized long-run frequency properties, error control, and sampling distributions, leading to the classical framework of statistical inference that still underlies much of modern applied statistics.
+Parallel developments in the early $20^{\text{th}}$ century focused on statistical inference from data rather than individual decision-making. These approaches emphasized long-run frequency properties, error control, and sampling distributions, leading to the classical framework of statistical inference that still underlies much of modern applied statistics.
 
 % What is probability .............................................................................
 \section{Probability and random events}
@@ -79,7 +79,7 @@ Mathematically, a discrete probability distribution assigns a probability $\math
 
 \subsection{Bernoulli trials}
 
-The Bernoulli trial was formalized by Jacob Bernoulli in \textit{Ars Conjectandi} (1713) \cite{bernoulli_1713_arsconjectandi}. His motivation was to understand how regularity emerges from randomness when an experiment with two outcomes is repeated many times.
+The Bernoulli trial was formalized by Jacob Bernoulli in \textit{"Ars Conjectandi"} (1713) \cite{bernoulli_1713_arsconjectandi}. His motivation was to understand how regularity emerges from randomness when an experiment with two outcomes is repeated many times.
 
 \medskip
 
@@ -157,7 +157,7 @@ Discrete uniform distributions appear whenever outcomes are assumed to be equall
 
 \subsection{Binomial distribution}
 
-The binomial distribution was systematically studied by Abraham de Moivre in the early eighteenth century. His analysis of repeated Bernoulli trials led not only to the binomial formula but also to the first appearance of the normal approximation. De Moivre introduced the binomial distribution while studying games of chance, but its importance quickly extended far beyond gambling. By considering repeated trials under identical conditions, the binomial distribution became a central model for understanding variability in counting processes.
+The binomial distribution was systematically studied by Abraham de Moivre in the early $18^{\text{th}}$ century. His analysis of repeated Bernoulli trials led not only to the binomial formula but also to the first appearance of the normal approximation. De Moivre introduced the binomial distribution while studying games of chance, but its importance quickly extended far beyond gambling. By considering repeated trials under identical conditions, the binomial distribution became a central model for understanding variability in counting processes.
 
 \medskip
 
@@ -253,7 +253,7 @@ The probability that a random variable lies in an interval $[a,b]$ is then given
 
 \subsection{Gaussian distribution}
 
-The Gaussian distribution emerged from the work of Abraham de Moivre in the early eighteenth century and was later developed systematically by Pierre-Simon Laplace. Its physical interpretation was provided by Carl Friedrich Gauss in \textit{Theoria Motus Corporum Coelestium} (1809) \cite{gauss_1809_astronomy}, in the context of measurement errors. Gauss introduced the distribution while studying astronomical observations, where repeated measurements of the same quantity produced small deviations around a central value. This interpretation linked probability theory directly to experimental science.
+The Gaussian distribution emerged from the work of Abraham de Moivre in the early $18^{\text{th}}$ century and was later developed systematically by Pierre-Simon Laplace. Its physical interpretation was provided by Carl Friedrich Gauss in \textit{Theoria Motus Corporum Coelestium} (1809) \cite{gauss_1809_astronomy}, in the context of measurement errors. Gauss introduced the distribution while studying astronomical observations, where repeated measurements of the same quantity produced small deviations around a central value. This interpretation linked probability theory directly to experimental science.
 
 \medskip
 
@@ -294,7 +294,7 @@ Gaussian distributions are used to model many natural and social phenomena where
 
 \subsection{Exponential distribution}
 
-The exponential distribution arose in the nineteenth century in the study of waiting times and decay processes, closely connected to Poisson’s work on random events and later developments in queueing theory \cite{poisson_1837_judgements,doob_1953_processes}. The exponential distribution emerged naturally from the study of random event timing, particularly in physics and telecommunications. Its mathematical form reflects the assumption that events occur independently and at a constant average rate.
+The exponential distribution arose in the $19^{\text{th}}$ century in the study of waiting times and decay processes, closely connected to Poisson’s work on random events and later developments in queueing theory \cite{poisson_1837_judgements,doob_1953_processes}. The exponential distribution emerged naturally from the study of random event timing, particularly in physics and telecommunications. Its mathematical form reflects the assumption that events occur independently and at a constant average rate.
 
 \medskip
 
