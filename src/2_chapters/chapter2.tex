@@ -55,7 +55,7 @@ Why, for example, do we say that a fair coin has probability $1/2$ of landing he
 
 \medskip
 
-This idea, that half of the times we toss a coin we obtain heads, hence we assigne $1/2$ probability, or that one every six times we roll dice we see a specific face, hence we assign $1/6$ probability, leads to common interpretation of probability known as the \textit{frequentist} view, developed most clearly by von Mises in his \textit{{"Probability, Statistics and Truth"}} \cite{vonmises_1928_truth}. In this perspective, probability is identified with the long-run relative frequency of an event in repeated, identical experiments. Saying that a coin has probability $0.5$ of landing heads means that, over many tosses, roughly half will result in heads. And as we increase the number of observations, at higher \textit{frequencies}, we expect that number to converge to a perfect half.
+This idea, that half of the times we toss a coin we obtain heads, hence we assign $1/2$ probability, or that one every six times we roll dice we see a specific face, hence we assign $1/6$ probability, leads to common interpretation of probability known as the \textit{frequentist} view, developed most clearly by von Mises in his \textit{{"Probability, Statistics and Truth"}} \cite{vonmises_1928_truth}. In this perspective, probability is identified with the long-run relative frequency of an event in repeated, identical experiments. Saying that a coin has probability $0.5$ of landing heads means that, over many tosses, roughly half will result in heads. And as we increase the number of observations, at higher \textit{frequencies}, we expect that number to converge to a perfect half.
 
 \medskip
 
@@ -68,7 +68,7 @@ Both interpretations use the same mathematical rules and rely on Kolmogorov's ax
 % Discrete events .............................................................................
 \section{Discrete events}
 
-With this simple definition of probability, we can now start categorizing event based on how their probabilities are \textit{distributed}. By \textit{discrete} events we mean those where the set of possible outcomes is finite or countably infinite. From coins and dice to coungin, discrete models are particularly useful when outcomes correspond to counts, successes and failures, or categorical observations. In such cases, probability distributions will represent exact probabilities to individual outcomes and are therefore called probability \textit{mass} functions. 
+With this simple definition of probability, we can now start categorizing event based on how their probabilities are \textit{distributed}. By \textit{discrete} events we mean those where the set of possible outcomes is finite or countably infinite. From coins and dice to counting, discrete models are particularly useful when outcomes correspond to counts, successes and failures, or categorical observations. In such cases, probability distributions will represent exact probabilities to individual outcomes and are therefore called probability \textit{mass} functions. 
 
 \medskip
 
@@ -98,24 +98,28 @@ Bernoulli trials are used whenever an experiment has exactly two possible outcom
 
 \medskip
 
-\textit{Example:} A single coin toss can be modeled as a Bernoulli trial, with $x=1$ representing heads and $x=0$ tails. For a fair coin, symmetry suggests $p=1/2$.
+\textit{Example:} A single coin toss of a fair coin can be modeled as a Bernoulli trial, with $x=1$ representing heads and $x=0$ tails. For a fair coin, symmetry suggests $p=1/2$.
+
+\medskip
+
+\textit{Example:} A single coin toss of a biased coin can be modeled as a Bernoulli trial, with $x=1$ representing heads and $x=0$ tails, but now the probability of successwould be, for instance $p=2/3$.
 
 \begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter2/bernoulli_1.png}
-        \caption{Bernoulli example 1.}
+        \caption{Bernoulli trial on a fair coin.}
         \label{fig:bernoulli_1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth, height=0.8\textwidth]{5_figures/chapter2/bernoulli_2.png}
-        \caption{Bernoulli example 2.}
+        \caption{Bernoulli trial on a biased coin.}
         \label{fig:bernoulli_2}
     \end{subfigure}
-    \caption{Probability distribution}
+    \caption{Bernoulli probability distribution}
     \label{fig:bernoulli_dist}
 \end{figure}
 
@@ -152,7 +156,7 @@ Discrete uniform distributions appear whenever outcomes are assumed to be equall
         \caption{Cumulative probability.}
         \label{fig:duniform_2}
     \end{subfigure}
-    \caption{Probability distribution}
+    \caption{Discrete uniform probability distribution}
     \label{fig:duniform_dist}
 \end{figure}
 
@@ -176,7 +180,7 @@ Binomial models naturally arise when we count how many times a certain event occ
 
 \medskip
 
-\textit{Example:} The number of heads obtained when tossing a fair coin $10$ times follows a binomial distribution with $n=10$ and $p=1/2$.
+\textit{Example:} The number of 4s obtained when rolling a fair dice $10$ times follows a binomial distribution with $n=10$ and $p=1/6$.
 
 \begin{figure}[ht]
     \centering
@@ -193,7 +197,7 @@ Binomial models naturally arise when we count how many times a certain event occ
         \caption{Cumulative probability.}
         \label{fig:binomial_2}
     \end{subfigure}
-    \caption{Probability distribution}
+    \caption{Binomial probability distribution}
     \label{fig:binomial_dist}
 \end{figure}
 
@@ -216,7 +220,7 @@ Poisson distributions are commonly used to model events that occur independently
 
 \medskip
 
-\textit{Example:} The number of emails received in one hour, when messages arrive independently at an average rate of $\lambda=5$ per hour, can be modeled using a Poisson distribution.
+\textit{Example:} The number of cancer patients observed in a hospital over a week, when the average patients happen at a rate rate of $\lambda=7$ per week, can also be modeled using a Poisson distribution.
 
 \begin{figure}[ht]
     \centering
@@ -233,7 +237,7 @@ Poisson distributions are commonly used to model events that occur independently
         \caption{Cumulative probability.}
         \label{fig:poisson_2}
     \end{subfigure}
-    \caption{Probability distribution}
+    \caption{Poisson probability distribution}
     \label{fig:poisson_dist}
 \end{figure}
 
@@ -349,7 +353,7 @@ Gaussian distributions are used to model many natural and social phenomena where
         \caption{Cumulative probability.}
         \label{fig:gaussian_2}
     \end{subfigure}
-    \caption{Probability distribution}
+    \caption{Gaussian probability density distribution}
     \label{fig:gaussian_dist}
 \end{figure}
 
@@ -390,7 +394,7 @@ Exponential models are appropriate for waiting-time phenomena. Examples include 
         \caption{Cumulative probability.}
         \label{fig:exponential_2}
     \end{subfigure}
-    \caption{Probability distribution}
+    \caption{Exponential probability density distribution}
     \label{fig:exponential_dist}
 \end{figure}
 
@@ -427,7 +431,7 @@ Continuous uniform distributions are often used in simulations and random sampli
         \caption{Cumulative probability.}
         \label{fig:uniform_2}
     \end{subfigure}
-    \caption{Probability distribution}
+    \caption{Continous uniform probability density distribution}
     \label{fig:uniform_dist}
 \end{figure}
 
