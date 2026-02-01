@@ -239,19 +239,19 @@ Jerzy Neyman and Egon~S. Pearson.
 
 \bibitem{student_1908_mean}
 Student.
-\newblock The probable error of a mean.
+\newblock {``\emph{The Probable Error of a Mean}''}.
 \newblock {\em Biometrika}, 6(1):1--25, 1908.
 
 \bibitem{welch_1947_generalization}
 Bernard~L. Welch.
-\newblock The generalization of ``student’s'' problem when several different
-  population variances are involved.
+\newblock {``\emph{The Generalization of ``Student’s'' Problem When Several
+  Different Population Variances Are Involved}''}.
 \newblock {\em Biometrika}, 34(1--2):28--35, 1947.
 
 \bibitem{fisher_1924_distribution}
 Ronald~A. Fisher.
-\newblock On a distribution yielding the error functions of several well known
-  statistics.
+\newblock {``\emph{On a Distribution Yielding the Error Functions of Several
+  Well Known Statistics}''}.
 \newblock {\em Proceedings of the International Congress of Mathematicians},
   1924.
 
@@ -267,54 +267,93 @@ Ronald~A. Fisher.
 
 \bibitem{pearson_1900_chisquare}
 Karl Pearson.
-\newblock On the criterion that a given system of deviations from the probable
-  in the case of a correlated system of variables is such that it can be
-  reasonably supposed to have arisen from random sampling.
+\newblock {``\emph{On the Criterion That a Given System of Deviations from the
+  Probable in the Case of a Correlated System of Variables Is Such That It Can
+  Be Reasonably Supposed to Have Arisen from Random Sampling}''}.
 \newblock {\em Philosophical Magazine}, 50:157--175, 1900.
 
 \bibitem{wald_1943_tests}
 Abraham Wald.
-\newblock Tests of statistical hypotheses concerning several parameters when
-  the number of observations is large.
+\newblock {``\emph{Tests of Statistical Hypotheses Concerning Several
+  Parameters When the Number of Observations Is Large}''}.
 \newblock {\em Transactions of the American Mathematical Society}, 54:426--482,
   1943.
 
+\bibitem{love_2014_deseq2}
+Michael~I. Love, Wolfgang Huber, and Simon Anders.
+\newblock {``\emph{Moderated Estimation of Fold Change and Dispersion for
+  RNA-Seq Data with DESeq2}''}.
+\newblock {\em Genome Biology}, 15(12):550, 2014.
+
 \bibitem{wilcoxon_1945_ranks}
 Frank Wilcoxon.
-\newblock Individual comparisons by ranking methods.
+\newblock {``\emph{Individual Comparisons by Ranking Methods}''}.
 \newblock {\em Biometrics Bulletin}, 1(6):80--83, 1945.
 
 \bibitem{mann_whitney_1947_test}
 Henry~B. Mann and Donald~R. Whitney.
-\newblock On a test of whether one of two random variables is stochastically
-  larger than the other.
+\newblock {``\emph{On a Test of Whether One of Two Random Variables Is
+  Stochastically Larger Than the Other}''}.
 \newblock {\em The Annals of Mathematical Statistics}, 18(1):50--60, 1947.
 
 \bibitem{levene_1960_variances}
 Howard Levene.
-\newblock Robust tests for equality of variances.
+\newblock {``\emph{Robust Tests for Equality of Variances}''}.
 \newblock {\em Contributions to Probability and Statistics}, pages 278--292,
   1960.
 
 \bibitem{kruskal_wallis_1952_use}
 William~H. Kruskal and W.~Allen Wallis.
-\newblock Use of ranks in one-criterion variance analysis.
+\newblock {``\emph{Use of Ranks in One-Criterion Variance Analysis}''}.
 \newblock {\em Journal of the American Statistical Association},
   47(260):583--621, 1952.
 
 \bibitem{kolmogorov_1933_sulla}
 Andrey Kolmogorov.
-\newblock Sulla determinazione empirica di una legge di distribuzione.
+\newblock {``\emph{Sulla Determinazione Empirica di una Legge di
+  Distribuzione}''}.
 \newblock {\em Giornale dell'Istituto Italiano degli Attuari}, 1933.
 
 \bibitem{smirnov_1948_table}
 Nikolai~V. Smirnov.
-\newblock Table for estimating the goodness of fit of empirical distributions.
+\newblock {``\emph{Table for Estimating the Goodness of Fit of Empirical
+  Distributions}''}.
 \newblock {\em The Annals of Mathematical Statistics}, 19(2):279--281, 1948.
 
 \bibitem{shapiro_wilk_1965_normality}
 Samuel~S. Shapiro and Martin~B. Wilk.
-\newblock An analysis of variance test for normality (complete samples).
+\newblock {``\emph{An Analysis of Variance Test for Normality (Complete
+  Samples)}''}.
 \newblock {\em Biometrika}, 52(3--4):591--611, 1965.
+
+\bibitem{reichenbach_1938_prediction}
+Hans Reichenbach.
+\newblock {\em ``{Experience and Prediction}''}.
+\newblock University of Chicago Press, 1938.
+
+\bibitem{popper_1934_logic}
+Karl Popper.
+\newblock {\em ``{Logik der Forschung}''}.
+\newblock Springer, 1934.
+
+\bibitem{lehmann_1959_testing}
+Erich~L. Lehmann.
+\newblock {\em ``{Testing Statistical Hypotheses}''}.
+\newblock Wiley, 1959.
+
+\bibitem{cox_2006_principles}
+David~R. Cox.
+\newblock {\em ``{Principles of Statistical Inference}''}.
+\newblock Cambridge University Press, 2006.
+
+\bibitem{mayo_1996_error}
+Deborah~G. Mayo.
+\newblock {\em ``{Error and the Growth of Experimental Knowledge}''}.
+\newblock University of Chicago Press, 1996.
+
+\bibitem{mayo_2018_severe}
+Deborah~G. Mayo.
+\newblock {\em ``{Statistical Inference as Severe Testing}''}.
+\newblock Cambridge University Press, 2018.
 
 \end{thebibliography}

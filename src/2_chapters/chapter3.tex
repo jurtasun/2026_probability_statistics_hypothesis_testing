@@ -143,7 +143,50 @@ A common way to combine these two sources of error is the mean squared error (MS
 
 \medskip
 
-\textit{Example.} The sample mean is an unbiased estimator of the population mean. Increasing the sample size reduces its variance, making the estimate more precise.
+\textbf{Example: The sample mean and variance}
+
+\medskip
+
+Let \(X_1,X_2,\dots,X_n\) be independent and identically distributed random variables with
+\[
+\mathbb{E}[X_i]=\mu,
+\qquad
+\operatorname{Var}(X_i)=\sigma^2.
+\]
+
+The \emph{sample mean}
+\[
+\bar{X}=\frac{1}{n}\sum_{i=1}^n X_i
+\]
+is an estimator of the population mean \(\mu\). Taking expectations,
+\[
+\mathbb{E}[\bar{X}]
+=
+\frac{1}{n}\sum_{i=1}^n \mathbb{E}[X_i]
+=
+\mu,
+\]
+so the sample mean is an \emph{unbiased} estimator of \(\mu\). Its variance is
+\[
+\operatorname{Var}(\bar{X})
+=
+\frac{\sigma^2}{n},
+\]
+which decreases as the sample size increases, explaining why larger samples yield more precise estimates.
+
+\medskip
+
+By contrast, consider the \emph{sample variance}
+\[
+s^2
+=
+\frac{1}{n-1}\sum_{i=1}^n (X_i-\bar{X})^2,
+\]
+which estimates the population variance \(\sigma^2\). The factor \(n-1\) in the denominator is chosen so that
+\[
+\mathbb{E}[s^2]=\sigma^2,
+\]
+making \(s^2\) an unbiased estimator. If instead the denominator \(n\) were used, the resulting estimator would be biased downward. This correction illustrates how bias and variance depend on the precise form of an estimator.
 
 % Confidence intervals and critical regions .......................................................
 \section{Confidence intervals and critical regions}
