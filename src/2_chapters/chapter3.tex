@@ -109,66 +109,66 @@ approaches a standard normal distribution as $n$ becomes large.
 
 \end{figure}
 
-% % Bias, variance and Mean Squared Errors ..........................................................
-% \section{Bias, variance and Mean Squared Error}
+% Bias, variance and Mean Squared Errors ..........................................................
+\section{Bias, variance and Mean Squared Error}
 
-% The systematic study of estimators and their properties developed alongside the rise of mathematical statistics in the late nineteenth and early twentieth centuries. Early statisticians recognized that good estimation procedures must balance systematic error and random variability. This insight led to the decomposition of mean squared error into variance and squared bias, a framework that remains central in both classical statistics and modern machine learning \cite{stigler_1986_history, degroot_2012_probability}.
+The systematic study of estimators and their properties developed alongside the rise of mathematical statistics in the late nineteenth and early twentieth centuries. Early statisticians recognized that good estimation procedures must balance systematic error and random variability. This insight led to the decomposition of mean squared error into variance and squared bias, a framework that remains central in both classical statistics and modern machine learning \cite{stigler_1986_history, degroot_2012_probability}.
 
-% \medskip
+\medskip
 
-% An estimator is a rule that assigns a numerical value to an unknown parameter based on observed data. Because estimators depend on random samples, they are themselves random variables.
+An estimator is a rule that assigns a numerical value to an unknown parameter based on observed data. Because estimators depend on random samples, they are themselves random variables.
 
-% \medskip
+\medskip
 
-% The \textit{bias} of an estimator measures systematic error: it quantifies whether the estimator tends to overestimate or underestimate the true parameter. The \textit{variance} measures how much the estimator fluctuates from sample to sample.
+The \textit{bias} of an estimator measures systematic error: it quantifies whether the estimator tends to overestimate or underestimate the true parameter. The \textit{variance} measures how much the estimator fluctuates from sample to sample.
 
-% \medskip
+\medskip
 
-% If $\hat{\theta}$ is an estimator of a parameter $\theta$, its bias is defined as
-% \begin{equation}
-% \operatorname{Bias}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta,
-% \end{equation}
-% and its variance is
-% \begin{equation}
-% \operatorname{Var}(\hat{\theta}).
-% \end{equation}
+If $\hat{\theta}$ is an estimator of a parameter $\theta$, its bias is defined as
+\begin{equation}
+\operatorname{Bias}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta,
+\end{equation}
+and its variance is
+\begin{equation}
+\operatorname{Var}(\hat{\theta}).
+\end{equation}
 
-% \medskip
+\medskip
 
-% A common way to combine these two sources of error is the mean squared error (MSE):
-% \begin{equation}
-% \operatorname{MSE}(\hat{\theta}) = \mathbb{E}\!\left[(\hat{\theta}-\theta)^2\right]
-% = \operatorname{Var}(\hat{\theta}) + \operatorname{Bias}(\hat{\theta})^2.
-% \end{equation}
+A common way to combine these two sources of error is the mean squared error (MSE):
+\begin{equation}
+\operatorname{MSE}(\hat{\theta}) = \mathbb{E}\!\left[(\hat{\theta}-\theta)^2\right]
+= \operatorname{Var}(\hat{\theta}) + \operatorname{Bias}(\hat{\theta})^2.
+\end{equation}
 
-% \medskip
+\medskip
 
-% \textit{Example.} The sample mean is an unbiased estimator of the population mean. Increasing the sample size reduces its variance, making the estimate more precise.
+\textit{Example.} The sample mean is an unbiased estimator of the population mean. Increasing the sample size reduces its variance, making the estimate more precise.
 
-% % Confidence intervals and critical regions .......................................................
-% \section{Confidence intervals and critical regions}
+% Confidence intervals and critical regions .......................................................
+\section{Confidence intervals and critical regions}
 
-% Confidence intervals emerged as a practical response to the limitations of point estimation. Rather than asking for a single best value, statisticians sought procedures that quantify uncertainty in a repeatable and operational way. The concept was formalized in the early twentieth century as part of the frequentist framework, emphasizing long-run coverage properties under repeated sampling. This interpretation remains foundational in applied statistics and experimental science \cite{degroot_2012_probability, bandyopadhyay_2011_philosophy}.
+Confidence intervals emerged as a practical response to the limitations of point estimation. Rather than asking for a single best value, statisticians sought procedures that quantify uncertainty in a repeatable and operational way. The concept was formalized in the early twentieth century as part of the frequentist framework, emphasizing long-run coverage properties under repeated sampling. This interpretation remains foundational in applied statistics and experimental science \cite{degroot_2012_probability, bandyopadhyay_2011_philosophy}.
 
-% \medskip
+\medskip
 
-% Point estimates summarize data with a single number, but they do not convey uncertainty. Confidence intervals address this limitation by providing a range of plausible values for an unknown parameter. A confidence interval is constructed so that, in repeated sampling, it contains the true parameter a fixed proportion of the time. This proportion is called the confidence level and is typically expressed as a percentage.
+Point estimates summarize data with a single number, but they do not convey uncertainty. Confidence intervals address this limitation by providing a range of plausible values for an unknown parameter. A confidence interval is constructed so that, in repeated sampling, it contains the true parameter a fixed proportion of the time. This proportion is called the confidence level and is typically expressed as a percentage.
 
-% \medskip
+\medskip
 
-% For a population with mean $\mu$ and known variance $\sigma^2$, an approximate $100(1-\alpha)\%$ confidence interval for $\mu$ is given by
-% \begin{equation}
-% \bar{X}_n \pm z_{\alpha/2}\frac{\sigma}{\sqrt{n}},
-% \end{equation}
-% where $z_{\alpha/2}$ is a quantile of the standard normal distribution.
+For a population with mean $\mu$ and known variance $\sigma^2$, an approximate $100(1-\alpha)\%$ confidence interval for $\mu$ is given by
+\begin{equation}
+\bar{X}_n \pm z_{\alpha/2}\frac{\sigma}{\sqrt{n}},
+\end{equation}
+where $z_{\alpha/2}$ is a quantile of the standard normal distribution.
 
-% \medskip
+\medskip
 
-% Confidence intervals are closely related to hypothesis testing. The set of parameter values not rejected by a statistical test forms a confidence region. This duality provides a unified framework for estimation and decision-making.
+Confidence intervals are closely related to hypothesis testing. The set of parameter values not rejected by a statistical test forms a confidence region. This duality provides a unified framework for estimation and decision-making.
 
-% \medskip
+\medskip
 
-% \textit{Example.} A $95\%$ confidence interval for the mean expresses the range of values that are consistent with the observed data under repeated sampling.
+\textit{Example.} A $95\%$ confidence interval for the mean expresses the range of values that are consistent with the observed data under repeated sampling.
 
 \begin{figure}[ht]
     

@@ -230,4 +230,91 @@ Siméon-Denis Poisson.
 \newblock {\em ``{Recherches sur la probabilité des jugements}''}.
 \newblock 1837.
 
+\bibitem{pearson_neyman_1933_efficient}
+Jerzy Neyman and Egon~S. Pearson.
+\newblock ``{On the Problem of the Most Efficient Tests of Statistical
+  Hypotheses}''.
+\newblock {\em Philosophical Transactions of the Royal Society of London A},
+  1933.
+
+\bibitem{student_1908_mean}
+Student.
+\newblock The probable error of a mean.
+\newblock {\em Biometrika}, 6(1):1--25, 1908.
+
+\bibitem{welch_1947_generalization}
+Bernard~L. Welch.
+\newblock The generalization of ``student’s'' problem when several different
+  population variances are involved.
+\newblock {\em Biometrika}, 34(1--2):28--35, 1947.
+
+\bibitem{fisher_1924_distribution}
+Ronald~A. Fisher.
+\newblock On a distribution yielding the error functions of several well known
+  statistics.
+\newblock {\em Proceedings of the International Congress of Mathematicians},
+  1924.
+
+\bibitem{fisher_1925_statistical}
+Ronald~A. Fisher.
+\newblock {\em ``{Statistical Methods for Research Workers}''}.
+\newblock Oliver and Boyd, 1925.
+
+\bibitem{fisher_1935_design}
+Ronald~A. Fisher.
+\newblock {\em ``{The Design of Experiments}''}.
+\newblock Oliver and Boyd, 1935.
+
+\bibitem{pearson_1900_chisquare}
+Karl Pearson.
+\newblock On the criterion that a given system of deviations from the probable
+  in the case of a correlated system of variables is such that it can be
+  reasonably supposed to have arisen from random sampling.
+\newblock {\em Philosophical Magazine}, 50:157--175, 1900.
+
+\bibitem{wald_1943_tests}
+Abraham Wald.
+\newblock Tests of statistical hypotheses concerning several parameters when
+  the number of observations is large.
+\newblock {\em Transactions of the American Mathematical Society}, 54:426--482,
+  1943.
+
+\bibitem{wilcoxon_1945_ranks}
+Frank Wilcoxon.
+\newblock Individual comparisons by ranking methods.
+\newblock {\em Biometrics Bulletin}, 1(6):80--83, 1945.
+
+\bibitem{mann_whitney_1947_test}
+Henry~B. Mann and Donald~R. Whitney.
+\newblock On a test of whether one of two random variables is stochastically
+  larger than the other.
+\newblock {\em The Annals of Mathematical Statistics}, 18(1):50--60, 1947.
+
+\bibitem{levene_1960_variances}
+Howard Levene.
+\newblock Robust tests for equality of variances.
+\newblock {\em Contributions to Probability and Statistics}, pages 278--292,
+  1960.
+
+\bibitem{kruskal_wallis_1952_use}
+William~H. Kruskal and W.~Allen Wallis.
+\newblock Use of ranks in one-criterion variance analysis.
+\newblock {\em Journal of the American Statistical Association},
+  47(260):583--621, 1952.
+
+\bibitem{kolmogorov_1933_sulla}
+Andrey Kolmogorov.
+\newblock Sulla determinazione empirica di una legge di distribuzione.
+\newblock {\em Giornale dell'Istituto Italiano degli Attuari}, 1933.
+
+\bibitem{smirnov_1948_table}
+Nikolai~V. Smirnov.
+\newblock Table for estimating the goodness of fit of empirical distributions.
+\newblock {\em The Annals of Mathematical Statistics}, 19(2):279--281, 1948.
+
+\bibitem{shapiro_wilk_1965_normality}
+Samuel~S. Shapiro and Martin~B. Wilk.
+\newblock An analysis of variance test for normality (complete samples).
+\newblock {\em Biometrika}, 52(3--4):591--611, 1965.
+
 \end{thebibliography}
