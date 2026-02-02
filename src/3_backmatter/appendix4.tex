@@ -1,12 +1,47 @@
-\chapter{Appendix: Some special functions}
+\chapter{Some special functions}
 \label{appendix4}
 
-\noindent\textbf{The Gaussian distribution.}
+In mathematics and statistics, certain functions appear so frequently and play such a foundational role that they are regarded as \emph{special functions}. Rather than being introduced for their own sake, these functions typically emerge from attempts to solve concrete problems involving error, accumulation, normalization, or symmetry. In probability and statistical inference, they often serve as canonical models or normalizing constants.
 
 \medskip
 
-\noindent\textbf{the Euler Gamma function.}
+\noindent\textbf{The Gaussian distribution.}
+
+The Gaussian (or normal) distribution arose historically from the study of measurement error and astronomical observation. In the early $19^{\text{th}}$ century, Carl Friedrich Gauss showed that assuming normally distributed errors led to optimal estimation procedures under natural symmetry assumptions \cite{gauss_1809_theoria}. Closely related forms were also developed independently by Pierre-Simon Laplace in his analytic theory of probability \cite{laplace_1812_theorie}. 
+
+In modern probability theory, the Gaussian distribution plays a central role through limit theorems, particularly the Central Limit Theorem, which explains its ubiquity as a model for aggregated random effects \cite{kolmogorov_1933_grundbegriffe}.
+
+A real-valued random variable \(X\) is said to follow a Gaussian distribution with mean \(\mu\) and variance \(\sigma^2>0\) if its probability density function is
+\[
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}
+\exp\!\left(-\frac{(x-\mu)^2}{2\sigma^2}\right).
+\]
+
+\medskip
+
+\noindent\textbf{The Euler Gamma function.}
+
+The Gamma function originated in attempts to extend the factorial function beyond the integers. While the factorial \(n!\) is defined only for positive integers, many problems in analysis and probability require a smooth continuation to non-integer values. Leonhard Euler introduced the Gamma function in the eighteenth century as a solution to this problem, providing an analytic extension of the factorial to the positive real numbers.
+
+For \(x>0\), the Gamma function is defined by the improper integral
+\[
+\Gamma(x) = \int_0^\infty t^{x-1} e^{-t}\,dt.
+\]
+For positive integers \(n\), it satisfies \(\Gamma(n) = (n-1)!\). In probability theory, the Gamma function appears naturally in the normalization of continuous distributions and in the study of waiting times and scale parameters \cite{degroot_2012_probability}.
 
 \medskip
 
 \noindent\textbf{The Euler Beta function.}
+
+The Beta function is closely related to the Gamma function and arose historically from the study of definite integrals involving powers of variables constrained to a finite interval. Euler showed that many such integrals could be expressed compactly using a special two-parameter function, now known as the Beta function.
+
+For \(x>0\) and \(y>0\), the Beta function is defined by
+\[
+B(x,y) = \int_0^1 t^{x-1}(1-t)^{y-1}\,dt.
+\]
+A key identity links the Beta and Gamma functions:
+\[
+B(x,y) = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}.
+\]
+
+In probability and statistics, the Beta function appears as the normalizing constant of the Beta distribution, which is widely used to model proportions, probabilities, and prior beliefs in Bayesian inference \cite{jaynes_2003_logic}. Together, the Gamma and Beta functions illustrate how integral calculus underlies the mathematical structure of many statistical models.

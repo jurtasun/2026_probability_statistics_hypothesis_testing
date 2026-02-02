@@ -4,15 +4,15 @@
 
 \epigraph{\textit{The development of mathematics is a continuous process of abstraction.}}{— Emmy Noether}
 
-In the previous chapters, we described data using summary statistics and introduced probability models to represent uncertainty. In this chapter, we connect these two perspectives. Estimation is the process through which data are used to learn about unknown features of a population, while probability provides the language to quantify how reliable such learning is.
+% In the previous chapters, we described data using summary statistics and introduced probability models to represent uncertainty. In this chapter, we connect these two perspectives. Estimation is the process through which data are used to learn about unknown features of a population, while probability provides the language to quantify how reliable such learning is.
 
-\medskip
+% \medskip
 
-As we discussed already, a crucial distinction must be made between \textit{prediction} and \textit{inference}. Prediction focuses on forecasting future observations, whereas inference aims to draw conclusions about underlying parameters or mechanisms that generate the data. Estimation lies at the heart of inference: it transforms random samples into numerical statements about unknown quantities.
+% As we discussed already, a crucial distinction must be made between \textit{prediction} and \textit{inference}. Prediction focuses on forecasting future observations, whereas inference aims to draw conclusions about underlying parameters or mechanisms that generate the data. Estimation lies at the heart of inference: it transforms random samples into numerical statements about unknown quantities.
 
-\medskip
+% \medskip
 
-Because data are inherently variable, different samples lead to different estimates. Understanding how estimates behave across repeated samples is therefore essential. The main goal of this chapter is to explain how probability theory allows us to quantify this variability and to construct principled measures of uncertainty such as confidence intervals.
+% Because data are inherently variable, different samples lead to different estimates. Understanding how estimates behave across repeated samples is therefore essential. The main goal of this chapter is to explain how probability theory allows us to quantify this variability and to construct principled measures of uncertainty such as confidence intervals.
 
 % The Law of Large Numbers ........................................................................
 \section{The Law of Large Numbers}
@@ -169,77 +169,77 @@ Because data are inherently variable, different samples lead to different estima
 % \textit{Example.} A $95\%$ confidence interval for the mean expresses the range of values that are consistent with the observed data under repeated sampling.
 
 
-% \begin{figure}[ht]
-%     \centering
-%     \includegraphics[width=0.7\textwidth]{5_figures/chapter3/lln.png}
-%     \caption{The Law of Large Numbers: The sample mean \(\bar{x}\) asymptotically tends to the expected valye \(\mu\), as the sample size increases.}
-%     \label{fig:lln}
-% \end{figure}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{5_figures/chapter3/lln.png}
+    \caption{The Law of Large Numbers: The sample mean \(\bar{x}\) asymptotically tends to the expected valye \(\mu\), as the sample size increases.}
+    \label{fig:lln}
+\end{figure}
 
-% \begin{figure}[ht]
+\begin{figure}[ht]
 
-%     \centering
+    \centering
 
-%     % ----------- Subfigure 1 -----------
-%     \begin{subfigure}{0.8\textwidth}
-%         \centering
-%         \includegraphics[width=0.6\textwidth]{5_figures/chapter3/clt_1.png}
-%         \caption{Histogram of sample mean for a sample size \(n = 10\).}
-%         \label{fig:clt1}
-%     \end{subfigure}
+    % ----------- Subfigure 1 -----------
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{5_figures/chapter3/clt_1.png}
+        \caption{Histogram of sample mean for a sample size \(n = 10\).}
+        \label{fig:clt1}
+    \end{subfigure}
 
-%     \vspace{1.2em}
+    \vspace{1.2em}
 
-%     % ----------- Subfigure 2 -----------
-%     \begin{subfigure}{0.8\textwidth}
-%         \centering
-%         \includegraphics[width=0.6\textwidth]{5_figures/chapter3/clt_2.png}
-%         \caption{Histogram of sample mean for a sample size \(n = 50\).}
-%         \label{fig:clt2}
-%     \end{subfigure}
+    % ----------- Subfigure 2 -----------
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{5_figures/chapter3/clt_2.png}
+        \caption{Histogram of sample mean for a sample size \(n = 50\).}
+        \label{fig:clt2}
+    \end{subfigure}
 
-%     \vspace{1.2em}
+    \vspace{1.2em}
 
-%     % ----------- Subfigure 3 -----------
-%     \begin{subfigure}{0.8\textwidth}
-%         \centering
-%         \includegraphics[width=0.6\textwidth]{5_figures/chapter3/clt_3.png}
-%         \caption{Histogram of sample mean for a sample size \(n = 100\).}
-%         \label{fig:clt3}
-%     \end{subfigure}
+    % ----------- Subfigure 3 -----------
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{5_figures/chapter3/clt_3.png}
+        \caption{Histogram of sample mean for a sample size \(n = 100\).}
+        \label{fig:clt3}
+    \end{subfigure}
 
-%     % ----------- Global caption -----------
-%     \caption{The Law of Large Numbers: The sample mean \(\bar{x}\) asymptotically tends to a Gaussian distribution, as the sample size increases.}
-%     \label{fig:clt}
+    % ----------- Global caption -----------
+    \caption{The Law of Large Numbers: The sample mean \(\bar{x}\) asymptotically tends to a Gaussian distribution, as the sample size increases.}
+    \label{fig:clt}
 
-% \end{figure}
+\end{figure}
 
-% \begin{figure}[ht]
+\begin{figure}[ht]
     
-%     \centering
+    \centering
 
-%     % ----------- Subfigure 1 -----------
-%     \begin{subfigure}{\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{5_figures/chapter3/xbar_sampling_distribution.png}
-%         \caption{Sample mean distribution, illustrating convergence to a perfect Gaussian under the Central Limit Theorem.}
-%         \label{fig:confidence1}
-%     \end{subfigure}
+    % ----------- Subfigure 1 -----------
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter3/xbar_sampling_distribution.png}
+        \caption{Sample mean distribution, illustrating convergence to a perfect Gaussian under the Central Limit Theorem.}
+        \label{fig:confidence1}
+    \end{subfigure}
 
-%     \vspace{1.2em}
+    \vspace{1.2em}
 
-%     % ----------- Subfigure 2 -----------
-%     \begin{subfigure}{\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{5_figures/chapter3/confidence_intervals.png}
-%         \caption{Confidence intervals: As the sample size increases, a narrower region from the estimator (e.g. sample mean, sample variance) surely contains the true population paramter.}
-%         \label{fig:confidence2}
-%     \end{subfigure}
+    % ----------- Subfigure 2 -----------
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter3/confidence_intervals.png}
+        \caption{Confidence intervals: As the sample size increases, a narrower region from the estimator (e.g. sample mean, sample variance) surely contains the true population paramter.}
+        \label{fig:confidence2}
+    \end{subfigure}
 
-%     \vspace{1.2em}
+    \vspace{1.2em}
 
-%     % ----------- Global caption -----------
-%     \caption{Confidence intervals and critical regions}
-%     \label{fig:confidence}
+    % ----------- Global caption -----------
+    \caption{Confidence intervals and critical regions}
+    \label{fig:confidence}
 
-% \end{figure}
+\end{figure}
