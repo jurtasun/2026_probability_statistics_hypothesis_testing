@@ -393,25 +393,10 @@ Leonhard Euler.
 \newblock {\em ``{Introductio in Analysin Infinitorum}''}.
 \newblock Marc-Michel Bousquet, Lausanne, 1748.
 
-\bibitem{newton_1687_principia}
-Isaac Newton.
-\newblock {\em ``{Philosophiae Naturalis Principia Mathematica}''}.
-\newblock Joseph Streater, London, 1687.
-
-\bibitem{leibniz_1684_nova}
-Gottfried~Wilhelm Leibniz.
-\newblock {``\emph{Nova Methodus pro Maximis et Minimis}''}.
-\newblock {\em Acta Eruditorum}, 1684.
-
 \bibitem{cauchy_1821_analyse}
 Augustin-Louis Cauchy.
 \newblock {\em ``{Cours d'Analyse de l'Ecole Royale Polytechnique}''}.
 \newblock Debure, Paris, 1821.
-
-\bibitem{courant_1965_calculus}
-Richard Courant and Fritz John.
-\newblock {\em ``{Introduction to Calculus and Analysis, Volume I}''}.
-\newblock Wiley, 1965.
 
 \bibitem{pingree_1978_kerala}
 David Pingree.
@@ -423,10 +408,30 @@ J.~L. Russell.
 \newblock {\em ``{The Development of Mathematics in the Islamic World}''}.
 \newblock Routledge, 1994.
 
+\bibitem{courant_1965_calculus}
+Richard Courant and Fritz John.
+\newblock {\em ``{Introduction to Calculus and Analysis, Volume I}''}.
+\newblock Wiley, 1965.
+
+\bibitem{newton_1687_principia}
+Isaac Newton.
+\newblock {\em ``{Philosophiae Naturalis Principia Mathematica}''}.
+\newblock Joseph Streater, London, 1687.
+
+\bibitem{leibniz_1684_nova}
+Gottfried~Wilhelm Leibniz.
+\newblock {``\emph{Nova Methodus pro Maximis et Minimis}''}.
+\newblock {\em Acta Eruditorum}, 1684.
+
 \bibitem{archimedes_1897_works}
 Archimedes.
 \newblock {\em ``{The Works of Archimedes}''}.
 \newblock Cambridge University Press, Cambridge, 1897.
+
+\bibitem{berggren_1986_islamic}
+J.~Lennart Berggren.
+\newblock {\em ``{Episodes in the Mathematics of Medieval Islam}''}.
+\newblock Springer, 1986.
 
 \bibitem{leibniz_1686_integral}
 Gottfried~Wilhelm Leibniz.
@@ -437,10 +442,5 @@ Gottfried~Wilhelm Leibniz.
 Bernhard Riemann.
 \newblock {\em ``{Gesammelte mathematische Werke}''}.
 \newblock Teubner, Leipzig, 1868.
-
-\bibitem{berggren_1986_islamic}
-J.~Lennart Berggren.
-\newblock {\em ``{Episodes in the Mathematics of Medieval Islam}''}.
-\newblock Springer, 1986.
 
 \end{thebibliography}

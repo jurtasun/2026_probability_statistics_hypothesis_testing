@@ -168,13 +168,36 @@
 
 % \textit{Example.} A $95\%$ confidence interval for the mean expresses the range of values that are consistent with the observed data under repeated sampling.
 
-
 \begin{figure}[ht]
+    
     \centering
-    \includegraphics[width=0.7\textwidth]{5_figures/chapter3/lln.png}
-    \caption{The Law of Large Numbers: The sample mean \(\bar{x}\) asymptotically tends to the expected valye \(\mu\), as the sample size increases.}
-    \label{fig:lln}
+
+    % ----------- Subfigure 1 -----------
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{5_figures/chapter3/clt_2.png}
+        \caption{The sample mean \(\bar{x}\) asymptotically converges to the expected value \(\mu\), as the sample size increases.}
+        \label{fig:lln_1}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ----------- Subfigure 2 -----------
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{5_figures/chapter3/lln.png}
+        \caption{The sample mean \(\bar{x}\) asymptotically converges to the expected value \(\mu\), as the sample size increases.}
+        \label{fig:lln_2}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ----------- Global caption -----------
+    \caption{The Law of Large Numbers: For a set of independent and identically distributed (iid) random variables, the sample mean \(\bar{x}\) asymptotically tends to the expected value \(\mu\), as the sample size \(n\) increases.}
+    \label{fig:fig:lln}
+
 \end{figure}
+
 
 \begin{figure}[ht]
 
@@ -184,7 +207,7 @@
     \begin{subfigure}{0.8\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{5_figures/chapter3/clt_1.png}
-        \caption{Histogram of sample mean for a sample size \(n = 10\).}
+        \caption{Histogram of sample mean for a sample size \(n = 10\) and Gaussian fit (dashed).}
         \label{fig:clt1}
     \end{subfigure}
 
@@ -194,7 +217,7 @@
     \begin{subfigure}{0.8\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{5_figures/chapter3/clt_2.png}
-        \caption{Histogram of sample mean for a sample size \(n = 50\).}
+        \caption{Histogram of sample mean for a sample size \(n = 50\) and Gaussian fit (dashed).}
         \label{fig:clt2}
     \end{subfigure}
 
@@ -204,12 +227,12 @@
     \begin{subfigure}{0.8\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{5_figures/chapter3/clt_3.png}
-        \caption{Histogram of sample mean for a sample size \(n = 100\).}
+        \caption{Histogram of sample mean for a sample size \(n = 100\) and Gaussian fit (dashed).}
         \label{fig:clt3}
     \end{subfigure}
 
     % ----------- Global caption -----------
-    \caption{The Law of Large Numbers: The sample mean \(\bar{x}\) asymptotically tends to a Gaussian distribution, as the sample size increases.}
+    \caption{The Central Limit Theorem: For a set of independent and identically distributed (iid) random variables, the sample mean \(\bar{x}\) asymptotically tends to a Gaussian distribution, as the sample size \(n\) increases.}
     \label{fig:clt}
 
 \end{figure}
@@ -222,7 +245,7 @@
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{5_figures/chapter3/xbar_sampling_distribution.png}
-        \caption{Sample mean distribution, illustrating convergence to a perfect Gaussian under the Central Limit Theorem.}
+        \caption{Sample mean distribution, illustrating convergence to a perfect Gaussian curve as the sample size \(n\) increaases, as expected under the Law of Large Numbers and the Central Limit Theorem.}
         \label{fig:confidence1}
     \end{subfigure}
 
@@ -232,7 +255,7 @@
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{5_figures/chapter3/confidence_intervals.png}
-        \caption{Confidence intervals: As the sample size increases, a narrower region from the estimator (e.g. sample mean, sample variance) surely contains the true population paramter.}
+        \caption{Confidence intervals: As the sample size \(n\) increases, a narrower region from the estimator (e.g. sample mean, sample variance) surely contains the true population paramter.}
         \label{fig:confidence2}
     \end{subfigure}
 
