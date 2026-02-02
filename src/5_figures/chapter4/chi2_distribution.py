@@ -73,23 +73,24 @@ plt.show()
 
 # --- THIRD PLOT: Chi-square distribution for varying degrees of freedom ---
 dfs = [1, 5, 10]
-x = np.linspace(0.3, 30, 1000)
+x = np.linspace(0.15, 20, 1000)
 
 fig3, ax3 = plt.subplots(figsize=(7, 4.5))
 
 for df in dfs:
     y = chi2.pdf(x, df)
-    ax3.plot(x, y, lw=2, label=fr"$\nu={df}$")
-
-# Add dashed curve for large df case (approx. normal)
-df_large = 15
-y_large = chi2.pdf(x, df_large)
-ax3.plot(x, y_large, 'k--', lw=2, label=fr"$\nu={df_large}$")
+    if df == 1:
+        ax3.plot(x, y, lw=2, color='black', linestyle='-', label=fr"$\nu = {df}$")
+    elif df == 5:
+        ax3.plot(x, y, lw=2, color='crimson', linestyle='-', label=fr"$\nu = {df}$")
+    else:  # df == 10
+        ax3.plot(x, y, lw=2, color='black', linestyle='--', label=fr"$\nu = {df}$")
 
 ax3.set_xlabel(r"$\chi^2$", fontsize=12)
 ax3.set_ylabel(r"$\mathcal{f}\; (\chi^2;\ \nu)$", fontsize=14)
-ax3.legend(frameon=False, fontsize=10, loc="upper right")
+ax3.legend(frameon=True, fontsize=10, loc="upper right")
 ax3.grid(True, linestyle='--', alpha=0.3)
+
 for spine in ax3.spines.values():
     spine.set_visible(True)
     spine.set_color('black')
@@ -99,5 +100,3 @@ plt.tight_layout()
 fig3.savefig("chi2_distribution.png", dpi=300, bbox_inches='tight')
 fig3.savefig("chi2_distribution.pdf", bbox_inches='tight')
 plt.show()
-
-

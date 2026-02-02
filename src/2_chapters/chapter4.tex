@@ -102,13 +102,6 @@ The general approach to hypothesis testing can be summarized in the following st
 
 A few remarks are in order regarding this general roadmap. A statistic may be as simple as an estimator, such as the sample mean, or a more abstract quantity derived from the data. Fisher originally introduced the \(p\)-value as a continuous measure of evidence against the null hypothesis, rather than as a strict decision rule. The widespread practice of fixed significance thresholds and accept--reject decisions reflects a later synthesis of Fisher’s ideas with the Neyman-Pearson framework. As a result, the modern approach to hypothesis testing combines elements of both traditions, a point we will return to later in this chapter. \textit{Warning.} A \(p\)-value \textit{does not} measure the probability that a hypothesis is true or false, but rather how compatible the observed data are with the null hypothesis under the assumed model.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{5_figures/chapter1/estimators.png}
-    \caption{Representation of the \textit{true} population mean $\mu$, in black, and the observed \textit{sample} mean $\bar{x}$. The true mean is and ideal and unaccessible quantity, while the sample mean can be computed as an estimator of the finite sample.}
-    \label{fig:estimators2}
-\end{figure}
-
 % Statistical tests: some examples ......................................................................................
 \section{Statistical tests: common examples}
 
@@ -180,41 +173,10 @@ while for a two-sided test,
 With \(\nu = 9\) degrees of freedom, the corresponding two-sided \(p\)-value is approximately \(p \approx 0.54\).
 
 \begin{figure}[ht]
-
     \centering
-
-    % ----------- Subfigure 1 -----------
-    \begin{subfigure}{0.8\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/t_distribution.png}
-        \caption{The Central Limit Theorem 1}
-        \label{fig:t_distribution}
-    \end{subfigure}
-
-    \vspace{1.2em}
-
-    % ----------- Subfigure 2 -----------
-    \begin{subfigure}{0.8\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/f_distribution.png}
-        \caption{The Central Limit Theorem 2}
-        \label{fig:f_distribution}
-    \end{subfigure}
-
-    \vspace{1.2em}
-
-    % ----------- Subfigure 3 -----------
-    \begin{subfigure}{0.8\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/chi2_distribution.png}
-        \caption{The Central Limit Theorem 3}
-        \label{fig:chi2_distribution}
-    \end{subfigure}
-
-    % ----------- Global caption -----------
-    \caption{Statistical distributions}
-    \label{fig:distributions_nu}
-
+    \includegraphics[width=0.7\textwidth]{5_figures/chapter4/t_distribution.png}
+        \caption{Representation of the Student's \(t\)-distribution for different values of the degrees of freedom \(\nu\). As they increase (\(\nu \rightarrow \infty\)), the distribution asymptotically approaches a Gaussian (Normal) curve.}
+    \label{fig:t_distribution_single}
 \end{figure}
 
 % Subsection ..........................................................................................................
@@ -253,36 +215,6 @@ This formulation corresponds to \textit{Welch’s two-sample \(t\)-test}, which 
 \medskip
 
 An alternative formulation is the two-sample \(t\)-test with \emph{pooled variance}, which additionally assumes that the two populations have the same variance, \(\sigma_1^2=\sigma_2^2\). Under this assumption, the sample variances \(s_1^2\) and \(s_2^2\) are combined into a single pooled estimator of the common variance, leading to a simplified standard error and a Student’s \(t\)-distribution with \(\nu = n_1 + n_2 - 2\) degrees of freedom. While this test is exact under normality and equal variances, it is more sensitive to heteroscedasticity than Welch’s test and is therefore less robust when the equality of variances is in doubt.
-
-\begin{figure}[ht]
-    
-    \centering
-
-    % ----------- Subfigure 1 -----------
-    \begin{subfigure}{0.7\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{5_figures/chapter4/t_test_1_sample_p_one_tailed.png}
-        \caption{One sided \(p\)-value.}
-        \label{fig:t_test1}
-    \end{subfigure}
-
-    \vspace{1.2em}
-
-    % ----------- Subfigure 2 -----------
-    \begin{subfigure}{0.7\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{5_figures/chapter4/t_test_1_sample_p_two_tailed.png}
-        \caption{One sided \(p\)-value.}
-        \label{fig:t_test2}
-    \end{subfigure}
-
-    \vspace{1.2em}
-
-    % ----------- Global caption -----------
-    \caption{Representation of the 1-sided and 2-sided \(p\)-value as the cumulative probability—the integral of the tails, the are under the curve —of the Student's \(t\)-distribution.}
-    \label{fig:t_p_values}
-
-\end{figure}
 
 % Subsection ..........................................................................................................
 \subsection{Fisher’s \(F\)-test: compare variances of two independent groups}
@@ -368,6 +300,13 @@ yielding a one-sided \(p\)-value of approximately \(p \approx 0.12\).
 
 It is worth noting that not all of Fisher’s contributions to hypothesis testing rely on continuous distributions or asymptotic arguments. In situations involving small samples and categorical data—most notably \(2\times2\) contingency tables—Fisher introduced what is now known as \textit{Fisher’s exact test}. Rather than comparing estimators such as means or variances, this test is based on the exact sampling distribution of cell counts under a fixed-margins assumption, which follows a hypergeometric distribution. As in the variance-ratio test, the null hypothesis is encoded through the conditions under which the observed statistic has a known distribution. We will return to this test later when discussing inference for categorical data and contingency tables.
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{5_figures/chapter4/f_distribution.png}
+        \caption{Representation of the Fisher's \(F\)-distribution for different values of the degrees of freedom \(\nu_1, \nu_2\). As they increase (\(\nu_1, \nu_2 \rightarrow \infty\)), the distribution asymptotically approaches a Gaussian (Normal) curve.}
+    \label{fig:f_distribution_single}
+\end{figure}
+
 % Subsection ..........................................................................................................
 \subsection{Fisher’s ANOVA: compare variability across multiple groups}
 
@@ -412,36 +351,6 @@ and \(N=\sum_{i=1}^{k} n_i\). When the null hypothesis is true and group means a
 \medskip
 
 Under \(H_0\), the ANOVA \(F\)-statistic follows a Fisher \(F\)-distribution with degrees of freedom \(\nu_1=k-1\) and \(\nu_2=N-k\). The corresponding \(p\)-value is obtained by integrating the right tail of this distribution, exactly as in the two-sample \(F\)-test.
-
-\begin{figure}[ht]
-    
-    \centering
-
-    % ----------- Subfigure 1 -----------
-    \begin{subfigure}{0.7\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{5_figures/chapter4/f_test_one_tailed.png}
-        \caption{One sided \(p\)-value.}
-        \label{fig:f_test1}
-    \end{subfigure}
-
-    \vspace{1.2em}
-
-    % ----------- Subfigure 2 -----------
-    \begin{subfigure}{0.7\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{5_figures/chapter4/f_test_two_tailed.png}
-        \caption{One sided \(p\)-value.}
-        \label{fig:f_test2}
-    \end{subfigure}
-
-    \vspace{1.2em}
-
-    % ----------- Global caption -----------
-    \caption{Representation of the 1-sided and 2-sided \(p\)-value as the cumulative probability—the integral of the tails, the are under the curve —of the Fisher \(t\)-distribution.}
-    \label{fig:f_p_values}
-
-\end{figure}
 
 % Subsection ..........................................................................................................
 \subsection{Pearson’s \(\chi^{2}\) test: goodness-of-fit and tests of independence}
@@ -504,30 +413,10 @@ Two remarks are in order. First, the validity of the Pearson \(\chi^2\)-test rel
 A remark is in order regarding sidedness. Unlike tests such as the \(t\)-test, where deviations in either direction from the null hypothesis are meaningful, the \(\chi^2\)-statistic is nonnegative by construction and measures the overall discrepancy between observed and expected frequencies. Small values of \(\chi^2\) indicate unusually good agreement with the model, whereas large values indicate poor fit. Consequently, evidence against the null hypothesis arises only through large values of the statistic, and hypothesis testing with the \(\chi^2\)-distribution is inherently one-sided. While it is mathematically possible to define a two-sided \(p\)-value by symmetrizing tail probabilities, such constructions are nonstandard and rarely meaningful in practice, as unusually small values of \(\chi^2\) do not correspond to a distinct or interpretable alternative hypothesis.
 
 \begin{figure}[ht]
-
     \centering
-
-    % Subfigure 1 .............................................................
-    \begin{subfigure}{0.8\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/chi2_test_one_tailed.png}
-        \caption{Representation of the one-sided \(p\)-value for the \(\chi^2\)-test, computed as the integral of the right tail of the distribution.}
-        \label{fig:chi2_p_1_sided}
-    \end{subfigure}
-
-    \vspace{1.2em}
-
-    % Subfigure 2 .............................................................
-    \begin{subfigure}{0.8\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/chi2_test_two_tailed.png}
-        \caption{Representation of the two-sided \(p\)-value for the \(\chi^2\)-test, computed as the integral of the right tail of the distribution.}
-        \label{fig:chi2_p_2_sided}
-    \end{subfigure}
-
-    % ----------- Global caption -----------
-    \caption{Representation of the 1-sided and 2-sided \(p\)-value as the cumulative probability—the integral of the tails, the are under the curve —of the Fisher \(t\)-distribution.}
-    \label{fig:chi2_test_comparison}
+    \includegraphics[width=0.7\textwidth]{5_figures/chapter4/chi2_distribution.png}
+        \caption{Representation of the Pearson's \(\chi^2\)-distribution for different values of the degrees of freedom \(\nu\). As they increase (\(\nu \rightarrow \infty\)), the distribution asymptotically approaches a Gaussian (Normal) curve.}
+    \label{fig:chi2_distribution_single}
 \end{figure}
 
 % Subsection ..........................................................................................................
@@ -733,3 +622,129 @@ Erich Lehmann, in his definitive treatment of hypothesis testing \cite{lehmann_1
 \medskip
 
 The coexistence of Fisherian evidence, Neyman–Pearson decision rules, Bayesian belief updating, Popperian falsification, and Reichenbach’s predictive frequentism reflects not confusion but plurality.  Each framework answers a different question—about evidence, action, belief, or prediction—and Type~I and Type~II errors acquire meaning only within the Neyman–Pearson decision-theoretic context.  Understanding these distinctions is essential for the principled use and interpretation of hypothesis tests in modern statistics.
+
+
+\begin{figure}[ht]
+
+    \centering
+
+    % ----------- Subfigure 1 -----------
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/t_distribution.png}
+        \caption{Representation of the Student's \(t\)-distribution for different values of the degrees of freedom \(\nu\). As they increase (\(\nu \rightarrow \infty\)), the distribution asymptotically approaches a Gaussian(Normal) curve.}
+        \label{fig:t_distribution}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ----------- Subfigure 2 -----------
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/f_distribution.png}
+        \caption{Representation of the Fisher's \(F\)-distribution for different values of the degrees of freedom \(\nu_1, \nu_2\). As they increase (\(\nu_1, \nu_2 \rightarrow \infty\)), the distribution asymptotically approaches a Gaussian (Normal) curve.}
+        \label{fig:f_distribution}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ----------- Subfigure 3 -----------
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/chi2_distribution.png}
+        \caption{Representation of the Pearson's \(\chi^2\)-distribution for different value of the degrees of freedom \(\nu\). As they increase (\(\nu \rightarrow \infty\)), the distribution asymptotically approaches a Gaussian (Normal) curve.}
+        \label{fig:chi2_distribution}
+    \end{subfigure}
+
+    % ----------- Global caption -----------
+    \caption{Statistical distributions}
+    \label{fig:distributions_nu}
+
+\end{figure}
+
+\begin{figure}[ht]
+    
+    \centering
+
+    % ----------- Subfigure 1 -----------
+    \begin{subfigure}{0.7\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter4/t_test_1_sample_p_one_tailed.png}
+        \caption{Computation of the one-sided \(p\)-value, as the integral of the positive tail of the \(t\)-distribution.}
+        \label{fig:t_test1}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ----------- Subfigure 2 -----------
+    \begin{subfigure}{0.7\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter4/t_test_1_sample_p_two_tailed.png}
+        \caption{Computation of the two-sided \(p\)-value, as the integral of both the positive and negative tails of the \(t\)-distribution. Given the symmetry of the \(t\)-distribution, this is exactly double the size of the one-sided \(p\)-value.}
+        \label{fig:t_test2}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ----------- Global caption -----------
+    \caption{Representation of the one-sided and two-sided \(p\)-value as the cumulative probability—the integral of the tails, the are under the curve —of the Student's \(t\)-distribution.}
+    \label{fig:t_p_values}
+
+\end{figure}
+
+\begin{figure}[ht]
+    
+    \centering
+
+    % ----------- Subfigure 1 -----------
+    \begin{subfigure}{0.7\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter4/f_test_one_tailed.png}
+        \caption{Computation of the one-sided \(p\)-value, as the integral of the positive tail of the \(F\)-distribution.}
+        \label{fig:f_test1}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ----------- Subfigure 2 -----------
+    \begin{subfigure}{0.7\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{5_figures/chapter4/f_test_two_tailed.png}
+        \caption{Computation of the two-sided \(p\)-value, as the integral of both tails of the \(F\)-distribution. Given the asymmetry of the \(F\)-distribution, this is not double the size of the one-sided \(p\)-value, and both integrals need to be computed independently.}
+        \label{fig:f_test2}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % ----------- Global caption -----------
+    \caption{Representation of the one-sided and two-sided \(p\)-value as the cumulative probability—the integral of the tails, the are under the curve —of the Fisher's \(F^2\)-distribution.}
+    \label{fig:f_p_values}
+
+\end{figure}
+
+\begin{figure}[ht]
+
+    \centering
+
+    % Subfigure 1 .............................................................
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/chi2_test_one_tailed.png}
+        \caption{Computation of the one-sided \(p\)-value, as the integral of the positive tail of the \(\chi^2\)-distribution.}
+        \label{fig:chi2_p_1_sided}
+    \end{subfigure}
+
+    \vspace{1.2em}
+
+    % Subfigure 2 .............................................................
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5_figures/chapter4/chi2_test_two_tailed.png}
+        \caption{Computation of the two-sided \(p\)-value, as the integral of both tails of the \(\chi^2\)-distribution. Given the asymmetry of the \(\chi^2\)-distribution, this is not double the size of the one-sided \(p\)-value, and both integrals need to be computed independently.}
+        \label{fig:chi2_p_2_sided}
+    \end{subfigure}
+
+    % ----------- Global caption -----------
+    \caption{Representation of the one-sided and two-sided \(p\)-value as the cumulative probability—the integral of the tails, the are under the curve —of the Pearson's \(\chi^2\)-distribution.}
+    \label{fig:chi2_test_comparison}
+\end{figure}

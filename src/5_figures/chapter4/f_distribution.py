@@ -73,24 +73,33 @@ plt.show()
 # --- THIRD PLOT: F-distribution for varying degrees of freedom ---
 dfs1 = [1, 5, 10]
 dfs2 = [5, 10, 30]
-x = np.linspace(0.02, 3.02, 1000)
+x = np.linspace(0.01, 2.2, 1000)
 
 fig3, ax3 = plt.subplots(figsize=(7, 4.5))
 
-for (num_df, den_df) in zip(dfs1, dfs2):
+for num_df, den_df in zip(dfs1, dfs2):
     y = f.pdf(x, num_df, den_df)
-    ax3.plot(x, y, lw=2, label=fr"$\nu_1={num_df},\ \nu_2={den_df}$")
-
-# Add dashed curve for large dof case
-df1_large = 50
-df2_large = 100
-y_large = f.pdf(x, df1_large, df2_large)
-ax3.plot(x, y_large, 'k--', lw=2, label=fr"$\nu_1={df1_large},\ \nu_2={df2_large}$")
+    if num_df == 1:
+        ax3.plot(
+            x, y, lw=2, color='black', linestyle='-',
+            label=fr"$\nu_1={num_df},\ \nu_2={den_df}$"
+        )
+    elif num_df == 5:
+        ax3.plot(
+            x, y, lw=2, color='crimson', linestyle='-',
+            label=fr"$\nu_1={num_df},\ \nu_2={den_df}$"
+        )
+    else:  # num_df == 10
+        ax3.plot(
+            x, y, lw=2, color='black', linestyle='--',
+            label=fr"$\nu_1={num_df},\ \nu_2={den_df}$"
+        )
 
 ax3.set_xlabel("F", fontsize=12)
 ax3.set_ylabel(r"$\mathcal{f}\; (F;\ \nu_1, \nu_2)$", fontsize=14)
-ax3.legend(frameon=False, fontsize=10, loc="upper right")
+ax3.legend(frameon=True, fontsize=10, loc="upper right")
 ax3.grid(True, linestyle='--', alpha=0.3)
+
 for spine in ax3.spines.values():
     spine.set_visible(True)
     spine.set_color('black')
@@ -100,5 +109,3 @@ plt.tight_layout()
 fig3.savefig("f_distribution.png", dpi=300, bbox_inches='tight')
 fig3.savefig("f_distribution.pdf", bbox_inches='tight')
 plt.show()
-
-

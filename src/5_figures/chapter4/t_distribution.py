@@ -24,7 +24,7 @@ ax1.axvline(t_obs, color='crimson', linestyle='--', linewidth=2, label=fr"$t_{{o
 
 ax1.set_xlabel("t", fontsize=12)
 ax1.set_ylabel(r"$\mathcal{f}\; (t;\ \nu=10)$", fontsize=14)
-ax1.legend(frameon=False, fontsize=10)
+ax1.legend(frameon=True, fontsize=10)
 ax1.grid(True, linestyle='--', alpha=0.3)
 for spine in ax1.spines.values():
     spine.set_visible(True)
@@ -76,15 +76,18 @@ fig3, ax3 = plt.subplots(figsize=(7, 4.5))
 # Plot each t-distribution
 for df_i in dfs:
     y = t.pdf(x, df_i)
-    ax3.plot(x, y, lw=2, label=fr"$\nu = {df_i}$")
-
-# Standard normal for comparison
-ax3.plot(x, norm.pdf(x), 'k--', label=r"$\mathcal{N}(0,1)$", linewidth=1.5)
+    if df_i == 1:
+        ax3.plot(x, y, lw=2, color='black', linestyle='-', label=fr"$\nu = {df_i}$")
+    elif df_i == 5:
+        ax3.plot(x, y, lw=2, color='crimson', linestyle='-', label=fr"$\nu = {df_i}$")
+    else:  # df_i == 100
+        ax3.plot(x, y, lw=2, color='black', linestyle='--', label=fr"$\nu = {df_i}$")
 
 ax3.set_xlabel("t", fontsize=12)
 ax3.set_ylabel(r"$\mathcal{f}\; (t;\ \nu)$", fontsize=14)
-ax3.legend(frameon=False, fontsize=10, loc="upper right")
+ax3.legend(frameon=False, fontsize=10)
 ax3.grid(True, linestyle='--', alpha=0.3)
+
 for spine in ax3.spines.values():
     spine.set_visible(True)
     spine.set_color('black')
@@ -94,5 +97,3 @@ plt.tight_layout()
 fig3.savefig("t_distribution.png", dpi=300, bbox_inches='tight')
 fig3.savefig("t_distribution.pdf", bbox_inches='tight')
 plt.show()
-
-
