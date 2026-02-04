@@ -232,8 +232,8 @@ Siméon-Denis Poisson.
 
 \bibitem{pearson_neyman_1933_efficient}
 Jerzy Neyman and Egon~S. Pearson.
-\newblock ``{On the Problem of the Most Efficient Tests of Statistical
-  Hypotheses}''.
+\newblock {``\emph{On the Problem of the Most Efficient Tests of Statistical
+  Hypotheses}}''.
 \newblock {\em Philosophical Transactions of the Royal Society of London A},
   1933.
 
@@ -271,6 +271,12 @@ Karl Pearson.
   Probable in the Case of a Correlated System of Variables Is Such That It Can
   Be Reasonably Supposed to Have Arisen from Random Sampling}''}.
 \newblock {\em Philosophical Magazine}, 50:157--175, 1900.
+
+\bibitem{wilks_1938_large}
+Samuel~S. Wilks.
+\newblock {``\emph{The Large-Sample Distribution of the Likelihood Ratio for
+  Testing Composite Hypotheses}''}.
+\newblock {\em The Annals of Mathematical Statistics}, 9(1):60--62, 1938.
 
 \bibitem{wald_1943_tests}
 Abraham Wald.
@@ -368,7 +374,8 @@ Sheldon Axler.
 
 \bibitem{grassmann_1844_ausdehnungslehre}
 Hermann Grassmann.
-\newblock {\em ``{Die lineale Ausdehnungslehre}''}.
+\newblock {\em ``{Die lineale Ausdehnungslehre (The Theory of Extension: New
+  Mathematical Ideas)}''}.
 \newblock Otto Wigand, Leipzig, 1844.
 
 \bibitem{cayley_1858_matrices}
@@ -379,8 +386,8 @@ Arthur Cayley.
 
 \bibitem{alkhwarizmi_820_aljabr}
 MuHammad ibn~Mūsā al~Khwārizmī.
-\newblock {\em ``{Al-Kitāb al-Mukhtaṣar fī Hisāb al-Jabr
-  wa-l-Muqābala}''}.
+\newblock {\em ``{Al-Kitāb al-Mukhtaṣar fī Hisāb al-Jabr wa-l-Muqābala
+  (Compendious Book on Calculation)}''}.
 \newblock House of Wisdom, Baghdad, c. 820.
 
 \bibitem{rosen_1831_algebra}
@@ -440,7 +447,8 @@ Gottfried~Wilhelm Leibniz.
 
 \bibitem{riemann_1868_werke}
 Bernhard Riemann.
-\newblock {\em ``{Gesammelte mathematische Werke}''}.
+\newblock {\em ``{Gesammelte mathematische Werke (Collected Mathematical
+  Works)}''}.
 \newblock Teubner, Leipzig, 1868.
 
 \end{thebibliography}

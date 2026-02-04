@@ -4,7 +4,7 @@
 
 \epigraph{\textit{The object of statistical science is the reduction of data to relevant information.}}{— Ronald A. Fisher}
 
-The term \textit{hypothesis testing} lies on top of the two pillars we have mentioned in previous chapters. From statistical analysis, as discussed in Chapter~\ref{chapter1}, we will use sampling, estimators, and graphical summaries to describe data. From probability theory, as discussed in Chapter~\ref{chapter2}, we will rely on probability distributions and expected values to model random variation and uncertainty. Throughout this chapter, we will mostly work in a \textit{parametric} setting, where data is assumed to follow a simple, smooth, and well-behaved distribution—most often the Gaussian distribution. Under these assumptions, and supported by the Law of Large Numbers and the Central Limit Theorem, estimators such as the sample mean and variance provide reliable information about the true population parameters. Confidence intervals and critical regions, introduced in Chapter~\ref{chapter3}, formalize this idea of reliability.
+The term \textit{hypothesis testing} lies on top of the two pillars we have mentioned in previous chapters. From statistical analysis, as discussed in Chapter~\ref{chapter1}, we will use sampling, estimators, and graphical summaries to describe data. From probability theory, as discussed in Chapter~\ref{chapter2}, we will rely on probability distributions and expected values to model random variation and uncertainty. Throug this chapter, we will mostly work in a \textit{parametric} setting, where data is assumed to follow a simple, smooth, and well-behaved distribution—most often the Gaussian distribution. Under these assumptions, and supported by the Law of Large Numbers and the Central Limit Theorem, estimators such as the sample mean and variance provide reliable information about the true population parameters. Confidence intervals and critical regions, introduced in Chapter~\ref{chapter3}, formalize this idea of reliability.
 
 \medskip
 
@@ -391,7 +391,7 @@ Unlike the \(t\)-test, where the degrees of freedom are always \(n-1\), the degr
 
 \medskip
 
-In the modern framework, the chi-square test is formulated with an explicit null hypothesis and a \(p\)-value. One specifies a null hypothesis \(H_0\) describing the expected distribution or independence structure, derives the asymptotic distribution \(\chi^2 \sim \chi^2_\nu\) under \(H_0\), and computes the \(p\)-value as the right-tail probability
+In the modern framework, the \(\chi^2\) test is formulated with an explicit null hypothesis and a \(p\)-value. One specifies a null hypothesis \(H_0\) describing the expected distribution or independence structure, derives the asymptotic distribution \(\chi^2 \sim \chi^2_\nu\) under \(H_0\), and computes the \(p\)-value as the right-tail probability
 \[
     p
     =
@@ -402,7 +402,7 @@ In the modern framework, the chi-square test is formulated with an explicit null
 
 \medskip
 
-A deeper theoretical connection emerges through likelihood-based testing. Pearson’s \(\chi^2\)-statistic is asymptotically equivalent to the likelihood-ratio statistic \(-2\log\Lambda\), a result formalized by Wilks in the 1930s. Together with Wald and score tests, this establishes a unifying asymptotic framework for hypothesis testing in parametric models.
+A deeper theoretical connection emerges through likelihood-based testing. Pearson’s \(\chi^2\)-statistic is asymptotically equivalent to the likelihood-ratio statistic \(-2\log\Lambda\), a result formalized by Wilks in the 1930s \cite{wilks_1938_large}. Together with Wald and score tests, this establishes a unifying asymptotic framework for hypothesis testing in parametric models.
 
 \medskip
 
@@ -593,7 +593,7 @@ where the coefficients \(a_i\) depend on normal order statistics. The distributi
 % Error types in hypothesis testing ...................................................................................
 \section{Error types in hypothesis testing}
 
-Modern hypothesis testing emerged in the early $20^{\text{th}}$ century as an attempt to formalize uncertainty, error, and decision making in empirical science.  Three major approaches—Fisherian significance testing, Neyman–Pearson hypothesis testing, and Bayesian inference—address these issues in fundamentally different ways, while later philosophical analyses by Reichenbach and Popper clarified their distinct aims.  Subsequent commentators such as Cox, Mayo, and Lehmann have emphasized both the strengths of each framework and the conceptual tensions created by their later amalgamation in textbook practice.
+Modern hypothesis testing emerged in the early $20^{\text{th}}$ century as an attempt to formalize uncertainty, error, and decision making in empirical science.  Three major approaches—Fisherian significance testing, Neyman–Pearson hypothesis testing, and Bayesian inference—address these issues in fundamentally different ways, while later philosophical analyses by Reichenbach and Popper clarified their distinct aims.  Subsequent commentators such as Cox, Mayo, and Lehmann have emphasized both the strengths of each framework and the conceptual tensions created by their later amalgamation in textbook practice. Here we explore such different approaches to hypothesis testing, with the very idea of error in the different frameworks, aiming to clarify common missconceptions.
 
 \medskip
 

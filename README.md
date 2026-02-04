@@ -11,18 +11,17 @@ ICL email address `jurtasun@ic.ac.uk`
 
 ### Access the Open-Source content on `Pressbooks`:
 
-This course [2026_probability_statistics_hypothesis_testing](https://github.com/jurtasun/2026_probability_statistics_hypothesis_testing) provides an introduction to the field of probability and statistical inference. The content of the course is currently being edited and revised by the [https://pressbooks.pub](https://pressbooks.pub) open-source platform. Meanwhile, please find the available pdf version of the notes `statistics_probability_course.pdf`.
+This course [2026_probability_statistics_hypothesis_testing](https://github.com/jurtasun/2026_probability_statistics_hypothesis_testing) provides an introduction to the field of probability and statistical inference. The content of the course is currently being edited and revised by the [https://pressbooks.pub](https://pressbooks.pub) open-source platform. Meanwhile, please find the available pdf version of the notes `statistics_probability_notes.pdf`.
 
-The course is organized in five chapters, covering the topics listed below:
+The course is organized in seven chapters, covering the topics listed below:
 
 - Descriptive statistics
-- Probability and random events
-- Parameter estimation
+- Foundations of probability
+- Estimation and confidence
 - Introduction to hypothesis testing
+- Modelling, dependency and correlation
 - Introduction to Bayesian probability
-- Appendix 1: Vectors and matrices: a quick review 
-- Appendix 2: Functions and derivatives: a quick review 
-- Appendix 3: Integrals: a quick review 
+- Stochasticity and Markov processes
 
 All will be followed by a practical session and hands-on coding, both in Python and R. No prior experience in statistics or programming is required for the attendance of this course. For exercises and detailed descriptions, the handwritten version of the *work-in-progress* chapters can be found at the appendices `statistics_probability_couse_app1.pdf` and `statistics_probability_course_app2.pdf`.
 
